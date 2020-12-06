@@ -26,7 +26,7 @@ page_sections:
       url: https://github.com/bottlesdevs/Bottles
       button_text: "See on GitHub "
     image:
-      image: "/uploads/2018/06/21/product-shot-1.png"
+      image: "/uploads/2018/06/21/screenshot-0.png"
       alt_text: Product Shot
     background_image: "/uploads/2018/06/21/hero-2-bg.png"
   - template: content-feature
