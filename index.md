@@ -28,7 +28,7 @@ page_sections:
     image:
       image: "/uploads/2018/06/21/screenshot-0.png"
       alt_text: Product Shot
-    background_image: "/uploads/2018/06/21/tiles.png"
+    background_image: "/uploads/2018/06/21/hero-2-bg.png"
   - template: content-feature
     block: feature-1
     media_alignment: Left
