@@ -8,18 +8,12 @@ page_sections:
     logo: "/uploads/2018/06/21/forestry-full.svg"
     navigation:
       - link: "/"
-        link_text: Ubuild
+        link_text: Home
       - link: "#swap"
         link_text: Swap
-      - link: "#customize"
-        link_text: Customize
-      - link: "#responsive"
-        link_text: Responsive
-      - link: "#blocks"
-        link_text: Blocks
     cta:
-      url: https://app.forestry.io/quick-start?repo=forestryio/ubuild-jekyll&provider=github&engine=jekyll
-      button_text: Import
+      url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous
+      button_text: Get bottles
   - template: hero-banner-w-image
     block: hero-2
     slug: features
@@ -29,7 +23,7 @@ page_sections:
       content manager.
     cta:
       enabled: true
-      url: https://github.com/forestryio/ubuild-jekyll
+      url: https://github.com/bottlesdevs/Bottles
       button_text: "See on GitHub "
     image:
       image: "/uploads/2018/06/21/product-shot-1.png"
