@@ -583,13 +583,13 @@ input.inverted::placeholder {
  }
  .block-feature-1 .column.text {
   -ms-flex:0 0 40%;
-  flex:0 0 40%;
+  flex:0 0 36%;
   margin-right:2rem;
   margin-bottom:0
  }
  .block-feature-1 .column.media {
   -ms-flex:0 0 calc(60% - 2rem);
-  flex:0 0 calc(60% - 2rem)
+  flex:0 0 calc(64% - 2rem);
  }
 }
 .block-feature-2 .columns {
@@ -629,14 +629,14 @@ input.inverted::placeholder {
  }
  .block-feature-2 .column.text {
   -ms-flex:0 0 50%;
-  flex:0 0 50%;
+  flex:0 0 36%;
   -ms-flex-order:2;
   order:2;
   margin-bottom:0
  }
  .block-feature-2 .column.media {
   -ms-flex:0 0 calc(50% - 4rem);
-  flex:0 0 calc(50% - 4rem);
+  flex:0 0 calc(64% - 4rem);
   margin-right:4rem;
   -ms-flex-order:1;
   order:1
