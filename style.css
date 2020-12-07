@@ -712,3 +712,13 @@ body {
   margin: 2rem 0 0 0;
   font-size: .8rem;
 }
+
+@media screen and (max-width:46.5625em) {
+ .block-header-2 {
+   display: block;
+ }
+ .block-header-2 .nav-item {
+   margin: 1rem 0;
+   display: block;
+ }
+}
