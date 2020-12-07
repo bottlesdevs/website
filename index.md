@@ -14,7 +14,7 @@ page_sections:
       - link: "https://github.com/bottlesdevs/Bottles/tree/master/po#help-translating-bottles-rocket"
         link_text: Help Translating
       - link: "https://github.com/bottlesdevs"
-        link_text: GitHub
+        link_text: 🚀 GitHub
     cta:
       url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous
       button_text: Get bottles
