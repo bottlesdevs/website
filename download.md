@@ -16,7 +16,7 @@ page_sections:
       - link: "https://github.com/bottlesdevs"
         link_text: 🚀 GitHub
     cta:
-      url: 
+      url: "/download"
       button_text: Get bottles
   - template: hero-banner-w-image
     block: hero-2
