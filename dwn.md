@@ -19,7 +19,7 @@ page_sections:
       url: "/download"
       button_text: Get bottles
   - template: hero-banner-w-image
-    block: hero-2
+    block: hero-3
     slug: features
     slug: swap
     headline:
@@ -30,10 +30,6 @@ page_sections:
       enabled: true
       url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous
       button_text: "Download v2"
-    content:
-      <div>
-      <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | <a href="https://github.com/bottlesdevs/Bottles#unofficial-packages">Unofficial packages</a>
-      </div>
     image:
       image: "/uploads/2020/screenshot-0.png"
       alt_text: Bottles v2
