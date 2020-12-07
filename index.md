@@ -37,13 +37,12 @@ page_sections:
     media_alignment: Left
     slug: swap
     headline:
-      <strong>Swap &amp; Switch<span class="light">&nbsp;</span></strong><span
-      class="light">the Blocks to create sites quickly</span>
+      <strong>Create &amp; use<span class="light">&nbsp;</span></strong><span
+      class="light">Bottles to play your favorite titlesc</span>
     content:
-      Quickly assemble and create custom sites with 16 design blocks for seven
-      different sections.
+      Thanks to the intuitive interface you can create and catalog as many bottles as you want!
     media:
-      image: "/uploads/2018/06/21/blocks-split.png"
+      image: "/uploads/2020/screenshot-2.png"
       alt_text: uBuild Blocks Mock-Up
   - template: content-feature
     block: feature-1
