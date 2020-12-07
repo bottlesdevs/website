@@ -25,7 +25,7 @@ page_sections:
     headline:
       <strong>Bottles<span class="light">&nbsp;</span></strong><span class="light">2</span>
     content:
-      Thanks to the intuitive interface you can create and catalog as many bottles as you want!
+      Try the next release of Bottles! (AppImage)
     cta:
       enabled: true
       url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous
