@@ -5,7 +5,7 @@ date: 2017-11-22T23:00:00.000+00:00
 page_sections:
   - template: navigation-header-w-button
     block: header-2
-    logo: "/uploads/2020/logo.svg"
+    logo: "/uploads/2020/logo.png"
     navigation:
       - link: "/"
         link_text: Home
@@ -31,7 +31,7 @@ page_sections:
     image:
       image: "/uploads/2020/screenshot-0.png"
       alt_text: Bottles
-    background_image: "/uploads/2020/hero-2-bg.png"
+    background_image: "/uploads/2018/06/21/hero-2-bg.png"
   - template: content-feature
     block: feature-1
     media_alignment: Left
