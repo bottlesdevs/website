@@ -271,15 +271,9 @@ input.inverted::placeholder {
 }
 .block-hero-2,
 .block-hero-2 .columns {
- display:-ms-flexbox;
- display:flex;
- -ms-flex-align:center;
  align-items:center
 }
 .block-hero-2 .columns {
- -ms-flex-wrap:wrap;
- flex-wrap:wrap;
- -ms-flex-pack:justify;
  justify-content:space-between
 }
 .block-hero-2 .column.text {
@@ -313,7 +307,8 @@ input.inverted::placeholder {
  .block-hero-2 .column.text {
   -ms-flex:0 0 45%;
   flex:0 0 45%;
-  text-align:left
+  text-align:center;
+  padding: 0 0 3rem 0;
  }
  .block-hero-2 .column.media {
   -ms-flex:0 0 55%;
@@ -327,8 +322,7 @@ input.inverted::placeholder {
   margin-top:0
  }
  .block-hero-2 .column.media img {
-  width:45vw;
-  max-width:520px
+  width:auto;
  }
 }
 .block-one-column-1 .columns {
