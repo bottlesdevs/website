@@ -23,7 +23,7 @@ page_sections:
     slug: features
     headline: Run Windows in<br><strong>a Bottle</strong>
     content:
-      Easily run Windows software on Linux with Bottles!
+      Easily run Windows software on Linux with 🍷 Bottles!
     cta:
       enabled: true
       url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous
