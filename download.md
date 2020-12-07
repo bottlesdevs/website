@@ -18,9 +18,9 @@ page_sections:
     cta:
       url: 
       button_text: Get bottles
-  - template: content-feature
-    block: feature-1
-    media_alignment: Left
+  - template: hero-banner-w-image
+    block: hero-2
+    slug: features
     slug: swap
     headline:
       <strong>Bottles<span class="light">&nbsp;</span></strong><span class="light">2</span>
@@ -32,11 +32,11 @@ page_sections:
       button_text: "Download v2"
     media:
       image: "/uploads/2020/screenshot-0.png"
-      alt_text: uBuild Blocks Mock-Up
-  - template: content-feature
-    block: feature-1
-    media_alignment: Right
-    slug: customize
+      alt_text: Bottles v2
+      background_image: "/uploads/2018/06/21/hero-2-bg.png"
+  - template: hero-banner-w-image
+    block: hero-2
+    slug: features
     headline:
       <strong>Bottles<span class="light">&nbsp;</span></strong><span class="light">1</span>
     content:
@@ -45,9 +45,10 @@ page_sections:
       enabled: true
       url: https://github.com/bottlesdevs/Bottles/releases/download/0.2.6/com.github.mirkobrombin.bottles_0.2.6_amd64.deb
       button_text: "Download v1"
-    media:
+    image:
       image: "/uploads/2020/screenshot-4.png"
-      alt_text: Customize Blocks  
+      alt_text: Bottles v1
+      background_image: "/uploads/2018/06/21/hero-2-bg.png"
   - template: simple-footer
     block: footer-1
     content: Made with ❤️ by Bottles Developers. Theme powered by ublocks.
