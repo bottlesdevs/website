@@ -40,7 +40,7 @@ page_sections:
     headline:
       <strong>Bottles<span class="light">&nbsp;</span></strong><span class="light">1</span>
     content:
-      Download the first version of bottles (.deb)
+      Download the first version of Bottles (.deb)
     cta:
       enabled: true
       url: https://github.com/bottlesdevs/Bottles/releases/download/0.2.6/com.github.mirkobrombin.bottles_0.2.6_amd64.deb
