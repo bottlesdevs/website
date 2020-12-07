@@ -56,17 +56,6 @@ page_sections:
     media:
       image: "/uploads/2020/screenshot-3.png"
       alt_text: Customize Blocks
-  - template: full-width-media-element
-    block: media-1
-    image: "/uploads/2018/06/21/theme.png"
-    caption: All Available Blocks
-    slug: blocks
-  - template: detail-content
-    block: text-1
-    headline: Steps to Build a Site!
-    content:
-      <p>Easily run Windows software on Linux with Bottles!</p><ol><li><p><a href="https://app.forestry.io/quick-start?repo=forestryio/ubuild-jekyll&provider=github&engine=jekyll">Import this demo in Forestry</a>.</p></li><li><p>Read <a href="https://forestry.io/blog/ubuild-a-new-theme-for-static-sites-using-blocks/">our
-      article</a> and create your own Blocks.</p></li><li><p>Add and customize the available Blocks and preview them as you go along.</p></li></ol>
   - template: simple-footer
     block: footer-1
     content: Software made with ❤︎ by BottlesDevs and Theme made with ❤︎ by ublocks
