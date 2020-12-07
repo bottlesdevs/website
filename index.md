@@ -57,5 +57,5 @@ page_sections:
       alt_text: Customize Blocks
   - template: simple-footer
     block: footer-1
-    content: Software made with ❤︎ by BottlesDevs and Theme made with ❤︎ by ublocks
+    content: Made with ❤️ by Bottles Developers. Theme powered by ublocks.
 ---
