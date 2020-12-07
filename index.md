@@ -26,7 +26,7 @@ page_sections:
       Easily run Windows software on Linux with 🍷 Bottles!
     cta:
       enabled: true
-      url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous
+      url: "/download"
       button_text: "Download"
     image:
       image: "/uploads/2020/screenshot-0.png"
