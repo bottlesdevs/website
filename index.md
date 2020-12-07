@@ -37,8 +37,8 @@ page_sections:
     media_alignment: Left
     slug: swap
     headline:
-      <strong>Create &amp; use<span class="light">&nbsp;</span></strong><span
-      class="light">Bottles to play your favorite titlesc</span>
+      <strong>Create &amp; Use<span class="light">&nbsp;</span></strong><span
+      class="light">Bottles to play your favorite titles</span>
     content:
       Thanks to the intuitive interface you can create and catalog as many bottles as you want!
     media:
