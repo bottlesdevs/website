@@ -55,6 +55,18 @@ page_sections:
     media:
       image: "/uploads/2020/screenshot-3.png"
       alt_text: Customize Blocks
+  - template: content-feature
+    block: feature-1
+    media_alignment: Left
+    slug: customize
+    headline:
+      <span class="light">Integrated&nbsp;</span><strong>dependency manager<span class="light">&nbsp;</span></strong>
+    content:
+      Manage software dependencies in a non boring way using our integrated dependency system based on a repository.
+    media:
+      image: "/uploads/2020/screenshot-0.png"
+      alt_text: Customize Blocks
+  
   - template: simple-footer
     block: footer-1
     content: Made with ❤️ by Bottles Developers. Theme powered by ublocks.
