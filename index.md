@@ -79,7 +79,5 @@ page_sections:
       article</a> and create your own Blocks.</p></li><li><p>Add and customize the available Blocks and preview them as you go along.</p></li></ol>
   - template: simple-footer
     block: footer-1
-    content: |
-    Software made with ❤︎ by BottlesDevs
-    Theme made with ❤︎ by ublocks
+    content: Software made with ❤︎ by BottlesDevs and Theme made with ❤︎ by ublocks
 ---
