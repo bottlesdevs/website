@@ -49,22 +49,13 @@ page_sections:
     media_alignment: Right
     slug: customize
     headline:
-      <strong>Customize Blocks</strong><span class="light">&nbsp;to make quick
-      edits throughout your new site</span>
+      <strong>Manage your Wineprefixes<span class="light">&nbsp;</span></strong><span
+      class="light">with ease!</span>
     content:
-      Each block comes with custom Front Matter that can be edited in
-      Forestry CMS.
+      Thanks to the new interface you can now manage your bottle settings in a much more user-friendly way.
     media:
-      image: "/uploads/2018/06/21/edit.gif"
+      image: "/uploads/2020/screenshot-3.png"
       alt_text: Customize Blocks
-  - template: 1-column-text
-    block: one-column-1
-    slug: responsive
-    headline: 16 Fully Responsive Design Blocks
-    content: |
-      The Design Blocks can be used without Forestry but to harness the power
-      of Blocks we recommend using <a href="https://forestry.io">Forestry</a>. Once the site is imported you can immediately
-      create new sites and make them fully customizable.
   - template: full-width-media-element
     block: media-1
     image: "/uploads/2018/06/21/theme.png"
