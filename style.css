@@ -704,3 +704,11 @@ body {
  background:#ffedbc;
  color:#333
 }
+
+.morelinks a {
+  color: #fff;
+}
+.morelinks {
+  margin: 2rem 0 0 0;
+  font-size: .8rem;
+}
