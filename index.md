@@ -64,7 +64,7 @@ page_sections:
     content:
       Manage software dependencies in a non boring way using our integrated dependency system based on a repository.
     media:
-      image: "/uploads/2020/screenshot-0.png"
+      image: "/uploads/2020/screenshot-1.png"
       alt_text: Customize Blocks
   
   - template: simple-footer
