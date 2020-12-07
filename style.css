@@ -81,7 +81,7 @@ p {
  opacity:.8
 }
 .button.primary {
- background-color:#e8104d;
+ background-color:#ce1315;
  color:#fff
 }
 .button.primary.inverted {
@@ -200,7 +200,7 @@ input.inverted::placeholder {
  font-size:.9rem;
 }
 .block-header-2 .nav-item.active a {
- color:#e8104d;
+ color:#ce1315;
 }
 .block-header-2 .nav-item a {
  text-decoration:none;
@@ -210,7 +210,7 @@ input.inverted::placeholder {
  color:#666
 }
 .block-header-2 .nav-item.active a:hover {
- color:#c61043;
+ color:#f00e10;
 }
 .block-header-2 .nav-item:last-of-type {
  margin:0
