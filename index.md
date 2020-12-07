@@ -9,15 +9,19 @@ page_sections:
     navigation:
       - link: "/"
         link_text: Home
-      - link: "#swap"
-        link_text: Swap
+      - link: "https://github.com/bottlesdevs/Bottles/issues/new/choose"
+        link_text: Report a Bug
+      - link: "https://github.com/bottlesdevs/Bottles/tree/master/po#help-translating-bottles-rocket"
+        link_text: Help Translating
+      - link: "https://github.com/bottlesdevs"
+        link_text: GitHub
     cta:
       url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous
       button_text: Get bottles
   - template: hero-banner-w-image
     block: hero-2
     slug: features
-    headline: Run in <br><strong>a Bottle</strong>
+    headline: Run Windows in<br><strong>a Bottle</strong>
     content:
       Easily run Windows software on Linux with Bottles!
     cta:
@@ -26,7 +30,7 @@ page_sections:
       button_text: "Download"
     image:
       image: "/uploads/2018/06/21/screenshot-0.png"
-      alt_text: Product Shot
+      alt_text: Bottles
     background_image: "/uploads/2018/06/21/hero-2-bg.png"
   - template: content-feature
     block: feature-1
