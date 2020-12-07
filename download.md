@@ -30,10 +30,10 @@ page_sections:
       enabled: true
       url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous
       button_text: "Download v2"
-    media:
+    image:
       image: "/uploads/2020/screenshot-0.png"
       alt_text: Bottles v2
-      background_image: "/uploads/2018/06/21/hero-2-bg.png"
+    background_image: "/uploads/2018/06/21/hero-2-bg.png"
   - template: hero-banner-w-image
     block: hero-2
     slug: features
@@ -48,7 +48,7 @@ page_sections:
     image:
       image: "/uploads/2020/screenshot-4.png"
       alt_text: Bottles v1
-      background_image: "/uploads/2018/06/21/hero-2-bg.png"
+    background_image: "/uploads/2018/06/21/hero-2-bg.png"
   - template: simple-footer
     block: footer-1
     content: Made with ❤️ by Bottles Developers. Theme powered by ublocks.
