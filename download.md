@@ -43,7 +43,7 @@ page_sections:
       Download the first version of Bottles (.deb)
     cta:
       enabled: true
-      url: https://github.com/bottlesdevs/Bottles/releases/download/0.2.6/com.github.mirkobrombin.bottles_0.2.6_amd64.deb
+      url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1
       button_text: "Download v1"
     image:
       image: "/uploads/2020/screenshot-4.png"
