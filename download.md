@@ -5,7 +5,7 @@ date: 2020-07-12T20:00:00.000+00:00
 page_sections:
   - template: navigation-header-w-button
     block: header-2
-    logo: "/uploads/2020/logo.png"
+    logo: "/uploads/2020/logo.svg"
     navigation:
       - link: "/"
         link_text: Home
