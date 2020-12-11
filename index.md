@@ -49,7 +49,7 @@ page_sections:
     media_alignment: Right
     slug: customize
     headline:
-      Manage your Wineprefixes <span class="light">with ease!</span>
+      Easily launch .exe/.msi <span class="light">in your Bottles!</span>
     content:
       Thanks to the new interface you can now manage your bottle settings in a much more user-friendly way.
     media:
