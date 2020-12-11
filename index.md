@@ -49,12 +49,12 @@ page_sections:
     media_alignment: Right
     slug: customize
     headline:
-      <span class="light">Manage your Wineprefixes&nbsp;</span><strong>with ease!<span class="light">&nbsp;</span></strong>
+      <span class="light">Manage your Wineprefixes&nbsp;</span><span class="light">with ease!</span>
     content:
       Thanks to the new interface you can now manage your bottle settings in a much more user-friendly way.
     media:
-      image: "/uploads/2020/screenshot-3.png"
-      alt_text: Customize Blocks
+      image: "/uploads/open.png"
+      alt_text: Run executable files in your bottles!
   - template: content-feature
     block: feature-1
     media_alignment: Left
