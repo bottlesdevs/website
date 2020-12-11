@@ -49,7 +49,7 @@ page_sections:
     media_alignment: Right
     slug: customize
     headline:
-      <span class="light">Manage your Wineprefixes&nbsp;</span><span class="light">with ease!</span>
+      Manage your Wineprefixes <span class="light">with ease!</span>
     content:
       Thanks to the new interface you can now manage your bottle settings in a much more user-friendly way.
     media:
