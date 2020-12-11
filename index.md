@@ -51,7 +51,7 @@ page_sections:
     headline:
       Easily launch .exe/.msi <span class="light">in your Bottles!</span>
     content:
-      Thanks to the new interface you can now manage your bottle settings in a much more user-friendly way.
+      Run any Windows executable directly from the context menu of your favorite file manager!
     media:
       image: "/uploads/open.png"
       alt_text: Run executable files in your bottles!
