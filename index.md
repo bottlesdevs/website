@@ -43,7 +43,7 @@ page_sections:
       Thanks to the intuitive interface you can create and catalog as many bottles as you want!
     media:
       image: "/uploads/2020/screenshot-2.png"
-      alt_text: uBuild Blocks Mock-Up
+      alt_text: Easy to use!
   - template: content-feature
     block: feature-1
     media_alignment: Right
@@ -65,7 +65,7 @@ page_sections:
       Manage software dependencies in a non boring way using our integrated dependency system based on a repository.
     media:
       image: "/uploads/2020/screenshot-1.png"
-      alt_text: Customize Blocks
+      alt_text: Quick and easy dependencies!
   
   - template: simple-footer
     block: footer-1
