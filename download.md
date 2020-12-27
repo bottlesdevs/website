@@ -33,7 +33,6 @@ page_sections:
     media:
       image: "/uploads/2020/screenshot-0.png"
       alt_text: Bottles v2
-    media_alignment: Left
   - template: hero-banner-w-image
     block: hero-2
     slug: features
