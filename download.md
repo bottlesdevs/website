@@ -34,7 +34,7 @@ page_sections:
       image: "/uploads/2020/screenshot-0.png"
       alt_text: Bottles v2
   - template: hero-banner-w-image
-    block: hero-2
+    block: download-1
     slug: features
     headline:
       <strong>Bottles<span class="light">&nbsp;</span></strong><span class="light">1</span>
@@ -44,7 +44,7 @@ page_sections:
       enabled: true
       url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1
       button_text: "Download v1"
-    image:
+    media:
       image: "/uploads/2020/screenshot-4.png"
       alt_text: Bottles v1
     background_image: "/uploads/2018/06/21/hero-2-bg.png"
