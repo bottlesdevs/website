@@ -722,3 +722,12 @@ body {
    display: block;
  }
 }
+.block-download-1 .column.text p {
+    margin: 0 0 2rem 0;
+    display: block;
+    font-size: 1.2em;
+}
+
+.block-download-1 .column.text h2 {
+    font-size: 2.8em;
+}
