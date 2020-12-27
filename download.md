@@ -19,7 +19,7 @@ page_sections:
       url: "/download"
       button_text: Get bottles
   - template: hero-banner-w-image
-    block: hero-3
+    block: download-1
     slug: features
     slug: swap
     headline:
@@ -30,7 +30,7 @@ page_sections:
       enabled: true
       url: https://github.com/bottlesdevs/Bottles/releases/tag/continuous
       button_text: "Download v2"
-    image:
+    media:
       image: "/uploads/2020/screenshot-0.png"
       alt_text: Bottles v2
     background_image: "/uploads/2018/06/21/hero-2-bg.png"
