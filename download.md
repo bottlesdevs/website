@@ -19,7 +19,7 @@ page_sections:
       url: "/download"
       button_text: Get bottles
   - template: hero-banner-w-image
-    block: hero-3
+    block: hero-2
     slug: features
     slug: swap
     headline:
