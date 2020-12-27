@@ -584,8 +584,8 @@ input.inverted::placeholder {
  .block-feature-1 .column.text {
   -ms-flex:0 0 40%;
   flex:0 0 36%;
-  margin-right:2rem;
-  margin-bottom:0
+  margin-left: 2rem;
+  margin-bottom:0;
  }
  .block-feature-1 .column.media {
   -ms-flex:0 0 calc(60% - 2rem);
