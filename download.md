@@ -33,6 +33,7 @@ page_sections:
     media:
       image: "/uploads/2020/screenshot-0.png"
       alt_text: Bottles v2
+    media_alignment: Left
   - template: hero-banner-w-image
     block: download-1
     slug: features
@@ -47,6 +48,7 @@ page_sections:
     media:
       image: "/uploads/2020/screenshot-4.png"
       alt_text: Bottles v1
+    media_alignment: Right
     background_image: "/uploads/2018/06/21/hero-2-bg.png"
   - template: simple-footer
     block: footer-1
