@@ -575,7 +575,8 @@ input.inverted::placeholder {
  margin-bottom:1rem
 }
 .block-feature-1 .column.media img {
- max-width:100%
+ max-width:100%;
+ margin: 0 auto;
 }
 @media screen and (min-width:700px) {
  .block-feature-1 .columns {
@@ -747,4 +748,5 @@ section.block.block-feature-1.block-download-1 {
 
 .block-feature-1.block-download-1 .column.media {
     flex: 0 0 calc(69% - 2rem);
+    text-align: center;
 }
