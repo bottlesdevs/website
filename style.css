@@ -734,3 +734,7 @@ body {
 .block-download-1 .column.text .morelinks a {
     color: black;
 }
+
+section.block.block-feature-1.block-download-1 {
+    padding: 6rem 4rem 2rem;
+}
