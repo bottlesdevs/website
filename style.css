@@ -731,3 +731,6 @@ body {
 .block-download-1 .column.text h2 {
     font-size: 2.8em;
 }
+.block-download-1 .column.text .morelinks a {
+    color: black;
+}
