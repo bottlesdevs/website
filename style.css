@@ -738,3 +738,13 @@ body {
 section.block.block-feature-1.block-download-1 {
     padding: 6rem 4rem 2rem;
 }
+
+
+.block-feature-1.block-download-1 .column.text {
+    flex: 0 0 31%;
+    margin-left: 2rem;
+}
+
+.block-feature-1.block-download-1 .column.media {
+    flex: 0 0 calc(69% - 2rem);
+}
