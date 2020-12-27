@@ -19,11 +19,14 @@ page_sections:
       url: "/download"
       button_text: Get bottles
   - template: hero-banner-w-image
-    block: hero-2
+    block: hero-3
     slug: features
     slug: swap
     headline:
       <strong>Bottles<span class="light">&nbsp;</span></strong><span class="light">2</span>
+      <div class="morelinks">
+        <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | <a href="https://github.com/bottlesdevs/Bottles#unofficial-packages">Unofficial packages</a>
+    </div>
     content:
       Try the next release of Bottles! (.AppImage)
     cta:
