@@ -2,9 +2,9 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-size: 16px;
 }
 
 a {
@@ -19,11 +19,12 @@ nav {
     margin: 0 auto;
 }
 
-nav a > img {
+nav a>img {
     max-height: 1.5rem;
 }
 
-nav a, a.button {
+nav a,
+a.button {
     text-decoration: none;
 }
 
@@ -39,7 +40,8 @@ nav a.brand {
     float: left;
 }
 
-.button, nav a.button {
+.button,
+nav a.button {
     padding: .5rem 1rem;
     font-weight: 800;
     background-color: #e81d43;
@@ -51,15 +53,17 @@ nav a:hover {
     opacity: .8;
 }
 
-.button:hover, nav a.button:hover {
+.button:hover,
+nav a.button:hover {
     background-color: #e43839;
 }
 
-.button:active, nav a.button:active {
+.button:active,
+nav a.button:active {
     background-color: #9e3636;
 }
 
-main > section {
+main>section {
     padding: 6rem 4rem;
 }
 
@@ -138,7 +142,8 @@ section .button:active {
     opacity: .7;
 }
 
-section.downloads .image, section.downloads .info {
+section.downloads .image,
+section.downloads .info {
     display: inline-table;
     width: 64.5%;
     vertical-align: top;
@@ -173,11 +178,12 @@ section.downloads p {
     padding: 0;
     color: #666;
 }
-section.downloads .container > .info:first-child {
+
+section.downloads .container>.info:first-child {
     text-align: right;
 }
 
-section.downloads .container > .info:first-child {
+section.downloads .container>.info:first-child {
     text-align: right;
     width: 48%;
 }
@@ -187,11 +193,55 @@ section.downloads {
     margin: 0 auto;
 }
 
-section.downloads .image > img   {
+section.downloads .image>img {
     max-width: 100%;
 }
 
-section.downloads .container > .info+.image {
+section.downloads .container>.info+.image {
     text-align: left;
     width: 46%;
+}
+
+@media screen and (max-width:745px) {
+    nav a.brand {
+        float: none;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+    }
+
+    section.hero h1 {
+        font-size: 2.4rem;
+    }
+
+    section p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+
+    main>section {
+        padding: 4rem 1rem;
+    }
+
+    section.downloads .image,
+    section.downloads .info,
+    section.downloads .container>.info+.image {
+        display: block;
+        width: initial;
+        text-align: center;
+    }
+
+    section.downloads .info,
+    section.downloads .image+.info,
+    section.downloads .container>.info:first-child {
+        width: initial;
+        max-width: initial;
+        margin: 0 1rem 4rem;
+        text-align: center;
+    }
 }
