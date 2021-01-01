@@ -6,7 +6,7 @@ title: Download
   <!-- v2 -->
   <div class="container">
     <div class="image">
-      <img class="animate__animated animate__fadeInUp" src="https://raw.githubusercontent.com/mirkobrombin/Bottles/master/screenshot-0.png" />
+      <img class="animate__animated animate__fadeIn" src="https://raw.githubusercontent.com/mirkobrombin/Bottles/master/screenshot-0.png" />
     </div>
     <div class="info">
       <h2 class="animate__animated animate__fadeInRight">Bottles 2</h2>
@@ -21,12 +21,12 @@ title: Download
   <!-- v1 -->
   <div class="container">
     <div class="info">
-      <h2 class="animate__animated animate__fadeInRight">Bottles 1</h2>
+      <h2 class="animate__animated animate__fadeInLeft">Bottles 1</h2>
       <p>Try the next release of Bottles! <small>(.AppImage)</small></p>
       <a class="button" href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1" title="Download Bottles v1 (.deb)">Download</a>
     </div>
     <div class="image">
-      <img class="animate__animated animate__fadeInUp" src="https://raw.githubusercontent.com/bottlesdevs/Bottles/v1/data/screenshot-1.png" />
+      <img class="animate__animated animate__fadeIn" src="https://raw.githubusercontent.com/bottlesdevs/Bottles/v1/data/screenshot-1.png" />
     </div>
   </div>
 </section>
