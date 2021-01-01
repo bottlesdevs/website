@@ -22,7 +22,7 @@ title: Download
   <div class="container">
     <div class="info">
       <h2 class="animate__animated animate__fadeInLeft">Bottles 1</h2>
-      <p>Try the next release of Bottles! <small>(.AppImage)</small></p>
+      <p>Try the first version of Bottles! <small>(.deb)</small></p>
       <a class="button" href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1" title="Download Bottles v1 (.deb)">Download</a>
     </div>
     <div class="image">
