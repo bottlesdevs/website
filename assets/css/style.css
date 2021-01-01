@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  font-size: 16px;
+}
+
+a {
+    color: #2b2b2b;
+}
+
+nav {
+    padding: 1rem 2rem;
+    text-align: right;
+    min-height: 1.6rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+nav a > img {
+    max-height: 1.5rem;
+}
+
+nav a, a.button {
+    text-decoration: none;
+}
+
+nav a:not(.brand) {
+    padding: .4rem .1rem;
+    margin: 0 .4rem;
+    position: relative;
+    top: .2rem;
+    font-size: 15px;
+}
+
+nav a.brand {
+    float: left;
+}
+
+.button, nav a.button {
+    padding: .5rem 1rem;
+    font-weight: 800;
+    background-color: #e81d43;
+    color: #fff;
+    border-radius: .3rem;
+}
+
+nav a:hover {
+    opacity: .8;
+}
+
+.button:hover, nav a.button:hover {
+    background-color: #e43839;
+}
+
+.button:active, nav a.button:active {
+    background-color: #9e3636;
+}
+
+main > section {
+    padding: 6rem 4rem;
+}
+
+section.hero {
+    text-align: center;
+}
+
+section.hero img {
+    display: block;
+    margin: 2rem auto 0;
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+section.hero h1 {
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -.1rem;
+    line-height: 1;
+}
+
+section p {
+    font-size: 20px;
+    margin: 1rem 0 1.5rem;
+}
+
+section .button {
+    display: inline-block;
+    font-size: 20px;
+    padding: .8rem 1.5rem;
+    font-weight: 500;
+}
+
+section.hero h1 strong {
+    display: block;
+}
+
+footer {
+    text-align: center;
+    padding: 6rem 4rem;
+}
+
+footer p {
+    letter-spacing: .03rem;
+    font-weight: 400;
+    color: #666;
+}
+
+
+section.hero.dark {
+    background-color: #313131;
+    color: #fff;
+}
+
+section.hero.dark .button {
+    background-color: #fff;
+    color: #191919;
+}
+
+section .button:hover {
+    opacity: .8;
+}
+
+section .button:active {
+    opacity: .7;
+}
+
+section.downloads .image, section.downloads .info {
+    display: inline-table;
+    width: 64.5%;
+    vertical-align: top;
+    text-align: left;
+}
+
+section.downloads .image+.info {
+    width: 30%;
+    max-width: 24rem;
+}
+
+section.downloads .info {
+    margin: 9rem 2rem;
+}
+
+.more-links {
+    margin: 1rem 0 0 0;
+    font-size: 12px;
+}
+
+section small {
+    color: #424242;
+}
+
+section.downloads .info h2 {
+    font-size: 3rem;
+    margin: 2rem 0 1rem;
+}
+
+section.downloads p {
+    margin: 1rem 0;
+    padding: 0;
+    color: #666;
+}
+section.downloads .container > .info:first-child {
+    text-align: right;
+}
+
+section.downloads .container > .info:first-child {
+    text-align: right;
+    width: 48%;
+}
+
+section.downloads {
+    max-width: 81rem;
+    margin: 0 auto;
+}
+
+section.downloads .image > img   {
+    max-width: 100%;
+}
+
+section.downloads .container > .info+.image {
+    text-align: left;
+    width: 46%;
+}
