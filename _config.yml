@@ -1,19 +1,18 @@
 title: Bottles
-author: BottlesDev
+description: Easily run Windows software on Linux with 🍷 Bottles!
+author: Bottles Developers
 email: mail@usebottles.com
-description: >-
-  💫 Easily manage 🍷prefix in a new way! (Run Windows software and games on Linux)
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # your site's origin, e.g. https://forestry.io
+logo: /uploads/logo.svg
 
-# Build settings
+assets: /assets
+uploads: /uploads
+
+markdown: kramdown
 defaults:
   - scope:
-      path: "" # an empty string here means all files in the project
+      path: ""
     values:
-      layout: "default" # this ensures all content renders with layouts/default.html
+      layout: "default"
 
 plugins:
   - jekyll-feed
-  - jekyll-menus
-
