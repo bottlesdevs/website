@@ -263,6 +263,10 @@ tbody tr:hover {
     background-color: #fbf2f2;
 }
 
+table td b {
+    font-weight: 500;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;
