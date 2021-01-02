@@ -236,6 +236,33 @@ section.heading h1 {
     max-width: 78rem;
 }
 
+section.page {
+    padding: .4rem 4rem;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    border-spacing: 0;
+}
+
+table th {
+    border-bottom: 1px solid #cccccc;
+}
+
+table th,
+table td {
+    padding: 1rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #fbf2f2;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;
