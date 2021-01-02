@@ -24,6 +24,7 @@ title: Download
       <h2 class="animate__animated animate__fadeInLeft">Bottles 1</h2>
       <p>Try the first version of Bottles! <small>(.deb)</small></p>
       <a class="button" href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1" title="Download Bottles v1 (.deb)">Download</a>
+      <a class="button" href="https://appcenter.elementary.io/com.github.mirkobrombin.bottles" title="Download Bottles v1 from AppCenter">AppCenter</a>
     </div>
     <div class="image">
       <img class="animate__animated animate__fadeIn" src="https://raw.githubusercontent.com/bottlesdevs/Bottles/v1/data/screenshot-1.png" />
