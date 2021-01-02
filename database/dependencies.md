@@ -15,7 +15,7 @@ title: Dependencies for software compatibility in Bottles
 
 <section class="page">
 	<div class="container large">
-		<table id="dependencies">
+		<table>
 			<thead>
 				<tr>
 					<th>Name</th>
@@ -23,7 +23,7 @@ title: Dependencies for software compatibility in Bottles
 					<th>Actions</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="dependencies">
 			</tbody>
 		</table>
 	</div>
