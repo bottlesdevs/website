@@ -299,6 +299,14 @@ span.tag.tag-Essentials {
     background-color: #ad64da;
 }
 
+.button.gray {
+    background-color: #a7a7a7;
+}
+
+.button.gray:hover {
+    background-color: #c1c1c1;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;
