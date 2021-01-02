@@ -28,3 +28,7 @@ title: Dependencies for software compatibility in Bottles
     </table>
   </div>
 </section>
+
+<script>
+  console.log("JS support here? 👀")
+</script>
