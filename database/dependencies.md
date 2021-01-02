@@ -48,10 +48,10 @@ title: Dependencies for software compatibility in Bottles
 
 					name.innerHTML = `<b>${item}</b>`;
 					description.innerHTML = dependency["Description"];
+					category.innerHTML = `<span class="tag tag-${dependency["Category"]}">${dependency["Category"]}</span>`;
 					actions.innerHTML = `\
 						<a href='https://github.com/bottlesdevs/dependencies/blob/main/${item}.json'>Details</a> | \
 						<a href='https://github.com/bottlesdevs/dependencies/issues/new/choose'>Report problem</a>`;
-					category.innerHTML = `<span class="tag tag-${dependency["Category"]}">${dependency["Category"]}</span>`;
 				}
 			})
 			.catch(err => {
