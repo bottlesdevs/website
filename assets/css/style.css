@@ -219,6 +219,23 @@ section.heading h1 {
     margin: 2rem 0 0;
 }
 
+.container {
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.container.small {
+    max-width: 38rem;
+}
+
+.container.medium {
+    max-width: 58rem;
+}
+
+.container.large {
+    max-width: 78rem;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;

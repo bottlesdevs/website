@@ -7,3 +7,9 @@ These are the HTML blocks available.
 ### `.hero`
 #### Supported classes
 - `dark`
+
+### `.container`
+#### Supported classes
+- `small`
+- `medium`
+- `large`
