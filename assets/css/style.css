@@ -267,6 +267,22 @@ table td b {
     font-weight: 500;
 }
 
+.tag {
+    border-radius: 10px;
+    background-color: #242424;
+    padding: .2rem .6rem;
+    color: #FFF;
+    font-size: 14px;
+}
+
+span.tag.tag-Fonts {
+    background-color: #2196F3;
+}
+
+span.tag.tag-Essentials {
+    background-color: #E91E63;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;
