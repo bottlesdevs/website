@@ -202,6 +202,23 @@ section.downloads .container>.info+.image {
     width: 46%;
 }
 
+section.heading {
+    padding: 1rem 4rem;
+}
+
+.warning {
+    background-color: #ffebb0;
+    padding: 1rem;
+}
+
+.warning p {
+    margin: 0;
+}
+
+section.heading h1 {
+    margin: 2rem 0 0;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;
