@@ -29,7 +29,7 @@ title: Download
       <a class="button"
          href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1" 
          title="Download Bottles v1 (.deb)">Download</a>
-      <a class="button purple"
+      <a class="button gray"
          href="https://appcenter.elementary.io/com.github.mirkobrombin.bottles" 
          title="Download Bottles v1 from AppCenter">AppCenter</a>
     </div>
