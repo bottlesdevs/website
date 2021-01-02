@@ -307,6 +307,13 @@ span.tag.tag-Essentials {
     background-color: #c1c1c1;
 }
 
+.button.link,
+.button.link:hover {
+    background-color: transparent;
+    color: initial;
+    text-decoration: underline;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;
