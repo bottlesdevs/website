@@ -713,7 +713,24 @@ body {
   margin: 2rem 0 0 0;
   font-size: .8rem;
 }
+section.heading {
+    padding: 1rem 4rem;
+}
 
+.warning {
+    background-color: #ffebb0;
+    padding: 1rem;
+}
+
+.warning p {
+    margin: 0;
+}
+
+section.heading h1 {
+    margin: 2rem 0 0;
+}
+
+/* mobile */
 @media screen and (max-width:46.5625em) {
  .block-header-2 {
    display: block;
