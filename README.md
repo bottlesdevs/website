@@ -16,5 +16,6 @@ These are the HTML blocks available.
 
 ### `.button`
 #### Supported classes
+- `link`
 - `gray`
 - `purple`
