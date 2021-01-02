@@ -283,6 +283,22 @@ span.tag.tag-Essentials {
     background-color: #E91E63;
 }
 
+.button+.button {
+    margin: 0 0 0 .4rem;
+}
+
+.button+.button {
+    margin: 0 0 0 .4rem;
+}
+
+.button.purple {
+    background-color: #992fdc;
+}
+
+.button.purple:hover {
+    background-color: #ad64da;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;
