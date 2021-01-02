@@ -314,6 +314,12 @@ span.tag.tag-Essentials {
     text-decoration: underline;
 }
 
+::selection,
+mark {
+    background: #ffffd5;
+    color: #535219
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;
