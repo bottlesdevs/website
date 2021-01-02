@@ -20,6 +20,7 @@ title: Dependencies for software compatibility in Bottles
 				<tr>
 					<th>Name</th>
 					<th>Description</th>
+					<th>Category</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -42,13 +43,15 @@ title: Dependencies for software compatibility in Bottles
 					var row = table.insertRow(0);
 					var name = row.insertCell(0);
 					var description = row.insertCell(1);
-					var actions = row.insertCell(2);
+					var category = row.insertCell(2);
+					var actions = row.insertCell(3);
 
 					name.innerHTML = `<b>${item}</b>`;
 					description.innerHTML = dependency["Description"];
 					actions.innerHTML = `\
 						<a href='https://github.com/bottlesdevs/dependencies/blob/main/${item}.json'>Details</a> | \
 						<a href='https://github.com/bottlesdevs/dependencies/issues/new/choose'>Report problem</a>`;
+					category.innerHTML = dependency["Category"];
 				}
 			})
 			.catch(err => {
