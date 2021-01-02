@@ -3,7 +3,7 @@ title: Dependencies, resources and software installers for Bottles
 ---
 
 <section class="heading">
-  <div class="container page">
+  <div class="container large">
     <h1>Bottles Database</h1>
     <p>Dependencies, resources and Windows software installers for Bottles.</p>
     <div class="warning">
