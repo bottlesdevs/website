@@ -13,3 +13,7 @@ These are the HTML blocks available.
 - `small`
 - `medium`
 - `large`
+
+### `.button`
+#### Supported classes
+- `purple`
