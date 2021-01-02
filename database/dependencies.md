@@ -47,7 +47,7 @@ title: Dependencies for software compatibility in Bottles
 					name.innerHTML = `<b>${item}</b>`;
 					description.innerHTML = dependency["Description"];
 					actions.innerHTML = `\
-						<a href='https://github.com/bottlesdevs/dependencies/blob/main/${item}.json'>Details</a> \
+						<a href='https://github.com/bottlesdevs/dependencies/blob/main/${item}.json'>Details</a> | \
 						<a href='https://github.com/bottlesdevs/dependencies/issues/new/choose'>Report problem</a>`;
 				}
 			})
