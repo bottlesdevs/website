@@ -44,7 +44,7 @@ title: Dependencies for software compatibility in Bottles
 					var description = row.insertCell(1);
 					var actions = row.insertCell(2);
 
-					name.innerHTML = item;
+					name.innerHTML = `<b>${item}</b>`;
 					description.innerHTML = dependency["Description"];
 					actions.innerHTML = `\
 						<a href='https://github.com/bottlesdevs/dependencies/blob/main/${item}.json'>Details</a> \
