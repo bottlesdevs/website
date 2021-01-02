@@ -30,39 +30,30 @@ title: Dependencies for software compatibility in Bottles
 </section>
 
 <script>
-	var getJSON = function (url, callback) {
-		var xhr = new XMLHttpRequest();
-		xhr.open('GET', url, true);
-		xhr.responseType = 'json';
-		xhr.onload = function () {
-			var status = xhr.status;
-			if (status === 200) {
-				callback(null, xhr.response);
-			} else {
-				callback(status, xhr.response);
-			}
-		};
-		xhr.send();
-	};
-
 	var table = document.getElementById("dependencies");
-	
 	document.addEventListener("DOMContentLoaded", function () {
-		getJSON('https://raw.githubusercontent.com/bottlesdevs/dependencies/main/index.json',
-			function (err, data) {
-				if (err !== null) {
-					console.error("Failed to fetch dependencies database index!")
-					return False
-				} else {
-					console.info("Dependencies database index found.")
-					for(var dependency in data) {
-						var row = table.insertRow(0);
-						var name = row.insertCell(0);
-						var description = row.insertCell(1);
-						name.innerHTML = dependency;
-						description.innerHTML = dependency;
-					}
+		fetch('https://raw.githubusercontent.com/bottlesdevs/dependencies/main/index.json')
+			.then(res => res.json())
+			.then((data) => {
+				console.info("Dependencies database index found.");
+				for (var item in data) {
+					dependency = data[item];
+
+					var row = table.insertRow(0);
+					var name = row.insertCell(0);
+					var description = row.insertCell(1);
+					var actions = row.insertCell(2);
+
+					name.innerHTML = item;
+					description.innerHTML = dependency["Description"];
+					actions.innerHTML = `\
+						<a href='https://github.com/bottlesdevs/dependencies/blob/main/${item}.json'>Details</a> \
+						<a href='https://github.com/bottlesdevs/dependencies/issues/new/choose'>Report problem</a>`;
 				}
+			})
+			.catch(err => {
+				console.error("Failed to fetch Dependencies database index!");
+				throw err
 			});
 	});
 </script>
