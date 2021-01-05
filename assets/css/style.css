@@ -20,7 +20,7 @@ nav {
 }
 
 nav a>img {
-    max-height: 1.5rem;
+    max-height: 1.9rem;
 }
 
 nav a,
@@ -38,6 +38,8 @@ nav a:not(.brand) {
 
 nav a.brand {
     float: left;
+    position: relative;
+    top: -.2rem;
 }
 
 .button,
