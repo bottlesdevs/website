@@ -13,7 +13,7 @@ title: Download
       <h2 class="animate__animated animate__fadeInRight">Bottles 2</h2>
       <p>Try the next release of Bottles! <small>(.AppImage)</small></p>
       <a class="button" 
-         href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous" 
+         href="https://github.com/bottlesdevs/Bottles/releases/tag/2.0.9.4" 
          title="Download Bottles (.AppImage)">Download</a>
       <div class="more-links">
         <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | 
