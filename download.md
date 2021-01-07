@@ -15,6 +15,9 @@ title: Download
       <a class="button" 
          href="https://github.com/bottlesdevs/Bottles/releases/tag/2.0.9.5" 
          title="Download Bottles (.AppImage)">Download</a>
+      <a class="button link"
+         href="https://flathub.org/apps/details/com.usebottles.Bottles" 
+         title="Download Bottles v2 from Flathub">Flathub</a>
       <div class="more-links">
         <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | 
         <a href="https://github.com/bottlesdevs/Bottles#unofficial-packages">Unofficial packages</a>
