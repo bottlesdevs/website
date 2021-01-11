@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400;700;900&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
 body {
@@ -88,7 +89,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 section.hero h1 {
@@ -322,6 +323,71 @@ mark {
     color: #535219
 }
 
+.page.post {
+    line-height: 1.94em;
+    font-family: 'Martel', serif;
+}
+
+.page.post img {
+    max-width: calc(100% + 8rem);
+    margin: 0 -4rem;
+}
+
+pre>code {
+    line-height: 1.6em;
+    overflow: auto;
+    padding: 30px;
+    background-color: #f3f3f3;
+    color: #2c363a;
+    display: block;
+}
+
+.language-python .k,
+.language-python .ow,
+.language-css .n {
+    color: #0f9814;
+}
+
+.language-python .s,
+.language-html .s,
+.language-css .nt,
+.language-css .o {
+    color: #006dc3;
+}
+
+.language-python .nb,
+.language-css .nb {
+    color: #FF9800;
+}
+
+.language-python .k,
+.language-python .ow,
+.language-python .nb,
+.language-html .nt,
+.language-css .nl {
+    font-weight: bold;
+}
+
+.language-python .bp,
+.language-python .mi,
+.language-css .k {
+    color: #8c1540;
+}
+
+.language-python .nf,
+.language-html .na {
+    color: #f13355;
+}
+
+blockquote {
+    border-left: 3px solid #e0e0e0;
+    padding: 1rem 1.6rem;
+}
+
+blockquote p {
+    margin: 0;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;
@@ -367,5 +433,10 @@ mark {
 
     section.heading h1 {
         font-size: 2.4rem;
+    }
+
+    .page.post img {
+        max-width: calc(100% + 4rem);
+        margin: 0 -2rem;
     }
 }
