@@ -1,0 +1,10 @@
+{% assign post = include.post %}
+{% assign date = post.date %}
+{% if post.published == true %}
+<article>
+    <h2>{{ post.title }}</h2>
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ date | date: "%a, %b %e, %Y" }}</time>
+    <p>{{ post.content | strip_html | truncatewords: 32 }}</p>
+    <a href="{{ post.url }}">Read</a>
+</article>
+{% endif %}

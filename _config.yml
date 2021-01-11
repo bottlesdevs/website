@@ -7,12 +7,19 @@ logo: /uploads/logo.svg?v2
 assets: /assets
 uploads: /uploads
 
+permalink: /blog/:title/
 markdown: kramdown
+
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
 plugins:
   - jekyll-feed
