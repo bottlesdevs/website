@@ -416,6 +416,12 @@ nav a.active {
 }
 
 @media screen and (max-width:745px) {
+    .container.small,
+    .container.medium,
+    .container.large {
+        max-width: initial;
+    }
+
     nav a.brand {
         float: none;
     }

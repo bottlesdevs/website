@@ -6,7 +6,7 @@ layout: post
 published: true
 comments: true
 ---
-Bottles is a project born in 2017 as a personal necessity and experiment. I 
+Bottles is a project born in 2017 as a personal need and experiment. I 
 needed to manage multiple wine prefixes quickly and easily. There were already 
 many wine prefix managers but none of them I have ever been comfortable with.
 
