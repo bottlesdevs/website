@@ -415,6 +415,11 @@ nav a.active {
     font-weight: 500;
 }
 
+footer .icon {
+    position: relative;
+    top: .15em;
+}
+
 @media screen and (max-width:745px) {
 
     .container.small,
