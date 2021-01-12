@@ -2,10 +2,8 @@
   <a class="brand" href="/">
     <img src="{{ site.logo }}" title="Bottles" />
   </a>
-  <a href="https://docs.usebottles.com">Documentation</a>
-  <a href="https://github.com/bottlesdevs/Bottles/issues/new/choose">Report Bug</a>
-  <a href="https://hosted.weblate.org/engage/bottles/">Help Translating</a>
-  <a href="https://github.com/bottlesdevs">🚀 GitHub</a>
-  <a href="/database">Database</a>
+  {% for item in site.navigation %}
+  <a href="{{ item.link }}" class="{% if page.url == item.link %}active{% endif %}">{{ item.name }}</a>
+  {% endfor %}
   <a class="button" href="/download">Get Bottles</a>
 </nav>
