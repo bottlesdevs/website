@@ -1,5 +1,6 @@
 ---
 title: Download
+description: Download Bottles for your Linux distribution
 ---
 
 <section class="downloads">

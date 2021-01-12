@@ -1,5 +1,6 @@
 ---
 title: Easily run Windows software on Linux with 🍷 Bottles!
+description: Run Windows programs on Linux.
 ---
 
 <section class="hero">
