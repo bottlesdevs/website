@@ -388,6 +388,14 @@ blockquote p {
     margin: 0;
 }
 
+p>code {
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: #f3f4f4;
+    border-radius: 6px;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;
