@@ -422,6 +422,14 @@ nav a.active {
         max-width: initial;
     }
 
+    section.heading {
+        padding: 1rem 2rem;
+    }
+    
+    section.page {
+        padding: .4rem 2rem;
+    }
+
     nav a.brand {
         float: none;
     }
