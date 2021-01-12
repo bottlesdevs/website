@@ -67,8 +67,7 @@ dnf install bottles
 - **Arch Linux**
   - [bottles-git](https://aur.archlinux.org/packages/bottles-git)
   - [bottles](https://aur.archlinux.org/packages/bottles)
-- **Open Suse**
-  - [bottles](https://download.opensuse.org/repositories/home:/WhiXard/openSUSE_Tumbleweed/x86_64/)
+- [Open Suse](https://download.opensuse.org/repositories/home:/WhiXard/openSUSE_Tumbleweed/x86_64/)
 - [Void Linux](https://github.com/void-linux/void-packages/pull/27066)
 - [NixOS](https://github.com/bottlesdevs/Bottles/issues/72)
 
