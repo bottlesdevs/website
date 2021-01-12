@@ -333,7 +333,7 @@ mark {
     margin: 0 -4rem;
 }
 
-pre > code {
+pre>code {
     line-height: 1.6em;
     overflow: auto;
     padding: 30px;
@@ -388,7 +388,7 @@ blockquote p {
     margin: 0;
 }
 
-p > code {
+p>code {
     padding: .2em .4em;
     margin: 0;
     font-size: 85%;
@@ -416,6 +416,7 @@ nav a.active {
 }
 
 @media screen and (max-width:745px) {
+
     .container.small,
     .container.medium,
     .container.large {
@@ -425,7 +426,7 @@ nav a.active {
     section.heading {
         padding: 1rem 2rem;
     }
-    
+
     section.page {
         padding: .4rem 2rem;
     }
@@ -436,10 +437,6 @@ nav a.active {
 
     nav {
         text-align: center;
-    }
-
-    nav a {
-        display: block;
     }
 
     section.hero h1 {
@@ -479,5 +476,31 @@ nav a.active {
     .page.post img {
         max-width: calc(100% + 4rem);
         margin: 0 -2rem;
+    }
+}
+
+@media screen and (max-width:860px) {
+    nav {
+        text-align: center;
+    }
+
+    nav a.brand {
+        float: none;
+        display: block;
+    }
+}
+
+@media screen and (max-width:751px) {
+
+    .button,
+    nav a.button {
+        display: block;
+        margin: 1rem 0 0 0
+    }
+}
+
+@media screen and (max-width:626px) {
+    nav a {
+        display: block;
     }
 }
