@@ -1,5 +1,6 @@
 ---
 title: Blog
+description: Bottles Developers's Blog
 layout: blog
 ---
 
