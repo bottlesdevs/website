@@ -396,6 +396,20 @@ p>code {
     border-radius: 6px;
 }
 
+.no-comments {
+    color: #888888;
+    text-align: center;
+}
+
+.no-comments p {
+    font-size: 1em;
+    letter-spacing: 0.01em;
+}
+
+section.comments .no-comments {
+    border-top: 1px solid #e2e2e2;
+}
+
 @media screen and (max-width:745px) {
     nav a.brand {
         float: none;

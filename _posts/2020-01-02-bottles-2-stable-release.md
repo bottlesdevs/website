@@ -4,6 +4,7 @@ description: "2.0.9.1 is the first stable release of Bottles 2."
 published: 2020-01-02
 layout: post
 published: true
+comments: true
 ---
 Bottles is a project born in 2017 as a personal necessity and experiment. I 
 needed to manage multiple wine prefixes quickly and easily. There were already 
