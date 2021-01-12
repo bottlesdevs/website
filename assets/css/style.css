@@ -333,7 +333,7 @@ mark {
     margin: 0 -4rem;
 }
 
-pre>code {
+pre > code {
     line-height: 1.6em;
     overflow: auto;
     padding: 30px;
@@ -388,7 +388,7 @@ blockquote p {
     margin: 0;
 }
 
-p>code {
+p > code {
     padding: .2em .4em;
     margin: 0;
     font-size: 85%;
@@ -408,6 +408,11 @@ p>code {
 
 section.comments .no-comments {
     border-top: 1px solid #e2e2e2;
+}
+
+nav a.active {
+    text-decoration: underline;
+    font-weight: 500;
 }
 
 @media screen and (max-width:745px) {

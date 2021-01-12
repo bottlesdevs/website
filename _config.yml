@@ -21,5 +21,19 @@ defaults:
     values:
       layout: "post"
 
+navigation:
+    - link: "https://docs.usebottles.com/"
+      name: Documentation
+    - link: "https://github.com/bottlesdevs/Bottles/issues/new/choose"
+      name: Bug Report
+    - link: "https://hosted.weblate.org/engage/bottles/"
+      name: Help Translating
+    - link: "https://github.com/bottlesdevs"
+      name: 🚀 GitHub
+    - link: "/database/"
+      name: Database
+    - link: "/blog/"
+      name: Blog
+
 plugins:
   - jekyll-feed
