@@ -28,12 +28,14 @@ navigation:
       name: Bug Report
     - link: "https://hosted.weblate.org/engage/bottles/"
       name: Help Translating
-    - link: "https://github.com/bottlesdevs"
+    - link: "https://github.com/bottlesdevs/"
       name: 🚀 GitHub
     - link: "/database/"
       name: Database
     - link: "/blog/"
       name: Blog
+    - link: "/funding/"
+      name: Funding
 
 plugins:
   - jekyll-feed
