@@ -379,6 +379,10 @@ pre>code {
     color: #f13355;
 }
 
+.inline .icon {
+    width: 16px;
+}
+
 blockquote {
     border-left: 3px solid #e0e0e0;
     padding: 1rem 1.6rem;

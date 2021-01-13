@@ -19,3 +19,7 @@ These are the HTML blocks available.
 - `link`
 - `gray`
 - `purple`
+
+### `ul`
+#### Supported classes
+- `inline`
