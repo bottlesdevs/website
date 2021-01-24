@@ -98,9 +98,9 @@ We did so many changes, and explaining them all in one article is impossible: ho
 
 ## Release date
 
-It is still early to talk about dates, but we are proceeding very quickly with great attention to detail. The new UI is very nice and we are proud of it. Despite this, we'd like to release Bottles v3 only when it is complete, stable and well tested.
+It is still early to talk about dates, but we are proceeding very quickly with great attention to details. The new UI is very nice and we are very proud of it. Despite this, we'd like to release Bottles v3 only when it is complete, stable and well tested.
 
-Anyone can help us with ideas and tips in the dedicated [Issue](github.com/bottlesdevs/Bottles/issues/77) page on GitHub.
+Anyone can help us with ideas and tips at the dedicated [Issue](https://github.com/bottlesdevs/Bottles/issues/77) page on GitHub.
 
 ~ Bottle's Developers
 
