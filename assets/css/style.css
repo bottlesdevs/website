@@ -426,6 +426,13 @@ footer .icon {
     top: .15em;
 }
 
+section.page.blog article:first-of-type {
+    background-color: #f9f9f9;
+    padding: 1rem 2rem 3rem;
+    margin: -1rem -2rem 0;
+    border-radius: .6rem;
+}
+
 @media screen and (max-width:745px) {
 
     .container.small,
