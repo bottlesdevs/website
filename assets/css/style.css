@@ -329,8 +329,10 @@ mark {
 }
 
 .page.post img {
-    max-width: calc(100% + 8rem);
-    margin: 0 -4rem;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: block;
 }
 
 pre>code {
@@ -480,11 +482,6 @@ footer .icon {
 
     section.heading h1 {
         font-size: 2.4rem;
-    }
-
-    .page.post img {
-        max-width: calc(100% + 4rem);
-        margin: 0 -2rem;
     }
 }
 
