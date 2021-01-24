@@ -445,6 +445,57 @@ section.page.blog article:first-of-type {
     border-radius: .6rem;
 }
 
+ul.inline li {
+    padding: .3em;
+    display: inline-table;
+}
+
+ul.inline {
+    margin: 0;
+    padding: 0;
+}
+
+ul.cards {
+    padding: 0;
+    margin: 0;
+}
+
+ul.cards li {
+    list-style: none;
+    background-color: #fff;
+    padding: .8rem;
+    margin: 0 0 .8rem 0;
+    border-radius: .3em;
+    border: 1px solid #d2d2d2;
+}
+
+ul.cards.inline li {
+    padding: 1em 2em;
+    margin: 0 .8rem .8rem 0;
+}
+
+ul.cards li.link {
+    padding: 0;
+}
+
+ul.cards li.link a {
+    display: block;
+    padding: 1em 2em;
+}
+
+ul.cards li a {
+    text-decoration: none;
+}
+
+ul.cards.has-hover li:hover {
+    background-color: #f3d6d540;
+    border-color: #e34843;
+}
+
+ul.cards.has-hover li:hover, ul.cards.has-hover li:hover a {
+    color: #e34843;
+}
+
 @media screen and (max-width:745px) {
 
     .container.small,

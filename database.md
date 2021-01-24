@@ -15,14 +15,14 @@ title: Dependencies, resources and software installers for Bottles
 
 <section class="page">
   <div class="container large">
-    <ul>
-      <li>
+    <ul class="cards list inline has-hover">
+      <li class="link">
         <a href="/database/dependencies">Dependencies Database</a>
       </li>
-      <li>
+      <li class="link">
         <a href="/database/components">Components Database</a>
       </li>
-      <li>
+      <li class="link">
         <a href="/database/installers">Installers Database</a>
       </li>
     </ul>
