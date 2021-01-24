@@ -3,7 +3,7 @@ title: "Bottles 3, codename Refresh"
 description: "We are working on a full UI remake for Bottles."
 published: 2020-01-24
 layout: post
-published: false
+published: true
 comments: true
 ---
 
