@@ -20,6 +20,9 @@ title: Dependencies, resources and software installers for Bottles
         <a href="/database/dependencies">Dependencies Database</a>
       </li>
       <li>
+        <a href="/database/components">Components Database</a>
+      </li>
+      <li>
         <a href="#">Installers Database</a>
       </li>
     </ul>
