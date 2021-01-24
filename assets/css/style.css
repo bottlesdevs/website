@@ -283,6 +283,18 @@ span.tag.tag-Fonts {
 }
 
 span.tag.tag-Essentials {
+    background-color: #009688;
+}
+
+span.tag.tag-dxvk {
+    background-color: #e91ec7;
+}
+
+span.tag.tag-runners {
+    background-color: #e9691e;
+}
+
+span.tag.tag-Games {
     background-color: #E91E63;
 }
 
