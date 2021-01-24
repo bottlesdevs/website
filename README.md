@@ -23,3 +23,9 @@ These are the HTML blocks available.
 ### `ul`
 #### Supported classes
 - `inline`
+- `cards`
+- `has-hover`
+
+### `li`
+#### Supported classes
+- `link`
