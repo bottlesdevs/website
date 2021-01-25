@@ -37,7 +37,7 @@ title: Bottles components
 				for (var item in data) {
 					component = data[item];
 
-					var row = table.insertRow(0);
+					var row = table.insertRow(-1);
 					var name = row.insertCell(0);
 					var category = row.insertCell(1);
 					var type = row.insertCell(2);

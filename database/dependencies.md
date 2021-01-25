@@ -40,7 +40,7 @@ title: Dependencies for software compatibility in Bottles
 				for (var item in data) {
 					dependency = data[item];
 
-					var row = table.insertRow(0);
+					var row = table.insertRow(-1);
 					var name = row.insertCell(0);
 					var description = row.insertCell(1);
 					var category = row.insertCell(2);
