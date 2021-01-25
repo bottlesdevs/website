@@ -17,7 +17,7 @@ description: Download Bottles for your Linux distribution
          href="https://github.com/bottlesdevs/Bottles/releases/tag/2.1.0.5" 
          title="Download Bottles (.AppImage)">Download</a>
       <a class="button link"
-         href="https://flathub.org/apps/details/com.usebottles.Bottles" 
+         href="https://flathub.org/apps/details/com.usebottles.bottles" 
          title="Download Bottles v2 from Flathub">Flathub</a>
       <div class="more-links">
         <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | 
