@@ -8,7 +8,7 @@ description: Download Bottles for your Linux distribution
   <div class="container">
     <div class="image">
       <img class="animate__animated animate__fadeIn" 
-           src="https://raw.githubusercontent.com/mirkobrombin/Bottles/master/screenshot.png" />
+           src="https://raw.githubusercontent.com/bottlesdevs/Bottles/master/screenshot.png" />
     </div>
     <div class="info">
       <h2 class="animate__animated animate__fadeInRight">Bottles 3</h2>
