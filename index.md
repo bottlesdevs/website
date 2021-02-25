@@ -11,6 +11,6 @@ description: Run Windows programs on Linux.
     <div class="more-links">
       <a href="https://flathub.org/apps/details/com.usebottles.bottles">Download from Flathub</a>
     </div>
-    <img class="animate__animated animate__fadeInUp" src="https://raw.githubusercontent.com/bottlesdevs/Bottles/master/screenshot-0.png" />
+    <img class="animate__animated animate__fadeInUp" src="https://raw.githubusercontent.com/bottlesdevs/Bottles/master/screenshot.png" />
   </div>
 </section>
