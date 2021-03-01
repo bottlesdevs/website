@@ -14,7 +14,7 @@ description: Download Bottles for your Linux distribution
       <h2 class="animate__animated animate__fadeInRight">Bottles 3</h2>
       <p>Try the new and reinvented Bottles v3! <small>(.AppImage)</small></p>
       <a class="button" 
-         href="https://github.com/bottlesdevs/Bottles/releases/tag/3.0.1" 
+         href="https://github.com/bottlesdevs/Bottles/releases/tag/3.0.3" 
          title="Download Bottles (.AppImage)">Download</a>
       <a class="button link"
          href="https://flathub.org/apps/details/com.usebottles.bottles" 
