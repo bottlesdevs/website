@@ -12,13 +12,16 @@ description: Download Bottles for your Linux distribution
     </div>
     <div class="info">
       <h2 class="animate__animated animate__fadeInRight">Bottles 3</h2>
-      <p>Try the new and reinvented Bottles v3! <small>(.AppImage)</small></p>
+      <p>Try the new and reinvented Bottles v3! <small>(.AppImage/.deb)</small></p>
       <a class="button" 
-         href="https://github.com/bottlesdevs/Bottles/releases/tag/3.1.5" 
-         title="Download Bottles (.AppImage)">Download</a>
+         href="https://github.com/bottlesdevs/Bottles/releases/tag/3.1.8" 
+         title="Download Bottles (.AppImage/.deb)">Download</a>
       <a class="button link"
          href="https://flathub.org/apps/details/com.usebottles.bottles" 
-         title="Download Bottles v2 from Flathub">Flathub</a>
+         title="Download Bottles v3 from Flathub">Flathub</a>
+      <a class="button link"
+         href="https://snapcraft.io/bottles" 
+         title="Download Bottles v3 from Snapcraft">Snapcraft</a>
       <div class="more-links">
         <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | 
         <a href="https://github.com/bottlesdevs/Bottles#unofficial-packages">Unofficial packages</a> | 
