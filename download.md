@@ -19,14 +19,12 @@ description: Download Bottles for your Linux distribution
       <a class="button link"
          href="https://flathub.org/apps/details/com.usebottles.bottles" 
          title="Download Bottles v3 from Flathub">Flathub</a>
-      <a class="button link"
-         href="https://snapcraft.io/bottles" 
-         title="Download Bottles v3 from Snapcraft">Snapcraft</a>
       <div class="more-links">
         <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | 
         <a href="https://github.com/bottlesdevs/Bottles#unofficial-packages">Unofficial packages</a> | 
         <a href="https://github.com/bottlesdevs/Bottles/releases/tag/unstable">Unstable</a> | 
-        <a href="https://github.com/bottlesdevs/Bottles/releases/tag/nightly">Nightly</a>
+        <a href="https://github.com/bottlesdevs/Bottles/releases/tag/nightly">Nightly</a> | 
+        <a href="https://snapcraft.io/bottles">Snapcraft</a>
       </div>
     </div>
   </div>
