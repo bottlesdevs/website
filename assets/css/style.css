@@ -159,7 +159,7 @@ section.downloads .image+.info {
 }
 
 section.downloads .info {
-    margin: 9rem 2rem;
+    margin: 5rem 2rem;
 }
 
 .more-links {
@@ -224,7 +224,7 @@ section.heading h1 {
 
 .container {
     margin: 0 auto;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .container.small {
@@ -553,6 +553,11 @@ ul.cards.has-hover li:hover, ul.cards.has-hover li:hover a {
     section.heading h1 {
         font-size: 2.4rem;
     }
+}
+
+section.downloads .image {
+    position: relative;
+    top: 18px;
 }
 
 @media screen and (max-width:860px) {
