@@ -17,8 +17,8 @@ description: Download Bottles for your Linux distribution
          href="https://github.com/bottlesdevs/Bottles/releases/tag/3.1.15" 
          title="Download Bottles (.AppImage/.deb)">Download</a>
       <a class="button link"
-         href="https://flathub.org/apps/details/com.usebottles.bottles" 
-         title="Download Bottles v3 from Flathub">Flathub</a>
+         href="https://aur.archlinux.org/packages/bottles/" 
+         title="Download Bottles v3 for Arch Linux and derivates">AUR</a>
       <div class="more-links">
         <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | 
         <a href="https://github.com/bottlesdevs/Bottles#unofficial-packages">Unofficial packages</a> | 
