@@ -11,14 +11,14 @@ description: Download Bottles for your Linux distribution
            src="https://raw.githubusercontent.com/bottlesdevs/Bottles/master/screenshot.png" />
     </div>
     <div class="info">
-      <h2 class="animate__animated animate__fadeInRight">Bottles 3</h2>
-      <p>Try the new and reinvented Bottles v3! <small>(.AppImage/.deb)</small></p>
+      <h2 class="animate__animated animate__fadeInRight">Bottles Treviso</h2>
+      <p>Try the new and reinvented third Bottles release! <small>(.AppImage/.deb)</small></p>
       <a class="button" 
-         href="https://github.com/bottlesdevs/Bottles/releases/tag/3.1.15" 
+         href="https://github.com/bottlesdevs/Bottles/releases/tag/2021.7.1-treviso" 
          title="Download Bottles (.AppImage/.deb)">Download</a>
       <a class="button link"
          href="https://aur.archlinux.org/packages/bottles/" 
-         title="Download Bottles v3 for Arch Linux and derivates">AUR</a>
+         title="Download Bottles for Arch Linux and derivates">AUR</a>
       <div class="more-links">
         <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | 
         <a href="https://github.com/bottlesdevs/Bottles#unofficial-packages">Unofficial packages</a> | 
