@@ -9,8 +9,9 @@ description: Run Windows programs on Linux.
     <p>Easily run Windows software on Linux with 🍷 Bottles!</p>
     <a class="button" href="/download" title="Download Bottles">Download</a>
     <div class="more-links">
-      <a href="https://aur.archlinux.org/packages/bottles/">AUR</a> | 
-      <a href="https://snapcraft.io/bottles">Snapcraft</a>
+      <a href="https://flathub.org/apps/details/com.usebottles.bottles">Flathub</a> | 
+      <a href="https://snapcraft.io/bottles">Snapcraft</a> | 
+      <a href="https://aur.archlinux.org/packages/bottles/">AUR</a>
     </div>
     <img class="animate__animated animate__fadeInUp" src="https://raw.githubusercontent.com/bottlesdevs/Bottles/master/screenshot.png" />
   </div>
