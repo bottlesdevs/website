@@ -23,6 +23,7 @@ description: Download Bottles for your Linux distribution
         <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | 
         <a href="https://flathub.org/apps/details/com.usebottles.bottles">Flathub</a> | 
         <a href="https://aur.archlinux.org/packages/bottles/">AUR</a> | 
+        <a href="https://github.com/bottlesdevs/Bottles/releases/">Deb</a> | 
         <a href="https://github.com/bottlesdevs/Bottles/releases/tag/unstable">Unstable</a> | 
         <a href="https://github.com/bottlesdevs/Bottles#unofficial-packages">Unofficial packages</a>
       </div>
