@@ -145,23 +145,6 @@ section .button:active {
     opacity: .7;
 }
 
-section.downloads .image,
-section.downloads .info {
-    display: inline-table;
-    width: 64.5%;
-    vertical-align: top;
-    text-align: left;
-}
-
-section.downloads .image+.info {
-    width: 28%;
-    max-width: 24rem;
-}
-
-section.downloads .info {
-    margin: 5rem 2rem;
-}
-
 .more-links {
     margin: 1rem 0 0 0;
     font-size: 12px;
@@ -182,27 +165,9 @@ section.downloads p {
     color: #666;
 }
 
-section.downloads .container>.info:first-child {
-    text-align: right;
-}
-
-section.downloads .container>.info:first-child {
-    text-align: right;
-    width: 48%;
-}
-
 section.downloads {
     max-width: 81rem;
     margin: 0 auto;
-}
-
-section.downloads .image>img {
-    max-width: 100%;
-}
-
-section.downloads .container>.info+.image {
-    text-align: left;
-    width: 46%;
 }
 
 section.heading {
@@ -496,6 +461,29 @@ ul.cards.has-hover li:hover, ul.cards.has-hover li:hover a {
     color: #e34843;
 }
 
+section.downloads .container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: 40px;
+}
+
+section.downloads .container > .image {
+    grid-column: span 7;
+    order: 1;
+    object-fit: cover;
+}
+
+section.downloads .container > .info {
+    grid-column: 8/span 6;
+    order: 2;
+}
+
+section.downloads .container > .image img {
+    width: 100%;
+}
+
 @media screen and (max-width:745px) {
 
     .container.small,
@@ -555,11 +543,6 @@ ul.cards.has-hover li:hover, ul.cards.has-hover li:hover a {
     }
 }
 
-section.downloads .image {
-    position: relative;
-    top: 18px;
-}
-
 @media screen and (max-width:860px) {
     nav {
         text-align: center;
@@ -585,3 +568,5 @@ section.downloads .image {
         display: block;
     }
 }
+
+
