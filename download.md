@@ -14,7 +14,7 @@ description: Download Bottles for your Linux distribution
       <h2 class="animate__animated animate__fadeInRight">Bottles Treviso</h2>
       <p>Try the new and reinvented third Bottles release! <small>(.AppImage/.deb)</small></p>
       <a class="button" 
-         href="https://github.com/bottlesdevs/Bottles/releases/tag/2021.7.1-treviso" 
+         href="https://github.com/bottlesdevs/Bottles/releases/tag/2021.7.3-treviso" 
          title="Download Bottles (.AppImage/.deb)">Download</a>
       <a class="button link"
          href="https://snapcraft.io/bottles" 
