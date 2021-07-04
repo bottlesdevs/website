@@ -27,13 +27,15 @@ title: Bottles components
 	</div>
 </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script>
 	var table = document.getElementById("components");
 	document.addEventListener("DOMContentLoaded", function () {
-		fetch('https://raw.githubusercontent.com/bottlesdevs/components/main/index.json')
-			.then(res => res.json())
+		fetch('https://raw.githubusercontent.com/bottlesdevs/components/main/index.yml')
+  			.then(response => response.text())
 			.then((data) => {
 				console.info("Components database index found.");
+				data = jsyaml.load(data)
 				for (var item in data) {
 					component = data[item];
 
@@ -52,7 +54,7 @@ title: Bottles components
 					channel.innerHTML = component["Channel"];
 					category.innerHTML = `<span class="tag tag-${component["Category"]}">${component["Category"]}</span>`;
 					actions.innerHTML = `\
-						<a href='https://github.com/bottlesdevs/components/blob/main/${component["Category"]}${sub_category_url}/${item}.json'>Details</a> | \
+						<a href='https://github.com/bottlesdevs/components/blob/main/${component["Category"]}${sub_category_url}/${item}.yml'>Details</a> | \
 						<a href='https://github.com/bottlesdevs/components/issues/new/choose'>Report problem</a>`;
 				}
 			})

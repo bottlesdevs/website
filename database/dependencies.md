@@ -30,13 +30,15 @@ title: Dependencies for software compatibility in Bottles
 	</div>
 </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script>
 	var table = document.getElementById("dependencies");
 	document.addEventListener("DOMContentLoaded", function () {
-		fetch('https://raw.githubusercontent.com/bottlesdevs/dependencies/main/index.json')
-			.then(res => res.json())
+		fetch('https://raw.githubusercontent.com/bottlesdevs/dependencies/main/index.yml')
+  			.then(response => response.text())
 			.then((data) => {
 				console.info("Dependencies database index found.");
+				data = jsyaml.load(data)
 				for (var item in data) {
 					dependency = data[item];
 
@@ -50,7 +52,7 @@ title: Dependencies for software compatibility in Bottles
 					description.innerHTML = dependency["Description"];
 					category.innerHTML = `<span class="tag tag-${dependency["Category"]}">${dependency["Category"]}</span>`;
 					actions.innerHTML = `\
-						<a href='https://github.com/bottlesdevs/dependencies/blob/main/${dependency["Category"]}/${item}.json'>Details</a> | \
+						<a href='https://github.com/bottlesdevs/dependencies/blob/main/${dependency["Category"]}/${item}.yml'>Details</a> | \
 						<a href='https://github.com/bottlesdevs/dependencies/issues/new/choose'>Report problem</a>`;
 				}
 			})
