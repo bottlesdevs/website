@@ -30,13 +30,15 @@ title: Dependencies for software compatibility in Bottles
 	</div>
 </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script>
 	var table = document.getElementById("installers");
 	document.addEventListener("DOMContentLoaded", function () {
-		fetch('https://raw.githubusercontent.com/bottlesdevs/programs/main/index.json')
-			.then(res => res.json())
+		fetch('https://raw.githubusercontent.com/bottlesdevs/programs/main/index.yml')
+  			.then(response => response.text())
 			.then((data) => {
 				console.info("Installers database index found.");
+				data = jsyaml.load(data)
 				for (var item in data) {
 					installer = data[item];
 
@@ -50,7 +52,7 @@ title: Dependencies for software compatibility in Bottles
 					description.innerHTML = installer["Description"];
 					category.innerHTML = `<span class="tag tag-${installer["Category"]}">${installer["Category"]}</span>`;
 					actions.innerHTML = `\
-						<a href='https://github.com/bottlesdevs/programs/blob/main/${installer["Category"]}/${item}.json'>Details</a> | \
+						<a href='https://github.com/bottlesdevs/programs/blob/main/${installer["Category"]}/${item}.yml'>Details</a> | \
 						<a href='https://github.com/bottlesdevs/programs/issues/new/choose'>Report problem</a>`;
 				}
 			})
