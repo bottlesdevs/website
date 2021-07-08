@@ -23,7 +23,7 @@ defaults:
 
 navigation:
     - link: "https://docs.usebottles.com/"
-      name: Documentation
+      name: 📕 Documentation
     - link: "https://github.com/bottlesdevs/Bottles/issues/new/choose"
       name: Bug Report
     - link: "https://hosted.weblate.org/engage/bottles/"
