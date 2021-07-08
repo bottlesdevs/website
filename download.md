@@ -4,15 +4,14 @@ description: Download Bottles for your Linux distribution
 ---
 
 <section class="downloads">
-  <!-- v2 -->
+  <!-- v3 -->
   <div class="container">
     <div class="image">
-      <img class="animate__animated animate__fadeIn" 
-           src="https://raw.githubusercontent.com/bottlesdevs/Bottles/master/screenshot.png" />
+      <img src="https://raw.githubusercontent.com/bottlesdevs/Bottles/master/screenshot.png" />
     </div>
     <div class="info">
-      <h2 class="animate__animated animate__fadeInRight">Bottles Treviso</h2>
-      <p>Try the new and reinvented third Bottles release! <small>(.AppImage/.deb)</small></p>
+      <h2>Bottles Treviso</h2>
+      <p>Download the third major version of Bottles <small>(.AppImage/.deb)</small></p>
       <a class="button" 
          href="https://github.com/bottlesdevs/Bottles/releases/tag/2021.7.3-treviso" 
          title="Download Bottles (.AppImage/.deb)">Download</a>
@@ -29,21 +28,21 @@ description: Download Bottles for your Linux distribution
       </div>
     </div>
   </div>
+
   <!-- v1 -->
   <div class="container">
+    <div class="image">
+      <img src="https://raw.githubusercontent.com/bottlesdevs/Bottles/v1/data/screenshot-1.png" />
+    </div>
     <div class="info">
-      <h2 class="animate__animated animate__fadeInLeft">Bottles 1</h2>
-      <p>Try the first version of Bottles! <small>(.deb)</small></p>
+      <h2>Bottles 1</h2>
+      <p>Download the first version of Bottles! <small>(.deb)</small></p>
       <a class="button link"
          href="https://appcenter.elementary.io/com.github.mirkobrombin.bottles" 
          title="Download Bottles v1 from AppCenter">AppCenter</a>
       <a class="button"
          href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1" 
          title="Download Bottles v1 (.deb)">Download</a>
-    </div>
-    <div class="image">
-      <img class="animate__animated animate__fadeIn" 
-           src="https://raw.githubusercontent.com/bottlesdevs/Bottles/v1/data/screenshot-1.png" />
     </div>
   </div>
 </section>
