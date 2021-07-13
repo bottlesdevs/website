@@ -20,6 +20,14 @@ layout: default
         </div>
     </section>
     <section class="page post">
+        {% if page.is_release_day != nil %}
+            <section class="release-day">
+                <div>
+                    <p>today is</p>
+                    <strong>Release Day!</strong>
+                </div>
+            </section>
+        {% endif %}
         <div class="container medium">
             {{ content }}
         </div>
