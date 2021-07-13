@@ -3,7 +3,7 @@ layout: default
 ---
 <article itemscope itemtype="https://schema.org/NewsArticle" class="hasSummary">
     {% if page.thumb != nil %}
-        <meta itemprop="image" content="{{ post.thumb }}" hidden />
+        <meta itemprop="image" content="{{ page.thumb }}" hidden />
     {% endif %}
     <section class="heading center">
         {% if page.background != nil %}
