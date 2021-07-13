@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
@@ -553,6 +554,27 @@ section.heading .background {
     border-top-left-radius: .3rem;
     border-bottom-left-radius: .3rem;
     text-align: center;
+}
+
+.release-day {
+    margin: 30px 0 10px 0;
+    text-align: center;
+}
+
+.release-day p {
+    font-size: 1.4em;
+    margin: 0 0 17px 0;
+}
+
+.release-day strong {
+    font-size: 4em;
+    font-family: 'Cookie', cursive;
+    font-weight: 300;
+    color: #0e3f7b;
+}
+
+.release-day div {
+    display: inline-block;
 }
 
 @media screen and (max-width:745px) {
