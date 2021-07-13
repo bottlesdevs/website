@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
 body {
@@ -11,6 +12,19 @@ body {
 
 a {
     color: #2b2b2b;
+}
+
+article .more {
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    text-align: right;
+}
+
+.mdi {
+    position: relative;
+    top: 6px;
+    margin: -9px 0 0 0;
 }
 
 nav {
@@ -402,6 +416,11 @@ section.page.blog article:first-of-type {
     padding: 1rem 2rem 3rem;
     margin: -1rem -2rem 0;
     border-radius: .6rem;
+    overflow: auto;
+}
+
+article>.thumb {
+    margin: -16px -32px 0;
 }
 
 ul.inline li {
@@ -451,7 +470,8 @@ ul.cards.has-hover li:hover {
     border-color: #1c71d8;
 }
 
-ul.cards.has-hover li:hover, ul.cards.has-hover li:hover a {
+ul.cards.has-hover li:hover,
+ul.cards.has-hover li:hover a {
     color: #1c71d8;
 }
 
@@ -463,18 +483,18 @@ section.downloads .container {
     gap: 40px;
 }
 
-section.downloads .container > .image {
+section.downloads .container>.image {
     grid-column: span 7;
     order: 1;
     object-fit: cover;
 }
 
-section.downloads .container > .info {
+section.downloads .container>.info {
     grid-column: 8/span 6;
     order: 2;
 }
 
-section.downloads .container > .image img {
+section.downloads .container>.image img {
     width: 100%;
 }
 
@@ -482,7 +502,8 @@ section.downloads .container > .image img {
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);
 }
 
-nav a:not(.brand):not(.button):hover {
+nav a:not(.brand):not(.button):hover,
+article p a {
     color: #1c71d8;
 }
 
@@ -570,5 +591,3 @@ nav a:not(.brand):not(.button):hover {
         display: block;
     }
 }
-
-
