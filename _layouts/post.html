@@ -3,6 +3,10 @@ layout: default
 ---
 <article>
     <section class="heading center">
+        {% if page.background != nil %}
+            <div class="background" 
+                 style="background-image: url({{ page.background }})"></div>
+        {% endif %}
         <div class="container medium">
             <h1>{{ page.title }}</h1>
             <p><time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%a, %b %e, %Y" }}</time></p>

@@ -186,6 +186,7 @@ section.downloads {
 section.heading {
     padding: 1rem 4rem;
     background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    position: relative;
 }
 
 .warning {
@@ -432,6 +433,7 @@ section.page.blog article:first-of-type .more {
 
 article>.thumb {
     margin: -16px -32px 0;
+    width: calc(100% + 64px);
 }
 
 ul.inline li {
@@ -509,13 +511,48 @@ section.downloads .container>.image img {
     width: 100%;
 }
 
-.button:not(.link) {
+.page.blog article:first-of-type, .button:not(.link) {
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);
 }
 
 nav a:not(.brand):not(.button):hover,
 article p a {
     color: #1c71d8;
+}
+
+section.heading .background::after,
+section.heading .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* filter: grayscale(1); */
+    opacity: 0.1;
+}
+
+.heading .container {
+    position: relative;
+    z-index: 1;
+}
+
+.button.icon-slot {
+    padding: .5rem 1rem .5rem 0;
+}
+
+.button.icon-slot .mdi {
+    background-color: #0000003d;
+    top: 7px;
+    padding: 5px;
+    width: 30px;
+    margin: -14px 7px 0 0;
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+    text-align: center;
 }
 
 @media screen and (max-width:745px) {
