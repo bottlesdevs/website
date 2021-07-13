@@ -2,9 +2,12 @@
 {% assign date = post.date %}
 {% if post.published == true %}
 <article>
+    {% if post.thumb != nil %}
+    <img class="thumb" src="{{ post.thumb }}" title="{{ post.title }}" alt="{{ post.title }}" />
+    {% endif %}
     <h2>{{ post.title }}</h2>
     <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ date | date: "%a, %b %e, %Y" }}</time>
     <p>{{ post.content | strip_html | truncatewords: 32 }}</p>
-    <a href="{{ post.url }}">Read</a>
+    <a class="more" href="{{ post.url }}">Read more<span class="mdi material-icons"> navigate_next </span></a>
 </article>
 {% endif %}

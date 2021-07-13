@@ -25,9 +25,9 @@ navigation:
     - link: "https://docs.usebottles.com/"
       name: 📕 Documentation
     - link: "https://github.com/bottlesdevs/Bottles/issues/new/choose"
-      name: Bug Report
+      name: Bug report
     - link: "https://hosted.weblate.org/engage/bottles/"
-      name: Help Translating
+      name: Help translating
     - link: "https://github.com/bottlesdevs/"
       name: 🚀 GitHub
     - link: "/database/"
