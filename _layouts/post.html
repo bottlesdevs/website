@@ -1,15 +1,22 @@
 ---
 layout: default
 ---
-<article>
+<article itemscope itemtype="https://schema.org/NewsArticle" class="hasSummary">
+    {% if page.thumb != nil %}
+        <meta itemprop="image" content="{{ post.thumb }}" hidden />
+    {% endif %}
     <section class="heading center">
         {% if page.background != nil %}
             <div class="background" 
                  style="background-image: url({{ page.background }})"></div>
         {% endif %}
         <div class="container medium">
-            <h1>{{ page.title }}</h1>
-            <p><time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%a, %b %e, %Y" }}</time></p>
+            <h1 itemprop="headline">{{ page.title }}</h1>
+            <p>
+                <time itemprop="datePublished" 
+                      datetime="{{ page.date | date:"%Y-%m-%d" }}"
+                      content="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%a, %b %e, %Y" }}</time>
+            </p>
         </div>
     </section>
     <section class="page post">
