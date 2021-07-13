@@ -1,12 +1,14 @@
 {% assign post = include.post %}
 {% assign date = post.date %}
 {% if post.published == true %}
-<article>
+<article itemscope itemtype="https://schema.org/NewsArticle" class="hasSummary">
     {% if post.thumb != nil %}
-    <img class="thumb" src="{{ post.thumb }}" title="{{ post.title }}" alt="{{ post.title }}" />
+        <meta itemprop="image" content="{{ post.thumb }}" hidden />
     {% endif %}
-    <h2>{{ post.title }}</h2>
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ date | date: "%a, %b %e, %Y" }}</time>
+    <h2 itemprop="headline">{{ post.title }}</h2>
+    <time itemprop="datePublished" 
+          content="{{ post.date | date:"%Y-%m-%d" }}" 
+          datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ date | date: "%a, %b %e, %Y" }}</time>
     <p>{{ post.content | strip_html | truncatewords: 32 }}</p>
     <a class="more" href="{{ post.url }}">Read more<span class="mdi material-icons"> navigate_next </span></a>
 </article>
