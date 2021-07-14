@@ -512,7 +512,8 @@ section.downloads .container>.image img {
     width: 100%;
 }
 
-.page.blog article:first-of-type, .button:not(.link) {
+.page.blog article:first-of-type,
+.button:not(.link) {
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);
 }
 
@@ -590,7 +591,7 @@ section.heading .background {
     }
 
     section.page {
-        padding: .4rem 2rem;
+        padding: .4rem .5rem;
     }
 
     nav a.brand {
@@ -637,6 +638,12 @@ section.heading .background {
 
     section.downloads .container {
         display: initial;
+    }
+
+    .button.icon-slot .mdi {
+        background-color: initial;
+        top: 6px;
+        padding: 0;
     }
 }
 
