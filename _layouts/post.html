@@ -24,7 +24,7 @@ layout: default
             <section class="release-day">
                 <div>
                     <p>today is</p>
-                    <strong>Release Day!</strong>
+                    <strong {% if page.is_release_day_color != nil %}style="color: {{page.is_release_day_color}}"{% endif %}>Release Day!</strong>
                 </div>
             </section>
         {% endif %}
