@@ -681,6 +681,36 @@ section.heading .background {
     cursor: pointer;
 }
 
+.feature-display {
+    max-width: 1300px;
+    overflow: visible;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.feature-display img {
+    flex: 0 0 auto;
+    order: 2;
+}
+
+.feature-display .description {
+    flex: 1 0 auto;
+    padding: 0 10px 0 58px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.feature-display .description p {
+    line-height: 1.6em;
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.feature-display .description h2 {
+    font-size: 2.2em;
+}
+
 @media screen and (max-width:745px) {
 
     .container.small,
@@ -747,6 +777,14 @@ section.heading .background {
         background-color: initial;
         top: 6px;
         padding: 0;
+    }
+
+    .feature-display {
+        display: block;
+    }
+    
+    .feature-display .description {
+        padding: 0 20px;
     }
 }
 
