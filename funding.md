@@ -27,7 +27,7 @@ title: Funding
         </a>
       </li>
       <li>
-        <a href="https://www.paypal.com/mirkobrombin" title="Support Bottles Developers with PayPal">
+        <a href="https://paypal.me/MirkoBrombin" title="Support Bottles Developers with PayPal">
           <ion-icon name="logo-paypal"></ion-icon> PayPal
         </a>
       </li>
