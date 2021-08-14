@@ -32,6 +32,11 @@ title: Funding
         </a>
       </li>
     </ul>
+    <h2>Our plans for Bottles</h2>
+    <p>We have several plans for Bottles' future, many features that take time
+      and money to come true.</p>
+    <p>Bottles is (today) a project driven by the effort of a single developer and the support of a magnificent community!</p>
+    <br />
     <p>- Thanks from the Bottles Developers.</p>
   </div>
 </section>
