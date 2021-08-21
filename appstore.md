@@ -21,7 +21,9 @@ title: AppStore
 </section>
 
 <div class="modal" id="modal_installer"></div>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/yaml.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script>
   function modal(url) {
@@ -30,7 +32,7 @@ title: AppStore
       return response.text().then(function (text) {
         var data =
           modal[0].innerHTML = `<div>
-            <pre>${text}</pre>
+            <pre><code class="language-yaml">${text}</code></pre>
             <div class="actions">
               <a class="button icon-slot" onclick="modal_close()">
                 <span class="mdi material-icons">close</span>
@@ -42,6 +44,7 @@ title: AppStore
               </a>
             </div>`;
         modal[0].classList.add('show');
+        hljs.highlightAll();
       }).catch(function (err) {
         console.log(err);
       });
