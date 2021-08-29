@@ -35,6 +35,25 @@ title: Funding
     <h2>Our plans for Bottles</h2>
     <p>We have several plans for Bottles' future, many features that take time
       and money to come true.</p>
+    <ul>
+      <li>
+        <b>Installer scripts</b>
+        <p>This is a feature in early development. It is an automated Windows 
+        software installation system based on a community driven 
+        <a href="https://github.com/bottlesdevs/programs" target="_blank">repository</a> 
+        and itis already 
+        <a href="https://docs.usebottles.com/bottles/installers" target="_blank">available</a>
+        as an experimental feature in Bottles. Even if it already works, it 
+        still requires some work before reaching a stable release.</p>
+      </li>
+      <li>
+        <b>Dependencies manager</b>
+        <p>This is the most important feature of Bottles. It is a dependency
+        manager based on a community driven repository, that replace winetricks 
+        in Bottles and allows you to install software dependencies in a 
+        simple way. It is already 
+        <a href="https://docs.usebottles.com/bottles/dependencies" target="_blank">available</a>
+        as a stable feature but it still in active development.</p>
     <p>Bottles is (today) a project driven by the effort of a small developer team and the support of a magnificent community!</p>
     <br />
     <h3>Thanks to them who made a donation or became our sponsor GitHub 💖!</h3>
