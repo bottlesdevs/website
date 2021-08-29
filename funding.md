@@ -35,7 +35,17 @@ title: Funding
     <h2>Our plans for Bottles</h2>
     <p>We have several plans for Bottles' future, many features that take time
       and money to come true.</p>
-    <p>Bottles is (today) a project driven by the effort of a single developer and the support of a magnificent community!</p>
+    <p>Bottles is (today) a project driven by the effort of a small developer team and the support of a magnificent community!</p>
+    <br />
+    <h3>Thanks to them who made a donation or became our sponsor GitHub 💖!</h3>
+    <ul>
+      <li>Daniel Rusek</li>
+      <li>Caleb Woodbine</li>
+      <li>Pietro di Caprio</li>
+      <li>Patrizio Bruno</li>
+      <li>NullDev // Chris</li>
+      <li>and the anonymous supporters</li>
+    </ul>
     <br />
     <p>- Thanks from the Bottles Developers.</p>
   </div>
