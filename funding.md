@@ -54,6 +54,8 @@ title: Funding
         simple way. It is already 
         <a href="https://docs.usebottles.com/bottles/dependencies" target="_blank">available</a>
         as a stable feature but it still in active development.</p>
+      </li>
+    </ul>
     <p>Bottles is (today) a project driven by the effort of a small developer team and the support of a magnificent community!</p>
     <br />
     <h3>Thanks to them who made a donation or became our sponsor GitHub 💖!</h3>
