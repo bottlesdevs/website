@@ -58,7 +58,7 @@ title: Funding
     </ul>
     <p>Bottles is (today) a project driven by the effort of a small developer team and the support of a magnificent community!</p>
     <br />
-    <h3>Thanks to them who made a donation or became our sponsor GitHub 💖!</h3>
+    <h3>Thanks to them who made a donation or became our GitHub sponsor 💖!</h3>
     <ul>
       <li>Daniel Rusek</li>
       <li>Caleb Woodbine</li>
