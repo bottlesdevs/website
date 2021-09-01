@@ -37,6 +37,13 @@ title: Funding
       and money to come true.</p>
     <ul>
       <li>
+        <b>Override system</b>
+        <p>This is our solution for multiple environments in one bottle. This is
+        currently a 
+        <a href="https://github.com/bottlesdevs/Bottles/issues/510" target="_blank">concept</a>,
+        but we are working on it.</p>
+      </li>
+      <li>
         <b>Installer scripts</b>
         <p>This is a feature in early development. It is an automated Windows 
         software installation system based on a community driven 
