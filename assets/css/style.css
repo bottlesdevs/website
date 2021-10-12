@@ -698,6 +698,7 @@ nav ul {
     list-style: none;
     align-items: center;
     margin: 0;
+    padding: 0;
 }
 
 .next {
@@ -803,7 +804,7 @@ nav ul {
 }
 
 @media screen and (max-width:860px) {
-    nav {
+    nav, nav ul {
         text-align: center;
         flex-direction: column;
     }
