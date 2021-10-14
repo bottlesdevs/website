@@ -13,7 +13,7 @@ description: Download Bottles for your Linux distribution
       <h2>Bottles Treviso</h2>
       <p>Download the third major version of Bottles <small>(.AppImage/.deb)</small></p>
       <a class="button" 
-         href="https://github.com/bottlesdevs/Bottles/releases/tag/2021.9.28-treviso" 
+         href="https://github.com/bottlesdevs/Bottles/releases/tag/2021.10.14-treviso-1" 
          title="Download Bottles (.AppImage/.deb)">Download</a>
       <a class="button link"
          href="https://snapcraft.io/bottles" 
