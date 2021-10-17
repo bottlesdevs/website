@@ -651,12 +651,15 @@ section.heading .background {
 .modal>div>pre {
     white-space: pre-line;
     overflow-y: auto;
-    height: calc(100% - 4.2rem);
+    height: calc(100% - 6.2rem);
     padding: 0 1rem;
 }
 
 .modal>div>.actions {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal>div>.actions a {
