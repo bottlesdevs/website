@@ -73,6 +73,7 @@ title: Funding
       <li>Pietro di Caprio</li>
       <li>Patrizio Bruno</li>
       <li>NullDev // Chris</li>
+      <li>Robert Krisztian Sandor</li>
       <li>and the anonymous supporters</li>
     </ul>
     <br />
