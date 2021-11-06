@@ -3,9 +3,10 @@ title: AppStore
 ---
 
 <section class="heading">
-  <div class="container large">
+  <div class="container large center">
     <h1>AppStore</h1>
     <p>Overview of the installers available in Bottles.</p>
+    <input class="store-search" type="search" autocomplete="off" placeholder="Epic Games Store" />
   </div>
 </section>
 
@@ -15,7 +16,7 @@ title: AppStore
       <p>This AppStore as the installer feature, is in early development.</p>
     </div>
     <br />
-    <div class="store">
+    <div class="store store-results">
     </div>
   </div>
 </section>
@@ -26,6 +27,20 @@ title: AppStore
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/yaml.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script>
+  document.querySelector('.store-search').addEventListener('keyup', function(e) {
+    var search = this.value.toLowerCase();
+    var cards = document.querySelectorAll('.store .card');
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var text = card.innerText.toLowerCase();
+      if (text.indexOf(search) > -1) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+  
   function modal(url) {
     var modal = document.getElementsByClassName('modal');
     fetch(url).then(function (response) {
@@ -66,10 +81,12 @@ title: AppStore
         data = jsyaml.load(data)
         for (var item in data) {
           installer = data[item];
+          icon = `https://github.com/bottlesdevs/programs/blob/main/data/${item}/${installer["Icon"]}?raw=true`;
           var card = `<div class="card">
             <div class="card-content">
+              <div class="card-bg" style="background-image: url(${icon})"></div>
               <h3>
-                <img src="https://github.com/bottlesdevs/programs/blob/main/data/${item}/${installer["Icon"]}?raw=true" alt="${item}" />
+                <img src="${icon}" alt="${item}" />
                 ${installer["Name"]}
               </h3>
               <p>${installer["Description"]}</p>
@@ -77,8 +94,18 @@ title: AppStore
                 <span class="tag tag-${installer["Category"]}">${installer["Category"]}</span>
               </div>
               <div class="actions">
-                <a onclick='modal("https://raw.githubusercontent.com/bottlesdevs/programs/main/${installer["Category"]}/${item}.yml")'>Show installer</a>
-                <a href='https://github.com/bottlesdevs/programs/issues/new/choose'>Report problem</a>
+                <a onclick='modal("https://raw.githubusercontent.com/bottlesdevs/programs/main/${installer["Category"]}/${item}.yml")' title='Show installer'>
+                  <span class="material-icons">code</span>
+                </a>
+                <a href='https://github.com/bottlesdevs/programs/issues/new/choose' title='Report problem'>
+                  <span class="material-icons">bug_report</span>
+                </a>
+                <a href='https://github.com/bottlesdevs/programs/blob/main/Reviews/${item}.md' title='Read review'>
+                  <span class="material-icons">book</span>
+                </a>
+                <a href='https://docs.usebottles.com/bottles/installers#use-installers' title='How to install'>
+                  <span class="material-icons">download</span>
+                </a>
               </div>
             </div>
           </div>`;

@@ -13,7 +13,8 @@ body {
 
 a,
 button,
-.modal {
+.modal,
+input {
     transition: all .2s ease-in-out
 }
 
@@ -511,7 +512,7 @@ section.downloads .container>.image img {
     width: 100%;
 }
 
-.page.blog article:first-of-type, .button:not(.link), .card, .modal>div, .next {
+.page.blog article:first-of-type, .button:not(.link), .card, .modal>div, .next, .message {
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);
 }
 
@@ -578,7 +579,7 @@ section.heading .background {
 
 .store {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     gap: 10px;
 }
 
@@ -587,6 +588,8 @@ section.heading .background {
     background-color: #fff;
     border-radius: .3rem;
     min-height: 6rem;
+    position: relative;
+    z-index: 1;
 }
 
 .card-content {
@@ -597,14 +600,8 @@ section.heading .background {
     margin: 0;
 }
 
-.store .card-content .tags,
-.store .card-content .actions {
-    display: inline-table;
-    width: 49%;
-}
-
 .store .card-content h3 img {
-    width: 32px;
+    height: 32px;
     display: inline-table;
     vertical-align: middle;
 }
@@ -728,6 +725,86 @@ nav ul {
     color: #fff;
     font-weight: 500;
 }
+
+.heading .center {
+    text-align: center;
+}
+
+input[type="text"],input[type="email"],input[type="password"],input[type="search"] {
+    font-size: 21px;
+    padding: 10px;
+    min-width: 510px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    outline: none;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%), 0 1px 0 0 #d7d7d7;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="password"]:focus, 
+input[type="search"]:focus {
+    border-color: #1c71d8;
+    box-shadow: 0 0 13px 0 #2263db66, 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%), 0 1px 0 0 #d7d7d7;
+}
+
+.store-results .card-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0px 0px;
+    grid-template-areas:
+        "title title"
+        "description description"
+        "labels actions";
+    position: relative;
+    overflow: hidden;
+}
+
+.store-results .card-content h3 {
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.store-results .card-content p {
+    grid-area: description;
+}
+
+.store-results .card-content .tags {
+    grid-area: labels;
+}
+
+.store-results .card-content .actions {
+    grid-area: actions;
+    display: flex;
+    gap: 5px;
+}
+
+.store-results .card .card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-position: 0 -10%;
+    background-repeat: no-repeat;
+    filter: blur(40px);
+    opacity: .2;
+    z-index: -1;
+}
+
+.message {
+    border-radius: 4px;
+    margin: 0 0 10px 0;
+}
+
+.card-content .actions a:hover {
+    color: #1c71d8;
+}
+
 
 @media screen and (max-width:745px) {
 
