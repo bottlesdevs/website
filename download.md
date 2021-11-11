@@ -16,15 +16,14 @@ description: Download Bottles for your Linux distribution
          href="https://github.com/bottlesdevs/Bottles/releases/tag/2021.10.14-treviso-2" 
          title="Download Bottles (.AppImage/.deb)">Download</a>
       <a class="button link"
-         href="https://snapcraft.io/bottles" 
-         title="Download Bottles from Snapcraft">Snapcraft</a>
+         href="https://flathub.org/apps/details/com.usebottles.bottles" 
+         title="Download Bottles from Flathub">Flathub</a>
       <div class="more-links">
-        <a href="https://github.com/bottlesdevs/Bottles#build-with-meson-construction_worker">Source code</a> | 
-        <a href="https://flathub.org/apps/details/com.usebottles.bottles">Flathub</a> | 
+        <a href="https://docs.usebottles.com/getting-started/installation#other-packages">Source code</a> | 
         <a href="https://aur.archlinux.org/packages/bottles/">AUR</a> | 
         <a href="https://github.com/bottlesdevs/Bottles/releases/">Deb</a> | 
         <a href="https://github.com/bottlesdevs/Bottles/actions">Unstable</a> | 
-        <a href="https://github.com/bottlesdevs/Bottles#unofficial-packages">Unofficial packages</a>
+        <a href="https://forums.usebottles.com/d/6-list-of-unofficial-packages">Unofficial packages</a>
       </div>
     </div>
   </div>
