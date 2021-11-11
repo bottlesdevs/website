@@ -1,7 +1,7 @@
 {% assign post = include.post %}
 {% assign date = post.date %}
 {% if post.published == true %}
-<article itemscope itemtype="https://schema.org/NewsArticle" class="hasSummary">
+<article itemscope itemtype="https://schema.org/NewsArticle" class="hasSummary m-a">
     {% if post.thumb != nil %}
         <meta itemprop="image" content="{{ post.thumb }}" hidden />
     {% endif %}

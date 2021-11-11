@@ -30,9 +30,9 @@ article .more {
 }
 
 .mdi {
-    position: relative;
-    top: 6px;
-    margin: -9px 0 0 0;
+    /* position: relative; */
+    /* top: 6px; */
+    /* margin: -9px 0 0 0; */
 }
 
 nav {
@@ -45,6 +45,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+    border-bottom: 1px solid #f2f3f3;
 }
 
 nav a>img {
@@ -70,6 +71,20 @@ nav a.button {
     color: #fff;
     border-radius: .3rem;
     display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button.secondary {
+    background-color: #515d70;
+}
+
+.button.secondary:hover {
+    background-color: #434d5c;
+}
+
+.button.secondary:active,.button.secondary:focus {
+    background-color: #353d48;
 }
 
 article .button {
@@ -126,10 +141,13 @@ section p {
 }
 
 section .button {
-    display: inline-block;
+    display: inline-flex;
     font-size: 20px;
-    padding: .8rem 1.5rem;
+    padding: .8rem 1.2rem;
     font-weight: 500;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
 }
 
 section.hero h1 strong {
@@ -256,6 +274,8 @@ table td b {
     padding: .2rem .6rem;
     color: #FFF;
     font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .5px;
 }
 
 span.tag.tag-Fonts {
@@ -512,7 +532,12 @@ section.downloads .container>.image img {
     width: 100%;
 }
 
-.page.blog article:first-of-type, .button:not(.link), .card, .modal>div, .next, .message {
+.page.blog article:first-of-type,
+.button:not(.link),
+.card,
+.modal>div,
+.next,
+.message {
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);
 }
 
@@ -547,10 +572,9 @@ section.heading .background {
 
 .button.icon-slot .mdi {
     background-color: #0000003d;
-    top: 7px;
     padding: 5px;
     width: 30px;
-    margin: -14px 7px 0 0;
+    margin: -8px 0;
     border-top-left-radius: .3rem;
     border-bottom-left-radius: .3rem;
     text-align: center;
@@ -691,6 +715,9 @@ section.heading .background {
 
 .feature-display .description h2 {
     font-size: 2.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 nav ul {
@@ -730,7 +757,10 @@ nav ul {
     text-align: center;
 }
 
-input[type="text"],input[type="email"],input[type="password"],input[type="search"] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
     font-size: 21px;
     padding: 10px;
     min-width: 510px;
@@ -740,9 +770,9 @@ input[type="text"],input[type="email"],input[type="password"],input[type="search
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%), 0 1px 0 0 #d7d7d7;
 }
 
-input[type="text"]:focus, 
-input[type="email"]:focus, 
-input[type="password"]:focus, 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
 input[type="search"]:focus {
     border-color: #1c71d8;
     box-shadow: 0 0 13px 0 #2263db66, 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%), 0 1px 0 0 #d7d7d7;
@@ -803,6 +833,90 @@ input[type="search"]:focus {
 
 .card-content .actions a:hover {
     color: #1c71d8;
+}
+
+.feature-display.invert {
+    flex-direction: row-reverse;
+}
+
+.feature-display.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.feature-display.center .description {
+    text-align: center;
+    max-width: 700px;
+    padding: 0;
+}
+
+.feature-display.has-icon > .mdi {
+    font-size: 5em;
+}
+
+.feature-display.center .description h2 {
+    justify-content: center;
+}
+
+.feature-display .description h2 .mdi {
+    font-size: 1em;
+}
+
+.hero.yellow {
+    background: #f2d6a9;
+}
+
+.hero.yellow .button {
+    background-color: #7c6b50;
+}
+
+.hero.yellow .button:hover {
+    background-color: #726349;
+}
+
+.hero.yellow .tag,
+.hero.yellow .button:active,
+.hero.yellow .button:focus {
+    background-color: #685739;
+}
+
+.hero.blue {
+    background: #c2d9eb;
+}
+
+.hero.blue .button {
+    background-color: #52595e;
+}
+
+.hero.blue .button:hover {
+    background-color: #4b5256;
+}
+
+.hero.blue .tag,
+.hero.blue .button:active,
+.hero.blue .button:focus {
+    background-color: #3f464a;
+}
+
+.hero.orange {
+    background: #f8bea8;
+}
+
+.hero.orange .button {
+    background-color: #a17c6f;
+}
+
+.hero.orange .button:hover {
+    background-color: #8f6d62;
+}
+
+.hero.orange .tag,
+.hero.orange .button:active,
+.hero.orange .button:focus {
+    background-color: #7a5d53;
 }
 
 
@@ -877,14 +991,16 @@ input[type="search"]:focus {
     .feature-display {
         display: block;
     }
-    
+
     .feature-display .description {
         padding: 0 20px;
     }
 }
 
 @media screen and (max-width:860px) {
-    nav, nav ul {
+
+    nav,
+    nav ul {
         text-align: center;
         flex-direction: column;
     }
