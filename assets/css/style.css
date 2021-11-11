@@ -715,8 +715,6 @@ section.heading .background {
 
 .feature-display .description h2 {
     font-size: 2.2em;
-    display: flex;
-    align-items: center;
     gap: 10px;
 }
 
