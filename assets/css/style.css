@@ -27,6 +27,9 @@ article .more {
     font-weight: 500;
     display: block;
     text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .mdi {
@@ -130,7 +133,7 @@ h3 {
 }
 
 section.hero h1 {
-    font-weight: 400;
+    /* font-weight: 400; */
     margin: 0;
     letter-spacing: -.1rem;
     line-height: 1;
