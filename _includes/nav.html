@@ -1,8 +1,9 @@
-<nav>
+<nav id="nav">
   <a class="brand" href="/">
     <img src="{{ site.logo }}" title="Bottles" />
   </a>
-  <ul>
+  <span class="material-icons" id="toggle-menu">menu</span>
+  <ul class="menu">
     {% for item in site.navigation %}
       <li>
         <a href="{{ item.link }}" class="{% if page.url == item.link %}active{% endif %}">{{ item.name }}</a>
@@ -13,3 +14,12 @@
     </li>
   </ul>
 </nav>
+
+
+<script>
+  var toggleMenu = document.getElementById('toggle-menu');
+  var nav = document.getElementById('nav');
+  toggleMenu.addEventListener('click', function() {
+    nav.classList.toggle('show-menu');
+  });
+</script>

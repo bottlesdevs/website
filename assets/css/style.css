@@ -52,12 +52,12 @@ nav a>img {
     max-height: 1.9rem;
 }
 
-nav a,
+.menu a,
 a.button {
     text-decoration: none;
 }
 
-nav a:not(.brand) {
+.menu a {
     padding: .4rem .1rem;
     margin: 0 .4rem;
     font-size: 15px;
@@ -83,7 +83,8 @@ nav a.button {
     background-color: #434d5c;
 }
 
-.button.secondary:active,.button.secondary:focus {
+.button.secondary:active,
+.button.secondary:focus {
     background-color: #353d48;
 }
 
@@ -718,7 +719,7 @@ section.heading .background {
     gap: 10px;
 }
 
-nav ul {
+.menu {
     display: flex;
     list-style: none;
     align-items: center;
@@ -851,7 +852,7 @@ input[type="search"]:focus {
     padding: 0;
 }
 
-.feature-display.has-icon > .mdi {
+.feature-display.has-icon>.mdi {
     font-size: 5em;
 }
 
@@ -917,8 +918,21 @@ input[type="search"]:focus {
     background-color: #7a5d53;
 }
 
+#toggle-menu {
+    display: none;
+}
+
+.show-menu #toggle-menu {
+    color: #1c71d8;
+}
+
 
 @media screen and (max-width:745px) {
+    #toggle-menu {
+        display: block;
+        grid-area: menu-icon;
+        text-align: right;
+    }
 
     .container.small,
     .container.medium,
@@ -987,18 +1001,45 @@ input[type="search"]:focus {
     .feature-display .description {
         padding: 0 20px;
     }
+
+    .menu {
+        padding: 10px;
+        border-radius: .3rem;
+        background-color: #f8f7f7;
+        flex-direction: column;
+        grid-area: menu;
+        display: none;
+    }
 }
 
 @media screen and (max-width:860px) {
 
-    nav,
-    nav ul {
+    nav {
         text-align: center;
-        flex-direction: column;
+        max-width: initial;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 10px 0;
+        grid-template-areas:
+            "brand menu-icon"
+            "menu menu";
+        padding: 1rem 2rem .2rem;
     }
 
     nav a.brand {
         float: none;
+        display: block;
+        grid-area: brand;
+        text-align: left;
+    }
+
+    nav.show-menu {
+        grid-template-rows: 0.1fr 1.9fr;
+        padding: 1rem 2rem;
+    }
+
+    nav.show-menu .menu {
         display: block;
     }
 }
@@ -1009,11 +1050,12 @@ input[type="search"]:focus {
     nav a.button {
         /* display: block; */
         margin: 1rem 0 0 0;
+        display: inline-flex;
     }
 }
 
 @media screen and (max-width:626px) {
-    nav a {
+    .menu a {
         display: block;
     }
 }
