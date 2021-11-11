@@ -980,12 +980,6 @@ input[type="search"]:focus {
         display: initial;
     }
 
-    .button.icon-slot .mdi {
-        background-color: initial;
-        top: 6px;
-        padding: 0;
-    }
-
     .feature-display {
         display: block;
     }
@@ -1013,8 +1007,8 @@ input[type="search"]:focus {
 
     .button,
     nav a.button {
-        display: block;
-        margin: 1rem 0 0 0
+        /* display: block; */
+        margin: 1rem 0 0 0;
     }
 }
 
