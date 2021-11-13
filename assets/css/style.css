@@ -940,8 +940,38 @@ input[type="search"]:focus {
 
 .grid-pics img:hover {transform: scale(1.5);z-index: 1;}
 
+.splitter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card.panel {
+    padding: 1.8rem 2rem;
+}
+
+.card.panel p {
+    line-height: 26px;
+}
+
+.card.panel h3 {
+    margin: 0;
+}
+
+.panel.funding {
+    background: #f2d6a9;
+}
+
+.panel.support {
+    background-color: #c2d9eb;
+}
+
 
 @media screen and (max-width:745px) {
+    .splitter {
+        display: flex;
+        flex-direction: column;
+    }
     .grid-pics {
         display: flex;
         flex-direction: column;
