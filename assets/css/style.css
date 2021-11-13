@@ -938,7 +938,10 @@ input[type="search"]:focus {
     gap: 10px;
 }
 
-.grid-pics img:hover {transform: scale(1.5);z-index: 1;}
+.grid-pics img:hover {
+    transform: scale(1.5);
+    z-index: 1;
+}
 
 .splitter {
     display: grid;
@@ -972,11 +975,12 @@ input[type="search"]:focus {
         display: flex;
         flex-direction: column;
     }
+
     .grid-pics {
         display: flex;
         flex-direction: column;
     }
-    
+
     #toggle-menu {
         display: block;
         grid-area: menu-icon;
