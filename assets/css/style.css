@@ -14,7 +14,8 @@ body {
 a,
 button,
 .modal,
-input {
+input,
+.grid-pics img {
     transition: all .2s ease-in-out
 }
 
@@ -349,6 +350,7 @@ mark {
     margin: 0 auto;
     position: relative;
     display: block;
+    transform: scale(1);
 }
 
 pre>code {
@@ -541,7 +543,8 @@ section.downloads .container>.image img {
 .card,
 .modal>div,
 .next,
-.message {
+.message,
+img.shadow {
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);
 }
 
@@ -929,8 +932,21 @@ input[type="search"]:focus {
     color: #1c71d8;
 }
 
+.grid-pics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-pics img:hover {transform: scale(1.5);z-index: 1;}
+
 
 @media screen and (max-width:745px) {
+    .grid-pics {
+        display: flex;
+        flex-direction: column;
+    }
+    
     #toggle-menu {
         display: block;
         grid-area: menu-icon;
