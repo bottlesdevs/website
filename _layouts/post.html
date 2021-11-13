@@ -7,13 +7,13 @@ layout: default
     {% endif %}
     <section class="heading center">
         {% if page.background != nil %}
-            <div class="background" 
+            <div class="background"
                  style="background-image: url({{ page.background }})"></div>
         {% endif %}
         <div class="container medium">
             <h1 itemprop="headline">{{ page.title }}</h1>
             <p>
-                <time itemprop="datePublished" 
+                <time itemprop="datePublished"
                       datetime="{{ page.date | date:"%Y-%m-%d" }}"
                       content="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%a, %b %e, %Y" }}</time>
             </p>
@@ -45,12 +45,18 @@ layout: default
     </section>
 </article>
 
-<script>
-    (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://bottles-1.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% if page.is_release_day_color != nil %}
+    <script>
+        function hexToRgb(hex) {
+            var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}`;
+        }
+
+        var rgb = hexToRgb('{{ page.is_release_day_color }}');
+        var startColor = `rgba(${rgb}, 0.1)`;
+        var endColor = `rgba(${rgb}, 0.3)`;
+
+        var el = document.getElementsByClassName('heading')[0];
+        el.style.background = `linear-gradient(120deg, ${startColor} 0%, ${endColor} 100%)`;
+    </script>
+{% endif %}>
