@@ -170,7 +170,6 @@ footer p {
     color: #666;
 }
 
-
 section.hero.dark {
     background-color: #313131;
     color: #fff;
@@ -788,10 +787,7 @@ input[type="search"]:focus {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     gap: 0px 0px;
-    grid-template-areas:
-        "title title"
-        "description description"
-        "labels actions";
+    grid-template-areas: "title title""description description""labels actions";
     position: relative;
     overflow: hidden;
 }
@@ -969,8 +965,7 @@ input[type="search"]:focus {
     background-color: #ddc2eb;
 }
 
-
-@media screen and (max-width:745px) {
+@media screen and (max-width: 745px) {
     .splitter {
         display: flex;
         flex-direction: column;
@@ -991,6 +986,7 @@ input[type="search"]:focus {
     .container.medium,
     .container.large {
         max-width: initial;
+        padding: 1rem;
     }
 
     section.heading {
@@ -1063,10 +1059,20 @@ input[type="search"]:focus {
         grid-area: menu;
         display: none;
     }
+
+    input.store-search {
+        min-width: initial;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .store {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-@media screen and (max-width:860px) {
-
+@media screen and (max-width: 860px) {
     nav {
         text-align: center;
         max-width: initial;
@@ -1074,9 +1080,7 @@ input[type="search"]:focus {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         gap: 10px 0;
-        grid-template-areas:
-            "brand menu-icon"
-            "menu menu";
+        grid-template-areas: "brand menu-icon""menu menu";
         padding: 1rem 2rem .2rem;
     }
 
@@ -1097,7 +1101,7 @@ input[type="search"]:focus {
     }
 }
 
-@media screen and (max-width:751px) {
+@media screen and (max-width: 751px) {
 
     .button,
     nav a.button {
@@ -1107,7 +1111,7 @@ input[type="search"]:focus {
     }
 }
 
-@media screen and (max-width:626px) {
+@media screen and (max-width: 626px) {
     .menu a {
         display: block;
     }
