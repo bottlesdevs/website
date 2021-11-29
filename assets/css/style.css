@@ -441,7 +441,7 @@ nav a.active {
 footer .icon {
     position: relative;
     top: .15em;
-    z-index: -1;
+    z-index: 1;
 }
 
 section.page.blog article:first-of-type {
