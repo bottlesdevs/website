@@ -7,6 +7,10 @@ description: Understanding how Bottles uses cookies
   <div class="container large">
     <h1>Cookies</h1>
     <p>Understanding how Bottles uses cookies to improve the user experience.</p>
+    <div class="warning">
+      <p>This page refer only to the Bottles website, not the application. We
+        do not collect any data from the application.</p>
+    </div>
   </div>
 </section>
 
