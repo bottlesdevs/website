@@ -14,23 +14,38 @@
 <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
 
-<!-- Start Open Web Analytics Tracker -->
-<script type="text/javascript">
-//<![CDATA[
-var owa_baseUrl = 'https://data.fabricators.ltd/';
-var owa_cmds = owa_cmds || [];
-owa_cmds.push(['setSiteId', 'aa5ae723b33d61e517ab4250f175c2a4']);
-owa_cmds.push(['trackPageView']);
-owa_cmds.push(['trackClicks']);
+<script type='text/javascript'>
+  //some default pre init
+  var Countly = Countly || {};
+  Countly.q = Countly.q || [];
+  
+  //provide countly initialization parameters
+  Countly.app_key = '8f93def849839a0ac49613dc72d3754d883e8723';
+  Countly.url = 'https://analytics.fabricators.ltd';
+  
+  Countly.q.push(['track_sessions']);
+  Countly.q.push(['track_pageview']);
+  Countly.q.push(['track_clicks']);
+  Countly.q.push(['track_scrolls']);
+  Countly.q.push(['track_errors']);
+  Countly.q.push(['track_links']);
+  
+  //load countly script asynchronously
+  (function() {
+     var cly = document.createElement('script'); cly.type = 'text/javascript';
+     cly.async = true;
+     //enter url of script here
+     cly.src = 'https://analytics.fabricators.ltd/sdk/web/countly.min.js';
+     cly.onload = function(){Countly.init()};
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cly, s);
+  })();
+  </script>
 
-(function() {
-    var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
-    owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
-    _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
-    var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
-}());
-//]]>
-</script>
-<!-- End Open Web Analytics Code -->
+  <script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.0.0/cookie-consent.js" charset="UTF-8"></script>
+  <script type="text/javascript" charset="UTF-8">
+  document.addEventListener('DOMContentLoaded', function () {
+  cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"light","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"website_name":"usebottles.com"});
+  });
+  </script>
 
-        
+  <noscript>Cookie Consent by <a href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/" rel="nofollow noopener">Free Privacy Policy website</a></noscript>
