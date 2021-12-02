@@ -41,11 +41,37 @@
   })();
   </script>
 
-  <script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.0.0/cookie-consent.js" charset="UTF-8"></script>
-  <script type="text/javascript" charset="UTF-8">
-  document.addEventListener('DOMContentLoaded', function () {
-  cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"light","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"website_name":"usebottles.com"});
-  });
-  </script>
+<div class="cookies-panel">
+  <div class="container large">
+    <div class="text">
+      <p>This website uses cookies to ensure you get the best experience on our website. <a href="/cookies">Find out more</a></p>
+    </div>
+    <div class="actions">
+      <button class="button link" id="cookie_decline">Decline</button>
+      <button class="button" id="cookie_accept">Accept</button>
+    </div>
+  </div>
+</div>
 
-  <noscript>Cookie Consent by <a href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/" rel="nofollow noopener">Free Privacy Policy website</a></noscript>
+<script>
+  var cookie_accept = document.getElementById("cookie_accept");
+  var cookie_decline = document.getElementById("cookie_decline");
+  var cookies_panel = document.getElementsByClassName("cookies-panel")[0];
+
+  if (document.cookie.indexOf("cookies=accepted") > -1) {
+    cookies_panel.style.display = "none";
+  }
+
+  cookie_accept.addEventListener("click", function() {
+    document.cookie = "cookies=accepted; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    cookies_panel.style.display = "none";
+    Countly.q.push(['track_accept_cookies']);
+  });
+  cookie_decline.addEventListener("click", function() {
+    document.cookie = "cookies=declined; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    cookies_panel.style.display = "none";
+    Countly.q.push(['track_event', 'cookies', 'declined']);
+  });
+
+
+</script>

@@ -965,6 +965,40 @@ input[type="search"]:focus {
     background-color: #ddc2eb;
 }
 
+.cookies-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #282c32;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.cookies-panel p {
+    margin: 0;
+}
+
+.cookies-panel .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.cookies-panel .actions {
+    display: flex;
+}
+
+.cookies-panel .actions .button {
+    border: 0;
+    cursor: pointer;
+}
+
+.cookies-panel,.cookies-panel a,.cookies-panel .link {
+    color: #fff;
+}
+
 @media screen and (max-width: 745px) {
     .splitter {
         display: flex;
