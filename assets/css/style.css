@@ -920,6 +920,24 @@ input[type="search"]:focus {
     background-color: #7a5d53;
 }
 
+.hero.green {
+    background: #c9e7c9;
+}
+
+.hero.green .button {
+    background-color: #5b8e5b;
+}
+
+.hero.green .button:hover {
+    background-color: #527a52;
+}
+
+.hero.green .tag,
+.hero.green .button:active,
+.hero.green .button:focus {
+    background-color: #4a6e4a;
+}
+
 #toggle-menu {
     display: none;
 }
