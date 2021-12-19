@@ -59,7 +59,6 @@
     document.cookie = "cookies=accepted; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
     cookies_panel.style.display = "none";
     Countly.q.push(['track_sessions']);
-    Countly.q.push(['track_pageview']);
     Countly.q.push(['track_clicks']);
     Countly.q.push(['track_scrolls']);
     Countly.q.push(['track_errors']);
@@ -68,5 +67,6 @@
   cookie_decline.addEventListener("click", function() {
     document.cookie = "cookies=declined; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
     cookies_panel.style.display = "none";
+    Countly.q.push(['track_pageview']);
   });
 </script>
