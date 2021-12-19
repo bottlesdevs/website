@@ -22,14 +22,7 @@
   //provide countly initialization parameters
   Countly.app_key = '8f93def849839a0ac49613dc72d3754d883e8723';
   Countly.url = 'https://analytics.fabricators.ltd';
-  
-  Countly.q.push(['track_sessions']);
-  Countly.q.push(['track_pageview']);
-  Countly.q.push(['track_clicks']);
-  Countly.q.push(['track_scrolls']);
-  Countly.q.push(['track_errors']);
-  Countly.q.push(['track_links']);
-  
+   
   //load countly script asynchronously
   (function() {
      var cly = document.createElement('script'); cly.type = 'text/javascript';
@@ -65,11 +58,15 @@
   cookie_accept.addEventListener("click", function() {
     document.cookie = "cookies=accepted; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
     cookies_panel.style.display = "none";
-    Countly.q.push(['track_accept_cookies']);
+    Countly.q.push(['track_sessions']);
+    Countly.q.push(['track_pageview']);
+    Countly.q.push(['track_clicks']);
+    Countly.q.push(['track_scrolls']);
+    Countly.q.push(['track_errors']);
+    Countly.q.push(['track_links']);
   });
   cookie_decline.addEventListener("click", function() {
     document.cookie = "cookies=declined; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
     cookies_panel.style.display = "none";
-    Countly.q.push(['track_event', 'cookies', 'declined']);
   });
 </script>
