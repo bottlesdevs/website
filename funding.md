@@ -67,6 +67,10 @@ title: Funding
     <br />
     <h3>Thanks to them who made a donation or became our GitHub sponsor 💖!</h3>
     <ul>
+      <li>Dan G</li>
+      <li>Anton Alexandrenok</li>
+      <li>Kamil Páral</li>
+      <li>Stéphane Travostino</li>
       <li>davebrny</li>
       <li>Joel S.</li>
       <li>Daniel Rusek</li>
