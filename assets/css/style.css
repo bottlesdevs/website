@@ -168,6 +168,8 @@ footer p {
     letter-spacing: .03rem;
     font-weight: 400;
     color: #666;
+    font-size: 18px;
+    line-height: 29px;
 }
 
 section.hero.dark {
@@ -1013,11 +1015,68 @@ input[type="search"]:focus {
     cursor: pointer;
 }
 
-.cookies-panel,.cookies-panel a,.cookies-panel .link {
+.cookies-panel,
+.cookies-panel a,
+.cookies-panel .link {
     color: #fff;
 }
 
+footer .grid {
+    display: grid;
+    text-align: initial;
+    gap: 30px;
+}
+
+footer .grid.cols-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+footer section ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+footer section ul li {
+    display: block;
+}
+
+footer section h4 {
+    font-size: 21px;
+    margin: 0;
+}
+
+footer section p {
+    margin: 0 0 8px 0;
+}
+
+footer section {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #d9d9d9;
+}
+
+hr.spacer {
+    margin: 3rem 0;
+}
+
 @media screen and (max-width: 745px) {
+    footer .grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 6rem 2rem;
+    }
+
     .splitter {
         display: flex;
         flex-direction: column;
