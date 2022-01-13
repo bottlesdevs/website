@@ -10,10 +10,10 @@ description: Download Bottles for your Linux distribution
       <img src="https://raw.githubusercontent.com/bottlesdevs/Bottles/master/screenshot.png" />
     </div>
     <div class="info">
-      <h2>Bottles Treviso</h2>
+      <h2>Bottles Trento</h2>
       <p>Download the third major version of Bottles <small>(.AppImage/.deb)</small></p>
       <a class="button" 
-         href="https://github.com/bottlesdevs/Bottles/releases/tag/2021.12.28-treviso" 
+         href="https://github.com/bottlesdevs/Bottles/releases/tag/2022.1.14-trento" 
          title="Download Bottles (.AppImage/.deb)">Download</a>
       <a class="button link"
          href="https://flathub.org/apps/details/com.usebottles.bottles" 
