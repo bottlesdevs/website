@@ -239,7 +239,7 @@ section.heading h1 {
     max-width: 58rem;
 }
 
-.container.large {
+.container.large,.container-lg {
     max-width: 78rem;
 }
 
