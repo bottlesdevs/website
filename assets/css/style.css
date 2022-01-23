@@ -226,7 +226,8 @@ section.heading h1 {
     margin: 2rem 0 0;
 }
 
-.container {
+.container,
+.container-lg {
     margin: 0 auto;
     padding: 2rem;
 }
@@ -239,7 +240,8 @@ section.heading h1 {
     max-width: 58rem;
 }
 
-.container.large,.container-lg {
+.container.large,
+.container-lg {
     max-width: 78rem;
 }
 
