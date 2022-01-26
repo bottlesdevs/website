@@ -67,6 +67,8 @@ title: Funding
     <br />
     <h3>Thanks to them who made a donation or became our GitHub sponsor 💖!</h3>
     <ul>
+      <li>Knebergish</li>
+      <li>destinatorM</li>
       <li>gbtb</li>
       <li>Luke Kaalim</li>
       <li>Daniel Rusek</li>
