@@ -7,8 +7,8 @@ title: Dependencies for software compatibility in Bottles
 		<h1>Installers Database</h1>
 		<p>Repository for programs installation in Bottles</p>
 		<div class="warning">
-			<p>The installer manager is an experimental feature and populating this
-				databases is not our priority until it reaches a stable release.</p>
+			<p>This functionality is new and we are still populating the database. 
+      Do you want to <a href="https://maintainers.usebottles.com">contribute</a>?</p>
 		</div>
 	</div>
 </section>
