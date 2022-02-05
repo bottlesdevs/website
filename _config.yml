@@ -23,13 +23,15 @@ defaults:
 
 navigation:
     - link: "https://docs.usebottles.com/"
-      name: 📕 Documentation
+      name: 📕 Docs
     - link: "https://github.com/bottlesdevs/Bottles/issues/new/choose"
       name: Bug report
     - link: "https://hosted.weblate.org/engage/bottles/"
       name: Help translating
     - link: "https://github.com/bottlesdevs/"
       name: 🚀 GitHub
+    - link: "/appstore/"
+      name: Apps
     - link: "/database/"
       name: Database
     - link: "/blog/"

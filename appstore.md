@@ -13,7 +13,8 @@ title: AppStore
 <section class="page">
   <div class="container large">
     <div class="warning">
-      <p>This AppStore as the installer feature, is in early development.</p>
+			<p>This functionality is new and we are still populating the database. 
+      Do you want to <a href="https://maintainers.usebottles.com">contribute</a>?</p>
     </div>
     <br />
     <div class="store store-results">
