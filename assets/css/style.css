@@ -216,6 +216,7 @@ section.heading {
 .warning {
     background-color: #ffebb0;
     padding: 1rem;
+    border-radius: 4px;
 }
 
 .warning p {
@@ -277,9 +278,9 @@ table td b {
 }
 
 .tag {
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #242424;
-    padding: .2rem .6rem;
+    padding: 3px 8px;
     color: #FFF;
     font-size: 14px;
     font-weight: 500;
@@ -547,7 +548,8 @@ section.downloads .container>.image img {
 .modal>div,
 .next,
 .message,
-img.shadow {
+img.shadow,
+.dropdown>ul {
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);
 }
 
@@ -617,8 +619,13 @@ section.heading .background {
     gap: 10px;
 }
 
+.dropdown .toggler {
+    cursor: pointer;
+}
+
 .card,
-.modal>div {
+.modal>div,
+.dropdown>ul {
     background-color: #fff;
     border-radius: .3rem;
     min-height: 6rem;
@@ -647,7 +654,8 @@ section.heading .background {
 .card-content .actions a {
     padding: 0 0 0 1rem;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
+    display: flex;
 }
 
 .modal {
@@ -791,9 +799,12 @@ input[type="search"]:focus {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     gap: 0px 0px;
-    grid-template-areas: "title title""description description""labels actions";
-    position: relative;
-    overflow: hidden;
+    grid-template-areas:
+        "title title"
+        "description description"
+        "labels actions";
+    /* position: relative; */
+    /* overflow: hidden; */
 }
 
 .store-results .card-content h3 {
@@ -809,12 +820,17 @@ input[type="search"]:focus {
 
 .store-results .card-content .tags {
     grid-area: labels;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
 }
 
 .store-results .card-content .actions {
     grid-area: actions;
     display: flex;
     gap: 5px;
+    align-items: center;
 }
 
 .store-results .card .card-bg {
@@ -1085,6 +1101,89 @@ hr.spacer {
 
 .grid-pics.layout-1-2 img:nth-child(3) {
     grid-area: 2 / 2 / 3 / 3;
+}
+
+span.tag.grade-Gold {
+    background-color: #f2edde;
+    color: #8d7637;
+    border: 1px solid #d3b352;
+}
+
+span.tag.grade-Silver {
+    background-color: #cdcdcd;
+    color: #000000;
+    border: 1px solid #ababab;
+}
+
+span.tag.grade-Bronze {
+    background-color: #dbbfa3;
+    color: #442700;
+    border: 1px solid #d79b4b;
+}
+
+span.tag.grade-Platinum {
+    background-color: #ebebeb;
+    color: #2a2a2a;
+    border: 1px solid #c5c5c5;
+}
+
+.store .card {
+    border: 1px solid #0000000f;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filters span.tag {
+    cursor: pointer;
+}
+
+.filters span.tag:not(.active) {
+    opacity: 0.5;
+}
+
+.dropdown ul {
+    display: none;
+    position: absolute;
+    z-index: 000;
+    top: 28px;
+    right: 0;
+}
+
+.dropdown.show ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+    padding: 5px 0 0 0;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.store .card .dropdown {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+}
+
+.dropdown.show ul li a {
+    padding: 9px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.dropdown.show ul li a:hover {
+    background-color: #eeeff0;
 }
 
 @media screen and (max-width: 745px) {

@@ -17,6 +17,14 @@ title: AppStore
       Do you want to <a href="https://maintainers.usebottles.com">contribute</a>?</p>
     </div>
     <br />
+    <div class="filters">
+      <span class="tag grade-all active" grade="All">All</span>
+      <span class="tag grade-Platinum" grade="Platinum">Platinum</span>
+      <span class="tag grade-Gold" grade="Gold">Gold</span>
+      <span class="tag grade-Silver" grade="Silver">Silver</span>
+      <span class="tag grade-Bronze" grade="Bronze">Bronze</span>
+    </div>
+    <br />
     <div class="store store-results">
     </div>
   </div>
@@ -40,6 +48,27 @@ title: AppStore
         card.style.display = 'none';
       }
     }
+  });
+
+  document.querySelectorAll('.filters .tag').forEach(function(tag) {
+    tag.addEventListener('click', function(e) {
+      var grade = this.getAttribute('grade');
+      document.querySelectorAll('.filters .tag').forEach(function(tag) {
+        tag.classList.remove('active');
+      });
+      this.classList.add('active');
+      document.querySelectorAll('.store .card').forEach(function(card) {
+        if (grade == 'All') {
+          card.style.display = 'block';
+        } else {
+          if (card.getAttribute('grade') == grade) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    });
   });
   
   function modal(url) {
@@ -73,6 +102,24 @@ title: AppStore
     modal[0].classList.remove('show');
   }
 
+  document.addEventListener('keyup', function(e) {
+    if (e.keyCode == 27) {
+      modal_close();
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal')) {
+      modal_close();
+    }
+  });
+
+  document.addEventListener('click', e => {
+    if (e.target.closest('.toggler')) {
+      e.target.closest('.dropdown').classList.toggle('show');
+    }
+  });
+
   var store = document.getElementsByClassName("store");
   document.addEventListener("DOMContentLoaded", function () {
     fetch('https://raw.githubusercontent.com/bottlesdevs/programs/main/index.yml')
@@ -83,29 +130,41 @@ title: AppStore
         for (var item in data) {
           installer = data[item];
           icon = `https://github.com/bottlesdevs/programs/blob/main/data/${item}/${installer["Icon"]}?raw=true`;
-          var card = `<div class="card">
+          var card = `<div class="card" grade="${installer["Grade"]}">
             <div class="card-content">
               <div class="card-bg" style="background-image: url(${icon})"></div>
               <h3>
                 <img src="${icon}" alt="${item}" />
                 ${installer["Name"]}
               </h3>
+              <div class="dropdown">
+                <div class="toggler">
+                  <span class="material-icons">expand_more</span>
+                </div>
+                <ul>
+                  <li>
+                    <a href='https://github.com/bottlesdevs/programs/issues/new/choose' title='Bug report'>
+                      <span class="material-icons">bug_report</span> <span>Bug report</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a onclick='modal("https://raw.githubusercontent.com/bottlesdevs/programs/main/${installer["Category"]}/${item}.yml")' title='Show installer'>
+                      <span class="material-icons">code</span> <span>Show installer</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
               <p>${installer["Description"]}</p>
               <div class="tags">
+                <span class="tag grade-${installer["Grade"]}">${installer["Grade"]}</span>
                 <span class="tag tag-${installer["Category"]}">${installer["Category"]}</span>
               </div>
               <div class="actions">
-                <a onclick='modal("https://raw.githubusercontent.com/bottlesdevs/programs/main/${installer["Category"]}/${item}.yml")' title='Show installer'>
-                  <span class="material-icons">code</span>
-                </a>
-                <a href='https://github.com/bottlesdevs/programs/issues/new/choose' title='Report problem'>
-                  <span class="material-icons">bug_report</span>
-                </a>
                 <a href='https://github.com/bottlesdevs/programs/blob/main/Reviews/${item}.md' title='Read review'>
-                  <span class="material-icons">book</span>
+                  <span class="material-icons-outlined">article</span>
                 </a>
                 <a href='https://docs.usebottles.com/bottles/installers#use-installers' title='How to install'>
-                  <span class="material-icons">download</span>
+                  <span class="material-icons-outlined">download</span> Install
                 </a>
               </div>
             </div>
