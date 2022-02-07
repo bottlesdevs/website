@@ -31,7 +31,8 @@ title: AppStore
 </section>
 
 <div class="modal" id="modal_installer"></div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<div class="modal" id="modal_review"></div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/obsidian.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/yaml.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
@@ -96,15 +97,24 @@ title: AppStore
     });
   }
 
-
   function modal_close() {
-    var modal = document.getElementsByClassName('modal');
-    modal[0].classList.remove('show');
+    var modals = document.getElementsByClassName('modal');
+    for (var i = 0; i < modals.length; i++) {
+      modals[i].classList.remove('show');
+    }
+  }
+
+  function dropdown_reset() {
+    var dropdowns = document.getElementsByClassName('dropdown');
+    for (var i = 0; i < dropdowns.length; i++) {
+      dropdowns[i].classList.remove('show');
+    }
   }
 
   document.addEventListener('keyup', function(e) {
     if (e.keyCode == 27) {
       modal_close();
+      dropdown_reset();
     }
   });
 
@@ -112,9 +122,6 @@ title: AppStore
     if (e.target.classList.contains('modal')) {
       modal_close();
     }
-  });
-
-  document.addEventListener('click', e => {
     if (e.target.closest('.toggler')) {
       e.target.closest('.dropdown').classList.toggle('show');
     }

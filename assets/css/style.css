@@ -55,6 +55,9 @@ nav {
 nav a>img {
     max-height: 1.9rem;
 }
+.modal code {
+    border-radius: .3rem;
+}
 
 .menu a,
 a.button {
@@ -656,6 +659,7 @@ section.heading .background {
     cursor: pointer;
     text-decoration: none;
     display: flex;
+    align-items: center;
 }
 
 .modal {
@@ -664,8 +668,8 @@ section.heading .background {
     left: 0;
     bottom: 0;
     right: 0;
-    background: #e6e8ef99;
-    backdrop-filter: blur(1px);
+    background: #2c2e3299;
+    backdrop-filter: blur(3px);
     visibility: hidden;
     opacity: 0;
     z-index: 9;
