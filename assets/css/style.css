@@ -1441,6 +1441,10 @@ section.heading.no-bg {
     nav.show-menu .menu {
         display: block;
     }
+
+    img.icon {
+        width: 32px;
+    }
 }
 
 @media screen and (max-width: 751px) {
