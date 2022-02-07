@@ -15,7 +15,7 @@ title: Dependencies, resources and software installers for Bottles
 
 <section class="page">
   <div class="container large">
-    <ul class="cards list inline has-hover">
+    <ul class="cards inline has-hover">
       <li class="link">
         <a href="/database/dependencies">Dependencies Database</a>
       </li>
