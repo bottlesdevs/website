@@ -1290,6 +1290,12 @@ section.heading.no-bg {
     font-size: 36px;
 }
 
+.button.small {
+    font-size: 15px;
+    padding: 0;
+    justify-content: start;
+}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;

@@ -30,6 +30,9 @@ title: AppStore
             checked by our maintainers and do not contain viruses. However, 
             they may be subject to copyright or licenses of different types, 
             including proprietary ones.</small>
+            <hr />
+            <a class="button small link" href="#" id="app_winedb" target="_blank">More info on WineDB</a>
+            <a class="button small link" href="#" id="app_protondb" target="_blank">More info on ProtonDB</a>
         </aside>
         <section>
             <p>This installer require a <b id="app_arch_req"></b> bottle to works.
@@ -128,6 +131,8 @@ title: AppStore
                 } else {
                     document.getElementById('app_review').setAttribute('disabled', 'disabled');
                 }
+                document.getElementById('app_winedb').setAttribute('href', `https://www.winehq.org/search?q=${entry['Name']}`);
+                document.getElementById('app_protondb').setAttribute('href', `https://www.protondb.com/search?q=${entry['Name']}`);
                 document.getElementById('app_arch_req').innerHTML = architectures[entry['Arch']];
                 document.getElementById('app_grade_ex').innerHTML = app['Grade'];
                 document.getElementById('app_grade_description').innerHTML = grade_descriptions[app['Grade']];
