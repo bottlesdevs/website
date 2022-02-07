@@ -19,10 +19,10 @@ title: AppStore
   <div class="container large">
     <div class="app-details">
         <aside>
-            <a href="#" class="button" id="app_download">
+            <a href="https://docs.usebottles.com/bottles/installers#use-installers" class="button" id="app_download">
                 <span class="mdi material-icons-outlined">file_download</span> How to install
             </a>
-            <a href="#" class="button secondary" id="app_review">
+            <a class="button secondary" id="app_review">
                 <span class="mdi material-icons-outlined">auto_stories</span> Read review
             </a>
             <small>Bottles does not re-distribute or host the files but just 
@@ -54,9 +54,11 @@ title: AppStore
 <div class="modal" id="modal_installer"></div>
 <div class="modal" id="modal_review"></div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/obsidian.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/yaml.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="/assets/js/store-common.js"></script>
 <script>
     var architectures = {
         "win64": "64-bit",
@@ -86,56 +88,6 @@ title: AppStore
         }
         location.reload();
     };
-    function modal(url) {
-        var modal = document.getElementsByClassName('modal');
-        fetch(url).then(function (response) {
-            return response.text().then(function (text) {
-            var data =
-                modal[0].innerHTML = `<div>
-                <pre><code class="language-yaml">${text}</code></pre>
-                <div class="actions">
-                    <a class="button icon-slot" onclick="modal_close()">
-                    <span class="mdi material-icons">close</span>
-                    Close
-                    </a>
-                    <a class="button icon-slot" href="https://github.com/bottlesdevs/programs">
-                    <span class="mdi material-icons">create</span>
-                    Edit
-                    </a>
-                </div>`;
-            modal[0].classList.add('show');
-            hljs.highlightAll();
-            }).catch(function (err) {
-            console.log(err);
-            });
-        });
-    }
-    function modal_close() {
-        var modals = document.getElementsByClassName('modal');
-        for (var i = 0; i < modals.length; i++) {
-            modals[i].classList.remove('show');
-        }
-    }
-    function dropdown_reset() {
-        var dropdowns = document.getElementsByClassName('dropdown');
-        for (var i = 0; i < dropdowns.length; i++) {
-            dropdowns[i].classList.remove('show');
-        }
-    }
-    document.addEventListener('keyup', function(e) {
-        if (e.keyCode == 27) {
-            modal_close();
-            dropdown_reset();
-        }
-    });
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('modal')) {
-            modal_close();
-        }
-        if (e.target.closest('.toggler')) {
-            e.target.closest('.dropdown').classList.toggle('show');
-        }
-    });
     function resourceExists(url) {
         var http = new XMLHttpRequest();
         http.open('HEAD', url, false);
@@ -170,7 +122,9 @@ title: AppStore
                     <span class="tag tag-${entry['Arch']}">${entry['Arch']}</span>
                 `;
                 if (resourceExists(review)) {
-                    document.getElementById('app_review').setAttribute('href', review);
+                    document.getElementById('app_review').onclick = function() {
+                        modal(review, markdown=true);
+                    }
                 } else {
                     document.getElementById('app_review').setAttribute('disabled', 'disabled');
                 }

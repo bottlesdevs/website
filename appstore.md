@@ -36,6 +36,7 @@ title: AppStore
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/yaml.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="/assets/js/store-common.js"></script>
 <script>
   document.querySelector('.store-search').addEventListener('keyup', function(e) {
     var search = this.value.toLowerCase();
@@ -50,7 +51,6 @@ title: AppStore
       }
     }
   });
-
   document.querySelectorAll('.filters .tag').forEach(function(tag) {
     tag.addEventListener('click', function(e) {
       var grade = this.getAttribute('grade');
@@ -71,62 +71,6 @@ title: AppStore
       });
     });
   });
-  
-  function modal(url) {
-    var modal = document.getElementsByClassName('modal');
-    fetch(url).then(function (response) {
-      return response.text().then(function (text) {
-        var data =
-          modal[0].innerHTML = `<div>
-            <pre><code class="language-yaml">${text}</code></pre>
-            <div class="actions">
-              <a class="button icon-slot" onclick="modal_close()">
-                <span class="mdi material-icons">close</span>
-                Close
-              </a>
-              <a class="button icon-slot" href="https://github.com/bottlesdevs/programs">
-                <span class="mdi material-icons">create</span>
-                Edit
-              </a>
-            </div>`;
-        modal[0].classList.add('show');
-        hljs.highlightAll();
-      }).catch(function (err) {
-        console.log(err);
-      });
-    });
-  }
-
-  function modal_close() {
-    var modals = document.getElementsByClassName('modal');
-    for (var i = 0; i < modals.length; i++) {
-      modals[i].classList.remove('show');
-    }
-  }
-
-  function dropdown_reset() {
-    var dropdowns = document.getElementsByClassName('dropdown');
-    for (var i = 0; i < dropdowns.length; i++) {
-      dropdowns[i].classList.remove('show');
-    }
-  }
-
-  document.addEventListener('keyup', function(e) {
-    if (e.keyCode == 27) {
-      modal_close();
-      dropdown_reset();
-    }
-  });
-
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('modal')) {
-      modal_close();
-    }
-    if (e.target.closest('.toggler')) {
-      e.target.closest('.dropdown').classList.toggle('show');
-    }
-  });
-
   var store = document.getElementsByClassName("store");
   document.addEventListener("DOMContentLoaded", function () {
     fetch('https://raw.githubusercontent.com/bottlesdevs/programs/main/index.yml')
@@ -169,9 +113,6 @@ title: AppStore
                 <span class="tag tag-${installer["Category"]}">${installer["Category"]}</span>
               </div>
               <div class="actions">
-                <a href='https://github.com/bottlesdevs/programs/blob/main/Reviews/${item}.md' title='Read review'>
-                  <span class="material-icons-outlined">article</span>
-                </a>
                 <a href='https://docs.usebottles.com/bottles/installers#use-installers' title='How to install'> <!--bottles:${item}-->
                   <span class="material-icons-outlined">download</span> Install
                 </a>
