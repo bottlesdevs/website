@@ -1541,4 +1541,13 @@ section.heading.no-bg {
     .panel.support {
         background-color: #65526e;
     }
+
+    .warning {
+        background-color: #584d2c;
+    }
+    
+    input[type="text"], input[type="email"], input[type="password"], input[type="search"] {
+        background-color: #191919;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%), 0 1px 0 0 #363636;
+    }
 }
