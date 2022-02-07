@@ -1242,7 +1242,8 @@ section.heading.no-bg {
     border-right: 1px solid #c3c3c3;
 }
 
-.app-details section,.app-details aside {
+.app-details section,
+.app-details aside {
     padding: 5px 15px;
 }
 
@@ -1276,7 +1277,12 @@ section.heading.no-bg {
     margin: 0 0 20px 0;
 }
 
-.reader h1,.reader h2,.reader h3,.reader h4,.reader h5,.reader h6 {
+.reader h1,
+.reader h2,
+.reader h3,
+.reader h4,
+.reader h5,
+.reader h6 {
     margin: 0;
 }
 
@@ -1397,6 +1403,14 @@ section.heading.no-bg {
     .store {
         display: flex;
         flex-direction: column;
+    }
+
+    .app-details {
+        display: block;
+    }
+
+    .app-details aside {
+        border-right: 0;
     }
 }
 
