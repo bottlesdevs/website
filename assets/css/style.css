@@ -1474,40 +1474,44 @@ section.heading.no-bg {
         background-color: #242424;
         color: #fff;
     }
-    
+
     nav {
         border-bottom-color: #464646;
     }
-    
+
     .menu {
         background-color: #191919;
     }
-    
-    a,.button.link, .button.link:hover {
+
+    a,
+    .button.link,
+    .button.link:hover {
         color: #fff;
     }
-    
+
     section small {
         color: #7e7e7e;
     }
-    
+
     ul.cards li {
         background-color: transparent;
         border-color: #4e4e4e;
     }
-    
+
     ul.cards li:hover {
         background-color: #191919;
     }
-    
+
     hr {
         border-color: #444444;
     }
-    
-    .card, .modal>div, .dropdown>ul {
+
+    .card,
+    .modal>div,
+    .dropdown>ul {
         background-color: #242424;
     }
-    
+
     .reader {
         background-color: #191919;
     }
@@ -1515,17 +1519,19 @@ section.heading.no-bg {
     section.hero {
         background-image: linear-gradient(120deg, #242424 0%, #191919 100%);
     }
-    
+
     .hero.yellow {
         background-color: #3c3528;
     }
-    
-    .hero.blue {background-color: #3c464e;}
-    
+
+    .hero.blue {
+        background-color: #3c464e;
+    }
+
     .hero.orange {
         background-color: #604b43;
     }
-    
+
     .hero.green {
         background-color: #384838;
     }
@@ -1537,7 +1543,7 @@ section.heading.no-bg {
     .panel.funding {
         background: #496768;
     }
-    
+
     .panel.support {
         background-color: #65526e;
     }
@@ -1545,9 +1551,20 @@ section.heading.no-bg {
     .warning {
         background-color: #584d2c;
     }
-    
-    input[type="text"], input[type="email"], input[type="password"], input[type="search"] {
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"] {
         background-color: #191919;
         box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%), 0 1px 0 0 #363636;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #191919;
+    }
+
+    tbody tr:hover {
+        background-color: #000;
     }
 }
