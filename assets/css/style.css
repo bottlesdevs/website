@@ -1468,3 +1468,77 @@ section.heading.no-bg {
         display: block;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #242424;
+        color: #fff;
+    }
+    
+    nav {
+        border-bottom-color: #464646;
+    }
+    
+    .menu {
+        background-color: #191919;
+    }
+    
+    a,.button.link, .button.link:hover {
+        color: #fff;
+    }
+    
+    section small {
+        color: #7e7e7e;
+    }
+    
+    ul.cards li {
+        background-color: transparent;
+        border-color: #4e4e4e;
+    }
+    
+    ul.cards li:hover {
+        background-color: #191919;
+    }
+    
+    hr {
+        border-color: #444444;
+    }
+    
+    .card, .modal>div, .dropdown>ul {
+        background-color: #242424;
+    }
+    
+    .reader {
+        background-color: #191919;
+    }
+
+    section.hero {
+        background-image: linear-gradient(120deg, #242424 0%, #191919 100%);
+    }
+    
+    .hero.yellow {
+        background-color: #3c3528;
+    }
+    
+    .hero.blue {background-color: #3c464e;}
+    
+    .hero.orange {
+        background-color: #604b43;
+    }
+    
+    .hero.green {
+        background-color: #384838;
+    }
+
+    section.heading {
+        background-image: none;
+    }
+
+    .panel.funding {
+        background: #496768;
+    }
+    
+    .panel.support {
+        background-color: #65526e;
+    }
+}
