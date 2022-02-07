@@ -1190,6 +1190,10 @@ span.tag.grade-Platinum {
     background-color: #eeeff0;
 }
 
+.dropdown.show ul li {
+    display: block;
+}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;
