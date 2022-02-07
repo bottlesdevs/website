@@ -147,7 +147,7 @@ title: AppStore
                                     <small>${dep_entry['Description']}</small>
                                 </a>
                             </li>
-                            `;
+                        `;
                     }
                 })
                 .catch(function (err) {
