@@ -141,8 +141,10 @@ title: AppStore
             <div class="card-content">
               <div class="card-bg" style="background-image: url(${icon})"></div>
               <h3>
-                <img src="${icon}" alt="${item}" />
-                ${installer["Name"]}
+                <a href="/app#${item}">
+                  <img src="${icon}" alt="${item}" />
+                  ${installer["Name"]}
+                </a>
               </h3>
               <div class="dropdown">
                 <div class="toggler">
