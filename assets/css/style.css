@@ -81,6 +81,7 @@ nav a.button {
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 .button.secondary {
@@ -689,14 +690,14 @@ section.heading .background {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    max-height: 86vh;
 }
 
 .modal>div>pre {
     white-space: pre-line;
     overflow-y: auto;
-    height: calc(100% - 6.2rem);
     padding: 0 1rem;
+    max-height: 80vh;
 }
 
 .modal>div>.actions {
@@ -1266,6 +1267,21 @@ section.heading.no-bg {
 
 .list.blocks {
     padding: 0;
+}
+
+.reader {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 0 0 20px 0;
+}
+
+.reader h1,.reader h2,.reader h3,.reader h4,.reader h5,.reader h6 {
+    margin: 0;
+}
+
+.reader h1 {
+    font-size: 36px;
 }
 
 @media screen and (max-width: 745px) {
