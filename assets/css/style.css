@@ -807,8 +807,8 @@ input[type="search"]:focus {
         "title title"
         "description description"
         "labels actions";
-    /* position: relative; */
-    /* overflow: hidden; */
+    position: relative;
+    overflow: hidden;
 }
 
 .store-results .card-content h3 {

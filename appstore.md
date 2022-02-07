@@ -170,7 +170,7 @@ title: AppStore
                 <a href='https://github.com/bottlesdevs/programs/blob/main/Reviews/${item}.md' title='Read review'>
                   <span class="material-icons-outlined">article</span>
                 </a>
-                <a href='https://docs.usebottles.com/bottles/installers#use-installers' title='How to install'>
+                <a href='https://docs.usebottles.com/bottles/installers#use-installers' title='How to install'> <!--bottles:${item}-->
                   <span class="material-icons-outlined">download</span> Install
                 </a>
               </div>
