@@ -13,8 +13,8 @@ title: AppStore
 <section class="page">
   <div class="container large">
     <div class="warning">
-			<p>This functionality is new and we are still populating the database. 
-      Do you want to <a href="https://maintainers.usebottles.com">contribute</a>?</p>
+			<p>This feature has just been released and we are just starting to populate this list. Do you want to <a href="https://maintainers.usebottles.com">contribute</a>?</p>
+      <p>Also, consider that Bottles only makes an installer for programs that need tweaking and don't work right out of the box.</p>
     </div>
     <br />
     <div class="filters">
