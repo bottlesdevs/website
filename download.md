@@ -11,10 +11,7 @@ description: Download Bottles for your Linux distribution
     </div>
     <div class="info">
       <h2>Bottles Trento</h2>
-      <p>Download the third major version of Bottles <small>(.AppImage/.deb)</small></p>
-      <a class="button" 
-         href="https://github.com/bottlesdevs/Bottles/releases/tag/2022.1.28-trento-3" 
-         title="Download Bottles (.AppImage/.deb)">Download</a>
+      <p>Download the latest version of Bottles via Flathub, AUR or other third party packages.</p>
       <a class="button link"
          href="https://flathub.org/apps/details/com.usebottles.bottles" 
          title="Download Bottles from Flathub">Flathub</a>
