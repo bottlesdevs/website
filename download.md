@@ -12,9 +12,12 @@ description: Download Bottles for your Linux distribution
     <div class="info">
       <h2>Bottles Trento</h2>
       <p>Download the latest version of Bottles via Flathub, AUR or other third party packages.</p>
-      <a class="button link"
+      <a class="button" 
+         href="https://github.com/bottlesdevs/Bottles/releases/latest" 
+         title="Download from GitHub">Download</a>
+      <a class="button link" 
          href="https://flathub.org/apps/details/com.usebottles.bottles" 
-         title="Download Bottles from Flathub">Flathub</a>
+         title="Download from Flathub">Flathub</a>
       <div class="more-links">
         <a href="https://docs.usebottles.com/getting-started/installation#other-packages">Source code</a> | 
         <a href="https://aur.archlinux.org/packages/bottles/">AUR</a> | 
