@@ -36,12 +36,12 @@ description: Download Bottles for your Linux distribution
     <div class="info">
       <h2>Bottles 1</h2>
       <p>Download the first version of Bottles! <small>(.deb)</small></p>
-      <a class="button link"
-         href="https://appcenter.elementary.io/com.github.mirkobrombin.bottles" 
-         title="Download Bottles v1 from AppCenter">AppCenter</a>
       <a class="button"
          href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1" 
          title="Download Bottles v1 (.deb)">Download</a>
+      <a class="button link"
+         href="https://appcenter.elementary.io/com.github.mirkobrombin.bottles" 
+         title="Download Bottles v1 from AppCenter">AppCenter</a>
     </div>
   </div>
 </section>
