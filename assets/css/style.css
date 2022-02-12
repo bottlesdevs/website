@@ -740,6 +740,7 @@ section.heading .background {
 .feature-display .description h2 {
     font-size: 2.2em;
     gap: 10px;
+    position: relative;
 }
 
 .menu {
@@ -962,6 +963,24 @@ input[type="search"]:focus {
 .hero.green .button:active,
 .hero.green .button:focus {
     background-color: #4a6e4a;
+}
+
+.hero.purple {
+    background: #d6c9e7;
+}
+
+.hero.purple .button {
+    background-color: #6d5b8e;
+}
+
+.hero.purple .button:hover {
+    background-color: #67527a;
+}
+
+.hero.purple .tag,
+.hero.purple .button:active,
+.hero.purple .button:focus {
+    background-color: #604a6e;
 }
 
 #toggle-menu {
@@ -1296,6 +1315,20 @@ section.heading.no-bg {
     justify-content: start;
 }
 
+h2 span.badge {
+    font-size: 14px;
+    position: absolute;
+    background-color: white;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin: 0 0 0 8px;
+}
+
+.badge.new {
+    background-color: #c1e9c1;
+    color: #003e00;
+}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;
@@ -1534,6 +1567,10 @@ section.heading.no-bg {
 
     .hero.green {
         background-color: #384838;
+    }
+
+    .hero.purple {
+        background-color: #423848;
     }
 
     section.heading {
