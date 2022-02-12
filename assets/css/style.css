@@ -897,17 +897,17 @@ input[type="search"]:focus {
     background: #f2d6a9;
 }
 
-.hero.yellow .button {
+.hero.yellow .button:not(.link) {
     background-color: #7c6b50;
 }
 
-.hero.yellow .button:hover {
+.hero.yellow .button:not(.link):hover {
     background-color: #726349;
 }
 
 .hero.yellow .tag,
-.hero.yellow .button:active,
-.hero.yellow .button:focus {
+.hero.yellow .button:not(.link):active,
+.hero.yellow .button:not(.link):focus {
     background-color: #685739;
 }
 
@@ -915,17 +915,17 @@ input[type="search"]:focus {
     background: #c2d9eb;
 }
 
-.hero.blue .button {
+.hero.blue .button:not(.link) {
     background-color: #52595e;
 }
 
-.hero.blue .button:hover {
+.hero.blue .button:not(.link):hover {
     background-color: #4b5256;
 }
 
 .hero.blue .tag,
-.hero.blue .button:active,
-.hero.blue .button:focus {
+.hero.blue .button:not(.link):active,
+.hero.blue .button:not(.link):focus {
     background-color: #3f464a;
 }
 
@@ -933,7 +933,7 @@ input[type="search"]:focus {
     background: #f8bea8;
 }
 
-.hero.orange .button {
+.hero.orange .button:not(.link) {
     background-color: #a17c6f;
 }
 
@@ -942,8 +942,8 @@ input[type="search"]:focus {
 }
 
 .hero.orange .tag,
-.hero.orange .button:active,
-.hero.orange .button:focus {
+.hero.orange .button:not(.link):active,
+.hero.orange .button:not(.link):focus {
     background-color: #7a5d53;
 }
 
@@ -951,17 +951,17 @@ input[type="search"]:focus {
     background: #c9e7c9;
 }
 
-.hero.green .button {
+.hero.green .button:not(.link) {
     background-color: #5b8e5b;
 }
 
-.hero.green .button:hover {
+.hero.green .button:not(.link):hover {
     background-color: #527a52;
 }
 
 .hero.green .tag,
-.hero.green .button:active,
-.hero.green .button:focus {
+.hero.green .button:not(.link):active,
+.hero.green .button:not(.link):focus {
     background-color: #4a6e4a;
 }
 
@@ -969,17 +969,17 @@ input[type="search"]:focus {
     background: #d6c9e7;
 }
 
-.hero.purple .button {
+.hero.purple .button:not(.link) {
     background-color: #6d5b8e;
 }
 
-.hero.purple .button:hover {
+.hero.purple .button:not(.link):hover {
     background-color: #67527a;
 }
 
 .hero.purple .tag,
-.hero.purple .button:active,
-.hero.purple .button:focus {
+.hero.purple .button:not(.link):active,
+.hero.purple .button:not(.link):focus {
     background-color: #604a6e;
 }
 
