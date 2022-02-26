@@ -117,7 +117,7 @@ title: AppStore
                 document.getElementById('app_name').innerHTML = `<img src="${icon}" class="icon"> ${entry['Name']}`;
                 document.getElementById('app_description').innerHTML = app['Description'];
                 if (resourceExists(screenshot)) {
-                    document.getElementById('app_screenshot').innerHTML = `<img class="card" src="${screenshot}" alt="Screenshot" />`;
+                    document.getElementById('app_screenshot').innerHTML = `<div class="screenshot" style="background-image:url(${screenshot})" alt="Screenshot" />`;
                 }
                 document.getElementById('app_tags').innerHTML = `
                     <span class="tag grade-${app['Grade']}">${app['Grade']}</span>

@@ -1335,6 +1335,36 @@ h2 span.badge {
     color: #003e00;
 }
 
+.screenshot {
+    position: relative;
+    margin: 10px;
+    border-radius: .3rem;
+    background: top/cover no-repeat;
+}
+
+.screenshot::before,
+.screenshot::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: 60%;
+    top: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+}
+
+.screenshot::before {
+    position: absolute;
+    filter: blur(20px);
+    top: 20px;
+    width: 100%;
+}
+
+.screenshot::after {
+    position: relative;
+}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;
