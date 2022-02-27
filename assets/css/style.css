@@ -713,9 +713,10 @@ section.heading .background {
     margin: 2rem auto;
     padding: 1rem;
     position: absolute;
-    top: 0;
+    top: 40px;
     left: 0;
     right: 0;
+    bottom: 40px;
     max-height: 86vh;
 }
 
