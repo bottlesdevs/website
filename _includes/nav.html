@@ -1,18 +1,20 @@
 <nav id="nav">
-  <a class="brand" href="/">
-    <img src="{{ site.logo }}" title="Bottles" />
-  </a>
-  <span class="material-icons" id="toggle-menu">menu</span>
-  <ul class="menu">
-    {% for item in site.navigation %}
+  <div class="container large">
+    <a class="brand" href="/">
+      <img src="{{ site.logo }}" title="Bottles" />
+    </a>
+    <span class="material-icons" id="toggle-menu">menu</span>
+    <ul class="menu">
+      {% for item in site.navigation %}
+        <li>
+          <a href="{{ item.link }}" class="{% if page.url == item.link %}active{% endif %}">{{ item.name }}</a>
+        </li>
+      {% endfor %}
       <li>
-        <a href="{{ item.link }}" class="{% if page.url == item.link %}active{% endif %}">{{ item.name }}</a>
+        <a class="button icon-slot" href="/download"><span class="mdi material-icons-outlined"> file_download </span> Get Bottles</a>
       </li>
-    {% endfor %}
-    <li>
-      <a class="button icon-slot" href="/download"><span class="mdi material-icons-outlined"> file_download </span> Get Bottles</a>
-    </li>
-  </ul>
+    </ul>
+  </div>
 </nav>
 
 
