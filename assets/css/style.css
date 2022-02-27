@@ -9,6 +9,9 @@ body {
     margin: 0;
     font-size: 16px;
     overflow-x: hidden;
+    color: #1d1d1f;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a,
@@ -39,17 +42,32 @@ article .more {
     /* margin: -9px 0 0 0; */
 }
 
+article h2 {
+    letter-spacing: -.003em;
+    font-size: 2.2rem;
+}
+
 nav {
-    padding: 1rem 2rem;
+    padding: 13px 0;
     text-align: right;
     min-height: 1.6rem;
-    max-width: 75rem;
     margin: 0 auto;
+    border-bottom: 1px solid #f2f3f3;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    -webkit-backdrop-filter: saturate(100%) blur(18px);
+    backdrop-filter: saturate(100%) blur(18px);
+    background-color: #ffffffb8;
+    border-bottom: 1px solid #0000001f;
+}
+
+nav .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-    border-bottom: 1px solid #f2f3f3;
+    padding: 0;
 }
 
 nav a>img {
@@ -75,9 +93,9 @@ a.button {
 nav a.button {
     padding: .5rem 1rem;
     font-weight: 800;
-    background-color: #1c71d8;
+    background-color: #0071e3;
     color: #fff;
-    border-radius: .3rem;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -117,7 +135,7 @@ main>section {
 
 section.hero {
     text-align: center;
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    background-image: linear-gradient(89.9deg, rgba(208, 246, 255, 1) 0.1%, rgba(255, 237, 237, 1) 47.9%, rgba(255, 255, 231, 1) 100.2%);
 }
 
 section.hero img {
@@ -143,15 +161,16 @@ h4 {
 }
 
 section.hero h1 {
-    /* font-weight: 400; */
+    font-weight: 800;
     margin: 0;
-    letter-spacing: -.1rem;
     line-height: 1;
+    letter-spacing: -0.014em;
 }
 
 section p {
     font-size: 20px;
     margin: 1rem 0 1.5rem;
+    line-height: 1.5;
 }
 
 section .button {
@@ -218,7 +237,6 @@ section.downloads {
 
 section.heading {
     padding: 1rem 4rem;
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     position: relative;
 }
 
@@ -466,7 +484,7 @@ section.page.blog article:first-of-type {
     border-radius: .6rem;
     overflow: auto;
     color: #fff;
-    background-image: linear-gradient(120deg, #1c71d8 0%, #15539e 100%);
+    background: #0071e3;
 }
 
 section.page.blog article:first-of-type .more {
@@ -595,7 +613,7 @@ section.heading .background {
 }
 
 .button.icon-slot .mdi {
-    background-color: #0000003d;
+    background-color: #00000026;
     padding: 5px;
     width: 30px;
     margin: -8px 0;
@@ -740,15 +758,16 @@ section.heading .background {
 }
 
 .feature-display .description p {
-    line-height: 1.6em;
-    font-size: 1.3em;
+    line-height: 1.5;
+    font-size: 1.4em;
     font-weight: 400;
 }
 
 .feature-display .description h2 {
-    font-size: 2.2em;
+    font-size: 2.8em;
     gap: 10px;
     position: relative;
+    letter-spacing: -.003em;
 }
 
 .menu {
@@ -760,7 +779,7 @@ section.heading .background {
 }
 
 .next {
-    background-color: #404650;
+    background-color: #1d222cad;
     padding: 1rem;
     position: fixed;
     right: 10px;
@@ -768,6 +787,8 @@ section.heading .background {
     border-radius: 4px;
     z-index: 1;
     color: #fff;
+    -webkit-backdrop-filter: saturate(100%) blur(18px);
+    backdrop-filter: saturate(100%) blur(18px);
 }
 
 .next p {
@@ -902,7 +923,7 @@ input[type="search"]:focus {
 }
 
 .hero.yellow {
-    background: #f2d6a9;
+    background: #f7e2c1;
 }
 
 .hero.yellow .button:not(.link) {
@@ -920,7 +941,7 @@ input[type="search"]:focus {
 }
 
 .hero.blue {
-    background: #c2d9eb;
+    background: #c1ddf7;
 }
 
 .hero.blue .button:not(.link) {
@@ -938,7 +959,7 @@ input[type="search"]:focus {
 }
 
 .hero.orange {
-    background: #f8bea8;
+    background: #f7d6c1;
 }
 
 .hero.orange .button:not(.link) {
@@ -955,8 +976,13 @@ input[type="search"]:focus {
     background-color: #7a5d53;
 }
 
+section.hero.gray,
+section.heading {
+    background: #fafafa;
+}
+
 .hero.green {
-    background: #c9e7c9;
+    background: #c8e9d6;
 }
 
 .hero.green .button:not(.link) {
@@ -974,7 +1000,7 @@ input[type="search"]:focus {
 }
 
 .hero.purple {
-    background: #d6c9e7;
+    background: #ddc8e9;
 }
 
 .hero.purple .button:not(.link) {
@@ -1238,7 +1264,7 @@ span.tag.grade-Platinum {
 }
 
 section.heading.no-bg {
-    background-image: none;
+    background: none;
 }
 
 .heading .card-bg {
@@ -1374,6 +1400,7 @@ h2 span.badge {
     padding-top: 30px;
     position: relative;
 }
+
 .video-frame iframe,
 .video-frame object,
 .video-frame embed {
@@ -1630,10 +1657,6 @@ h2 span.badge {
 
     .hero.purple {
         background-color: #423848;
-    }
-
-    section.heading {
-        background-image: none;
     }
 
     .panel.funding {
