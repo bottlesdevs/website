@@ -364,7 +364,7 @@ mark {
     position: relative;
     display: block;
     transform: scale(1);
-    background-color: white;
+    /* background-color: white; */
     border-radius: 4px;
 }
 
@@ -560,7 +560,8 @@ section.downloads .container>.image img {
 .next,
 .message,
 img.shadow,
-.dropdown>ul {
+.dropdown>ul,
+.video-frame {
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);
 }
 
@@ -636,7 +637,8 @@ section.heading .background {
 
 .card,
 .modal>div,
-.dropdown>ul {
+.dropdown>ul,
+.video-frame {
     background-color: #fff;
     border-radius: .3rem;
     min-height: 6rem;
@@ -1365,6 +1367,23 @@ h2 span.badge {
     position: relative;
 }
 
+.video-frame {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    position: relative;
+}
+.video-frame iframe,
+.video-frame object,
+.video-frame embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;
@@ -1550,6 +1569,10 @@ h2 span.badge {
 
     .menu {
         background-color: #191919;
+    }
+
+    .page.post img {
+        background-color: #fff;
     }
 
     a,
