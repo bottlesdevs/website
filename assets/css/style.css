@@ -718,6 +718,7 @@ section.heading .background {
     right: 0;
     bottom: 40px;
     max-height: 86vh;
+    overflow: auto;
 }
 
 .modal>div>pre {
