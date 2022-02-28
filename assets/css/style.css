@@ -837,10 +837,7 @@ input[type="search"]:focus {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     gap: 0px 0px;
-    grid-template-areas:
-        "title title"
-        "description description"
-        "labels actions";
+    grid-template-areas: "title title""description description""labels actions";
     position: relative;
     overflow: hidden;
 }
@@ -1423,6 +1420,15 @@ h2 span.badge {
         padding: 6rem 2rem;
     }
 
+    nav.show-menu .menu li {
+        padding: 3px 3px;
+        border-radius: 4px;
+    }
+
+    nav.show-menu .menu li:hover {
+        background-color: #000000a3;
+    }
+
     .splitter {
         display: flex;
         flex-direction: column;
@@ -1460,6 +1466,7 @@ h2 span.badge {
 
     nav {
         text-align: center;
+        padding: 0;
     }
 
     section.hero h1 {
@@ -1538,7 +1545,7 @@ h2 span.badge {
 }
 
 @media screen and (max-width: 860px) {
-    nav {
+    nav .container {
         text-align: center;
         max-width: initial;
         display: grid;
@@ -1547,22 +1554,25 @@ h2 span.badge {
         gap: 10px 0;
         grid-template-areas: "brand menu-icon""menu menu";
         padding: 1rem 2rem .2rem;
+        padding-bottom: 8px !important;
     }
 
     nav a.brand {
+        width: 28px;
         float: none;
         display: block;
         grid-area: brand;
         text-align: left;
+        overflow: hidden;
     }
 
     nav.show-menu {
         grid-template-rows: 0.1fr 1.9fr;
-        padding: 1rem 2rem;
     }
 
     nav.show-menu .menu {
         display: block;
+        text-align: left;
     }
 
     img.icon {
@@ -1583,6 +1593,7 @@ h2 span.badge {
 @media screen and (max-width: 626px) {
     .menu a {
         display: block;
+        font-size: 17px;
     }
 }
 
@@ -1592,17 +1603,24 @@ h2 span.badge {
         color: #fff;
     }
 
+    p>code {
+        background-color: #5a5a5a;
+    }
+
+    pre>code {
+        background-color: #0c0c0b;
+        color: #fbd45e;
+    }
+
     nav {
         border-bottom-color: #464646;
-        background-color: #191919;
+        background-color: #1919199c;
     }
 
-    .menu {
-        background-color: #191919;
-    }
-
-    .page.post img {
-        background-color: #fff;
+    nav.show-menu .menu,
+    section.hero.gray,
+    section.heading {
+        background-color: #19191987;
     }
 
     a,
