@@ -1410,6 +1410,15 @@ h2 span.badge {
     width: 100%;
 }
 
+a.brand {
+    background-image: url(/uploads/logo.svg);
+    display: block;
+    width: 200px;
+    height: 32px;
+    background-size: auto 32px;
+    background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;
@@ -1601,6 +1610,10 @@ h2 span.badge {
     body {
         background-color: #242424;
         color: #fff;
+    }
+
+    a.brand {
+        background-image: url(/uploads/logo-dark.svg);
     }
 
     p>code {
