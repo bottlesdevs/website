@@ -21,7 +21,7 @@ description: Download Bottles for your Linux distribution
       <div class="more-links">
         <a href="https://docs.usebottles.com/getting-started/installation#other-packages">Source code</a> | 
         <a href="https://aur.archlinux.org/packages/bottles/">AUR</a> | 
-        <a href="https://github.com/bottlesdevs/Bottles/releases/">Deb</a> | 
+        <!--<a href="https://github.com/bottlesdevs/Bottles/releases/">Deb</a> | -->
         <a href="https://github.com/bottlesdevs/Bottles/actions">Unstable</a> | 
         <a href="https://forums.usebottles.com/d/6-list-of-unofficial-packages">Unofficial packages</a>
       </div>
