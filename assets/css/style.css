@@ -1419,6 +1419,16 @@ a.brand {
     background-repeat: no-repeat;
 }
 
+a.linode-brand {
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    height: 24px;
+    background-image: url(/uploads/linode-brand.png);
+    background-repeat: no-repeat;
+    background-size: 90px;
+}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;
@@ -1614,6 +1624,10 @@ a.brand {
 
     a.brand {
         background-image: url(/uploads/logo-dark.svg);
+    }
+
+    a.linode-brand {
+        background-image: url(/uploads/linode-brand-dark.png);
     }
 
     p>code {
