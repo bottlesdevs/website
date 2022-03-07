@@ -67,6 +67,7 @@ title: Funding
     <br />
     <h3>Thanks to them who made a donation or became our GitHub sponsor 💖!</h3>
     <ul>
+      <li>Simon Jenkins</li>
       <li>Daniel Chirinos</li>
       <li>Jorge O. Castro</li>
       <li>Hugo Gonzalez Hernandez</li>
