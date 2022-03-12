@@ -73,14 +73,14 @@ title: AppStore
   });
   var store = document.getElementsByClassName("store");
   document.addEventListener("DOMContentLoaded", function () {
-    fetch('https://repo.usebottles.com/programs/index.yml')
+    fetch('https://raw.githubusercontent.com/bottlesdevs/programs/main/index.yml')
       .then(response => response.text())
       .then((data) => {
         console.info("Installers database index found.");
         data = jsyaml.load(data)
         for (var item in data) {
           installer = data[item];
-          icon = `https://repo.usebottles.com/programs/data/${item}/${installer["Icon"]}?raw=true`;
+          icon = `https://github.com/bottlesdevs/programs/blob/main/data/${item}/${installer["Icon"]}?raw=true`;
           var card = `<div class="card" grade="${installer["Grade"]}">
             <div class="card-content">
               <div class="card-bg" style="background-image: url(${icon})"></div>
