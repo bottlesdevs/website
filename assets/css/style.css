@@ -1574,7 +1574,7 @@ span.badge.experimental {
     }
 
     main>section {
-        padding: 4rem 1rem;
+        padding: 4rem 10px;
     }
 
     section.downloads .image,
