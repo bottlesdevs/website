@@ -1496,6 +1496,15 @@ main>section.linked {
 
 .hero.scarlet:nth-child(even) {background-image: linear-gradient(0deg, #bd5285, transparent);}
 
+span.badge.experimental {
+    background-color: #1d1d1f;
+    color: #fff;
+}
+
+.scarlet span.badge.experimental {
+    color: #fe7b73;
+}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;
