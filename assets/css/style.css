@@ -939,6 +939,27 @@ input[type="search"]:focus {
     background-color: #685739;
 }
 
+.hero.scarlet {
+    background: #ff7d74;
+    background-image: linear-gradient(180deg, #bd5285, transparent);
+}
+
+.hero.scarlet .button:not(.link) {
+    background-color: #382f2e;
+}
+
+.hero.scarlet .button:not(.link):hover {
+    background-color: #724949;
+}
+
+.hero.scarlet .tag,
+.hero.scarlet .button:not(.link):active,
+.hero.scarlet .button:not(.link):focus {
+    background-color: #683939;
+}
+
+
+
 .hero.blue {
     background: #c1ddf7;
 }
@@ -1429,6 +1450,52 @@ a.linode-brand {
     background-size: 90px;
 }
 
+.hero .video::after {
+    content: "";
+    background-image: linear-gradient(265deg, #720000bd, #a137a19e);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    pointer-events: none;
+}
+
+.hero .video video {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    object-fit: cover;
+    object-position: center;
+    filter: blur(2px);
+}
+
+section.hero.video-background {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero.video-background .feature-display {
+    position: relative;
+}
+
+section.hero.video-background .details {
+    position: relative;
+    z-index: 6;
+}
+
+main>section.linked {
+    padding: 3rem 4rem;
+}
+
+.hero.scarlet:nth-child(even) {background-image: linear-gradient(0deg, #bd5285, transparent);}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;
@@ -1689,6 +1756,10 @@ a.linode-brand {
 
     .hero.yellow {
         background-color: #3c3528;
+    }
+
+    .hero.scarlet {
+        background-color: #3c2828;
     }
 
     .hero.blue {
