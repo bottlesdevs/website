@@ -35,7 +35,7 @@ title: AppStore
             <a class="button small link" href="#" id="app_protondb" target="_blank">More info on ProtonDB</a>
         </aside>
         <section>
-            <p>This installer require a <b id="app_arch_req"></b> bottle to works.
+            <p>This installer requires a <b id="app_arch_req"></b> bottle to work.
                 If you don't see the the installer in the list, please check if your
                 bottle has the right architecture, if not please <a href="https://docs.usebottles.com/getting-started/environments">make a new one</a>.</p>
             <hr />
