@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
 body {
@@ -24,6 +23,10 @@ input,
 
 a {
     color: #2b2b2b;
+}
+
+a>.icon {
+    font-size: 22px;
 }
 
 article .more {
@@ -93,7 +96,15 @@ a.button {
     white-space: nowrap;
 }
 
-.menu ul {display: flex;list-style: none;align-items: center;width: 100%;justify-content: flex-start;padding: 0;margin: 0;}
+.menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
 
 
 
@@ -153,6 +164,15 @@ section.hero img {
     max-width: 100%;
 }
 
+h1 img,
+h2 img,
+h3 img,
+h4 img,
+h5 img,
+h6 img {
+    height: 48px;
+}
+
 h1 {
     font-size: 4rem;
 }
@@ -161,8 +181,9 @@ h2 {
     font-size: 2rem;
 }
 
-h3 {
-    font-size: 1.4rem;
+h3,
+h3 .icon {
+    font-size: 1.5rem;
 }
 
 h4 {
@@ -253,7 +274,8 @@ section.heading {
     justify-content: center;
 }
 
-.warning,.info {
+.warning,
+.info {
     margin: 0 0 10px 0;
 }
 
@@ -264,7 +286,7 @@ section.heading {
 }
 
 .warning p,
-.info p{
+.info p {
     margin: 0;
 }
 
@@ -639,14 +661,17 @@ section.heading .background {
     padding: .5rem 1rem .5rem 0;
 }
 
-.button.icon-slot .mdi {
+.button.icon-slot .mdi,
+.button.icon-slot .icon {
     background-color: #00000026;
-    padding: 5px;
+    padding: 6px;
     width: 30px;
+    height: 23px;
     margin: -8px 0;
     border-top-left-radius: .3rem;
     border-bottom-left-radius: .3rem;
     text-align: center;
+    position: relative;
 }
 
 .release-day {
@@ -715,6 +740,7 @@ section.heading .background {
     text-decoration: none;
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
 .modal {
@@ -1097,6 +1123,9 @@ section.heading {
 
 .card.panel h3 {
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .panel.funding {
@@ -1252,7 +1281,7 @@ span.tag.grade-Platinum {
 .dropdown ul {
     display: none;
     position: absolute;
-    z-index: 000;
+    z-index: 9;
     top: 28px;
     right: 0;
 }
@@ -1302,10 +1331,6 @@ span.tag.grade-Platinum {
     padding: 10px 10px 0;
     margin-top: -3rem;
     position: relative;
-}
-
-.icon {
-    width: 48px;
 }
 
 section.heading.no-bg {
@@ -1587,6 +1612,8 @@ body.page-gaming footer p {
         display: block;
         grid-area: menu-icon;
         text-align: right;
+        margin-left: auto;
+        font-size: 32px;
     }
 
     .container.small,

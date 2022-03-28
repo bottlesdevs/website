@@ -10,6 +10,8 @@
           content="{{ post.date | date:"%Y-%m-%d" }}" 
           datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ date | date: "%a, %b %e, %Y" }}</time>
     <p>{{ post.content | strip_html | truncatewords: 32 }}</p>
-    <a class="more" href="{{ post.url }}">Read more<span class="mdi material-icons"> navigate_next </span></a>
+    <a class="more" href="{{ post.url }}">
+        Read more <ion-icon class="icon" name="arrow-forward-outline"></ion-icon>
+    </a>
 </article>
 {% endif %}

@@ -7,7 +7,7 @@ function modal(url, markdown=false) {
                 <div class="reader">${marked.parse(text)}</div>
                     <div class="actions">
                     <a class="button icon-slot" onclick="modal_close()">
-                        <span class="mdi material-icons">close</span>
+                      <ion-icon class="icon" name="close-outline"></ion-icon>
                         Close
                     </a>
                 </div>`;
@@ -17,7 +17,7 @@ function modal(url, markdown=false) {
                 <pre><code class="language-yaml">${text}</code></pre>
                 <div class="actions">
                 <a class="button icon-slot" onclick="modal_close()">
-                    <span class="mdi material-icons">close</span>
+                  <ion-icon class="icon" name="close-outline"></ion-icon>
                     Close
                 </a>
                 </div>`;
