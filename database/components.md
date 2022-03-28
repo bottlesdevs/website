@@ -4,8 +4,8 @@ title: Bottles components
 
 <section class="heading">
 	<div class="container large">
-		<h1>Components Database</h1>
-		<p>Bottles Components</p>
+		<h1>Components</h1>
+		<p>These are essential elements for creating environments and extending them with new features and implementations.</p>
 	</div>
 </section>
 

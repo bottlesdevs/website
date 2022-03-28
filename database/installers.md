@@ -4,11 +4,13 @@ title: Dependencies for software compatibility in Bottles
 
 <section class="heading">
 	<div class="container large">
-		<h1>Installers Database</h1>
-		<p>Repository for programs installation in Bottles</p>
+		<h1>Installers</h1>
+		<p>These are installers maintained by our community that automate the installation of a Windows program.</p>
 		<div class="warning">
-			<p>This functionality is new and we are still populating the database. 
-      Do you want to <a href="https://maintainers.usebottles.com">contribute</a>?</p>
+			<p>This feature is new and we are still populating the database. Want to <a href="https://maintainers.usebottles.com">contribute</a>?</p>
+		</div>
+		<div class="info">
+			<p>We have a new <a href="/appstore">dedicated place</a> for installers.</p>
 		</div>
 	</div>
 </section>
