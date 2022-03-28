@@ -20,10 +20,10 @@ title: AppStore
     <div class="app-details">
         <aside>
             <a href="https://docs.usebottles.com/bottles/installers#use-installers" class="button" id="app_download">
-                <span class="mdi material-icons-outlined">file_download</span> How to install
+                <ion-icon class="icon" name="cloud-download-outline"></ion-icon> How to install
             </a>
             <a class="button secondary" id="app_review">
-                <span class="mdi material-icons-outlined">auto_stories</span> Read review
+                <ion-icon class="icon" name="reader-outline"></ion-icon> Read review
             </a>
             <small>Bottles does not re-distribute or host the files but just 
             download them from the vendor's official sources. These files are 

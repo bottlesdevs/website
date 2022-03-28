@@ -1,7 +1,7 @@
 <nav id="nav">
   <div class="container large">
     <a class="brand" href="/"></a>
-    <span class="material-icons" id="toggle-menu">menu</span>
+    <ion-icon class="icon" name="menu-outline" id="toggle-menu"></ion-icon>
     <div class="menu">
       <ul>
         {% for item in site.navigation_left %}
@@ -17,7 +17,8 @@
           </li>
         {% endfor %}
         <li class="place-right">
-          <a class="button icon-slot" href="/download"><span class="mdi material-icons-outlined"> file_download </span> Get Bottles</a>
+          <a class="button icon-slot" href="/download">
+            <ion-icon class="icon" name="cloud-download-outline"></ion-icon> Get Bottles</a>
         </li>
       </ul>
     </div>
