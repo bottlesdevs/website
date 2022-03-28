@@ -16,7 +16,7 @@ description: Download Bottles for your Linux distribution
       <li class="link active">
         <a href="https://flathub.org/apps/details/com.usebottles.bottles">
           <h3>Flatpak<span class="badge new">Recommended</span></h3>
-          <p>This is the format we recommend to get the best experience of using Bottles. It is supported by all Linux distributions via Flathub.</p>
+          <p>This is the format we recommend to get the best experience with Bottles. It is supported by all Linux distributions via Flathub.</p>
         </a>
       </li>
       <li class="link">
