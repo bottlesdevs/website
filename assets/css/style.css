@@ -524,6 +524,7 @@ nav a.active {
 footer .icon {
     position: relative;
     top: .15em;
+    font-size: 20px;
     z-index: 1;
 }
 
@@ -1176,6 +1177,12 @@ footer .grid {
     display: grid;
     text-align: initial;
     gap: 30px;
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 footer .grid.cols-4 {
