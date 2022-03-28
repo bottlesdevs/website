@@ -3,45 +3,54 @@ title: Download
 description: Download Bottles for your Linux distribution
 ---
 
-<section class="downloads">
-  <!-- v3 -->
-  <div class="container">
-    <div class="image">
-      <img src="https://raw.githubusercontent.com/bottlesdevs/Bottles/master/screenshot.png" />
-    </div>
-    <div class="info">
-      <h2>Bottles Trento</h2>
-      <p>Download the latest version of Bottles via Flathub, AUR or other third party packages.</p>
-      <a class="button" 
-         href="https://github.com/bottlesdevs/Bottles/releases/latest" 
-         title="Download from GitHub">Download</a>
-      <a class="button link" 
-         href="https://flathub.org/apps/details/com.usebottles.bottles" 
-         title="Download from Flathub">Flathub</a>
-      <div class="more-links">
-        <a href="https://docs.usebottles.com/getting-started/installation#other-packages">Source code</a> | 
-        <a href="https://aur.archlinux.org/packages/bottles/">AUR</a> | 
-        <!--<a href="https://github.com/bottlesdevs/Bottles/releases/">Deb</a> | -->
-        <a href="https://github.com/bottlesdevs/Bottles/actions">Unstable</a> | 
-        <a href="https://forums.usebottles.com/d/6-list-of-unofficial-packages">Unofficial packages</a>
-      </div>
-    </div>
+<section class="heading">
+  <div class="container large">
+    <h1><ion-icon class="icon" name="cloud-download-outline"></ion-icon> Get Bottles</h1>
+    <p>We offer a variety of download options for Bottles.</p>
   </div>
+</section>
 
-  <!-- v1 -->
-  <div class="container">
-    <div class="image">
-      <img src="https://raw.githubusercontent.com/bottlesdevs/Bottles/v1/data/screenshot-1.png" />
-    </div>
-    <div class="info">
-      <h2>Bottles 1</h2>
-      <p>Download the first version of Bottles! <small>(.deb)</small></p>
-      <a class="button"
-         href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1" 
-         title="Download Bottles v1 (.deb)">Download</a>
-      <a class="button link"
-         href="https://appcenter.elementary.io/com.github.mirkobrombin.bottles" 
-         title="Download Bottles v1 from AppCenter">AppCenter</a>
-    </div>
+<section class="page">
+  <div class="container large">
+    <ul class="cards store has-hover">
+      <li class="link active">
+        <a href="https://flathub.org/apps/details/com.usebottles.bottles">
+          <h3>Flatpak<span class="badge new">Recommended</span></h3>
+          <p>This is the format we recommend to get the best experience of using Bottles. It is supported by all Linux distributions via Flathub.</p>
+        </a>
+      </li>
+      <li class="link">
+        <a href="https://aur.archlinux.org/packages/bottles">
+          <h3>AUR</h3>
+          <p>If you are using Arch Linux or its derivative, you may want to use our official AUR package. We keep it updated.</p>
+        </a>
+      </li>
+      <li class="link">
+        <a href="https://docs.usebottles.com/getting-started/installation#other-packages">
+          <h3>Other packages</h3>
+          <p>There are also other non-officially supported packages maintained by our community.</p>
+        </a>
+      </li>
+    </ul>
+
+    <hr />
+
+    <h3>Other versions</h3>
+    <p>Are you looking for a specific version of Bottles?</p>
+
+    <ul class="cards store has-hover">
+      <li class="link">
+        <a href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1">
+          <h3>Bottles 1 (Legacy)</h3>
+          <p>The first version of Bottles (Legacy) is still available and maintained. It does not have many features introduced by Bottles 2 but useful for those who need a very simple prefix manager.</p>
+        </a>
+      </li>
+      <li class="link">
+        <a href="https://github.com/bottlesdevs/Bottles">
+          <h3>Source code</h3>
+          <p>Bottles source code is GPLv3 licensed and is publicly available on the GitHub.</p>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
