@@ -48,7 +48,7 @@ description: Download Bottles for your Linux distribution
       <li class="link">
         <a href="https://github.com/bottlesdevs/Bottles">
           <h3>Source code</h3>
-          <p>Bottles source code is GPLv3 licensed and is publicly available on the GitHub.</p>
+          <p>Bottles source code is under GPLv3 license and is publicly available on GitHub.</p>
         </a>
       </li>
     </ul>
