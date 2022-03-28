@@ -588,13 +588,12 @@ ul.cards li a {
     text-decoration: none;
 }
 
-ul.cards.has-hover li:hover {
+ul.cards.has-hover li:hover, ul.cards li.active {
     background-color: #d5e1f340;
     border-color: #1c71d8;
 }
 
-ul.cards.has-hover li:hover,
-ul.cards.has-hover li:hover a {
+ul.cards.has-hover li:hover, ul.cards.has-hover li:hover a,ul.cards li.active, ul.cards li.active a {
     color: #1c71d8;
 }
 
@@ -1426,7 +1425,7 @@ section.heading.no-bg {
     justify-content: start;
 }
 
-h2 span.badge {
+h2 span.badge,h3 span.badge {
     font-size: 14px;
     position: absolute;
     background-color: white;
