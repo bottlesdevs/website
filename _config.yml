@@ -36,7 +36,7 @@ navigation:
       name: Database
     - link: "/blog/"
       name: Blog
-    - link: "https://forums.usebottles.com"
+    - link: "https://forum.usebottles.com"
       name: Forums
     - link: "/funding/"
       name: Funding

@@ -4,8 +4,8 @@ title: Dependencies for software compatibility in Bottles
 
 <section class="heading">
 	<div class="container large">
-		<h1>Dependencies Database</h1>
-		<p>Dependencies for software compatibility in Bottles</p>
+		<h1>Dependencies</h1>
+		<p>These packages increase the compatibility of WINE environments with Windows software.</p>
 	</div>
 </section>
 
