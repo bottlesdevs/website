@@ -15,36 +15,43 @@ title: Funding
     <h2>How to donate</h2>
     <p>Here are the official channels from which you can donate to Bottles
       Developers.</p>
-    <ul class="inline">
-      <li>
+    <ul class="cards store has-hover">
+      <li class="link">
         <a href="https://github.com/sponsors/bottlesdevs" title="Support Bottles Developers on GitHub">
-          <ion-icon name="logo-github"></ion-icon> GitHub Sponsor
+          <h3><ion-icon class="icon" name="logo-github"></ion-icon> GitHub Sponsor</h3>
+          <p>By subscribing for only 2$ you can help keep the project alive. You can also make a one-time donation.</p>
         </a>
       </li>
-      <li>
-        <a href="https://liberapay.com/bottles" title="Support Bottles Developers with LiberaPay">
-          <img class="icon" src="/uploads/liberapay_logo_black.svg" /> LiberaPay
+      <li class="link">
+        <a href="https://liberapay.com/bottles">
+          <h3><img class="icon" src="/uploads/liberapay_logo_black.svg" /> LiberaPay</h3>
+          <p>You can also decide for an even more flexible subscription with LiberaPay.</p>
         </a>
       </li>
-      <li>
-        <a href="https://paypal.me/MirkoBrombin" title="Support Bottles Developers with PayPal">
-          <ion-icon name="logo-paypal"></ion-icon> PayPal
+      <li class="link">
+        <a href="https://paypal.me/MirkoBrombin">
+          <h3><ion-icon class="icon" name="logo-paypal"></ion-icon> PayPal</h3>
+          <p>You can also donate via PayPal if you prefer.</p>
         </a>
       </li>
     </ul>
+
+    <hr />
+
     <h2>Our plans for Bottles</h2>
     <p>We have several plans for Bottles' future, many features that take time
       and money to come true.</p>
     <ul>
       <li>
-        <b>Override system</b>
+        <h3>Layered bottles</h3>
         <p>This is our solution for multiple environments in one bottle. This is
         currently a 
         <a href="https://github.com/bottlesdevs/Bottles/issues/510" target="_blank">concept</a>,
         but we are working on it.</p>
       </li>
       <li>
-        <b>Installer scripts</b>
+        <h3>Installers</h3>
+        <b>Now implemented!</b>
         <p>This is a feature in early development. It is an automated Windows 
         software installation system based on a community driven 
         <a href="https://github.com/bottlesdevs/programs" target="_blank">repository</a> 
@@ -54,7 +61,8 @@ title: Funding
         still requires some work before reaching a stable release.</p>
       </li>
       <li>
-        <b>Dependencies manager</b>
+        <h3>Dependencies manager</h3>
+        <b>Now implemented!</b>
         <p>This is the most important feature of Bottles. It is a dependency
         manager based on a community driven repository, that replace winetricks 
         in Bottles and allows you to install software dependencies in a 

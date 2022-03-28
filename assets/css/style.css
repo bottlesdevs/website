@@ -29,6 +29,10 @@ a>.icon {
     font-size: 22px;
 }
 
+img.icon {
+    max-height: 23px;
+}
+
 article .more {
     text-decoration: none;
     font-weight: 500;
