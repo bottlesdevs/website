@@ -21,15 +21,7 @@ defaults:
     values:
       layout: "post"
 
-navigation:
-    - link: "https://docs.usebottles.com/"
-      name: 📕 Docs
-    - link: "https://github.com/bottlesdevs/Bottles/issues/new/choose"
-      name: Bug report
-    - link: "https://hosted.weblate.org/engage/bottles/"
-      name: Help translating
-    - link: "https://github.com/bottlesdevs/"
-      name: 🚀 GitHub
+navigation_left:
     - link: "/appstore/"
       name: Apps
     - link: "/database/"
@@ -40,6 +32,19 @@ navigation:
       name: Forums
     - link: "/funding/"
       name: Funding
+navigation_right:
+    - link: "https://docs.usebottles.com/"
+      name: <ion-icon name="book-outline"></ion-icon> Docs
+      place: right
+    - link: "https://github.com/bottlesdevs/Bottles/issues/new/choose"
+      name: <ion-icon name="bug-outline"></ion-icon> Bug report
+      place: right
+    - link: "https://hosted.weblate.org/engage/bottles/"
+      name: <ion-icon name="language-outline"></ion-icon> Help translating
+      place: right
+    - link: "https://github.com/bottlesdevs/"
+      name: <ion-icon name="logo-github"></ion-icon> GitHub
+      place: right
 
 plugins:
   - jekyll-feed

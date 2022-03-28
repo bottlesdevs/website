@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
     font-size: 16px;
     overflow-x: hidden;
@@ -49,7 +49,7 @@ article h2 {
 
 nav {
     padding: 13px 0;
-    text-align: right;
+    /* text-align: right; */
     min-height: 1.6rem;
     margin: 0 auto;
     border-bottom: 1px solid #f2f3f3;
@@ -65,7 +65,7 @@ nav {
 nav .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 5px;
     padding: 0;
 }
@@ -87,12 +87,21 @@ a.button {
     padding: .4rem .1rem;
     margin: 0 .4rem;
     font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
 }
+
+.menu ul {display: flex;list-style: none;align-items: center;width: 100%;justify-content: flex-start;padding: 0;margin: 0;}
+
+
+
 
 .button,
 nav a.button {
     padding: .5rem 1rem;
-    font-weight: 800;
+    font-weight: 700;
     background-color: #0071e3;
     color: #fff;
     border-radius: 6px;
@@ -135,7 +144,7 @@ main>section {
 
 section.hero {
     text-align: center;
-    background-image: linear-gradient(89.9deg, rgba(208, 246, 255, 1) 0.1%, rgba(255, 237, 237, 1) 47.9%, rgba(255, 255, 231, 1) 100.2%);
+    background-image: linear-gradient(72deg, rgba(208, 246, 255, 1) 0.1%, rgba(255, 237, 237, 1) 47.9%, rgba(255, 255, 231, 1) 100.2%);
 }
 
 section.hero img {
@@ -788,14 +797,12 @@ section.heading .background {
     gap: 10px;
     position: relative;
     letter-spacing: -.003em;
+    font-weight: 800;
 }
 
 .menu {
+    width: 100%;
     display: flex;
-    list-style: none;
-    align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
 .next {
@@ -1452,10 +1459,12 @@ h2 span.badge {
 a.brand {
     background-image: url(/uploads/logo.svg);
     display: block;
-    width: 200px;
+    width: 135px;
     height: 32px;
     background-size: auto 32px;
     background-repeat: no-repeat;
+    border-right: 1px solid;
+    margin-right: 5px;
 }
 
 a.linode-brand {
@@ -1699,6 +1708,7 @@ body.page-gaming footer p {
         grid-area: brand;
         text-align: left;
         overflow: hidden;
+        border-right: 0;
     }
 
     nav.show-menu {
@@ -1706,6 +1716,12 @@ body.page-gaming footer p {
     }
 
     nav.show-menu .menu {
+        display: flex;
+        text-align: left;
+        width: initial;
+    }
+
+    nav.show-menu .menu ul {
         display: block;
         text-align: left;
     }
