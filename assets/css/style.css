@@ -593,7 +593,7 @@ ul.cards li a {
 }
 
 ul.cards.has-hover li:hover, ul.cards li.active {
-    background-color: #d5e1f340;
+    background-color: #26272808;
     border-color: #1c71d8;
 }
 
