@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   {% include head.html %}
-  <body>
+  <body class="page-{{ page.url | slugify }}"> 
     {% include nav.html %}
     <main class="animate__animated animate__fadeIn">{{ content }}</main>
     {% include footer.html %}

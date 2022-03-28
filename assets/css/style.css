@@ -1157,7 +1157,7 @@ footer section {
 
 hr {
     border: 0;
-    border-top: 1px solid #d9d9d9;
+    border-top: 1px solid #00000059;
 }
 
 hr.spacer {
@@ -1494,7 +1494,9 @@ main>section.linked {
     padding: 3rem 4rem;
 }
 
-.hero.scarlet:nth-child(even) {background-image: linear-gradient(0deg, #bd5285, transparent);}
+.hero.scarlet:nth-child(even) {
+    background-image: linear-gradient(0deg, #bd5285, transparent);
+}
 
 span.badge.experimental {
     background-color: #1d1d1f;
@@ -1503,6 +1505,26 @@ span.badge.experimental {
 
 .scarlet span.badge.experimental {
     color: #fe7b73;
+}
+
+.page-gaming #nav {
+    background-color: #320d1cb5;
+}
+
+.page-gaming #nav a {
+    color: #fff;
+}
+
+.page-gaming a.brand {
+    background-image: url(/uploads/logo-dark.svg);
+}
+
+body.page-gaming {
+    background-color: #fd7b74;
+}
+
+body.page-gaming footer p {
+    color: black;
 }
 
 @media screen and (max-width: 745px) {
@@ -1695,6 +1717,14 @@ span.badge.experimental {
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #242424;
+        color: #fff;
+    }
+
+    body.page-gaming {
+        background-color: #3c2727;
+    }
+
+    body.page-gaming footer p {
         color: #fff;
     }
 
