@@ -572,7 +572,7 @@ ul.cards li {
     margin: 0 0 .8rem 0;
     border-radius: .3em;
     border: 1px solid #d2d2d2;
-}
+flex: 1;}
 
 ul.cards.inline li {
     padding: 1em 2em;
@@ -583,7 +583,7 @@ ul.cards li.link {
     padding: 0;
 }
 
-ul.cards li.link a {
+ul.cards li.link {
     display: block;
     padding: 1em 2em;
 }
@@ -592,13 +592,23 @@ ul.cards li a {
     text-decoration: none;
 }
 
-ul.cards.has-hover li:hover, ul.cards li.active {
+ul.cards.has-hover li:hover,
+ul.cards li.active {
     background-color: #26272808;
     border-color: #1c71d8;
 }
 
-ul.cards.has-hover li:hover, ul.cards.has-hover li:hover a,ul.cards li.active, ul.cards li.active a {
+ul.cards.has-hover li:hover,
+ul.cards.has-hover li:hover a,
+ul.cards li.active,
+ul.cards li.active a {
     color: #1c71d8;
+}
+
+.cards .link h3 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 section.downloads .container {
@@ -701,7 +711,7 @@ section.heading .background {
 
 .store {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
 }
 
@@ -1429,7 +1439,8 @@ section.heading.no-bg {
     justify-content: start;
 }
 
-h2 span.badge,h3 span.badge {
+h2 span.badge,
+h3 span.badge {
     font-size: 14px;
     position: absolute;
     background-color: white;
