@@ -1837,7 +1837,7 @@ body.page-gaming footer p {
 
 @media (prefers-color-scheme: dark) {
     #las_2022,
-    #las_2022 a {
+    #las_2022 a:not(.button) {
         color: #191919;
     }
 
