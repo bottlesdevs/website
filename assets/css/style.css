@@ -1836,6 +1836,10 @@ body.page-gaming footer p {
 }
 
 @media (prefers-color-scheme: dark) {
+    #las_2022 {
+        color: #191919;
+    }
+    
     body {
         background-color: #242424;
         color: #fff;
