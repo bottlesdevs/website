@@ -162,6 +162,22 @@ section.hero {
     background-image: linear-gradient(72deg, rgba(208, 246, 255, 1) 0.1%, rgba(255, 237, 237, 1) 47.9%, rgba(255, 255, 231, 1) 100.2%);
 }
 
+section.panel.orange {
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+section.hero.fill {
+    height: calc(100vh - 62px);
+    padding: 0 4rem;
+}
+
+section.hero.fill .container {
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: relative;
+}
+
 section.hero img {
     display: block;
     margin: 2rem auto 0;
@@ -683,6 +699,10 @@ section.heading .background {
     position: relative;
 }
 
+.center {
+    text-align: center;
+}
+
 .release-day {
     margin: 30px 0 10px 0;
     text-align: center;
@@ -981,6 +1001,10 @@ input[type="search"]:focus {
     font-size: 1em;
 }
 
+.button.button-dark {
+    background-color: #191919;
+}
+
 .hero.yellow {
     background: #f7e2c1;
 }
@@ -1120,6 +1144,26 @@ section.heading {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+}
+
+.splitter.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.panel {
+    padding: 0;
+}
+
+section.panel h4 {
+    font-size: 1.6em;
+    margin: 0;
+}
+
+section.panel p {
+    margin: .5em 0;
+    font-size: 18px;
 }
 
 .card.panel {
