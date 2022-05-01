@@ -13,6 +13,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+button,input,textarea, select {font-family: 'Source Sans Pro', sans-serif;}
+
 a,
 button,
 .modal,
@@ -113,8 +115,7 @@ a.button {
 
 
 
-.button,
-nav a.button {
+button,.button, nav a.button {
     padding: .5rem 1rem;
     font-weight: 700;
     background-color: #0071e3;
@@ -124,7 +125,7 @@ nav a.button {
     align-items: center;
     gap: 10px;
     cursor: pointer;
-}
+border: 0;}
 
 .button.secondary {
     background-color: #515d70;
@@ -672,15 +673,7 @@ section.downloads .container>.image img {
     width: 100%;
 }
 
-.page.blog article:first-of-type,
-.button:not(.link),
-.card,
-.modal>div,
-.next,
-.message,
-img.shadow,
-.dropdown>ul,
-.video-frame {
+button,.page.blog article:first-of-type, .button:not(.link), .card, .modal>div, .next, .message, img.shadow, .dropdown>ul, .video-frame {
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);
 }
 
@@ -709,7 +702,7 @@ section.heading .background {
     z-index: 1;
 }
 
-.button.icon-slot {
+button.icon-slot,.button.icon-slot {
     padding: .5rem 1rem .5rem 0;
 }
 
