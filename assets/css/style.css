@@ -13,6 +13,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+
+
+* {
+    box-sizing: border-box;
+}
+
 a,
 button,
 .modal,
@@ -541,6 +547,32 @@ ul.checkout-cart {
     gap: 10px;
 }
 
+form.address-checkout input,
+form.address-checkout select {
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {}
+
+.address-checkout button[type="submit"] {
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    font-size: 1.3rem;
+    margin: 1.5rem 0.5rem;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    transition: background-color 50ms ease;
+    width: 100%;
+}
+
 ul.checkout-cart li img {
     width: 80px;
 }
@@ -568,18 +600,18 @@ input[type="search"] {
     min-width: 510px;
 }
 
-form.address-checkout label {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
 .address-checkout {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+form.address-checkout label {
+    align-self: flex-end;
+    flex-grow: 1;
+    margin: 0.25rem 0.5rem;
+    min-width: calc(50% - 1rem);
 }
 
 form.address-checkout label[for=address_name] {
@@ -1915,6 +1947,11 @@ section.heading.center h1 {
 }
 
 @media screen and (max-width: 745px) {
+    ul.checkout-cart li {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     footer .grid {
         display: flex;
         flex-direction: column;
