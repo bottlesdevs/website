@@ -356,6 +356,33 @@ table th {
     border-bottom: 1px solid #cccccc;
 }
 
+nav.secondary {
+    z-index: 888;
+    top: 62px;
+}
+
+nav .menu ul:last-of-type {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shop > ul {
+display: grid;grid-template-columns: 1fr 1fr 1fr;padding: 0;gap: 20px;}
+
+
+.shop > ul > li > a > img {max-width: 100%;max-width: 280px;}
+
+.shop > ul > li {list-style: none;}
+
+.shop > ul > li > a {display: flex;
+    flex-direction: column;justify-content: center;align-items: center;padding: 20px;border-radius: 6px;border: 1px solid transparent;}
+
+.shop > ul > li > a:hover {border-color: #e0e0e0;box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);}
+
+.shop > ul > li > a > h3 {font-size: 21px;}
+
+section.shop {padding: 0 4rem;}
+
 table th,
 table td {
     padding: 1rem;
