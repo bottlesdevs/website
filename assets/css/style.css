@@ -21,6 +21,12 @@ input,
     transition: all .2s ease-in-out
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 button,
 input,
 textarea,
@@ -174,12 +180,17 @@ button {
     display: flex;
     flex-direction: row;
     align-items: center;
-margin: 0 0 3rem 0;gap: 4em;}
+    margin: 0 0 3rem 0;
+    gap: 4em;
+}
 
 .product img {
     width: 100%;
     max-width: 580px;
-background-color: #f6f6f6;border-radius: 10px;}
+    background-color: #f6f6f6;
+    border-radius: 10px;
+}
+
 ul.selector.color li span.color {
     display: block;
     width: 48px;
@@ -195,7 +206,8 @@ ul.selector.color li button {
     padding: 0;
 }
 
-ul.selector.color li a,ul.selector.color li button {
+ul.selector.color li a,
+ul.selector.color li button {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -218,7 +230,12 @@ ul.selector.color li button span.color::after {
     border-radius: 100%;
 }
 
-.product .description {border-top: 1px solid;font-size: 20px;max-width: 940px;}
+.product .description {
+    border-top: 1px solid;
+    font-size: 20px;
+    max-width: 940px;
+}
+
 button[type="submit"] {
     font-size: 1.4em;
 }
@@ -514,6 +531,59 @@ nav .menu ul:last-of-type {
 
 section.shop {
     padding: 0 4rem;
+}
+
+ul.checkout-cart {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ul.checkout-cart li img {
+    width: 80px;
+}
+
+ul.checkout-cart li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+ul.checkout-cart li:hover {
+    background-color: #f1f1f1;
+}
+
+span.price-row {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+input[type="search"] {
+    min-width: 510px;
+}
+
+form.address-checkout label {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.address-checkout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+form.address-checkout label[for=address_name] {
+    width: 100%;
 }
 
 table th,
@@ -1052,16 +1122,20 @@ section.heading .background {
 }
 
 input[type="text"],
+input[type="tel"],
+input[type="number"],
 input[type="email"],
 input[type="password"],
-input[type="search"] {
+input[type="search"],
+select {
     font-size: 21px;
     padding: 10px;
-    min-width: 510px;
+
     border-radius: 4px;
     border: 2px solid transparent;
     outline: none;
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%), 0 1px 0 0 #d7d7d7;
+    background-color: #fff;
 }
 
 input[type="text"]:focus,
@@ -1859,7 +1933,8 @@ section.heading.center h1 {
         background-color: #000000a3;
     }
 
-    .splitter,.product .splitter {
+    .splitter,
+    .product .splitter {
         display: flex;
         flex-direction: column;
     }
