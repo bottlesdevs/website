@@ -13,19 +13,33 @@ layout: default
         <div class="container medium">
             <h1 itemprop="headline">{{ page.title }}</h1>
             <p>
-                <time itemprop="datePublished"
-                      datetime="{{ page.date | date:"%Y-%m-%d" }}"
-                      content="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%a, %b %e, %Y" }}</time>
+                {% if page.user_nick != nil %}
+                <div class="author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <a href="https://github.com/{{ page.user_nick }}">
+                        <img class="avatar" src="https://github.com/{{ page.user_nick }}.png" alt="{{ page.user_nick }}" itemprop="image">
+                    </a>
+                    <div class="author-info">
+                        <a href="https://github.com/{{ page.user_nick }}" itemprop="author">
+                            <b>{{ page.user_name }}</b> | {{ page.user_tag }}
+                        </a>
+                        <time itemprop="datePublished"
+                            datetime="{{ page.date | date:"%Y-%m-%d" }}"
+                            content="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%a, %b %e, %Y" }}</time>
+                    </div>
+                </div>
+                {% else %}
+                    <time itemprop="datePublished"
+                        datetime="{{ page.date | date:"%Y-%m-%d" }}"
+                        content="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%a, %b %e, %Y" }}</time>
+                {% endif %}
             </p>
         </div>
     </section>
     <section class="page post">
         {% if page.is_release_day != nil %}
             <section class="release-day">
-                <div>
-                    <p>today is</p>
-                    <strong {% if page.is_release_day_color != nil %}style="color: {{page.is_release_day_color}}"{% endif %}>Release Day!</strong>
-                </div>
+                <p>today is</p>
+                <strong {% if page.is_release_day_color != nil %}style="color: {{page.is_release_day_color}}"{% endif %}>Release Day!</strong>
             </section>
         {% endif %}
         <div class="container medium">

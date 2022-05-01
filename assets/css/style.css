@@ -1639,6 +1639,42 @@ body.page-gaming footer p {
     color: black;
 }
 
+img.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 5px 10px rgb(0 0 0 / 6%);
+    border: 1px solid transparent;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.author-info a {
+    font-size: 17px;
+}
+
+.author-info time {
+    font-size: 14px;
+}
+
+.author-info a {
+    text-decoration: none;
+}
+
+.author-info a b {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;
@@ -1836,6 +1872,7 @@ body.page-gaming footer p {
 }
 
 @media (prefers-color-scheme: dark) {
+
     #las_2022,
     #las_2022 a:not(.button) {
         color: #191919;
