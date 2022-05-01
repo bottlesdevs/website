@@ -1675,6 +1675,11 @@ img.avatar {
     text-decoration: underline;
 }
 
+section.heading.center h1 {
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (max-width: 745px) {
     footer .grid {
         display: flex;
