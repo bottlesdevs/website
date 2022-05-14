@@ -86,8 +86,13 @@ layout: default
         var rgb = hexToRgb('{{ page.is_release_day_color }}');
         var startColor = `rgba(${rgb}, 0.1)`;
         var endColor = `rgba(${rgb}, 0.3)`;
+        var fgColor = `rgba(${rgb}, 1)`;
+        var selection = document.createElement('style');
 
         var el = document.getElementsByClassName('heading')[0];
         el.style.background = `linear-gradient(120deg, ${startColor} 0%, ${endColor} 100%)`;
+        selection.type = 'text/css';
+        selection.innerHTML = `::selection { background: ${startColor}; color: ${fgColor} !important; }`;
+        document.getElementsByTagName('head')[0].appendChild(selection);
     </script>
 {% endif %}
