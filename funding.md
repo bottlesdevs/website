@@ -74,45 +74,59 @@ title: Funding
     <p>Bottles is (today) a project driven by the effort of a small developer team and the support of a magnificent community!</p>
     <br />
     <h3>Thanks to them who made a donation or became our GitHub sponsor 💖!</h3>
-    <ul>
-      <li>Digoss/li>
-      <li>wesleyote</li>
-      <li>terasaka2k</li>
-      <li>JaxiiRuff</li>
-      <li>SashaPGT</li>
-      <li>Blisto91</li>
-      <li>Simon Jenkins</li>
-      <li>Christopher (kit) Eubanks</li>
-      <li>Manaurys Suazo</li>
-      <li>Black_file</li>
-      <li>Phil Roggenbuck</li>
-      <li>Chris</li>
-      <li>Robin Lee</li>
-      <li>Simon Jenkins</li>
-      <li>Daniel Chirinos</li>
-      <li>Jorge O. Castro</li>
-      <li>Hugo Gonzalez Hernandez</li>
-      <li>AsciiWolf</li>
-      <li>Andrew Ego</li>
-      <li>Knebergish</li>
-      <li>destinatorM</li>
-      <li>gbtb</li>
-      <li>Luke Kaalim</li>
-      <li>Daniel Rusek</li>
-      <li>Dan G</li>
-      <li>Anton Alexandrenok</li>
-      <li>Kamil Páral</li>
-      <li>Stéphane Travostino</li>
-      <li>davebrny</li>
-      <li>Joel S.</li>
-      <li>Daniel Rusek</li>
-      <li>Caleb Woodbine</li>
-      <li>Pietro di Caprio</li>
-      <li>Patrizio Bruno</li>
-      <li>NullDev // Chris</li>
-      <li>Robert Krisztian Sandor</li>
-      <li>and the anonymous supporters</li>
+    <ul class="people">
     </ul>
+    <script src="/assets/js/donations.js"></script>
+    <script>
+      var people = {
+          "github": [
+            "Digoss",
+            "wesleyote",
+            "terasaka2k",
+            "JaxiiRuff",
+            "SashaPGT",
+            "Blisto91",
+            "phrogg",
+            "EvoxCX",
+            "Manaurys",
+            "Knebergish",
+            "kparal",
+            "castrojo",
+            "chrissewell1234",
+            "cheese",
+            "sjenkins7",
+            "danielheadbang",
+            "lukekaalim",
+            "davebrny",
+            "gbtb",
+            "dginovker",
+            "the-spyke",
+            "AsciiWolf",
+            "1player",
+            "joelselvaraj",
+            "patriziobruno",
+            "pietrodicaprio",
+            "NullDev",
+            "nickavem",
+            "Christophereubanks",
+            "destinatorM",
+            "robert-sandor",
+          ],
+          "other": [
+            "Christopher (kit) Eubanks",
+            "Black_file",
+            "Chris",
+            "Robin Lee",
+            "Andrew Ego",
+            "Sonny Piers",
+            "Dan G",
+            "Caleb Woodbine",
+            "Robert Krisztian Sandor",
+            "+ All the anonymous donations",
+          ]
+        };
+      Donations.people(dom=".people", list=people);
+    </script>
     <br />
     <p>- Thanks from the Bottles Developers.</p>
   </div>

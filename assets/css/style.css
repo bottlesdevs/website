@@ -1948,6 +1948,16 @@ section.heading.center h1 {
     justify-content: center;
 }
 
+.people {gap: 10px;padding: 0;}
+
+.people .person {display: inline-flex;flex-direction: column;text-align: center;margin: 10px;gap: 10px;}
+
+.people .person img {width: 120px;border-radius: 100%;}
+
+.people .person span {font-weight: 600;font-size: 15px;}
+
+.people .person.no-pic {background-color: #ededed;display: inline-block;margin: 0;padding: 20px 30px;margin: 2px;border-radius: 4px;}
+
 @media screen and (max-width: 745px) {
     ul.checkout-cart li {
         flex-direction: column;
