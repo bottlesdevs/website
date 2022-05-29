@@ -13,8 +13,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-
-
 * {
     box-sizing: border-box;
 }
@@ -299,6 +297,29 @@ section.panel.orange {
     background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
 
+.splitter.flex.center {
+    justify-content: center;
+}
+
+.panel.small .container {
+    padding: 10px;
+}
+
+section.panel.small h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.panel.silver {
+    background-color: #adadad26;
+    border-bottom: 1px solid #89888821;
+}
+
+.button.medium {
+    padding: 4px 13px 6px;
+    font-size: 16px;
+}
+
 section.hero.fill {
     height: calc(100vh - 62px);
     padding: 0 4rem;
@@ -505,7 +526,6 @@ nav .menu ul:last-of-type {
     padding: 0;
     gap: 20px;
 }
-
 
 .shop>ul>li>a>img {
     max-width: 100%;
@@ -1162,7 +1182,6 @@ input[type="search"],
 select {
     font-size: 21px;
     padding: 10px;
-
     border-radius: 4px;
     border: 2px solid transparent;
     outline: none;
@@ -1309,8 +1328,6 @@ input[type="search"]:focus {
 .hero.scarlet .button:not(.link):focus {
     background-color: #683939;
 }
-
-
 
 .hero.blue {
     background: #c1ddf7;
@@ -1948,15 +1965,37 @@ section.heading.center h1 {
     justify-content: center;
 }
 
-.people {gap: 10px;padding: 0;}
+.people {
+    gap: 10px;
+    padding: 0;
+}
 
-.people .person {display: inline-flex;flex-direction: column;text-align: center;margin: 10px;gap: 10px;}
+.people .person {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px;
+    gap: 10px;
+}
 
-.people .person img {width: 120px;border-radius: 100%;}
+.people .person img {
+    width: 120px;
+    border-radius: 100%;
+}
 
-.people .person span {font-weight: 600;font-size: 15px;}
+.people .person span {
+    font-weight: 600;
+    font-size: 15px;
+}
 
-.people .person.no-pic {background-color: #ededed;display: inline-block;margin: 0;padding: 20px 30px;margin: 2px;border-radius: 4px;}
+.people .person.no-pic {
+    background-color: #ededed;
+    display: inline-block;
+    margin: 0;
+    padding: 20px 30px;
+    margin: 2px;
+    border-radius: 4px;
+}
 
 @media screen and (max-width: 745px) {
     ul.checkout-cart li {
@@ -2243,6 +2282,10 @@ section.heading.center h1 {
 
     section.hero {
         background-image: linear-gradient(120deg, #242424 0%, #191919 100%);
+    }
+
+    .panel.silver h4 {
+        color: #fff;
     }
 
     .hero.yellow {
