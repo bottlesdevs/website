@@ -7,8 +7,7 @@ published: false
 comments: true
 user_nick: theevilskeleton
 user_name: TheEvilSkeleton
-user_tag: Founder
-co_tag: Helper
+user_tag: Helper
 ---
 
 We are developers and contributors of Bottles who want to provide the best support to our users.
