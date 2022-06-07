@@ -2003,7 +2003,7 @@ section.heading.center h1 {
 }
 
 .avatars a:first-of-type {
-    margin-right: -10px;
+    margin-right: -12px;
 }
 
 .avatars:hover a:first-of-type {
@@ -2011,11 +2011,31 @@ section.heading.center h1 {
 }
 
 .avatars a:last-of-type {
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 .avatars:hover a:last-of-type {
     margin-right: 0;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #2e2e2e;
+    border-top: 1px solid #4c4c4c;
+    padding: 6px 10px;
+    font-size: 13px;
+    box-shadow: 0 0 6px #6a6a6aab;
+    color: #fff;
+    border-radius: 5px;
+    display: none;
+    pointer-events: none;
+    text-shadow: 1px 1px 1px black;
+    font-weight: 600;
+    letter-spacing: .1px;
+}
+
+.tooltip p {
+    margin: 0;
 }
 
 @media screen and (max-width: 745px) {

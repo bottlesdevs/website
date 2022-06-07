@@ -8,29 +8,29 @@
       <section>
         <h4>Community</h4>
         <ul>
-          <li><a href="//forum.usebottles.com" title="Forums"><ion-icon class="icon" name="chatbox-ellipses-outline"></ion-icon>Forums</a></li>
-          <li><a href="//twitter.com/usebottles" title="Twitter"><ion-icon class="icon" name="logo-twitter"></ion-icon>Twitter</a></li>
-          <li><a href="//discord.gg/wF4JAdYrTR" title="Discord"><ion-icon class="icon" name="logo-discord"></ion-icon>Discord</a></li>
-          <li><a href="//github.com/bottlesdevs" title="GitHub"><ion-icon class="icon" name="logo-github"></ion-icon>GitHub</a></li>
-          <li><a href="//t.me/usebottles" title="Telegram"><ion-icon class="icon" name="paper-plane-outline"></ion-icon>Telegram</a></li>
-          <li><a href="https://matrix.to/#/%23UseBottles:matrix.org" title="Matrix"><ion-icon class="icon" name="planet-outline"></ion-icon>Matrix</a></li>
+          <li><a href="//forum.usebottles.com" tooltip="Forums"><ion-icon class="icon" name="chatbox-ellipses-outline"></ion-icon>Forums</a></li>
+          <li><a href="//twitter.com/usebottles" tooltip="Twitter"><ion-icon class="icon" name="logo-twitter"></ion-icon>Twitter</a></li>
+          <li><a href="//discord.gg/wF4JAdYrTR" tooltip="Discord"><ion-icon class="icon" name="logo-discord"></ion-icon>Discord</a></li>
+          <li><a href="//github.com/bottlesdevs" tooltip="GitHub"><ion-icon class="icon" name="logo-github"></ion-icon>GitHub</a></li>
+          <li><a href="//t.me/usebottles" tooltip="Telegram"><ion-icon class="icon" name="paper-plane-outline"></ion-icon>Telegram</a></li>
+          <li><a href="https://matrix.to/#/%23UseBottles:matrix.org" tooltip="Matrix"><ion-icon class="icon" name="planet-outline"></ion-icon>Matrix</a></li>
         </ul>
       </section>
       <section>
         <h4>Support</h4>
         <ul>
-          <li><a href="//docs.usebottles.com" title="Documentation">Documentation</a></li>
-          <li><a href="//github.com/bottlesdevs/Bottles/issues/new/choose" title="Report a bug">Report a bug</a></li>
-          <li><a href="//github.com/bottlesdevs/Bottles/issues/new/choose" title="Request a feature">Request a feature</a></li>
-          <li><a href="//github.com/bottlesdevs/dependencies/issues/new/choose" title="Report a dependency">Report a dependency</a></li>
+          <li><a href="//docs.usebottles.com" tooltip="Documentation">Documentation</a></li>
+          <li><a href="//github.com/bottlesdevs/Bottles/issues/new/choose" tooltip="Report a bug">Report a bug</a></li>
+          <li><a href="//github.com/bottlesdevs/Bottles/issues/new/choose" tooltip="Request a feature">Request a feature</a></li>
+          <li><a href="//github.com/bottlesdevs/dependencies/issues/new/choose" tooltip="Report a dependency">Report a dependency</a></li>
         </ul>
       </section>
       <section>
         <h4>Other</h4>
         <ul>
-          <li><a href="//github.com/bottlesdevs/Bottles/blob/master/LICENSE" title="License">License (GPLv3)</a></li>
-          <li><a href="//usebottles.com/feed" title="RSS Feed">RSS Feed</a></li>
-          <li><a href="//usebottles.com/funding" title="RSS Feed">Support Us</a></li>
+          <li><a href="//github.com/bottlesdevs/Bottles/blob/master/LICENSE" tooltip="License">License (GPLv3)</a></li>
+          <li><a href="//usebottles.com/feed" tooltip="RSS Feed">RSS Feed</a></li>
+          <li><a href="//usebottles.com/funding" tooltip="Support Us">Support Us</a></li>
         </ul>
       </section>
     </div>
@@ -46,9 +46,11 @@
 </footer>
 
 <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-
+<script src="/assets/js/tooltips.js"></script>
 
 <script type='text/javascript'>
+  Tooltips.init();
+  
   //some default pre init
   var Countly = Countly || {};
   Countly.q = Countly.q || [];

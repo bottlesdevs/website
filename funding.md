@@ -17,7 +17,7 @@ title: Funding
       Developers.</p>
     <ul class="cards store has-hover">
       <li class="link">
-        <a href="https://github.com/sponsors/bottlesdevs" title="Support Bottles Developers on GitHub">
+        <a href="https://github.com/sponsors/bottlesdevs" tooltip="Support Bottles Developers on GitHub">
           <h3><ion-icon class="icon" name="logo-github"></ion-icon> GitHub Sponsor</h3>
           <p>By subscribing for only 2$ you can help keep the project alive. You can also make a one-time donation.</p>
         </a>
