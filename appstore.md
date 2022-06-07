@@ -96,12 +96,12 @@ title: AppStore
                 </div>
                 <ul>
                   <li>
-                    <a href='https://github.com/bottlesdevs/programs/issues/new/choose' title='Bug report'>
+                    <a href='https://github.com/bottlesdevs/programs/issues/new/choose' tooltip='Bug report'>
                       <ion-icon class="icon" name="bug-outline"></ion-icon> <span>Bug report</span>
                     </a>
                   </li>
                   <li>
-                    <a onclick='modal("https://raw.githubusercontent.com/bottlesdevs/programs/main/${installer["Category"]}/${item}.yml")' title='Show installer'>
+                    <a onclick='modal("https://raw.githubusercontent.com/bottlesdevs/programs/main/${installer["Category"]}/${item}.yml")' tooltip='Show installer'>
                       <ion-icon class="icon" name="code-outline"></ion-icon> <span>Show installer</span>
                     </a>
                   </li>
@@ -113,7 +113,7 @@ title: AppStore
                 <span class="tag tag-${installer["Category"]}">${installer["Category"]}</span>
               </div>
               <div class="actions">
-                <a href='https://docs.usebottles.com/bottles/installers#use-installers' title='How to install'> <!--bottles:${item}-->
+                <a href='https://docs.usebottles.com/bottles/installers#use-installers' tooltip='How to install'> <!--bottles:${item}-->
                   <ion-icon class="icon" name="download-outline"></ion-icon> Install
                 </a>
               </div>

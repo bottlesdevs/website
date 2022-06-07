@@ -17,10 +17,10 @@ layout: default
                     {% if page.co_user_nick != nul %}
                         <div class="author">
                             <div class="avatars">
-                                <a href="https://github.com/{{ page.user_nick }}" itemscope itemtype="https://schema.org/Person" title="{{ page.user_name }} - {{ page.user_tag }}">
+                                <a href="https://github.com/{{ page.user_nick }}" itemscope itemtype="https://schema.org/Person" tooltip="{{ page.user_name }} - {{ page.user_tag }}">
                                     <img class="avatar" src="https://github.com/{{ page.user_nick }}.png" alt="{{ page.user_nick }}" itemprop="image">
                                 </a>
-                                <a href="https://github.com/{{ page.co_user_nick }}" itemscope itemtype="https://schema.org/Person" title="{{ page.co_user_name }} - {{ page.co_user_tag }}">
+                                <a href="https://github.com/{{ page.co_user_nick }}" itemscope itemtype="https://schema.org/Person" tooltip="{{ page.co_user_name }} - {{ page.co_user_tag }}">
                                     <img class="avatar" src="https://github.com/{{ page.co_user_nick }}.png" alt="{{ page.co_user_nick }}" itemprop="image">
                                 </a>
                             </div>
