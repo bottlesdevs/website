@@ -3,7 +3,7 @@ title: "Please don't unofficially ship Bottles in distribution repositories"
 description: "An open letter to distributions publishing Bottles unofficially"
 published: 2022-06-07
 layout: post
-published: false
+published: true
 comments: true
 user_nick: theevilskeleton
 user_name: TheEvilSkeleton
