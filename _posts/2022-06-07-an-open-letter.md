@@ -25,3 +25,6 @@ For more than a year, Bottles has been supplied mainly as a Flatpak, giving us t
 **If you are a packager who packages Bottles unofficially, please reconsider this decision.** We spend a lot of our time with quality assurance (QA) with Flatpak, as well as supporting people who have problems with Bottles in issue trackers or in chat channels. The difficulty of maintaining workarounds and troubleshooting for distribution specific problems is time consuming and hinders our development.
 
 We understand the need of providing a trusted source where users can obtain packages. However, we vastly prefer to provide no support than poor support, just so the user needn't deal with a bad experience with Bottles directly. We also prefer to avoid telling users that the packagers who unofficially packaged Bottles did so incorrectly and/or didn't test enough.
+
+## Addendum – Jun 7 2022
+Our invitation is addressed to all those who are packaging Bottles incorrectly and/or do not provide adequate tests, thus invalidating the user experience. We are happy to help anyone who would like to keep their package, adapting to our quality standards (i.e. making the application work as it intended).
