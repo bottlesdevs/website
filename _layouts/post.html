@@ -14,19 +14,45 @@ layout: default
             <h1 itemprop="headline">{{ page.title }}</h1>
             <p>
                 {% if page.user_nick != nil %}
-                <div class="author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                    <a href="https://github.com/{{ page.user_nick }}">
-                        <img class="avatar" src="https://github.com/{{ page.user_nick }}.png" alt="{{ page.user_nick }}" itemprop="image">
-                    </a>
-                    <div class="author-info">
-                        <a href="https://github.com/{{ page.user_nick }}" itemprop="author">
-                            <b>{{ page.user_name }}</b> | {{ page.user_tag }}
-                        </a>
-                        <time itemprop="datePublished"
-                            datetime="{{ page.date | date:"%Y-%m-%d" }}"
-                            content="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%a, %b %e, %Y" }}</time>
-                    </div>
-                </div>
+                    {% if page.co_user_nick != nul %}
+                        <div class="author">
+                            <div class="avatars">
+                                <a href="https://github.com/{{ page.user_nick }}" itemscope itemtype="https://schema.org/Person" title="{{ page.user_name }} - {{ page.user_tag }}">
+                                    <img class="avatar" src="https://github.com/{{ page.user_nick }}.png" alt="{{ page.user_nick }}" itemprop="image">
+                                </a>
+                                <a href="https://github.com/{{ page.co_user_nick }}" itemscope itemtype="https://schema.org/Person" title="{{ page.co_user_name }} - {{ page.co_user_tag }}">
+                                    <img class="avatar" src="https://github.com/{{ page.co_user_nick }}.png" alt="{{ page.co_user_nick }}" itemprop="image">
+                                </a>
+                            </div>
+                            <div class="author-info">
+                                <div>
+                                    <a href="https://github.com/{{ page.user_nick }}" itemprop="author">
+                                        <b>{{ page.user_name }}</b> | {{ page.user_tag }}
+                                    </a> &amp; 
+                                    <a href="https://github.com/{{ page.co_user_nick }}" itemprop="author">
+                                        <b>{{ page.co_user_name }}</b> | {{ page.co_user_tag }}
+                                    </a>
+                                </div>
+                                <time itemprop="datePublished"
+                                    datetime="{{ page.date | date:"%Y-%m-%d" }}"
+                                    content="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%a, %b %e, %Y" }}</time>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <a href="https://github.com/{{ page.user_nick }}">
+                                <img class="avatar" src="https://github.com/{{ page.user_nick }}.png" alt="{{ page.user_nick }}" itemprop="image">
+                            </a>
+                            <div class="author-info">
+                                <a href="https://github.com/{{ page.user_nick }}" itemprop="author">
+                                    <b>{{ page.user_name }}</b> | {{ page.user_tag }}
+                                </a>
+                                <time itemprop="datePublished"
+                                    datetime="{{ page.date | date:"%Y-%m-%d" }}"
+                                    content="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%a, %b %e, %Y" }}</time>
+                            </div>
+                        </div>
+                    {% endif %}
                 {% else %}
                     <time itemprop="datePublished"
                         datetime="{{ page.date | date:"%Y-%m-%d" }}"

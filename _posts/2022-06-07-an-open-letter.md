@@ -8,6 +8,9 @@ comments: true
 user_nick: theevilskeleton
 user_name: TheEvilSkeleton
 user_tag: Helper
+co_user_nick: mirkobrombin
+co_user_name: Mirko Brombin
+co_user_tag: Founder
 ---
 
 We are developers and contributors of Bottles who want to provide the best support to our users.

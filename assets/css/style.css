@@ -21,7 +21,8 @@ a,
 button,
 .modal,
 input,
-.grid-pics img {
+.grid-pics img,
+.avatars {
     transition: all .2s ease-in-out
 }
 
@@ -1995,6 +1996,26 @@ section.heading.center h1 {
     padding: 20px 30px;
     margin: 2px;
     border-radius: 4px;
+}
+
+.avatars {
+    display: flex;
+}
+
+.avatars a:first-of-type {
+    margin-right: -10px;
+}
+
+.avatars:hover a:first-of-type {
+    margin-right: 0;
+}
+
+.avatars a:last-of-type {
+    margin-right: 10px;
+}
+
+.avatars:hover a:last-of-type {
+    margin-right: 0;
 }
 
 @media screen and (max-width: 745px) {
