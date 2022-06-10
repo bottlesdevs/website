@@ -29,27 +29,21 @@ function modal(url, markdown=false) {
       });
     });
   }
-  function modal_close() {
-    var modals = document.getElementsByClassName('modal');
-    for (var i = 0; i < modals.length; i++) {
-      modals[i].classList.remove('show');
-    }
-  }
-  function dropdown_reset() {
-    var dropdowns = document.getElementsByClassName('dropdown');
-    for (var i = 0; i < dropdowns.length; i++) {
-      dropdowns[i].classList.remove('show');
+  function hide_element(classToHide) {
+    var allElements = document.getElementsByClassName(classToHide);
+    for (var i = 0; i < allElements.length; i++) {
+      allElements[i].classList.remove('show');
     }
   }
   document.addEventListener('keyup', function(e) {
     if (e.keyCode == 27) {
-      modal_close();
-      dropdown_reset();
+      hide_element('modal');
+      hide_element('dropdown');
     }
   });
   document.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal')) {
-      modal_close();
+      hide_element('modal');
     }
     if (e.target.closest('.toggler')) {
       e.target.closest('.dropdown').classList.toggle('show');
