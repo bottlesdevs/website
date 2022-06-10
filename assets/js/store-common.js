@@ -6,7 +6,7 @@ function modal(url, markdown=false) {
             modal[0].innerHTML = `<div>
                 <div class="reader">${marked.parse(text)}</div>
                     <div class="actions">
-                    <a class="button icon-slot" onclick="modal_close()">
+                    <a class="button icon-slot" onclick="hide_element('modal')">
                       <ion-icon class="icon" name="close-outline"></ion-icon>
                         Close
                     </a>
@@ -16,7 +16,7 @@ function modal(url, markdown=false) {
             modal[0].innerHTML = `<div>
                 <pre><code class="language-yaml">${text}</code></pre>
                 <div class="actions">
-                <a class="button icon-slot" onclick="modal_close()">
+                <a class="button icon-slot" onclick="hide_element('modal')">
                   <ion-icon class="icon" name="close-outline"></ion-icon>
                     Close
                 </a>
