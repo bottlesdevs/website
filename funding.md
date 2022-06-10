@@ -80,6 +80,7 @@ title: Funding
     <script>
       var people = {
           "github": [
+            "ajayyy",
             "Digoss",
             "wesleyote",
             "terasaka2k",
