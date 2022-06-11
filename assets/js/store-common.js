@@ -36,7 +36,7 @@ function modal(url, markdown=false) {
     }
   }
   document.addEventListener('keyup', function(e) {
-    if (e.key === 'Esc' || e.key === 'Escape') {
+    if (e.key === 'Escape' || e.key === 'Esc') {
       hide_element('modal');
       hide_element('dropdown');
     }
