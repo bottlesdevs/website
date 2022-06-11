@@ -33,6 +33,9 @@ navigation_left:
     - link: "/funding/"
       name: Funding
 navigation_right:
+    - link: "http://127.0.0.1:4000/blog/LAS-2022/"
+      name: "<b>@LAS22</b>"
+      place: right
     - link: "https://docs.usebottles.com/"
       name: <ion-icon name="book-outline"></ion-icon> Docs
       place: right
@@ -41,9 +44,6 @@ navigation_right:
       place: right
     - link: "https://hosted.weblate.org/engage/bottles/"
       name: <ion-icon name="language-outline"></ion-icon> Help translating
-      place: right
-    - link: "https://github.com/bottlesdevs/"
-      name: <ion-icon name="logo-github"></ion-icon> GitHub
       place: right
 
 plugins:
