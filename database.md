@@ -25,7 +25,7 @@ title: Dependencies, resources and software installers for Bottles
         </a>
       </li>
       <li class="link">
-        <a href="/database/installers">
+        <a href="/appstore">
           <h3>Installers</h3>
           <p>These are installers maintained by our community that automate the installation of a Windows program.</p>
         </a>
