@@ -1278,6 +1278,8 @@ input[type="search"]:focus {
 }
 
 .feature-display.center .description h2 {
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
