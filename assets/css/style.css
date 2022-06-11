@@ -867,7 +867,6 @@ ul.cards {
 ul.cards li {
     list-style: none;
     background-color: #fff;
-    padding: .8rem;
     margin: 0 0 .8rem 0;
     border-radius: .3em;
     border: 1px solid #d2d2d2;
@@ -880,16 +879,13 @@ ul.cards.inline li {
 }
 
 ul.cards li.link {
-    padding: 0;
-}
-
-ul.cards li.link {
-    display: block;
-    padding: 1em 2em;
+    display: flex;
 }
 
 ul.cards li a {
+    width: 100%;
     text-decoration: none;
+    padding: 1em 2em;
 }
 
 ul.cards.has-hover li:hover,
