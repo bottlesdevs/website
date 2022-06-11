@@ -2,28 +2,24 @@ function modal(url, markdown=false) {
     var modal = document.getElementsByClassName('modal');
     fetch(url).then(function (response) {
       return response.text().then(function (text) {
-        if (markdown) {
-            modal[0].innerHTML = `<div>
-                <div class="reader">${marked.parse(text)}</div>
-                    <div class="actions">
-                    <a class="button icon-slot" onclick="hide_element('modal')">
-                      <ion-icon class="icon" name="close-outline"></ion-icon>
-                        Close
-                    </a>
-                </div>`;
-        } else {
-            var data =
-            modal[0].innerHTML = `<div>
-                <pre><code class="language-yaml">${text}</code></pre>
-                <div class="actions">
-                <a class="button icon-slot" onclick="hide_element('modal')">
-                  <ion-icon class="icon" name="close-outline"></ion-icon>
-                    Close
-                </a>
-                </div>`;
+        modal[0].innerHTML = getModalMarkup();
+
+        if (!markdown) {
             hljs.highlightAll();
         }
+        
         modal[0].classList.add('show');
+
+        function getModalMarkup() {
+          return `<div>` +
+          markdown ? `<div class="reader">${marked.parse(text)}</div>` : `<pre><code class="language-yaml">${text}</code></pre>` +
+          `<div class="actions">
+            <a class="button icon-slot" onclick="hide_element('modal')">
+              <ion-icon class="icon" name="close-outline"></ion-icon>
+                Close
+            </a>
+          </div>`;
+        }
       }).catch(function (err) {
         console.log(err);
       });
