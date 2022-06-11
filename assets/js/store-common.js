@@ -12,7 +12,7 @@ function modal(url, markdown=false) {
 
         function getModalMarkup() {
           return `<div>` +
-          markdown ? `<div class="reader">${marked.parse(text)}</div>` : `<pre><code class="language-yaml">${text}</code></pre>` +
+          (markdown ? `<div class="reader">${marked.parse(text)}</div>` : `<pre><code class="language-yaml">${text}</code></pre>`) +
           `<div class="actions">
             <a class="button icon-slot" onclick="hide_element('modal')">
               <ion-icon class="icon" name="close-outline"></ion-icon>
