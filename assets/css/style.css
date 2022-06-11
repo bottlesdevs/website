@@ -1277,11 +1277,6 @@ input[type="search"]:focus {
     font-size: 5em;
 }
 
-.feature-display.center .description h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .feature-display .description h2 .mdi {
     font-size: 1em;
@@ -2235,6 +2230,14 @@ section.heading.center h1 {
     .menu a {
         display: block;
         font-size: 17px;
+    }
+}
+
+@media screen and (min-width:440px) {
+    .feature-display.center .description h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
