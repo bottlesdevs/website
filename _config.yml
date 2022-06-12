@@ -33,7 +33,7 @@ navigation_left:
     - link: "/funding/"
       name: Funding
 navigation_right:
-    - link: "http://127.0.0.1:4000/blog/LAS-2022/"
+    - link: "/blog/LAS-2022/"
       name: "<b>@LAS22</b>"
       place: right
     - link: "https://docs.usebottles.com/"
