@@ -17,6 +17,10 @@ body {
     box-sizing: border-box;
 }
 
+.on-dark {
+    display: none !important;
+}
+
 a,
 button,
 .modal,
@@ -1415,7 +1419,7 @@ section.heading {
 }
 
 .grid-pics img:hover {
-    transform: scale(1.5);
+    transform: scale(2);
     z-index: 1;
 }
 
@@ -1572,6 +1576,10 @@ hr.spacer {
 
 .grid-pics.layout-1-2 img:nth-child(3) {
     grid-area: 2 / 2 / 3 / 3;
+}
+
+.grid-pics.layout-3 {
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 span.tag.grade-Gold {
@@ -2231,6 +2239,9 @@ section.heading.center h1 {
         display: block;
         font-size: 17px;
     }
+    .grid-pics img:hover {
+        transform: none;
+    }
 }
 
 @media screen and (min-width:440px) {
@@ -2242,6 +2253,12 @@ section.heading.center h1 {
 }
 
 @media (prefers-color-scheme: dark) {
+    .on-light {
+        display: none !important;
+    }
+    .on-dark {
+        display: inherit !important;
+    }
 
     #las_2022,
     #las_2022 a:not(.button) {
