@@ -43,6 +43,17 @@ title: Funding
       and money to come true.</p>
     <ul>
       <li>
+        <h3>Library mode</h3>
+        <p>Already implemented as an experimental feature, this feature allow you to add any program from any bottle in
+        a library view for easy access. We want to allow the user to launch Bottles in library mode only, for gaming purposes
+        like on Steam Deck.</p>
+      </li>
+      <li>
+        <h3>Per-bottle sandbox</h3>
+        <p>Already implemented as an experimental feature, this feature is a wrapper around bubblewrap an flatpak-spawn to
+          make a sandbox per-bottle, allowing the user to limit permissions..</p>
+      </li>
+      <li>
         <h3>Layered bottles</h3>
         <p>This is our solution for multiple environments in one bottle. This is
         currently a 
