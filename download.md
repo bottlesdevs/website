@@ -20,19 +20,22 @@ description: Download Bottles for your Linux distribution
         </a>
       </li>
       <li class="link">
-        <a href="https://aur.archlinux.org/packages/bottles">
-          <h3>AUR</h3>
-          <p>If you are using Arch Linux or its derivative, you may want to use our official AUR package. We keep it updated.</p>
+        <a href="#">
+          <h3>Snap</h3>
+          <p>We are working on it.</p>
         </a>
       </li>
       <li class="link">
-        <a href="https://docs.usebottles.com/getting-started/installation#other-packages">
-          <h3>Other packages</h3>
-          <p>There are also other non-officially supported packages maintained by our community.</p>
+        <a href="#">
+          <h3>AppImage</h3>
+          <p>We are working on it.</p>
         </a>
       </li>
     </ul>
-
+    
+    <br />
+    <p>There are also <a href="https://docs.usebottles.com/getting-started/installation#other-packages">other</a> non-officially supported packages maintained by our community.</p>
+    <br />
     <hr />
 
     <h3>Other versions</h3>
