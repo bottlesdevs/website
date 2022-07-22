@@ -21,21 +21,12 @@ description: Download Bottles for your Linux distribution
       </li>
       <li class="link">
         <a href="#">
-          <h3>Snap</h3>
-          <p>We are working on it.</p>
-        </a>
-      </li>
-      <li class="link">
-        <a href="#">
-          <h3>AppImage</h3>
-          <p>We are working on it.</p>
+          <h3>Snap & AppImage</h3>
+          <p>Currently not available.</p>
         </a>
       </li>
     </ul>
     
-    <br />
-    <p>There are also <a href="https://docs.usebottles.com/getting-started/installation#other-packages">other</a> non-officially supported packages maintained by our community.</p>
-    <br />
     <hr />
 
     <h3>Other versions</h3>
@@ -52,6 +43,12 @@ description: Download Bottles for your Linux distribution
         <a href="https://github.com/bottlesdevs/Bottles">
           <h3>Source code</h3>
           <p>Bottles source code is under GPLv3 license and is publicly available on GitHub.</p>
+        </a>
+      </li>
+      <li class="link">
+        <a href="https://docs.usebottles.com/getting-started/installation#other-packages">
+          <h3>Other packages</h3>
+          <p>There are also other non-officially supported packages maintained by our community.</p>
         </a>
       </li>
     </ul>
