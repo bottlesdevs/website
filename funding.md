@@ -124,6 +124,8 @@ title: Funding
             "Christophereubanks",
             "destinatorM",
             "robert-sandor",
+            "sirterric",
+            "dennis1248"
           ],
           "other": [
             "Christopher (kit) Eubanks",
