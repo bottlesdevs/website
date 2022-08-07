@@ -126,7 +126,8 @@ title: Funding
             "robert-sandor",
             "sirterric",
             "dennis1248",
-            "speltriao"
+            "speltriao",
+            "DoodlesEpic"
           ],
           "other": [
             "Christopher (kit) Eubanks",
