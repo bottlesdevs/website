@@ -2316,6 +2316,10 @@ section.heading.center h1 {
         color: #7e7e7e;
     }
 
+    input.store-search {
+        color: white;
+    }
+
     ul.cards li {
         background-color: transparent;
         border-color: #4e4e4e;
