@@ -2039,10 +2039,24 @@ section.heading.center h1 {
     margin: 0;
 }
 
+.sponsors {
+    display: flex;
+    gap: 10px;
+    margin: 0 0 30px 0;
+}
+
+.sponsors img {
+    height: 43px;
+}
+
 @media screen and (max-width: 745px) {
     ul.checkout-cart li {
         flex-direction: column;
         gap: 10px;
+    }
+    
+    .sponsors {
+        flex-direction: column;
     }
 
     footer .grid {
