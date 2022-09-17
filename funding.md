@@ -91,6 +91,7 @@ title: Funding
     <script>
       var people = {
           "github": [
+            "HVinther",
             "appwrite",
             "btwonion",
             "WebsiteDeveloper",
