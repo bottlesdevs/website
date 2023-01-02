@@ -5,7 +5,7 @@ title: Funding
 <section class="heading">
   <div class="container large">
     <h1><ion-icon class="icon" name="heart-circle-outline"></ion-icon> Funding</h1>
-    <p>Bottles is an Open Source project, free and always free. You can support its development by leaving a small
+    <p>Bottles is a [free software](https://en.wikipedia.org/wiki/Free_software) project. You can support its development by leaving a small
       donation.</p>
   </div>
 </section>
@@ -18,7 +18,7 @@ title: Funding
     <ul class="cards store has-hover">
       <li class="link">
         <a href="https://github.com/sponsors/bottlesdevs" tooltip="Support Bottles Developers on GitHub">
-          <h3><ion-icon class="icon" name="logo-github"></ion-icon> GitHub Sponsor</h3>
+          <h3><ion-icon class="icon" name="logo-github"></ion-icon> GitHub Sponsors</h3>
           <p>By subscribing for only 2$ you can help keep the project alive. You can also make a one-time donation.</p>
         </a>
       </li>
