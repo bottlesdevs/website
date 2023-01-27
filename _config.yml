@@ -48,3 +48,4 @@ navigation_right:
 
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
