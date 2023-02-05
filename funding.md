@@ -5,7 +5,7 @@ title: Funding
 <section class="heading">
   <div class="container large">
     <h1><ion-icon class="icon" name="heart-circle-outline"></ion-icon> Funding</h1>
-    <p>Bottles is a [free software](https://en.wikipedia.org/wiki/Free_software) project. You can support its development by leaving a small
+    <p>Bottles is a <a href="https://en.wikipedia.org/wiki/Free_software">free software</a> project. You can support its development by leaving a small
       donation.</p>
   </div>
 </section>
