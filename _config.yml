@@ -3,6 +3,7 @@ description: Easily run Windows software on Linux with 🍷 Bottles!
 author: Bottles Developers
 email: mail@usebottles.com
 logo: /uploads/logo.svg?v4
+include: [".well-known"]
 
 assets: /assets
 uploads: /uploads
