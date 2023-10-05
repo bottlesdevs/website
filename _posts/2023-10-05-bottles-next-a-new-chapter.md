@@ -29,7 +29,7 @@ With this perspective, we've spent the recent months analyzing the entire projec
 
 ## What is Bottles Next?
 
-Bottles Next is our response to the needs of users and the market for running Windows software on Linux and Mac OS. We've redesigned Bottles from scratch to address all the issues and shortcomings that are currently unresolvable due to the existing codebase. The Next project is designed for scalability and extensibility over time, with the goal of avoiding the need for another complete rewrite.
+Bottles Next is our response to the needs of users and the market for running Windows software on Linux and MacOS. We've redesigned Bottles from scratch to address all the issues and shortcomings that are currently unresolvable due to the existing codebase. The Next project is designed for scalability and extensibility over time, with the goal of avoiding the need for another complete rewrite.
 
 ### A Next-Gen User Experience
 
