@@ -22,8 +22,8 @@ Bottles is now a mature software with six years of experience behind it. Its fir
 
 By "mature software," we don't mean a bug-free project or one that can't be improved further, but rather one that has reached the limit of its current form. We acknowledge Bottles' limitations, but we've always focused on delivering a user-friendly experienc, making a complex tool like Wine accessible. User experience doesn't have a destination, it's a constantly evolving field driven by technological growth and changing user needs.
 
-<img tooltip="Bottles Next, a new chapter begins" class="on-light" src="/uploads/bottles-next-spot.svg" />
-<img tooltip="Bottles Next, a new chapter begins (dark)" class="on-dark" src="/uploads/bottles-next-spot-dark.svg" />
+<img tooltip="Bottles Next, a new chapter begins (dark)" class="on-dark" src="/uploads/bottles-next-spot.svg" />
+<img tooltip="Bottles Next, a new chapter begins" class="on-light" src="/uploads/bottles-next-spot-dark.svg" />
 
 With this perspective, we've spent recent months analyzing the entire project, considering its current shortcomings and limitations. This study has led to the design of a new project: Bottles Next.
 
