@@ -6,8 +6,6 @@ layout: post
 thumb: https://raw.githubusercontent.com/bottlesdevs/data/main/backgrounds/Next.png
 published: true
 comments: true
-is_release_day: false
-is_release_day_color: '#42a5f5'
 user_nick: mirkobrombin
 user_name: Mirko Brombin
 user_tag: Founder
