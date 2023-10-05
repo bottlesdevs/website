@@ -52,7 +52,7 @@ The Next mode simplifies Bottles usage significantly. There won't be individual 
     <img tooltip="Bottles Next App Settings" src="/uploads/bottles-next-app-settings.png" />
 </div>
 
-The classic mode, on the other hand, will provide advanced users with the same bottle management capabilities as before. It will introduce many new features for taking full control of their bottles in different environments (Gaming, Software, Custom, and Next). Users can still create Next-type bottles, incorporating the layering and application-specific configuration concepts.
+The Classic mode, on the other hand, will provide advanced users with the same bottle management capabilities as before. It will introduce many new features for taking full control of their bottles in different environments (Gaming, Software, Custom, and Next). Users can still create Next-type bottles, incorporating the layering and application-specific configuration concepts.
 
 <div class="grid-pics">
     <img tooltip="Bottles Classic Bottle Details" src="/uploads/bottles-next-classic-bottle-details.png" />
