@@ -113,7 +113,7 @@ Moreover, Go greatly simplifies the distribution process, allowing the creation 
 
 ### Farewell to Shell Commands
 
-Another significant change is how wineprefixes are managed. Currently, Bottles modifies wineprefixes using shell commands, but Bottles Next introduces a completely new approach: efficiency and scalability. In Next, prefix management happens directly from within the prefix itself, eliminating the need for external shell commands. This approach provides greater flexibility and control over the Windows application runtime environments. Users can configure application-specific settings within the wineprefix, including DirectX settings, environment variables, and more, and Bottles will instruct the prefix to apply these changes, without using shell commands.
+Another significant change is how wineprefixes are managed. Currently, Bottles modifies wineprefixes using shell commands, but Bottles Next introduces a completely new approach: efficiency and scalability. In Next, prefix management happens directly from within the prefix itself, eliminating the need for external shell commands. This approach provides greater flexibility and control over the Windows application runtime environments. Users can configure application-specific settings within the wineprefix, including DirectX settings, environment variables, and more. Bottles will instruct the prefix to apply these changes, without using shell commands.
 
 ### A New Architecture
 
