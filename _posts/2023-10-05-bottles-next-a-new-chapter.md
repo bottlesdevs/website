@@ -125,7 +125,7 @@ Bottles Next has been designed with a three-component architecture: Server, Clie
 
 The Server (local) is the core of the system, handling all wineprefix and Windows application management operations. One of the main innovations is the adoption of a communication protocol (we're evaluating gRPC) instead of traditional commands. This makes communication between the Server and other components more efficient and clear, eliminating any possibility of command interpretation errors.
 
-The Server exposes the protocol that allows the Client and Agent to interact with the Bottles Next system. It manages the creation, launch, and maintenance of wine prefixes, providing statistics and usage information.
+The Server exposes the protocol that allows the Client and Agent to interact with the Bottles Next system. It manages the creation, launch, and maintenance of wineprefixes, providing statistics and usage information.
 
 #### The Client - Versatile User Interface
 
