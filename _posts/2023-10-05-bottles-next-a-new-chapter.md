@@ -16,7 +16,7 @@ co_user_tag: Public Relations Manager
 
 If you've been a long-time Bottles user, you've gotten used to frequent releases that brought lots of new features and bug fixes. However, over the past year, this has become less frequent. This is because Bottles, like many other projects before it, has reached a point where implementing new features without making drastic changes to the codebase is no longer possible. This doesn't mean Bottles is stagnant; it's far from it. We're still adding small features and fixing critical bugs that don't require a complete codebase overhaul.
 
-Bottles is now a mature software with six years of experience behind it. Its first release dates back to 2017, which is quite distant from its current vision.
+Bottles is now a mature application with six years of experience behind it. Its first release dates back to 2017, which is quite distant from its current vision.
 
 ![Bottles 0.0.7, first stable release published in 2017](/uploads/bottles-0.0.7-2017.png)
 
