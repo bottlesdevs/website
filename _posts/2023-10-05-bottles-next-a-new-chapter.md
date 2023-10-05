@@ -97,7 +97,7 @@ The new interface uses a default color scheme designed to reduce eye strain, but
 
 ### Parental Control
 
-Bottles has matured to the point where it must take responsibility for parental control. Since it allows the installation of Windows software on Linux and Mac OS, it can potentially bypass parental control filters. For this reason, we've introduced an in-house parental control system that allows parents and legal guardians to limit access to certain Bottles features, such as running new executables or restricting access to pre-installed applications.
+Bottles has matured to the point where it must take responsibility for parental control. Since it allows the installation of Windows software on Linux and MacOS, it can potentially bypass parental control filters. For this reason, we've introduced an in-house parental control system that allows parents and legal guardians to limit access to certain Bottles features, such as running new executables or restricting access to pre-installed applications.
 
 Sorry, kids, when mom says it's time for homework, it's homework time.
 
