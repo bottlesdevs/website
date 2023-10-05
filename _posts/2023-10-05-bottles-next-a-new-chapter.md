@@ -153,7 +153,7 @@ One of the most famous features of Bottles is its installers, we developed a str
 
 Unfortunately, however, creating installers currently requires a certain level of knowledge of the Bottles structure and several hours, if not days, of analysis and testing.
 
-In Bottles Next this changes, the user can use the development tools integrated into Bottles to debug applications, experiment with different configurations and transform entire bottles into Bottles-compatible installers. Sci-fi right?
+In Bottles Next this changes, the user can use the development tools integrated into Bottles to debug applications, experiment with different configurations, and transform entire bottles into Bottles-compatible installers. Sci-fi right?
 
 ## When?
 
