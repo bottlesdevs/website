@@ -47,8 +47,6 @@ After much consideration, we've realized it's impossible to provide a single use
 
 The Next mode simplifies Bottles usage significantly. There won't be individual bottle management; Bottles will create and manage a single bottle, leaving users with the task of installing and running the software they need. The Next bottle will use a layering concept to isolate applications, dependencies, and configurations. This means that the underlying wineprefix will be the same, but each application will have its settings (DXVK, VKD3D, FSR, desktop resolution, environment variables, launch options, dependencies, etc.). This minimizes the risk of bottle breakage to just external interferences.
 
-![Bottles Next App Details](/uploads/bottles-next-app-details.png)
-
 <div class="grid-pics">
     <img tooltip="Bottles Next App Details" src="/uploads/bottles-next-app-details.png" />
     <img tooltip="Bottles Next App Settings" src="/uploads/bottles-next-app-settings.png" />
