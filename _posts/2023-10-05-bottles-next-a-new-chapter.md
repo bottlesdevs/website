@@ -33,7 +33,7 @@ Bottles Next is our response to the needs of users and the market for running Wi
 
 ### A Next-Gen User Experience
 
-Bottles has gained millions of users on various Linux distributions with different Desktop Environments. Some Mac OS users who currently don't have access to Bottles have expressed their interest in using it, which is currently impossible without big changes to the codebase.
+Bottles has gained millions of users on various Linux distributions with different Desktop Environments. Some MacOS users who currently don't have access to Bottles have expressed their interest in using it, which is currently impossible without big changes to the codebase.
 
 Based on this, we've considered how to provide a consistent user experience across different operating systems. Our decision is that Bottles Next should offer the same user experience everywhere but remain flexible enough for developers to create new Bottles frontends using various graphical toolkits. Bottles Next will provide both options. The new Bottles Next will have a graphical interface based on Electron and VueJS 3 (GTK user? Keep reading.), allowing us to tailor the user experience to Bottles users' needs. At the same time, it will leave room for anyone to develop new frontends using any graphical toolkit and programming language.
 
