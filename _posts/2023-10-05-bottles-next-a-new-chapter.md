@@ -25,7 +25,7 @@ By "mature application," we don't mean a bug-free project or one that can't be i
 <img tooltip="Bottles Next, a new chapter begins (dark)" class="on-dark" src="/uploads/bottles-next-spot.svg" />
 <img tooltip="Bottles Next, a new chapter begins" class="on-light" src="/uploads/bottles-next-spot-dark.svg" />
 
-With this perspective, we've spent recent months analyzing the entire project, considering its current shortcomings and limitations. This study has led to the design of a new project: Bottles Next.
+With this perspective, we've spent the recent months analyzing the entire project, considering its current shortcomings and limitations. This study has led to the design of a new project: Bottles Next.
 
 ## What is Bottles Next?
 
