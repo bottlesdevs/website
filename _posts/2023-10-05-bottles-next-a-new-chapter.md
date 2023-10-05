@@ -145,7 +145,7 @@ Thanks to C# and .NET, WineBridge can make native calls using the WinAPI directl
 
 Bottles Next will have an **optional** cloud feature, which allows you to backup and restore your bottles and applications in just one click, or share your environments with friends and colleagues over the internet.
 
-> This feature is still in the design phase, so we can't provide more details at this time. Keep an eye on this blog for updates.
+> This feature is still in the design phase, so we can't provide more details at this time. Keep an eye out for this blog for updates.
 
 ## Environments become Installers
 
