@@ -137,7 +137,7 @@ The primary client for Bottles Next will be the new Electron-based user interfac
 
 The Agent, also known as WineBridge, is a key component inside the wineprefix. Developed in C# and .NET, it manages all operations within the prefix itself, including software execution, registry key management, process management, and more.
 
-Using the Agent allows cleaner and direct communication between the Server and the wineprefix, eliminating the need for complex wine commands. This architecture significantly simplifies wineprefix management and provides more flexibility for developers dealing with wine prefixes.
+Using the Agent allows cleaner and direct communication between the Server and the wineprefix, eliminating the need for complex wine commands. This architecture significantly simplifies wineprefix management and provides more flexibility for developers dealing with wineprefixes.
 
 Thanks to C# and .NET, WineBridge can make native calls using the WinAPI directly. This allows access to and exposure of many features that are currently only accessible through the command line or integrated tools like the task manager, debugger, uninstaller, etc. These tools are nearly all implemented and accessible in Bottles today, but they don't provide a consistent and smooth user experience.
 
