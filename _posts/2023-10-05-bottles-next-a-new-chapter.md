@@ -157,7 +157,7 @@ In Bottles Next this changes, the user can use the development tools integrated 
 
 ## When?
 
-Soon, we hope, but there is much work to be done. Bottles Next is an exciting project, but it will take months of hard work. We will release updates when possible, so keep an eye on this blog.
+Soon, we hope, but there is a lot of work to be done. Bottles Next is an exciting project, but it will take months of hard work. We will release updates when possible, so keep an eye out for this blog.
 
 ## What Will Happen to Bottles Now?
 
