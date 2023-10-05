@@ -20,7 +20,7 @@ Bottles is now a mature software with six years of experience behind it. Its fir
 
 ![Bottles 0.0.7, first stable release published in 2017](/uploads/bottles-0.0.7-2017.png)
 
-By "mature software," we don't mean a bug-free project or one that can't be improved further, but rather one that has reached the limit of its current form. We acknowledge Bottles' limitations, but we've always focused on delivering a user-friendly experienc, making a complex tool like Wine accessible. User experience doesn't have a destination, it's a constantly evolving field driven by technological growth and changing user needs.
+By "mature application," we don't mean a bug-free project or one that can't be improved further, but rather one that has reached the limit of its current form. We acknowledge Bottles' limitations, but we've always focused on delivering a user-friendly experience, making a complex tool like Wine accessible. User experience doesn't have a destination, it's a constantly evolving field driven by technological growth and changing user needs.
 
 <img tooltip="Bottles Next, a new chapter begins (dark)" class="on-dark" src="/uploads/bottles-next-spot.svg" />
 <img tooltip="Bottles Next, a new chapter begins" class="on-light" src="/uploads/bottles-next-spot-dark.svg" />
