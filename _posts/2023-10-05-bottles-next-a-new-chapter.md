@@ -65,7 +65,7 @@ In short, there's something for everyone and every need.
 
 ### A New App View
 
-Bottles is a tool for running Windows software on Linux (and Mac OS starting with Next), with gaming being the primary use case for most of our user base. For this reason, we've decided to provide access to some statistics and useful information for gamers, which can also be appreciated by users running other types of software.
+Bottles is a tool for running Windows software on Linux (and MacOS starting with Next), with gaming being the primary use case for most of our user base. For this reason, we've decided to provide access to some statistics and useful information for gamers, which can also be appreciated by users running other types of software.
 
 In the application screen, there will be an Insights view that allows users to see the runtime of an application compared to others. By clicking on these values, users can access various features, such as setting alerts and actions when a certain usage time is reached. This feature is useful for those who want to limit their PC time, especially for children or people with specific needs.
 
