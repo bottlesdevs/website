@@ -165,7 +165,7 @@ Nothing. Bottles will continue to receive bug fixes and possibly small, low-impa
 
 ## How can I help?
 
-We're always looking for new contributors to the project. If you're interested in helping us, please join our [Discord server](https://discord.gg/wF4JAdYrTR) and contact us via the `#dev` channel.
+We're always looking for new contributors to the project. If you're interested in helping us, please join our [Discord server](https://discord.gg/wF4JAdYrTR) and contact us via the `#🔧-development` channel.
 
 You can also help us by donating. Please take a look at our [funding page](/funding) for more information.
 
