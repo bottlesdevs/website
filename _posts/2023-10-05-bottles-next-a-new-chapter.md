@@ -159,6 +159,8 @@ In Bottles Next this changes, the user can use the development tools integrated 
 
 Soon, we hope, but there is a lot of work to be done. Bottles Next is an exciting project, but it will take months of hard work. We will release updates when possible, so keep an eye out for this blog.
 
+In the meantime, you can take a look at the [interactive mockup](https://www.figma.com/proto/iWNlSzDKpTucBNzQymGzyY/Bottles-Next?type=design&node-id=29-1150&t=Ge4CUBp7vcWkoy3l-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=29%3A1150). Please note that this is just an idea of how Bottles Next should look, and that it may look partially or completely different from the mockup once released.
+
 ## What Will Happen to Bottles Now?
 
 Nothing. Bottles will continue to receive bug fixes and possibly small, low-impact features. However, the main effort of the team will be focused on the Bottles Next project.
