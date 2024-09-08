@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Article from "../components/Article.astro";
+const allPosts = await Astro.glob("./posts/*.md");
+
+const generateBrief = (content: string) => {
+  const plainText = content.replace(/(<([^>]+)>)/gi, "");
+  return plainText.slice(0, 250) + (plainText.length > 250 ? "..." : "");
+};
+
+// @ts-ignore
+allPosts.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate));
+---
+
+<Layout title="Blog">
+  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">Latest News</h1>
+      <p class="text-lg text-gray-700 dark:text-gray-300">Stay updated with the latest news, releases, and development updates from the Bottles team.</p>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-4 mt-8">
+    <div class="grid md:grid-cols-3 gap-6">
+      {allPosts.map((post) => {
+        const brief = generateBrief(post.compiledContent());
+        return (
+          <Article 
+            url={post.url} 
+            title={post.frontmatter.title} 
+            description={post.frontmatter.description} 
+            date={post.frontmatter.pubDate.slice(0, 10)} 
+            brief={brief} 
+          />
+        );
+      })}
+    </div>
+  </div>
+</Layout>

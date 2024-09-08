@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Components">
+
+  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+      <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">Components</h1>
+      <p class="text-lg text-gray-700 dark:text-gray-300">These are essential elements for creating environments and extending them with new features and implementations.</p>
+      </div>
+  </section>
+
+  <div class="container mx-auto px-4 mt-8 overflow-auto md:overflow-hidden w-full">
+    <table id="components" class="min-w-full bg-white dark:bg-gray-800 shadow-md rounded-lg">
+      <thead class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">
+        <tr>
+          <th class="px-6 py-3 text-left font-medium uppercase tracking-wider">Name</th>
+          <th class="px-6 py-3 text-left font-medium uppercase tracking-wider">Type</th>
+          <th class="px-6 py-3 text-left font-medium uppercase tracking-wider">Category</th>
+          <th class="px-6 py-3 text-left font-medium uppercase tracking-wider">Channel</th>
+          <th class="px-6 py-3 text-left font-medium uppercase tracking-wider">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS will inject components here -->
+      </tbody>
+    </table>
+  </div>
+
+</Layout>
+
+<script>
+import DatabaseTableManager from '../../scripts/db-table-manager';
+
+  document.addEventListener("DOMContentLoaded", function () {
+    new DatabaseTableManager("components", "components");
+  });
+</script>

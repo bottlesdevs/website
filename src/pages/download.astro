@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<Layout title="Get Bottles">
+
+  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">Get Bottles</h1>
+      <p class="text-lg text-gray-700 dark:text-gray-300">We offer a variety of download options for Bottles.</p>
+    </div>
+  </section>
+  
+  <div class="container mx-auto px-4 mt-8">
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <a href="https://flathub.org/apps/details/com.usebottles.bottles" class="bg-white dark:bg-gray-800 text-blue-800 dark:text-blue-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1 border border-blue-400 dark:border-blue-600">
+        <Icon name="material-symbols:download" class="w-12 h-12 mb-4 mx-auto" />
+        <h3 class="text-2xl font-bold mb-2">Flatpak</h3>
+        <p>The recommended installation method to get the best experience. It's supported by all Linux distributions. Also recommended for Steam Deck users.</p>
+      </a>
+      <a href="#" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
+        <Icon name="material-symbols:block" class="w-12 h-12 mb-4 mx-auto" />
+        <h3 class="text-2xl font-bold mb-2">Snap & AppImage</h3>
+        <p>Currently not available.</p>
+      </a>
+    </div>
+  </div>
+  
+  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Other versions</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">Are you looking for a specific version of Bottles?</p>
+  
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1#" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
+          <Icon name="material-symbols:history" class="w-12 h-12 mb-4 mx-auto" />
+          <h3 class="text-2xl font-bold mb-2">Bottles 1 (Legacy)</h3>
+          <p>The first version of Bottles (Legacy) is still available and maintained. It does not have many features introduced by Bottles 2 but useful for those who need a very simple prefix manager.</p>
+        </a>
+        <a href="https://github.com/bottlesdevs/Bottles" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
+          <Icon name="material-symbols:code" class="w-12 h-12 mb-4 mx-auto" />
+          <h3 class="text-2xl font-bold mb-2">Source code</h3>
+          <p>Bottles source code is under GPLv3 license and is publicly available on GitHub.</p>
+        </a>
+        <a href="https://docs.usebottles.com/getting-started/installation#other-packages" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
+          <Icon name="material-symbols:group" class="w-12 h-12 mb-4 mx-auto" />
+          <h3 class="text-2xl font-bold mb-2">Other packages</h3>
+          <p>There are also other non-officially supported packages maintained by our community.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+  
