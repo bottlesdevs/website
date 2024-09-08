@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<Layout title="Run Windows in a Bottle">
+
+  <section class="bg-gradient-to-r from-purple-300 via-pink-200 to-red-200 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 min-h-screen flex flex-col md:justify-between gap-4 md:gap-0">
+    <div class="text-center mt-20">
+      <h1 class="text-6xl font-extrabold text-gray-800 dark:text-white mb-6">Run Windows in a Bottle</h1>
+      <p class="text-2xl leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
+        Easily run Windows software on Linux with Bottles!
+      </p>
+      <a href="/download" class="mt-6 inline-block px-8 py-4 bg-blue-600 dark:bg-blue-700 text-white text-2xl rounded-lg hover:bg-blue-900 dark:hover:bg-blue-800 transition-all">
+        <Icon name="material-symbols:cloud-download" class="w-6 h-6 inline mr-2" />
+        Download
+      </a>
+      <div class="mt-4">
+        <a href="https://flathub.org/apps/details/com.usebottles.bottles" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-base">Download from Flathub</a>
+      </div>
+    </div>
+    <div class="w-full flex justify-center">
+      <img src="/assets/hero/bottle-creation.png" alt="Bottle Creation" class="max-w-full h-auto mb-0">
+    </div>
+  </section>
+
+  <section class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-black dark:bg-gray-900">
+	<video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+	  <source src="/assets/videos/gaming-2.webm" type="video/webm">
+	  Your browser does not support the video tag.
+	</video>
+	<div class="absolute inset-0 bg-gradient-to-r from-purple-900/50 via-red-500/30 to-pink-400/20 dark:from-purple-800/50 dark:via-red-600/30 dark:to-pink-500/20 backdrop-blur-lg z-10"></div>
+	<div class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center text-center text-white justify-start">
+		<div class="text-left grow z-20 md:min-w-[600px]">
+			<h2 class="text-5xl font-extrabold mb-6">Gaming ready.</h2>
+			<p class="text-2xl leading-relaxed mb-6">Bottles' Gaming Environment comes preconfigured to support a large set of Windows video games on Linux.</p>
+			<p class="text-2xl leading-relaxed mb-6">Thanks to our <span class="bg-purple-900 text-white px-2 rounded-lg">Installers</span>, you can have immediate access to the most famous game stores (e.g. Epic Games Store, EA Launcher, Battle.net etc.) and then play your favorite games, just like on Windows.</p>
+			<a href="/gaming" class="mt-4 inline-block px-8 py-4 bg-purple-900 dark:bg-purple-800 text-white text-2xl rounded-lg hover:bg-purple-950 dark:hover:bg-purple-900 transition-all">More about</a>
+		</div>
+		<img src="/assets/hero/bottles-gaming.png" alt="Bottles Gaming" class="md:max-w-none md:h-auto">
+	</div>
+  </section>
+  
+  <section class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#fbe6d4] dark:bg-gray-800">
+	<div class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center text-center text-black dark:text-white justify-start">
+	  <div class="text-left grow z-20 md:min-w-[600px]">
+		<h2 class="text-5xl font-extrabold mb-6">Empowered by environments</h2>
+		<p class="text-2xl leading-relaxed mb-6">
+		  Bottles introduces a new way to handle Windows prefixes using environments, 
+		  a combination of ready-to-use settings, libraries and dependencies.
+		</p>
+		<p class="text-2xl leading-relaxed mb-6">
+		  Choose between <span class="bg-[#b89b82] text-[#ffffff] px-2 rounded-lg">Gaming</span> and 
+		  <span class="bg-[#b89b82] text-[#ffffff]  px-2 rounded-lg">Software</span> environment based on the type of software you want to start.
+		</p>
+		<p class="text-2xl leading-relaxed mb-6">
+		  More advanced users can choose the <span class="bg-[#b89b82] text-[#ffffff]  px-2 rounded-lg">Custom</span> 
+		  environment to configure the bottle on their own.
+		</p>
+		<a href="https://docs.usebottles.com/getting-started/environments" class="mt-4 inline-block px-8 py-4 bg-[#b89b82] text-[#ffffff]  dark:bg-[#947a68] text-2xl rounded-lg hover:bg-[#c0a08b] dark:hover:bg-[#b38e77] transition-all">More about</a>
+	  </div>
+	  <img src="/assets/hero/bottles-environments.png" alt="Bottles Environments" class="md:max-w-none md:h-auto">
+	</div>
+  </section>
+  
+  <section class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#cfe1f7] dark:bg-gray-700">
+	<div class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center text-center text-black dark:text-white justify-start">
+	  <div class="text-left grow z-20 md:min-w-[600px]">
+		<h2 class="text-5xl font-extrabold mb-6">Highly tweakable</h2>
+		<p class="text-2xl leading-relaxed mb-6">
+		  Customize your Windows environment with ease.
+		</p>
+		<p class="text-2xl leading-relaxed mb-6">
+		  Choose whether to use <span class="font-bold">dxvk</span>, <span class="font-bold">vkd3d</span>, <span class="font-bold">gamemode</span>, 
+		  <span class="font-bold">esync</span>, <span class="font-bold">fsync</span> or others, and Bottles will handle it all for you.
+		</p>
+		<p class="text-2xl leading-relaxed mb-6">
+		  Change runners on the fly or install new ones for all your tests.
+		</p>
+		<a href="https://docs.usebottles.com/bottles/preferences" class="mt-4 inline-block px-8 py-4 bg-[#98bddf] dark:bg-[#6a91b3] text-white text-2xl rounded-lg hover:bg-[#7fa7cb] dark:hover:bg-[#5f88a7] transition-all">More about</a>
+	  </div>
+	  <img src="/assets/hero/bottles-customizable.png" alt="Bottles Customizable" class="md:max-w-none md:h-auto">
+	</div>
+  </section>
+
+  <section class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#f7d5c0] dark:bg-gray-800">
+	<div class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center text-center text-black dark:text-white justify-start">
+	  <div class="text-left grow z-20 md:min-w-[600px]">
+		<h2 class="text-5xl font-extrabold mb-6">Integrated dependency manager</h2>
+		<p class="text-2xl leading-relaxed mb-6">
+		  Windows software need dependencies to work properly.
+		</p>
+		<p class="text-2xl leading-relaxed mb-6">
+		  Bottles comes with a powerful and easy-to-use dependency manager that automates this task.
+		</p>
+		<p class="text-2xl leading-relaxed mb-6">
+		  Just look for the package you need and then "install", Bottles will take care of everything for you.
+		</p>
+		<a href="https://docs.usebottles.com/bottles/dependencies" class="mt-4 inline-block px-8 py-4 bg-[#d59a7e] dark:bg-[#b98066] text-white text-2xl rounded-lg hover:bg-[#b98066] dark:hover:bg-[#a76f58] transition-all">More about</a>
+	  </div>
+	  <img src="/assets/hero/bottles-dependencies-manager.png" alt="Bottles Dependencies Manager" class="md:max-w-none md:h-auto">
+	</div>
+  </section>
+  
+  <section class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#e4d4f7] dark:bg-gray-700">
+	<div class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center text-center text-black dark:text-white justify-start">
+	  <div class="text-left grow z-20 md:min-w-[600px]">
+		<h2 class="text-5xl font-extrabold mb-6">Install programs <span class="underline">in one click</span></h2>
+		<p class="text-2xl leading-relaxed mb-6">
+		  Installers (introduced in 2022.2.14) are an easy way to install games and applications into your bottles.
+		</p>
+		<p class="text-2xl leading-relaxed mb-6">
+		  Installers are instruction sets written by our community, which automate the entire dependency setup and installation process. You won't have to worry about anything anymore.
+		</p>
+		<a href="https://docs.usebottles.com/bottles/installers" class="mt-4 inline-block px-8 py-4 bg-[#b79dda] dark:bg-[#9477bb] text-white text-2xl rounded-lg hover:bg-[#9e83c3] dark:hover:bg-[#8569a5] transition-all">More about</a>
+		<a href="/appstore" class="ml-4 text-2xl text-gray-700 dark:text-gray-300 underline">Apps</a>
+	  </div>
+	  <img src="/assets/hero/bottles-installers.png" alt="Bottles Installers" class="md:max-w-none md:h-auto">
+	</div>
+  </section>
+  
+  <section class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#c5e6d1] dark:bg-gray-800">
+	<div class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center text-center text-black dark:text-white justify-start">
+	  <div class="text-left grow z-20 md:min-w-[600px]">
+		<h2 class="text-5xl font-extrabold mb-6">Easy <span class="underline">to restore</span></h2>
+		<p class="text-2xl leading-relaxed mb-6">
+		  The Snapshots manager allows you to easily restore a previous state of your bottle.
+		</p>
+		<p class="text-2xl leading-relaxed mb-6">
+		  If enabled, Bottles will automatically create a new snapshot when you install a new dependency.
+		</p>
+		<p class="text-2xl leading-relaxed mb-6">
+		  If something goes wrong, go to the Snapshots section of your bottle and restore the previous state.
+		</p>
+		<a href="https://docs.usebottles.com/bottles/versioning" class="mt-4 inline-block px-8 py-4 bg-[#87b08f] dark:bg-[#6e9578] text-white text-2xl rounded-lg hover:bg-[#6e9578] dark:hover:bg-[#5d7d65] transition-all">More about</a>
+	  </div>
+	  <img src="/assets/hero/bottles-versioning.png" alt="Bottles Versioning" class="md:max-w-none md:h-auto">
+	</div>
+  </section>
+  
+  <section class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#f7f7f7] dark:bg-gray-900">
+	<div class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col items-center text-center text-black dark:text-white justify-center">
+	  <h2 class="text-5xl font-extrabold mb-6">
+		<Icon name="material-symbols:shield-lock-outline" class="w-16 h-16 inline mr-2" />
+		Safe. <span class="underline">Sandboxed.</span>
+	  </h2>
+	  <p class="text-2xl leading-relaxed mb-6">
+		Your bottles are isolated from the system and will only hit your personal files when you decide.
+	  </p>
+	  <p class="text-2xl leading-relaxed mb-6">
+		The full-sandbox is provided and pre-configured only using the <a href="https://flathub.org/apps/details/com.usebottles.bottles" class="text-blue-600 dark:text-blue-400 underline">Flatpak package</a> (highly recommended).
+	  </p>
+	  <p class="text-2xl leading-relaxed mb-6">
+		All other packages still have access to the partial sandbox which isolates the bottle files and prevents them from accessing your homedir.
+	  </p>
+	  <a href="#" class="mt-4 inline-block px-8 py-4 bg-gray-900 dark:bg-gray-700 text-white text-2xl rounded-lg hover:bg-black dark:hover:bg-gray-800 transition-all">
+		More about
+	  </a>
+	</div>
+  </section>
+
+</Layout>

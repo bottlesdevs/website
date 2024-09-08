@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+const { frontmatter } = Astro.props;
+const allPosts = await Astro.glob("../pages/posts/*.md");
+
+const generateBrief = (content: string) => {
+  const plainText = content.replace(/(<([^>]+)>)/gi, "");
+  return plainText.slice(0, 250) + (plainText.length > 250 ? "..." : "");
+};
+
+const relatedPosts = allPosts
+  .filter(post => post.url !== Astro.url.toString()) 
+  .sort((a, b) => Number(new Date(b.frontmatter.pubDate)) - Number(new Date(a.frontmatter.pubDate))) 
+  .slice(0, 3); 
+---
+
+<Layout title={frontmatter.title}>
+  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <h1 class="text-5xl font-bold mb-4 text-center text-gray-900 dark:text-white">{frontmatter.title}</h1>
+        <p class="text-gray-600 dark:text-gray-300 text-lg mb-4">Published on <span class="font-semibold">{frontmatter.pubDate.slice(0, 10)}</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="container mx-auto px-4">
+      <article class="prose lg:prose-xl max-w-none dark:prose-invert">
+        <slot />
+      </article>
+    </div>
+  </section>
+
+  <section class="py-10 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Related Articles</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {relatedPosts.map(post => {
+          const brief = generateBrief(post.compiledContent());
+          return (
+            <a href={post.url} class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all block">
+              <div class="relative p-6 flex gap-2 flex-col items-start">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{post.frontmatter.title}</h3>
+                  <p class="text-gray-600 dark:text-gray-300">{brief}</p>
+                  <span class="text-gray-500 dark:text-gray-400 text-sm bg-gray-200 dark:bg-gray-700 px-4 py-1 rounded-full mt-2 inline-block">
+                    {new Date(post.frontmatter.pubDate).toLocaleDateString()}
+                  </span>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</Layout>

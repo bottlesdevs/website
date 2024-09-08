@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Dependencies">
+
+  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+      <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">Dependencies</h1>
+      <p class="text-lg text-gray-700 dark:text-gray-300">These packages increase the compatibility of WINE environments with Windows software.</p>
+      </div>
+  </section>
+  
+  <div class="container mx-auto px-4 mt-8 overflow-auto md:overflow-hidden w-full">
+    <table id="dependencies" class="min-w-full bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
+      <thead class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">
+        <tr>
+          <th class="px-6 py-3 text-left font-medium uppercase tracking-wider">Name</th>
+          <th class="px-6 py-3 text-left font-medium uppercase tracking-wider">Description</th>
+          <th class="px-6 py-3 text-left font-medium uppercase tracking-wider">Category</th>
+          <th class="px-6 py-3 text-left font-medium uppercase tracking-wider">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS will inject dependencies here -->
+      </tbody>
+    </table>
+  </div>
+  
+</Layout>
+
+<script>
+import DatabaseTableManager from '../../scripts/db-table-manager';
+
+  document.addEventListener("DOMContentLoaded", function () {
+    new DatabaseTableManager("dependencies", "dependencies");
+  });
+</script>

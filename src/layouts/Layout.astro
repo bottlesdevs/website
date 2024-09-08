@@ -1,0 +1,46 @@
+---
+import '../styles/tailwind.css';
+import Header from '../components/Header.astro';
+import Sponsors from '../components/Sponsors.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="shortcut icon" href="/uploads/bottles.png" type="image/png" />
+		<link rel="icon" type="image/png" href="/uploads/bottles.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="stylesheet" href="https://mastodon.online/custom.css" media="all" />
+		<link href='https://mastodon.online/@usebottles.rss' rel='alternate' type='application/rss+xml'>
+		<link href='https://mastodon.online/users/usebottles' rel='alternate' type='application/activity+json'>
+		<meta content="profile" property="og:type">
+		<meta content='81 Posts, 14 Following, 830 Followers · Run Windows software on Linux with Bottles.' name='description'>
+		<meta content="https://mastodon.online/@usebottles" property="og:url">
+		<meta content="Mastodon" property="og:site_name">
+		<meta content="usebottles (@usebottles@mastodon.online)" property="og:title">
+		<meta content="81 Posts, 14 Following, 830 Followers · Run Windows software on Linux with Bottles." property="og:description">
+		<meta content="https://files.mastodon.online/accounts/avatars/108/200/697/004/152/142/original/b30e7d4b6fe0ad6e.png" property="og:image">
+		<meta content="400" property="og:image:width">
+		<meta content="400" property="og:image:height">
+		<meta content="summary" property="twitter:card">
+		<meta content="usebottles@mastodon.online" property="profile:username">
+	</head>
+	<body class="antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200">
+		<Header />
+		<slot />
+		<Sponsors />
+		<Footer />
+	</body>
+</html>
+
