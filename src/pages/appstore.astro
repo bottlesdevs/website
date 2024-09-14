@@ -19,7 +19,7 @@ import { Icon } from 'astro-icon/components';
       </div>
     </div>
   </section>
-  
+
   <div class="container mx-auto px-4 mt-8">
       <div id="filters" class="flex mb-8 space-x-4 overflow-x-auto md:overflow-x-hidden w-full md:justify-center">
         <button id="allFilter" class="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors active:shadow-lg">All</button>
@@ -28,15 +28,15 @@ import { Icon } from 'astro-icon/components';
         <button id="silverFilter" class="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors opacity-50">Silver</button>
         <button id="bronzeFilter" class="bg-yellow-600 dark:bg-yellow-700 text-yellow-100 px-4 py-2 rounded-lg hover:bg-yellow-700 dark:hover:bg-yellow-800 transition-colors opacity-50">Bronze</button>
       </div>
-  
+
       <div id="storeResults" class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- JS will inject cards here -->
       </div>
   </div>
-  
+
   <div class="modal" id="modal_installer"></div>
   <div class="modal" id="modal_review"></div>
-  
+
 </Layout>
 
 <script>
@@ -90,7 +90,7 @@ class AppStore {
       if (button) {
         button.addEventListener('click', () => {
           const cards = document.querySelectorAll('#storeResults .card');
-          const filterValue = filter === 'all' ? '' : filter; 
+          const filterValue = filter === 'all' ? '' : filter;
 
           cards.forEach((card) => {
             const grade = (card as HTMLElement).getAttribute('grade') || '';
@@ -171,9 +171,9 @@ class AppStore {
             <span class="px-2 py-1 rounded-lg text-sm ${this.getCategoryColor(installer.Category)}">${installer.Category}</span>
           </div>
         </div>
-        <div class="bg-gray-100 p-2 rounded-b-lg text-center hover:bg-gray-200 flex gap-2 justify-around dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">
-          <a class="block font-medium text-lg" href="/app#${item}">Details</a>
-          <a class="block font-medium text-lg" href="https://docs.usebottles.com/bottles/installers#use-installers">Install</a>
+        <div class="bg-gray-100 rounded-b-lg text-center flex gap-2 justify-between dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">
+          <a class="block font-medium text-lg size-full p-2 hover:bg-gray-500 rounded-bl-lg" href="/app#${item}">Details</a>
+          <a class="block font-medium text-lg size-full p-2 hover:bg-gray-500 rounded-br-lg" href="https://docs.usebottles.com/bottles/installers#use-installers">Install</a>
         </div>
       </div>
       `;
