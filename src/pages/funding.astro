@@ -118,7 +118,7 @@ class Donations {
   getPersonMarkup(person: string, hasPic: boolean): string {
     return `<div class="flex items-center space-x-2">
       ${hasPic ? `<img src="https://avatars.githubusercontent.com/${person}?s=120" alt="${person}" class="w-12 h-12 rounded-full">` : ''}
-      <span class="bg-gray-100 px-4 py-2 rounded-lg text-center">${person}</span>
+      <span class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg text-center">${person}</span>
     </div>`;
   }
 }
