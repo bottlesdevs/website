@@ -11,12 +11,12 @@ import { Icon } from 'astro-icon/components';
       <p class="text-lg text-gray-700 dark:text-gray-300">Bottles is a <a href="https://en.wikipedia.org/wiki/Free_software" class="text-blue-600 dark:text-blue-400 underline">free software</a> project. You can support its development by leaving a small donation.</p>
     </div>
   </section>
-  
+
   <div class="container mx-auto px-4 mt-8">
     <section class="py-5">
       <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">How to donate</h2>
       <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">Here are the official channels from which you can donate to Bottles Developers.</p>
-      
+
       <div class="grid md:grid-cols-3 gap-6 mb-8">
         <a class="bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-200 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1" href="https://github.com/sponsors/bottlesdevs">
           <Icon name="material-symbols:favorite-outline" class="w-8 h-8 mb-4 mx-auto" />
@@ -35,7 +35,7 @@ import { Icon } from 'astro-icon/components';
         </a>
       </div>
     </section>
-  
+
     <section class="py-5">
       <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Our plans for Bottles</h2>
       <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">We have several plans for Bottles' future, many features that take time and money to come true.</p>
@@ -62,27 +62,32 @@ import { Icon } from 'astro-icon/components';
         </li>
       </ul>
     </section>
-  
+
     <section class="py-5">
       <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Thanks to them who made a donation or became our GitHub sponsor 💖!</h2>
       <div class="flex flex-wrap mb-8 mt-8 gap-4" id="github">
         <!-- JS will inject people here -->
       </div>
-  
+
       <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Other platforms</h3>
       <div class="flex flex-wrap mb-8 gap-4" id="other">
         <!-- JS will inject people here -->
       </div>
-      
+
       <p class="text-center text-gray-800 dark:text-gray-300">- Thanks from the Bottles Developers.</p>
     </section>
   </div>
-  
+
 </Layout>
 
 <script>
+interface Sponsor {
+  username: string;
+  avatar: string;
+}
+
 interface PeopleList {
-  github: string[];
+  github: Sponsor[];
   other: string[];
 }
 
@@ -96,8 +101,8 @@ class Donations {
     this.renderPeople();
   }
 
-  renderPeople(): void {
-    const githubPeople = this.list.github;
+  async renderPeople(): Promise<void> {
+    const githubPeople = await this.getGitHubSponsors();
     const otherPeople = this.list.other;
     let html = '';
 
@@ -105,36 +110,51 @@ class Donations {
     html += this.addSection('#other', otherPeople);
   }
 
-  addSection(sectionDOM: string, personList: string[], hasPic: boolean = false) {
+  addSection(sectionDOM: string, personList: Sponsor[] | string[], hasPic: boolean = false) {
     let sectionHtml = ``;
 
     personList.forEach((person) => {
-      sectionHtml += this.getPersonMarkup(person, hasPic);
+      if (typeof person === "string") {
+        sectionHtml += this.getPersonMarkup(person, hasPic);
+      } else {
+        sectionHtml += this.getPersonMarkup(person.username, hasPic, person.avatar);
+      }
     });
-    
+
     document.querySelector(sectionDOM)?.insertAdjacentHTML('beforeend', sectionHtml);
   }
 
-  getPersonMarkup(person: string, hasPic: boolean): string {
+  getPersonMarkup(person: string, hasPic: boolean, avatarUrl: string = ''): string {
     return `<div class="flex items-center space-x-2">
-      ${hasPic ? `<img src="https://avatars.githubusercontent.com/${person}?s=120" alt="${person}" class="w-12 h-12 rounded-full">` : ''}
+      ${hasPic ? `<img src="${avatarUrl}" alt="${person}" class="w-12 h-12 rounded-full">` : ''}
       <span class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg text-center">${person}</span>
     </div>`;
+  }
+
+  async getGitHubSponsors(): Promise<Sponsor[]> {
+    try {
+      const response = await fetch('https://ghs.vercel.app/v2/sponsors/bottlesdevs');
+      const data = await response.json();
+
+      const allSponsors = [...data.sponsors.current, ...data.sponsors.past].map(
+        (sponsor: { username: string; avatar: string }) => ({
+          username: sponsor.username,
+          avatar: sponsor.avatar,
+        })
+      );
+
+      return allSponsors;
+    } catch (error) {
+      console.error('Error fetching GitHub sponsors:', error);
+      return [];
+    }
   }
 }
 
 const people: PeopleList = {
-  github: [
-    "rejurime", "AreoByte", "Hubro", "kbdharun", "brugr", "HVinther", "appwrite", "btwonion",
-    "WebsiteDeveloper", "ajayyy", "Digoss", "wesleyote", "terasaka2k", "JaxiiRuff", "SashaPGT", 
-    "Blisto91", "phrogg", "EvoxCX", "Manaurys", "Knebergish", "kparal", "castrojo", 
-    "chrissewell1234", "cheese", "sjenkins7", "danielheadbang", "lukekaalim", "davebrny", 
-    "gbtb", "dginovker", "the-spyke", "AsciiWolf", "1player", "joelselvaraj", "patriziobruno", 
-    "pietrodicaprio", "NullDev", "nickavem", "Christophereubanks", "destinatorM", 
-    "robert-sandor", "sirterric", "dennis1248", "speltriao", "DoodlesEpic"
-  ],
+  github: [],
   other: [
-    "Christopher (kit) Eubanks", "Black_file", "Chris", "Robin Lee", "Andrew Ego", 
+    "Christopher (kit) Eubanks", "Black_file", "Chris", "Robin Lee", "Andrew Ego",
     "Sonny Piers", "Dan G", "Caleb Woodbine", "Robert Krisztian Sandor", "+ All the anonymous donations"
   ]
 };
@@ -142,5 +162,4 @@ const people: PeopleList = {
 document.addEventListener('DOMContentLoaded', () => {
   new Donations('#people', people);
 });
-
 </script>
