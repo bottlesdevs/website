@@ -1,0 +1,73 @@
+---
+layout: ../../layouts/ArticleLayout.astro
+title: "Update on UMU and Bottles Next"
+description: "Learn about the latest updates on UMU integration in Bottles and the progress of Bottles Next."
+pubDate: 2024-24-09
+comments: true
+user_nick: mirkobrombin
+user_name: Mirko Brombin
+user_tag: Founder
+---
+
+We’ve received many questions about [UMU](https://github.com/Open-Wine-Components/umu-launcher) in Bottles and the current development of [Bottles Next](https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/). In this brief article, we’ll try to answer these questions.
+
+## UMU in Bottles
+
+OWC (Open Wine Components) is a relatively young organization, bringing together notable names like GloriousEggroll, Lutris, Heroic, Bottles, and many, many others. The idea behind OWC is to unify and improve the Wine experience on Linux by joining forces.
+
+UMU is an OWC project aimed at bringing the benefits of the Steam runtime for Proton outside of Steam itself, allowing the high efficiency and compatibility of this technology to be used for titles not available on Valve’s platform. This is a constantly evolving project with a growing database of supported titles and a thriving community.
+
+While UMU has been quickly adopted by other platforms like Lutris, the case with Bottles is a bit more complex. Unlike Lutris and other platforms, Bottles follows a different concept: the user needs to create one or more bottles where they can install software, either through our installers or manually via a Windows executable. Implementing UMU requires more complex design work, as UMU needs to create and manage these bottles (wineprefix), but the architectural challenges don’t stop there. UMU is tightly connected to the Wine components that we define as “legacy” in Bottles—tools that aren’t implemented within Bottles’ architecture. This includes things like DLL overrides, drive management, Windows version control, virtual desktops, fullscreen capture, mouse warp, DPI settings, rendering modes, process management, or even dependency management itself, which is handled by Winetricks in UMU and other platforms. In Bottles, we have a dedicated infrastructure and a custom syntax to simplify and streamline the creation of new dependencies and installers.
+
+Implementing UMU is a significant undertaking, and we’ve identified two possible paths forward:
+
+- **Implementing UMU in a separate section of Bottles**: The user will need to create a UMU-specific bottle, where they’ll be greeted with a store-like interface to browse and install software from the UMU database. Once installed, they’ll be able to modify the settings for each piece of software.
+  
+- **Maintaining a fork of UMU compatible with Bottles**: This option will also use a store-like interface but requires rewriting components to integrate them with the existing Bottles architecture.
+
+Naturally, the first path requires much less time and effort than the second.
+
+We’ve already begun experimenting with the first approach and will evaluate things as progress continues.
+
+## Bottles Next
+
+As we mentioned when we first revealed the project, Next is a complete overhaul of Bottles, not just a simple update, and for this reason, we’ve chosen not to announce a potential release date.
+
+Over the past few months, we’ve focused on three main tasks: research, experimentation, and the development of new technologies.
+
+The idea behind Next is to create a solid foundation that can support future updates without the need to completely overhaul the underlying structure. The project is divided into three main components:
+
+- **Agent (WineBridge)**: The true beating heart of every bottle, this is a native Windows software that runs inside the Wine prefix, performing all operations natively using Wine-supported Windows methods and communicating these operations to the Bottles core.
+  
+- **Core**: This is the orchestrator of all agents. It receives input from any Next-compatible client and manages the communication with the bottle, delegating tasks to the agent and waiting for the results.
+
+- **Client**: A graphical or command-line interface that allows users to manage bottles through the Next core.
+
+This is a completely new approach to managing Wine prefixes. Our goal is to completely eliminate the use of command-line Wine tools and subprocesses, fostering clearer, more transparent, and potentially more performant communication while standardizing the results of these interactions.
+
+In recent months, we’ve focused on three main tasks: designing the overall architecture of Next to determine the best way for these three components to communicate consistently and defining the rules for creating a Next-compatible client. This will finally allow us to bring Bottles to other platforms like macOS, Qt, Web, command line, and essentially anywhere else.
+
+At the same time, we’ve been exploring which technology to use for developing the first Next client. As mentioned earlier, we’ve always used GTK for Bottles, remaining faithful to GNOME guidelines. This won’t change in the future—a GTK client will come, although probably later than the initial release of Next, depending on contributions. We’ve evaluated several technologies, including Electron, Tauri, Wails, Flutter, Fyne, and Qt, conducting numerous tests to determine which one offers the best balance between efficiency and compatibility. At the moment, we’re torn between Tauri and Wails.
+
+Both technologies (Tauri and Wails) meet the requirements we’ve set:
+
+- **Customization freedom**: By allowing the use of HTML/CSS/JS and reactive frameworks like Svelte, Vue, React, Angular, etc., it’s possible to create a user experience tailored to Bottles’ needs.
+  
+- **Low resource consumption**: Despite common criticisms of web-based software, our tests have shown that applications built with Tauri and Wails, even under heavy computational and graphical loads, are significantly less resource-intensive than those built with Electron. Specifically, their resource consumption is very close to that of a GTK4 application with libadwaita. For these tests, we used Bottles and GNOME Console as benchmarks, noting that Tauri and Wails maintain more consistent memory usage. In contrast, in the current versions of Bottles and GNOME Console, we observed less predictable fluctuations in resource consumption.
+
+It’s worth mentioning that Flutter also met these points, but the need to learn a new language (Dart) and the limited flexibility of Flutter’s [Widget Tree](https://docs.flutter.dev/ui) led us to focus on the aforementioned technologies.
+
+Alongside the architectural work on Next (especially the core), we’ve also begun designing and building the visual language needed for the new [Bottles graphical client](https://www.figma.com/design/iWNlSzDKpTucBNzQymGzyY/Bottles-Next?node-id=0-1&t=l0z3Bc3UAEClFM5O-1). This gave rise to the experimental [vnt](https://github.com/mirkobrombin/vnt), a graphical toolkit built on VueJS 3, designed to work with Tauri, Wails, web browsers, and potentially others in the future. Below are some links showcasing vnt in action:
+
+- [https://mastodon.social/@mirkobrombin/112260361866348048](https://mastodon.social/@mirkobrombin/112260361866348048)
+- [https://mastodon.social/@mirkobrombin/112258227193837424](https://mastodon.social/@mirkobrombin/112258227193837424)
+- [https://mastodon.social/@mirkobrombin/112252080737173945](https://mastodon.social/@mirkobrombin/112252080737173945)
+- [https://mastodon.social/@mirkobrombin/112246238320239278](https://mastodon.social/@mirkobrombin/112246238320239278)
+
+There’s also a demo available in the vnt repository.
+
+It should be noted that we’re still in an experimental phase. From the beginning, we decided to take our time with Next’s development to ensure we have the flexibility to experiment with different technologies. Therefore, everything is still subject to change. The only thing that’s set in stone is the agent-core-client model. For example, I (Mirko) have been experimenting with [rfw](https://github.com/rfwlab/rfw), a reactive framework in Golang using WebAssembly. This is a prototype and could potentially become a candidate for the first Next client in the future.
+
+Everything is still in the experimental stage. The current version of Bottles is still actively maintained, developed, and receiving new releases, so we don’t feel pressured to rush the development of Next. We’re confident we can take our time. UMU is certainly a priority right now, to ensure better compatibility for all Bottles users.
+
+_ Mirko B.
