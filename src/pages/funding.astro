@@ -1,165 +1,319 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Icon } from 'astro-icon/components';
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Funding">
-
   <section class="py-20 bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
-      <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">Funding</h1>
-      <p class="text-lg text-gray-700 dark:text-gray-300">Bottles is a <a href="https://en.wikipedia.org/wiki/Free_software" class="text-blue-600 dark:text-blue-400 underline">free software</a> project. You can support its development by leaving a small donation.</p>
+      <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+        Funding
+      </h1>
+      <p class="text-lg text-gray-700 dark:text-gray-300">
+        Bottles is a <a
+          href="https://en.wikipedia.org/wiki/Free_software"
+          class="text-blue-600 dark:text-blue-400 underline">free software</a
+        > project. You can support its development by leaving a small donation.
+      </p>
     </div>
   </section>
 
   <div class="container mx-auto px-4 mt-8">
     <section class="py-5">
-      <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">How to donate</h2>
-      <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">Here are the official channels from which you can donate to Bottles Developers.</p>
+      <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+        How to donate
+      </h2>
+      <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
+        Here are the official channels from which you can donate to Bottles
+        Developers.
+      </p>
 
       <div class="grid md:grid-cols-3 gap-6 mb-8">
-        <a class="bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-200 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1" href="https://github.com/sponsors/bottlesdevs">
-          <Icon name="material-symbols:favorite-outline" class="w-8 h-8 mb-4 mx-auto" />
+        <div
+          class="bg-gray-900 text-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1"
+        >
+          <Icon
+            name="material-symbols:favorite-outline"
+            class="w-8 h-8 mb-4 mx-auto"
+          />
           <h3 class="text-2xl font-bold mb-2">GitHub Sponsors</h3>
-          <p>By subscribing for only 2$ you can help keep the project alive. You can also make a one-time donation.</p>
-        </a>
-        <a class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1" href="https://liberapay.com/bottles">
-          <Icon name="material-symbols:volunteer-activism-outline" class="w-8 h-8 mb-4 mx-auto" />
-          <h3 class="text-2xl font-bold mb-2">LiberaPay</h3>
-          <p>You can also decide for an even more flexible subscription with LiberaPay.</p>
-        </a>
-        <a class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1" href="https://paypal.me/MirkoBrombin">
-          <Icon name="material-symbols:credit-card-outline" class="w-8 h-8 mb-4 mx-auto" />
+          <span
+            class="bg-gray-700 text-white px-2 py-1 rounded-full text-sm inline-block mb-4"
+            >Recurring</span
+          >
+          <a
+            href="https://github.com/sponsors/bottlesdevs"
+            class="mt-4 block bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition-all"
+            >Sponsor via GitHub</a
+          >
+        </div>
+        <div
+          class="bg-blue-500 dark:bg-blue-700 text-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1"
+        >
+          <Icon
+            name="material-symbols:credit-card-outline"
+            class="w-8 h-8 mb-4 mx-auto"
+          />
           <h3 class="text-2xl font-bold mb-2">PayPal</h3>
-          <p>You can also donate via PayPal if you prefer.</p>
-        </a>
+          <span
+            class="bg-blue-700 dark:bg-blue-500 text-white px-2 py-1 rounded-full text-sm inline-block mb-4"
+            >One-Time / Recurring</span
+          >
+          <span
+            class="bg-blue-700 dark:bg-blue-500 text-white px-2 py-1 rounded-full text-sm inline-block mb-4"
+            >Preferred Method</span
+          >
+          <a
+            href="https://www.paypal.com/donate?hosted_button_id=HM2VKUH5STU4J"
+            class="mt-4 block bg-white text-blue-500 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+            >Donate via PayPal</a
+          >
+          <a href="https://paypal.me/MirkoBrombin" class="mt-4 block underline"
+            >Old PayPal Method</a
+          >
+        </div>
+        <div
+          class="bg-yellow-400 dark:bg-yellow-500 text-gray-900 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1"
+        >
+          <Icon
+            name="material-symbols:volunteer-activism-outline"
+            class="w-8 h-8 mb-4 mx-auto"
+          />
+          <h3 class="text-2xl font-bold mb-2">LiberaPay</h3>
+          <span
+            class="bg-yellow-500 dark:bg-yellow-600 text-gray-900 px-2 py-1 rounded-full text-sm inline-block mb-4"
+            >Flexible Subscription</span
+          >
+          <a
+            href="https://liberapay.com/bottles"
+            class="mt-4 block bg-yellow-500 dark:bg-yellow-600 text-gray-900 py-2 px-4 rounded-lg hover:bg-yellow-300 transition-all"
+            >Donate via LiberaPay</a
+          >
+        </div>
       </div>
     </section>
 
     <section class="py-5">
-      <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Our plans for Bottles</h2>
-      <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">We have several plans for Bottles' future, many features that take time and money to come true.</p>
-      <ul class="list-disc list-inside text-gray-800 dark:text-gray-300 mb-8 flex flex-col space-y-4">
+      <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+        Our plans for Bottles
+      </h2>
+      <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
+        We have several plans for Bottles' future, many features that take time
+        and money to come true.
+      </p>
+      <ul
+        class="list-disc list-inside text-gray-800 dark:text-gray-300 mb-8 flex flex-col space-y-4"
+      >
         <li>
           <span class="font-bold text-xl">[DONE] Library mode:</span>
-          <p class="text-lg">Allow users to add any program from any bottle in a library view for easy access.</p>
+          <p class="text-lg">
+            Allow users to add any program from any bottle in a library view for
+            easy access.
+          </p>
         </li>
         <li>
           <span class="font-bold text-xl">[ALPHA] Per-bottle sandbox:</span>
-          <p class="text-lg">Experimental feature for wrapping each bottle with a sandbox to limit permissions.</p>
+          <p class="text-lg">
+            Experimental feature for wrapping each bottle with a sandbox to
+            limit permissions.
+          </p>
         </li>
         <li>
           <span class="font-bold text-xl">[WIP] Layered bottles:</span>
-          <p class="text-lg">Our solution for multiple environments in one bottle. Currently in concept.</p>
+          <p class="text-lg">
+            Our solution for multiple environments in one bottle. Currently in
+            concept.
+          </p>
+        </li>
+        <li>
+          <span class="font-bold text-xl">[WIP] Integration of UMU:</span>
+          <p class="text-lg">
+            Integration of UMU to enhance the gaming compatibility in Bottles.
+            For more information, check <a
+              href="https://usebottles.com/posts/2024-09-24-umu-next/"
+              class="text-blue-600 dark:text-blue-400 underline">this post</a
+            > and the <a
+              href="https://github.com/Open-Wine-Components/umu-launcher"
+              class="text-blue-600 dark:text-blue-400 underline"
+              >UMU GitHub page</a
+            >.
+          </p>
         </li>
         <li>
           <span class="font-bold text-xl">[DONE] Installers:</span>
-          <p class="text-lg">Already implemented as an experimental feature for automated Windows software installation.</p>
+          <p class="text-lg">
+            Already implemented as an experimental feature for automated Windows
+            software installation.
+          </p>
         </li>
         <li>
           <span class="font-bold text-xl">[DONE] Dependencies manager:</span>
-          <p class="text-lg">A core feature that manages software dependencies in a simple, automated way.</p>
+          <p class="text-lg">
+            A core feature that manages software dependencies in a simple,
+            automated way.
+          </p>
         </li>
       </ul>
     </section>
 
     <section class="py-5">
-      <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Thanks to them who made a donation or became our GitHub sponsor 💖!</h2>
+      <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+        Thanks to them who made a donation or became our GitHub sponsor 💖!
+      </h2>
       <div class="flex flex-wrap mb-8 mt-8 gap-4" id="github">
         <!-- JS will inject people here -->
       </div>
 
-      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Other platforms</h3>
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+        Other platforms
+      </h3>
       <div class="flex flex-wrap mb-8 gap-4" id="other">
         <!-- JS will inject people here -->
       </div>
 
-      <p class="text-center text-gray-800 dark:text-gray-300">- Thanks from the Bottles Developers.</p>
+      <p class="text-center text-gray-800 dark:text-gray-300">
+        - Thanks from the Bottles Developers.
+      </p>
     </section>
   </div>
 
+  <div
+    id="donationModal"
+    class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden"
+  >
+    <div
+      class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg w-1/3 text-center"
+    >
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        Thank You!
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        We sincerely appreciate your donation. Your support helps us keep
+        Bottles growing and improving.
+      </p>
+      <button
+        id="closeModal"
+        class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+        >Close</button
+      >
+    </div>
+  </div>
 </Layout>
 
 <script>
-interface Sponsor {
-  username: string;
-  avatar: string;
-}
-
-interface PeopleList {
-  github: Sponsor[];
-  other: string[];
-}
-
-class Donations {
-  domSelector: string;
-  list: PeopleList;
-
-  constructor(domSelector: string, list: PeopleList) {
-    this.domSelector = domSelector;
-    this.list = list;
-    this.renderPeople();
+  interface Sponsor {
+    username: string;
+    avatar: string;
   }
 
-  async renderPeople(): Promise<void> {
-    const githubPeople = await this.getGitHubSponsors();
-    const otherPeople = this.list.other;
-    let html = '';
-
-    html += this.addSection('#github', githubPeople, true);
-    html += this.addSection('#other', otherPeople);
+  interface PeopleList {
+    github: Sponsor[];
+    other: string[];
   }
 
-  addSection(sectionDOM: string, personList: Sponsor[] | string[], hasPic: boolean = false) {
-    let sectionHtml = ``;
+  class Donations {
+    domSelector: string;
+    list: PeopleList;
 
-    personList.forEach((person) => {
-      if (typeof person === "string") {
-        sectionHtml += this.getPersonMarkup(person, hasPic);
-      } else {
-        sectionHtml += this.getPersonMarkup(person.username, hasPic, person.avatar);
-      }
-    });
+    constructor(domSelector: string, list: PeopleList) {
+      this.domSelector = domSelector;
+      this.list = list;
+      this.renderPeople();
+    }
 
-    document.querySelector(sectionDOM)?.insertAdjacentHTML('beforeend', sectionHtml);
-  }
+    async renderPeople(): Promise<void> {
+      const githubPeople = await this.getGitHubSponsors();
+      const otherPeople = this.list.other;
+      let html = "";
 
-  getPersonMarkup(person: string, hasPic: boolean, avatarUrl: string = ''): string {
-    return `<div class="flex items-center space-x-2">
-      ${hasPic ? `<img src="${avatarUrl}" alt="${person}" class="w-12 h-12 rounded-full">` : ''}
+      html += this.addSection("#github", githubPeople, true);
+      html += this.addSection("#other", otherPeople);
+    }
+
+    addSection(
+      sectionDOM: string,
+      personList: Sponsor[] | string[],
+      hasPic: boolean = false
+    ) {
+      let sectionHtml = ``;
+
+      personList.forEach((person) => {
+        if (typeof person === "string") {
+          sectionHtml += this.getPersonMarkup(person, hasPic);
+        } else {
+          sectionHtml += this.getPersonMarkup(
+            person.username,
+            hasPic,
+            person.avatar
+          );
+        }
+      });
+
+      document
+        .querySelector(sectionDOM)
+        ?.insertAdjacentHTML("beforeend", sectionHtml);
+    }
+
+    getPersonMarkup(
+      person: string,
+      hasPic: boolean,
+      avatarUrl: string = ""
+    ): string {
+      return `<div class="flex items-center space-x-2">
+      ${hasPic ? `<img src="${avatarUrl}" alt="${person}" class="w-12 h-12 rounded-full">` : ""}
       <span class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg text-center">${person}</span>
     </div>`;
-  }
+    }
 
-  async getGitHubSponsors(): Promise<Sponsor[]> {
-    try {
-      const response = await fetch('https://ghs.vercel.app/v2/sponsors/bottlesdevs');
-      const data = await response.json();
+    async getGitHubSponsors(): Promise<Sponsor[]> {
+      try {
+        const response = await fetch(
+          "https://ghs.vercel.app/v2/sponsors/bottlesdevs"
+        );
+        const data = await response.json();
 
-      const allSponsors = [...data.sponsors.current, ...data.sponsors.past].map(
-        (sponsor: { username: string; avatar: string }) => ({
+        const allSponsors = [
+          ...data.sponsors.current,
+          ...data.sponsors.past,
+        ].map((sponsor: { username: string; avatar: string }) => ({
           username: sponsor.username,
           avatar: sponsor.avatar,
-        })
-      );
+        }));
 
-      return allSponsors;
-    } catch (error) {
-      console.error('Error fetching GitHub sponsors:', error);
-      return [];
+        return allSponsors;
+      } catch (error) {
+        console.error("Error fetching GitHub sponsors:", error);
+        return [];
+      }
     }
   }
-}
 
-const people: PeopleList = {
-  github: [],
-  other: [
-    "Christopher (kit) Eubanks", "Black_file", "Chris", "Robin Lee", "Andrew Ego",
-    "Sonny Piers", "Dan G", "Caleb Woodbine", "Robert Krisztian Sandor", "+ All the anonymous donations"
-  ]
-};
+  const people: PeopleList = {
+    github: [],
+    other: [
+      "Christopher (kit) Eubanks",
+      "Black_file",
+      "Chris",
+      "Robin Lee",
+      "Andrew Ego",
+      "Sonny Piers",
+      "Dan G",
+      "Caleb Woodbine",
+      "Robert Krisztian Sandor",
+      "+ All the anonymous donations",
+    ],
+  };
 
-document.addEventListener('DOMContentLoaded', () => {
-  new Donations('#people', people);
-});
+  document.addEventListener("DOMContentLoaded", () => {
+    new Donations("#people", people);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("thankyou")) {
+      document.getElementById("donationModal")?.classList.remove("hidden");
+    }
+
+    document.getElementById("closeModal")?.addEventListener("click", () => {
+      document.getElementById("donationModal")?.classList.add("hidden");
+    });
+  });
 </script>
