@@ -94,46 +94,59 @@ import { Icon } from "astro-icon/components";
     </section>
 
     <section
-      class="sticky z-10 bg-white dark:bg-gray-900 py-4 border-b border-gray-300 dark:border-gray-700"
-      style="top: 72px"
+      class="sticky top-18 z-10 bg-white dark:bg-gray-900 py-4 border-b border-gray-300 dark:border-gray-700"
     >
       <div
-        class="container mx-auto px-4 flex flex-wrap items-center justify-between"
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4"
       >
-        <div class="flex space-x-4">
+        <div class="flex flex-wrap items-center gap-2">
           <button
-            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg"
-            data-status="WIP">WIP</button
+            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg text-sm"
+            data-status="WIP"
           >
+            WIP
+          </button>
           <button
-            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg"
-            data-status="DONE">Done</button
+            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg text-sm"
+            data-status="DONE"
           >
+            Done
+          </button>
           <button
-            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg"
-            data-status="ALPHA">Alpha</button
+            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg text-sm"
+            data-status="ALPHA"
           >
+            Alpha
+          </button>
           <button
-            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg"
-            data-status="NEXT">Next</button
+            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg text-sm"
+            data-status="NEXT"
           >
+            Next
+          </button>
           <button
-            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg"
-            data-status="REJECTED">Rejected</button
+            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg text-sm"
+            data-status="REJECTED"
           >
+            Rejected
+          </button>
         </div>
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search tasks..."
-          class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg w-full md:w-1/3"
-        />
-        <button
-          id="resetButton"
-          class="bg-blue-500 text-white px-4 py-2 rounded-lg"
+        <div
+          class="flex flex-col md:flex-row items-center gap-2 w-full md:w-auto"
         >
-          Reset Filters
-        </button>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search tasks..."
+            class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg text-sm w-full md:w-72"
+          />
+          <button
+            id="resetButton"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm w-full md:w-auto"
+          >
+            Reset Filters
+          </button>
+        </div>
       </div>
     </section>
 
@@ -164,7 +177,7 @@ import { Icon } from "astro-icon/components";
           <div class="mt-auto">
             <a
               href="https://usebottles.com/posts/2022-08-28-release-2022.8.28"
-              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800"
             >
               <Icon
                 name="material-symbols:menu-book-outline"
@@ -204,7 +217,7 @@ import { Icon } from "astro-icon/components";
           <div class="mt-auto">
             <a
               href="https://github.com/bottlesdevs/Bottles/issues/1158"
-              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800"
             >
               <Icon
                 name="material-symbols:menu-book-outline"
@@ -245,7 +258,7 @@ import { Icon } from "astro-icon/components";
           <div class="mt-auto">
             <a
               href="https://github.com/bottlesdevs/Bottles/issues/510"
-              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800"
             >
               <Icon
                 name="material-symbols:menu-book-outline"
@@ -289,7 +302,7 @@ import { Icon } from "astro-icon/components";
           <div class="mt-auto">
             <a
               href="https://usebottles.com/posts/2024-09-24-umu-next/"
-              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800"
             >
               <Icon
                 name="material-symbols:menu-book-outline"
@@ -353,7 +366,7 @@ import { Icon } from "astro-icon/components";
           <div class="mt-auto">
             <a
               href="https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/"
-              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800"
             >
               <Icon
                 name="material-symbols:menu-book-outline"
