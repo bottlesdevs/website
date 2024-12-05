@@ -30,7 +30,7 @@ import { Icon } from "astro-icon/components";
 
       <div class="grid md:grid-cols-3 gap-6 mb-8">
         <div
-          class="bg-gray-900 dark:bg-gray-800 text-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1"
+          class="bg-gray-900 text-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1"
         >
           <Icon
             name="material-symbols:favorite-outline"
@@ -43,7 +43,7 @@ import { Icon } from "astro-icon/components";
           >
           <a
             href="https://github.com/sponsors/bottlesdevs"
-            class="mt-4 block bg-gray-800 dark:bg-gray-700 text-white py-2 px-4 rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-all"
+            class="mt-4 block bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition-all"
             >Sponsor via GitHub</a
           >
         </div>
@@ -81,111 +81,293 @@ import { Icon } from "astro-icon/components";
           />
           <h3 class="text-2xl font-bold mb-2">LiberaPay</h3>
           <span
-            class="bg-yellow-500 dark:bg-yellow-100 dark:bg-opacity-50 text-gray-900 px-2 py-1 rounded-full text-sm inline-block mb-4"
+            class="bg-yellow-500 dark:bg-yellow-600 text-gray-900 px-2 py-1 rounded-full text-sm inline-block mb-4"
             >Flexible Subscription</span
           >
           <a
             href="https://liberapay.com/bottles"
-            class="mt-4 block bg-yellow-500 dark:bg-yellow-100 text-gray-900 py-2 px-4 rounded-lg hover:bg-yellow-300 dark:hover:bg-yellow-200 transition-all"
+            class="mt-4 block bg-yellow-500 dark:bg-yellow-600 text-gray-900 py-2 px-4 rounded-lg hover:bg-yellow-300 transition-all"
             >Donate via LiberaPay</a
           >
         </div>
       </div>
     </section>
 
-    <section class="py-5">
-      <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-        Our plans for Bottles
-      </h2>
-      <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
-        We have several plans for Bottles' future, many features that take time
-        and money to come true.
-      </p>
-      <ul
-        class="list-disc list-inside text-gray-800 dark:text-gray-300 mb-8 flex flex-col space-y-4"
+    <section
+      class="sticky top-0 z-10 bg-white dark:bg-gray-900 py-4 border-b border-gray-300 dark:border-gray-700"
+    >
+      <div
+        class="container mx-auto px-4 flex flex-wrap items-center justify-between"
       >
-        <li>
-          <span class="font-bold text-xl">[DONE] Library mode:</span>
-          <p class="text-lg">
-            Allow users to add any program from any bottle in a library view for
-            easy access.
-          </p>
-        </li>
-        <li>
-          <span class="font-bold text-xl">[ALPHA] Per-bottle sandbox:</span>
-          <p class="text-lg">
-            Experimental feature for wrapping each bottle with a sandbox to
-            limit permissions.
-          </p>
-        </li>
-        <li>
-          <span class="font-bold text-xl">[WIP] Layered bottles:</span>
-          <p class="text-lg">
-            Our solution for multiple environments in one bottle. Currently in
-            concept.
-          </p>
-        </li>
-        <li>
-          <span class="font-bold text-xl">[WIP] Integration of UMU:</span>
-          <p class="text-lg">
-            Integration of UMU to enhance the gaming compatibility in Bottles.
-            For more information, check <a
+        <div class="flex space-x-4">
+          <button
+            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg"
+            data-status="WIP">WIP</button
+          >
+          <button
+            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg"
+            data-status="DONE">Done</button
+          >
+          <button
+            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg"
+            data-status="ALPHA">Alpha</button
+          >
+          <button
+            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg"
+            data-status="NEXT">Next</button
+          >
+          <button
+            class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg"
+            data-status="REJECTED">Rejected</button
+          >
+        </div>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search tasks..."
+          class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg w-full md:w-1/3"
+        />
+        <button
+          id="resetButton"
+          class="bg-blue-500 text-white px-4 py-2 rounded-lg"
+        >
+          Reset Filters
+        </button>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div
+          class="task-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-all relative flex flex-col"
+          data-status="DONE"
+          data-title="Library mode"
+        >
+          <div>
+            <span
+              class="bg-green-500 text-white px-2 py-1 rounded-full text-sm inline-block mb-4"
+              >[DONE]</span
+            >
+            <h3 class="text-2xl font-bold mb-2">Library mode</h3>
+            <p class="text-lg mb-4">
+              Allow users to add any program from any bottle in a library view
+              for easy access.
+            </p>
+            <div class="flex items-center space-x-2 mb-4">
+              <span class="w-full bg-gray-300 rounded">
+                <span class="block bg-green-500 h-2 rounded" style="width: 100%"
+                ></span>
+              </span>
+            </div>
+          </div>
+          <div class="mt-auto">
+            <a
+              href="https://usebottles.com/posts/2022-08-28-release-2022.8.28"
+              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+            >
+              <Icon
+                name="material-symbols:menu-book-outline"
+                class="w-5 h-5 mr-2"
+              />
+              README
+            </a>
+          </div>
+        </div>
+        <div
+          class="task-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-all relative flex flex-col"
+          data-status="ALPHA"
+          data-title="Per-bottle sandbox"
+        >
+          <div>
+            <span
+              class="bg-yellow-500 text-white px-2 py-1 rounded-full text-sm inline-block mb-4"
+              >[ALPHA]</span
+            >
+            <h3 class="text-2xl font-bold mb-2">Per-bottle sandbox</h3>
+            <p class="text-lg mb-4">
+              Experimental feature for wrapping each bottle with a sandbox to
+              limit permissions.
+            </p>
+            <div class="flex items-center space-x-2 mb-4">
+              <span class="w-full bg-gray-300 rounded">
+                <span class="block bg-yellow-500 h-2 rounded" style="width: 80%"
+                ></span>
+              </span>
+              <Icon
+                name="material-symbols:info-outline"
+                class="w-6 h-6 cursor-pointer"
+                onclick="document.getElementById('infoModal').classList.remove('hidden'); document.getElementById('infoModalText').innerText = 'Estimated time: 1 week of work based on average hourly cost.'"
+              />
+            </div>
+          </div>
+          <div class="mt-auto">
+            <a
+              href="https://github.com/bottlesdevs/Bottles/issues/1158"
+              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+            >
+              <Icon
+                name="material-symbols:menu-book-outline"
+                class="w-5 h-5 mr-2"
+              />
+              README
+            </a>
+          </div>
+        </div>
+        <div
+          class="task-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-all relative flex flex-col"
+          data-status="REJECTED"
+          data-title="Layered bottles"
+        >
+          <div>
+            <span
+              class="bg-red-500 text-white px-2 py-1 rounded-full text-sm inline-block mb-4"
+              >[REJECTED]</span
+            >
+            <h3 class="text-2xl font-bold mb-2">Layered bottles</h3>
+            <p class="text-lg mb-4">
+              Our solution for multiple environments in one bottle. Planned for
+              Bottles Next. Please refer to the Bottles Next task for more
+              details.
+            </p>
+            <div class="flex items-center space-x-2 mb-4">
+              <span class="w-full bg-gray-300 rounded">
+                <span class="block bg-red-300 h-2 rounded" style="width: 0%"
+                ></span>
+              </span>
+              <Icon
+                name="material-symbols:info-outline"
+                class="w-6 h-6 cursor-pointer"
+                onclick="document.getElementById('infoModal').classList.remove('hidden'); document.getElementById('infoModalText').innerText = 'This feature is planned for Bottles Next. Read the Bottles Next task for more information.'"
+              />
+            </div>
+          </div>
+          <div class="mt-auto">
+            <a
+              href="https://github.com/bottlesdevs/Bottles/issues/510"
+              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+            >
+              <Icon
+                name="material-symbols:menu-book-outline"
+                class="w-5 h-5 mr-2"
+              />
+              README
+            </a>
+          </div>
+        </div>
+        <div
+          class="task-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-all relative flex flex-col"
+          data-status="WIP"
+          data-title="Integration of UMU"
+        >
+          <div>
+            <span
+              class="bg-blue-500 text-white px-2 py-1 rounded-full text-sm inline-block mb-4"
+              >[WIP]</span
+            >
+            <h3 class="text-2xl font-bold mb-2">Integration of UMU</h3>
+            <p class="text-lg mb-4">
+              Integration of UMU to enhance the gaming compatibility in Bottles.
+              For more information, check the <a
+                href="https://github.com/Open-Wine-Components/umu-launcher"
+                class="text-blue-600 dark:text-blue-400 underline"
+                >UMU GitHub page</a
+              >.
+            </p>
+            <div class="flex items-center space-x-2 mb-4">
+              <span class="w-full bg-gray-300 rounded">
+                <span class="block bg-blue-500 h-2 rounded" style="width: 10%"
+                ></span>
+              </span>
+              <Icon
+                name="material-symbols:info-outline"
+                class="w-6 h-6 cursor-pointer"
+                onclick="document.getElementById('infoModal').classList.remove('hidden'); document.getElementById('infoModalText').innerText = 'Estimated time: 4 weeks of work based on average hourly cost.'"
+              />
+            </div>
+          </div>
+          <div class="mt-auto">
+            <a
               href="https://usebottles.com/posts/2024-09-24-umu-next/"
-              class="text-blue-600 dark:text-blue-400 underline">this post</a
-            > and the <a
-              href="https://github.com/Open-Wine-Components/umu-launcher"
-              class="text-blue-600 dark:text-blue-400 underline"
-              >UMU GitHub page</a
-            >.
-          </p>
-        </li>
-        <li>
-          <span class="font-bold text-xl">[DONE] Installers:</span>
-          <p class="text-lg">
-            Already implemented as an experimental feature for automated Windows
-            software installation.
-          </p>
-        </li>
-        <li>
-          <span class="font-bold text-xl">[DONE] Dependencies manager:</span>
-          <p class="text-lg">
-            A core feature that manages software dependencies in a simple,
-            automated way.
-          </p>
-        </li>
-        <li>
-          <span class="font-bold text-xl">[NEXT] Bottles Next:</span>
-          <p class="text-lg">
-            A complete redesign of Bottles to overcome current limitations and
-            provide a consistent user experience across Linux and macOS. The new
-            modular architecture introduces three key components:
-            <ul class="list-disc list-inside mt-2">
-              <li>
-                <strong>Agent (WineBridge):</strong> native Windows software operating
-                within the Wine prefix.
-              </li>
-              <li>
-                <strong>Core:</strong> the central component managing agents and
-                handling user inputs.
-              </li>
-              <li>
-                <strong>Client:</strong> the user interface ensuring a seamless experience
-                across platforms.
-              </li>
-            </ul>
-            For more details, check out the <a
+              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+            >
+              <Icon
+                name="material-symbols:menu-book-outline"
+                class="w-5 h-5 mr-2"
+              />
+              README
+            </a>
+          </div>
+        </div>
+        <div
+          class="task-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-all relative flex flex-col"
+          data-status="NEXT"
+          data-title="Bottles Next"
+        >
+          <div>
+            <span
+              class="bg-purple-500 text-white px-2 py-1 rounded-full text-sm inline-block mb-4"
+              >[NEXT]</span
+            >
+            <h3 class="text-2xl font-bold mb-2">Bottles Next</h3>
+            <p class="text-lg mb-4">
+              A complete redesign of Bottles to overcome current limitations and
+              provide a consistent user experience across Linux and macOS. We
+              need funds, contributors, and companies to provide infrastructure
+              support.
+              <br /><br />
+              Additionally, we are experimenting with two technologies developed
+              by the same developer of Bottles to determine the best candidate for
+              Bottles Next:
+              <ul class="list-disc list-inside mt-2">
+                <li>
+                  <strong>vnt (50% progress, 2 months estimated work):</strong>
+                  <a
+                    href="https://github.com/mirkobrombin/vnt"
+                    class="text-blue-600 dark:text-blue-400 underline"
+                    >GitHub repository</a
+                  >.
+                </li>
+                <li>
+                  <strong>rfw (20% progress, 4 months estimated work):</strong>
+                  <a
+                    href="https://github.com/rfwlab/rfw"
+                    class="text-blue-600 dark:text-blue-400 underline"
+                    >GitHub repository</a
+                  >.
+                </li>
+              </ul>
+            </p>
+            <div class="flex items-center space-x-2 mb-4">
+              <span class="w-full bg-gray-300 rounded">
+                <span class="block bg-purple-500 h-2 rounded" style="width: 10%"
+                ></span>
+              </span>
+              <Icon
+                name="material-symbols:info-outline"
+                class="w-6 h-6 cursor-pointer"
+                onclick="document.getElementById('infoModal').classList.remove('hidden'); document.getElementById('infoModalText').innerText = 'We are looking for funds, contributors, and companies to provide infrastructure support.'"
+              />
+            </div>
+          </div>
+          <div class="mt-auto">
+            <a
               href="https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/"
-              class="text-blue-600 dark:text-blue-400 underline"
-              >official announcement</a
-            >.
-          </p>
-        </li>
-      </ul>
+              class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all"
+            >
+              <Icon
+                name="material-symbols:menu-book-outline"
+                class="w-5 h-5 mr-2"
+              />
+              README
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="py-5">
       <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-        Thanks to them who made a donation or became our GitHub sponsor 💖!
+        Thanks to them who made a donation or became our GitHub sponsor ❤️!
       </h2>
       <div class="flex flex-wrap mb-8 mt-8 gap-4" id="github">
         <!-- JS will inject people here -->
@@ -225,6 +407,30 @@ import { Icon } from "astro-icon/components";
       >
     </div>
   </div>
+
+  <div
+    id="infoModal"
+    class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden"
+  >
+    <div
+      class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg w-1/3 text-center"
+    >
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        Progress Information
+      </h2>
+      <p
+        id="infoModalText"
+        class="text-lg text-gray-700 dark:text-gray-300 mb-4"
+      >
+        Progress is calculated based on the completion status of each task.
+      </p>
+      <button
+        id="closeInfoModal"
+        class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+        >Close</button
+      >
+    </div>
+  </div>
 </Layout>
 
 <script>
@@ -251,10 +457,8 @@ import { Icon } from "astro-icon/components";
     async renderPeople(): Promise<void> {
       const githubPeople = await this.getGitHubSponsors();
       const otherPeople = this.list.other;
-      let html = "";
-
-      html += this.addSection("#github", githubPeople, true);
-      html += this.addSection("#other", otherPeople);
+      this.addSection("#github", githubPeople, true);
+      this.addSection("#other", otherPeople);
     }
 
     addSection(
@@ -263,7 +467,6 @@ import { Icon } from "astro-icon/components";
       hasPic: boolean = false
     ) {
       let sectionHtml = ``;
-
       personList.forEach((person) => {
         if (typeof person === "string") {
           sectionHtml += this.getPersonMarkup(person, hasPic);
@@ -275,7 +478,6 @@ import { Icon } from "astro-icon/components";
           );
         }
       });
-
       document
         .querySelector(sectionDOM)
         ?.insertAdjacentHTML("beforeend", sectionHtml);
@@ -287,9 +489,13 @@ import { Icon } from "astro-icon/components";
       avatarUrl: string = ""
     ): string {
       return `<div class="flex items-center space-x-2">
-      ${hasPic ? `<img src="${avatarUrl}" alt="${person}" class="w-12 h-12 rounded-full">` : ""}
-      <span class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg text-center">${person}</span>
-    </div>`;
+          ${
+            hasPic
+              ? `<img src="${avatarUrl}" alt="${person}" class="w-12 h-12 rounded-full">`
+              : ""
+          }
+          <span class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg text-center">${person}</span>
+        </div>`;
     }
 
     async getGitHubSponsors(): Promise<Sponsor[]> {
@@ -298,7 +504,6 @@ import { Icon } from "astro-icon/components";
           "https://ghs.vercel.app/v2/sponsors/bottlesdevs"
         );
         const data = await response.json();
-
         const allSponsors = [
           ...data.sponsors.current,
           ...data.sponsors.past,
@@ -306,7 +511,6 @@ import { Icon } from "astro-icon/components";
           username: sponsor.username,
           avatar: sponsor.avatar,
         }));
-
         return allSponsors;
       } catch (error) {
         console.error("Error fetching GitHub sponsors:", error);
@@ -341,6 +545,98 @@ import { Icon } from "astro-icon/components";
 
     document.getElementById("closeModal")?.addEventListener("click", () => {
       document.getElementById("donationModal")?.classList.add("hidden");
+    });
+
+    document.getElementById("closeInfoModal")?.addEventListener("click", () => {
+      document.getElementById("infoModal")?.classList.add("hidden");
+    });
+
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const searchInput = document.getElementById("searchInput");
+    const resetButton = document.getElementById("resetButton");
+    const taskCards = document.querySelectorAll(".task-card");
+
+    let currentStatusFilter = "";
+    let currentSearchQuery = "";
+
+    function updateTasksDisplay() {
+      taskCards.forEach((card) => {
+        const cardStatus = card.getAttribute("data-status");
+        // @ts-ignore
+        const title = card.getAttribute("data-title").toLowerCase();
+        // @ts-ignore
+        const description = card.querySelector("p").textContent.toLowerCase();
+        let matchesStatus = true;
+        let matchesSearch = true;
+
+        if (currentStatusFilter !== "") {
+          matchesStatus = cardStatus === currentStatusFilter;
+        }
+
+        if (currentSearchQuery !== "") {
+          matchesSearch =
+            title.includes(currentSearchQuery) ||
+            description.includes(currentSearchQuery);
+        }
+
+        if (matchesStatus && matchesSearch) {
+          // @ts-ignore
+          card.style.display = "";
+        } else {
+          // @ts-ignore
+          card.style.display = "none";
+        }
+      });
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const status = button.getAttribute("data-status");
+        // @ts-ignore
+        currentStatusFilter = status;
+        filterButtons.forEach((btn) => {
+          btn.classList.remove("active", "bg-blue-500", "text-white");
+          btn.classList.add(
+            "bg-gray-200",
+            "dark:bg-gray-700",
+            "text-black",
+            "dark:text-white"
+          );
+        });
+        button.classList.add("active", "bg-blue-500", "text-white");
+        button.classList.remove(
+          "bg-gray-200",
+          "dark:bg-gray-700",
+          "text-black",
+          "dark:text-white"
+        );
+        updateTasksDisplay();
+      });
+    });
+
+    // @ts-ignore
+    searchInput.addEventListener("input", () => {
+      // @ts-ignore
+      currentSearchQuery = searchInput.value.toLowerCase();
+      updateTasksDisplay();
+    });
+
+    // @ts-ignore
+    resetButton.addEventListener("click", () => {
+      currentStatusFilter = "";
+      currentSearchQuery = "";
+      // @ts-ignore
+      searchInput.value = "";
+      filterButtons.forEach((btn) => {
+        btn.classList.remove("active", "bg-blue-500", "text-white");
+        btn.classList.add(
+          "bg-gray-200",
+          "dark:bg-gray-700",
+          "text-black",
+          "dark:text-white"
+        );
+      });
+      updateTasksDisplay();
     });
   });
 </script>
