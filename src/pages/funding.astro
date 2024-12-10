@@ -266,6 +266,46 @@ import { Icon } from "astro-icon/components";
       </section>
 
       <section class="py-5">
+        <div class="flex flex-wrap gap-6">
+          <div class="flex items-center gap-2">
+            <Icon
+              name="material-symbols:build-circle"
+              class="w-6 h-6"
+              title="In progress"
+            />
+            <span class="text-gray-700 dark:text-gray-300"
+              >Work in progress</span
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon
+              name="material-symbols:help-outline"
+              class="w-6 h-6"
+              title="Needs funding"
+            />
+            <span class="text-gray-700 dark:text-gray-300">Needs funding</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon
+              name="material-symbols:info-outline"
+              class="w-6 h-6"
+              title="More information"
+            />
+            <span class="text-gray-700 dark:text-gray-300"
+              >More information</span
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <p
+              class="bg-purple-300 dark:bg-purple-800 px-4 py-2 rounded-lg text-sm"
+            >
+              Progress bars refers to the completion status of each task.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5">
         <div class="grid md:grid-cols-3 gap-6">
           <div
             class="task-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-all relative flex flex-col"
@@ -314,6 +354,18 @@ import { Icon } from "astro-icon/components";
                 >[ALPHA]</span
               >
               <h3 class="text-2xl font-bold mb-2">Per-bottle sandbox</h3>
+              <div class="flex gap-2 mb-2">
+                <Icon
+                  name="material-symbols:build-circle"
+                  class="w-5 h-5"
+                  title="In progress"
+                />
+                <Icon
+                  name="material-symbols:help-outline"
+                  class="w-5 h-5"
+                  title="Needs funding"
+                />
+              </div>
               <p class="text-lg mb-4">
                 Experimental feature for wrapping each bottle with a sandbox to
                 limit permissions.
@@ -396,13 +448,21 @@ import { Icon } from "astro-icon/components";
                 >[WIP]</span
               >
               <h3 class="text-2xl font-bold mb-2">Integration of UMU</h3>
+              <div class="flex gap-2 mb-2">
+                <Icon
+                  name="material-symbols:build-circle"
+                  class="w-5 h-5"
+                  title="In progress"
+                />
+                <Icon
+                  name="material-symbols:help-outline"
+                  class="w-5 h-5"
+                  title="Needs funding"
+                />
+              </div>
               <p class="text-lg mb-4">
                 Integration of UMU to enhance the gaming compatibility in
-                Bottles. For more information, check the <a
-                  href="https://github.com/Open-Wine-Components/umu-launcher"
-                  class="text-blue-600 dark:text-blue-400 underline"
-                  >UMU GitHub page</a
-                >.
+                Bottles.
               </p>
               <div class="flex items-center space-x-2 mb-4">
                 <span class="w-full bg-gray-300 rounded">
@@ -440,6 +500,18 @@ import { Icon } from "astro-icon/components";
                 >[NEXT]</span
               >
               <h3 class="text-2xl font-bold mb-2">Bottles Next</h3>
+              <div class="flex gap-2 mb-2">
+                <Icon
+                  name="material-symbols:build-circle"
+                  class="w-5 h-5"
+                  title="In progress"
+                />
+                <Icon
+                  name="material-symbols:help-outline"
+                  class="w-5 h-5"
+                  title="Needs funding"
+                />
+              </div>
               <p class="text-lg mb-4">
                 A complete redesign of Bottles to overcome current limitations
                 and provide a consistent user experience across Linux and macOS.
