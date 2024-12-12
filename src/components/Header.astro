@@ -1,39 +1,79 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 ---
 
 <header class="bg-white dark:bg-gray-800 shadow-md py-4 sticky top-0 z-50">
   <div class="container mx-auto flex items-center justify-between px-4">
     <div class="flex items-center">
       <a href="/">
-        <img src="/assets/logo.svg" alt="Bottles Logo" class="h-8 mr-2 on-light" />
-        <img src="/assets/logo-dark.svg" alt="Bottles Logo" class="h-8 mr-2 on-dark" />
+        <img
+          src="/assets/logo.svg"
+          alt="Bottles Logo"
+          class="h-8 mr-2 on-light"
+        />
+        <img
+          src="/assets/logo-dark.svg"
+          alt="Bottles Logo"
+          class="h-8 mr-2 on-dark"
+        />
       </a>
 
       <!-- Desktop Menu -->
       <nav class="hidden md:flex ml-10 space-x-6">
-        <a href="/appstore" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg">Apps</a>
-        <a href="/database" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg">Database</a>
-        <a href="/blog" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg">Blog</a>
-        <a href="https://forum.usebottles.com/" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg">Forums</a>
-        <a href="/funding" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg">Funding</a>
+        <a
+          href="/appstore"
+          class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg"
+          >Apps</a
+        >
+        <a
+          href="/database"
+          class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg"
+          >Database</a
+        >
+        <a
+          href="/blog"
+          class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg"
+          >Blog</a
+        >
+        <a
+          href="https://github.com/orgs/bottlesdevs/discussions"
+          class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg"
+          >Forums</a
+        >
+        <a
+          href="/funding"
+          class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg"
+          >Funding</a
+        >
       </nav>
     </div>
 
     <div class="hidden md:flex items-center space-x-4">
-      <a href="https://docs.usebottles.com/" class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg">
+      <a
+        href="https://docs.usebottles.com/"
+        class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg"
+      >
         <Icon name="material-symbols:book-2-outline" class="w-5 h-5 mr-1" />
         <span class="hidden lg:inline">Docs</span>
       </a>
-      <a href="https://github.com/bottlesdevs/Bottles/issues?q=is%3Aissue+label%3ABug" class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg">
+      <a
+        href="https://github.com/bottlesdevs/Bottles/issues?q=is%3Aissue+label%3ABug"
+        class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg"
+      >
         <Icon name="material-symbols:bug-report-outline" class="w-5 h-5 mr-1" />
         <span class="hidden lg:inline">Bug report</span>
       </a>
-      <a href="https://hosted.weblate.org/engage/bottles/" class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg">
+      <a
+        href="https://hosted.weblate.org/engage/bottles/"
+        class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-lg"
+      >
         <Icon name="material-symbols:translate" class="w-5 h-5 mr-1" />
         <span class="hidden lg:inline">Help translating</span>
       </a>
-      <a href="/download" class="px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 flex items-center">
+      <a
+        href="/download"
+        class="px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 flex items-center"
+      >
         <Icon name="material-symbols:cloud-download" class="w-5 h-5 mr-1" />
         <span class="hidden lg:inline">Get Bottles</span>
       </a>
@@ -41,60 +81,109 @@ import { Icon } from 'astro-icon/components';
 
     <!-- Mobile Hamburger Menu -->
     <div class="md:hidden flex items-center">
-      <button id="hamburger" aria-label="Toggle menu" class="z-50 focus:outline-none">
-        <div class="w-8 h-8 flex flex-col justify-center items-center space-y-1 relative">
-          <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-200 transition-all duration-300 ease-in-out" id="line1"></span>
-          <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-200 transition-all duration-300 ease-in-out" id="line2"></span>
+      <button
+        id="hamburger"
+        aria-label="Toggle menu"
+        class="z-50 focus:outline-none"
+      >
+        <div
+          class="w-8 h-8 flex flex-col justify-center items-center space-y-1 relative"
+        >
+          <span
+            class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-200 transition-all duration-300 ease-in-out"
+            id="line1"></span>
+          <span
+            class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-200 transition-all duration-300 ease-in-out"
+            id="line2"></span>
         </div>
       </button>
     </div>
   </div>
 
   <!-- Mobile Menu Overlay -->
-  <div id="mobileMenu" class="md:hidden bg-white dark:bg-gray-800 fixed inset-0 z-40 transform translate-x-full transition-transform">
-    <div class="flex flex-col items-center justify-center min-h-screen space-y-6">
-      <a href="/appstore" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl">Apps</a>
-      <a href="/database" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl">Database</a>
-      <a href="/blog" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl">Blog</a>
-      <a href="https://forum.usebottles.com/" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl">Forums</a>
-      <a href="/funding" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl">Funding</a>
-      <a href="https://docs.usebottles.com/" class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl">
+  <div
+    id="mobileMenu"
+    class="md:hidden bg-white dark:bg-gray-800 fixed inset-0 z-40 transform translate-x-full transition-transform"
+  >
+    <div
+      class="flex flex-col items-center justify-center min-h-screen space-y-6"
+    >
+      <a
+        href="/appstore"
+        class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl"
+        >Apps</a
+      >
+      <a
+        href="/database"
+        class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl"
+        >Database</a
+      >
+      <a
+        href="/blog"
+        class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl"
+        >Blog</a
+      >
+      <a
+        href="https://forum.usebottles.com/"
+        class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl"
+        >Forums</a
+      >
+      <a
+        href="/funding"
+        class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl"
+        >Funding</a
+      >
+      <a
+        href="https://docs.usebottles.com/"
+        class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl"
+      >
         <Icon name="material-symbols:book-2-outline" class="w-6 h-6 mr-1" /> Docs
       </a>
-      <a href="https://github.com/bottlesdevs/Bottles/issues?q=is%3Aissue+label%3ABug" class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl">
-        <Icon name="material-symbols:bug-report-outline" class="w-6 h-6 mr-1" /> Bug report
+      <a
+        href="https://github.com/bottlesdevs/Bottles/issues?q=is%3Aissue+label%3ABug"
+        class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl"
+      >
+        <Icon name="material-symbols:bug-report-outline" class="w-6 h-6 mr-1" />
+        Bug report
       </a>
-      <a href="https://hosted.weblate.org/engage/bottles/" class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl">
+      <a
+        href="https://hosted.weblate.org/engage/bottles/"
+        class="flex items-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 text-xl"
+      >
         <Icon name="material-symbols:translate" class="w-6 h-6 mr-1" /> Help translating
       </a>
-      <a href="/download" class="px-6 py-3 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 flex items-center">
-        <Icon name="material-symbols:cloud-download" class="w-6 h-6 mr-1" /> Get Bottles
+      <a
+        href="/download"
+        class="px-6 py-3 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 flex items-center"
+      >
+        <Icon name="material-symbols:cloud-download" class="w-6 h-6 mr-1" /> Get
+        Bottles
       </a>
     </div>
   </div>
 </header>
 
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const line1 = document.getElementById('line1');
-  const line2 = document.getElementById('line2');
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const line1 = document.getElementById("line1");
+  const line2 = document.getElementById("line2");
 
   let menuOpen = false;
 
-  hamburger!.addEventListener('click', () => {
-    console.log('clicked');
+  hamburger!.addEventListener("click", () => {
+    console.log("clicked");
     menuOpen = !menuOpen;
     if (menuOpen) {
-      mobileMenu!.classList.remove('translate-x-full');
-      mobileMenu!.classList.add('translate-x-0');
-      line1!.classList.add('rotate-45');
-      line2!.classList.add('-rotate-45', '-translate-y-1.5');
+      mobileMenu!.classList.remove("translate-x-full");
+      mobileMenu!.classList.add("translate-x-0");
+      line1!.classList.add("rotate-45");
+      line2!.classList.add("-rotate-45", "-translate-y-1.5");
     } else {
-      mobileMenu!.classList.remove('translate-x-0');
-      mobileMenu!.classList.add('translate-x-full');
-      line1!.classList.remove('rotate-45');
-      line2!.classList.remove('-rotate-45', '-translate-y-1.5');
+      mobileMenu!.classList.remove("translate-x-0");
+      mobileMenu!.classList.add("translate-x-full");
+      line1!.classList.remove("rotate-45");
+      line2!.classList.remove("-rotate-45", "-translate-y-1.5");
     }
   });
 </script>
