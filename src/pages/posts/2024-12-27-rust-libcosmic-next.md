@@ -57,7 +57,7 @@ In the coming days, the Bottles Next development team will be finalized, and the
 
 We’ll also announce the public repositories where you can follow the ongoing work and contribute.
 
-Additionally, we kindly ask you to consider making a donation, even a small one, to help support development timelines and cover any necessary resources. For those interested, [visit our dedicated page](https://usebottles.com/funding/). We deeply appreciate your support for the [future of Bottles](https://usebottles.com/posts/2024-12-02-future-of-bottles/).
+> Additionally, we kindly ask you to consider making a donation, even a small one, to help support development timelines and cover any necessary resources. For those interested, [visit our dedicated page](https://usebottles.com/funding/). We deeply appreciate your support for the [future of Bottles](https://usebottles.com/posts/2024-12-02-future-of-bottles/).
 
 ## GTK?
 
