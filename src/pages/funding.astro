@@ -188,22 +188,6 @@ const legendIcons = [
     title: "More information",
   },
 ];
-
-const people: PeopleList = {
-  github: [],
-  other: [
-    "Christopher (kit) Eubanks",
-    "Black_file",
-    "Chris",
-    "Robin Lee",
-    "Andrew Ego",
-    "Sonny Piers",
-    "Dan G",
-    "Caleb Woodbine",
-    "Robert Krisztian Sandor",
-    "+ All the anonymous donations",
-  ],
-};
 ---
 
 <Layout title="Funding">
@@ -254,43 +238,22 @@ const people: PeopleList = {
               <Icon name={method.icon} class="w-8 h-8 mb-4 mx-auto" />
               <h3 class="text-2xl font-bold mb-2">{method.name}</h3>
 
-              {method.recurring && method.oneTime ? (
-                <span class="relative z-10 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm inline-block mb-4">
-                  One-Time / Recurring
-                </span>
-              ) : method.recurring ? (
-                <span class="relative z-10 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm inline-block mb-4">
-                  Recurring
-                </span>
-              ) : method.oneTime ? (
-                <span class="relative z-10 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm inline-block mb-4">
-                  One-Time
-                </span>
-              ) : (
-                ""
-              )}
-
-              {method.preferred ? (
-                <span class="relative z-10 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm inline-block mb-4">
-                  Preferred Method
-                </span>
-              ) : (
-                ""
-              )}
-              {method.flexible ? (
-                <span class="relative z-10 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm inline-block mb-4">
-                  Flexible Subscription
-                </span>
-              ) : (
-                ""
-              )}
-              {method.crypto ? (
-                <span class="relative z-10 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm inline-block mb-4">
-                  Bitcoin, Ethereum, and more
-                </span>
-              ) : (
-                ""
-              )}
+              {["One-Time / Recurring", "Recurring", "One-Time", "Preferred Method", "Flexible Subscription", "Bitcoin, Ethereum, and more"].map((text, index) => {
+              const conditions = [
+                method.recurring && method.oneTime,
+                method.recurring && !method.oneTime,
+                method.oneTime && !method.recurring,
+                method.preferred,
+                method.flexible,
+                method.crypto,
+              ];
+              const condition = conditions[index];
+                return condition ? (
+                  <span class="relative z-10 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm inline-block mb-4">
+                    {text}
+                  </span>
+                ) : null;
+              })}
 
               <a
                 href={method.crypto ? "#" : method.linkUrl}
@@ -328,59 +291,61 @@ const people: PeopleList = {
               You can donate using the following cryptocurrency addresses.
             </p>
             <div class="flex flex-col gap-4">
-              <div>
-                <h3 class="text-xl font-bold mb-2">
-                  Ethereum (ETH) <Icon
-                    name="material-symbols:check-circle"
-                    class="w-6 h-6 inline-block"
-                    title="Suggested"
-                  />
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300">Network: ERC20</p>
-                <code
-                  class="text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded-md block overflow-x-auto"
-                >
-                  0xef6a653c63db31403f507bca277f719d2f3d44f8
-                </code>
-              </div>
-              <hr class="border-gray-300 dark:border-gray-700 my-4" />
-              <div>
-                <h3 class="text-xl font-bold mb-2">Bitcoin (BTC)</h3>
-                <p class="text-gray-700 dark:text-gray-300">
-                  Network: BTC(SegWit)
-                </p>
-                <code
-                  class="text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded-md block overflow-x-auto"
-                >
-                  bc1q2svx64v90hyyd7jt8xamvqm9vc5248l5rgzwpm
-                </code>
-              </div>
-              <hr class="border-gray-300 dark:border-gray-700 my-4" />
-              <div>
-                <h3 class="text-xl font-bold mb-2">Litecoin (LTC)</h3>
-                <p class="text-gray-700 dark:text-gray-300">Network: LTC</p>
-                <code
-                  class="text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded-md block overflow-x-auto"
-                >
-                  LWqpd2411CQTuWD15bcPP7bfAw3wmYHScm
-                </code>
-              </div>
-              <hr class="border-gray-300 dark:border-gray-700 my-4" />
-              <div>
-                <h3 class="text-xl font-bold mb-2">Ripple (XRP)</h3>
-                <p class="text-gray-700 dark:text-gray-300">Network: XRP</p>
-                <code
-                  class="text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded-md block overflow-x-auto"
-                >
-                  rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV
-                </code>
-                <div
-                  class="bg-red-500 text-white px-2 py-1 rounded-md text-sm block mt-6"
-                >
-                  <p>The following MEMO is required: 420078619.</p>
-                  <p>If you can't add the MEMO, coins will be lost.</p>
+              {[
+                {
+                  name: "Ethereum (ETH)",
+                  network: "ERC20",
+                  address: "0xef6a653c63db31403f507bca277f719d2f3d44f8",
+                  icon: "material-symbols:check-circle",
+                  suggested: true,
+                },
+                {
+                  name: "Bitcoin (BTC)",
+                  network: "BTC(SegWit)",
+                  address: "bc1q2svx64v90hyyd7jt8xamvqm9vc5248l5rgzwpm",
+                },
+                {
+                  name: "Litecoin (LTC)",
+                  network: "LTC",
+                  address: "LWqpd2411CQTuWD15bcPP7bfAw3wmYHScm",
+                },
+                {
+                  name: "Ripple (XRP)",
+                  network: "XRP",
+                  address: "rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV",
+                  memo: "420078619",
+                },
+              ].map((crypto, index) => (
+              <div class={`flex flex-col gap-2 ${crypto.suggested ? 'bg-green-100 dark:bg-green-900 p-3 rounded-lg' : ''}`}>
+                  <h3 class="text-xl font-bold mb-2">
+                    {crypto.name}{" "}
+                    {crypto.suggested == true && (
+                      <Icon
+                        name="material-symbols:check-circle"
+                        class="w-6 h-6 inline-block"
+                        title="Suggested"
+                      />
+                    )}
+                  </h3>
+                  <p class="text-gray-700 dark:text-gray-300">
+                    Network: {crypto.network}
+                  </p>
+                  <code
+                  class={`text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md block overflow-x-auto ${crypto.suggested ? 'bg-green-200 dark:bg-green-800' : 'bg-gray-200 dark:bg-gray-800'}`}
+                  >
+                    {crypto.address}
+                  </code>
+                  {crypto.memo && (
+                    <div class="bg-red-500 text-white px-2 py-1 rounded-md text-sm block mt-6">
+                      <p>The following MEMO is required: {crypto.memo}.</p>
+                      <p>If you can't add the MEMO, coins will be lost.</p>
+                    </div>
+                  )}
+                  {index < 3 && (
+                    <hr class="border-gray-300 dark:border-gray-700 my-4" />
+                  )}
                 </div>
-              </div>
+              ))}
               <button
                 id="closeCryptoModal"
                 class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
