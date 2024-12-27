@@ -2,7 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "Rust and libcosmic in Bottles Next"
 description: "We've made some important decisions regarding the Bottles Next stack. Read on to learn more about the technologies we've chosen and why."
-pubDate: 2024-12-22
+pubDate: 2024-12-27
 comments: true
 user_nick: mirkobrombin
 user_name: Mirko Brombin
