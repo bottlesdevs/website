@@ -1,193 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
-
-interface DonationMethod {
-  name: string;
-  bgClass: string;
-  titleColorClass?: string;
-  recurring?: boolean;
-  oneTime?: boolean;
-  preferred?: boolean;
-  flexible?: boolean;
-  crypto?: boolean;
-  badgeText?: string;
-  badgeColorClass?: string;
-  linkText: string;
-  linkUrl: string;
-  oldLinkText?: string;
-  oldLinkUrl?: string;
-  extraBadgeText?: string;
-  extraBadgeColorClass?: string;
-  extraBadgeText2?: string;
-  extraBadgeColorClass2?: string;
-  icon: string;
-}
-
-interface Task {
-  status: string;
-  statusColorClass: string;
-  title: string;
-  description: string;
-  progress: number;
-  link: string;
-  extras?: string[];
-  icons?: { name: string; title: string }[];
-  infoText?: string;
-}
-
-interface Sponsor {
-  username: string;
-  avatar: string;
-}
-
-interface PeopleList {
-  github: Sponsor[];
-  other: string[];
-}
-
-const donationMethods: DonationMethod[] = [
-  {
-    name: "GitHub Sponsors",
-    bgClass: "bg-blue-900 text-white",
-    recurring: true,
-    linkText: "Sponsor via GitHub",
-    linkUrl: "https://github.com/sponsors/bottlesdevs",
-    icon: "material-symbols:favorite-outline",
-  },
-  {
-    name: "PayPal",
-    bgClass: "bg-blue-500 dark:bg-blue-700 text-white",
-    recurring: true,
-    oneTime: true,
-    preferred: true,
-    linkText: "Donate via PayPal",
-    linkUrl: "https://www.paypal.com/donate?hosted_button_id=HM2VKUH5STU4J",
-    oldLinkText: "Old PayPal Method",
-    oldLinkUrl: "https://paypal.me/MirkoBrombin",
-    icon: "material-symbols:credit-card-outline",
-  },
-  {
-    name: "LiberaPay",
-    bgClass: "bg-yellow-400 dark:bg-yellow-500 text-gray-900",
-    flexible: true,
-    linkText: "Donate via LiberaPay",
-    linkUrl: "https://liberapay.com/bottles",
-    icon: "material-symbols:volunteer-activism-outline",
-  },
-  {
-    name: "Patreon",
-    bgClass: "bg-red-500 text-white",
-    recurring: true,
-    linkText: "Support via Patreon",
-    linkUrl: "https://www.patreon.com/MirkoBrombin",
-    icon: "material-symbols:favorite-outline",
-  },
-  {
-    name: "Cryptocurrency",
-    bgClass: "bg-purple-500 dark:bg-purple-700 text-white",
-    crypto: true,
-    linkText: "View Addresses",
-    linkUrl: "#",
-    icon: "material-symbols:currency-bitcoin",
-  },
-];
-
-const tasks: Task[] = [
-  {
-    status: "DONE",
-    statusColorClass: "bg-green-500",
-    title: "Library mode",
-    description:
-      "Allow users to add any program from any bottle in a library view for easy access.",
-    progress: 100,
-    link: "https://usebottles.com/posts/2022-08-28-release-2022.8.28",
-  },
-  {
-    status: "ALPHA",
-    statusColorClass: "bg-yellow-500",
-    title: "Per-bottle sandbox",
-    description:
-      "Experimental feature for wrapping each bottle with a sandbox to limit permissions.",
-    progress: 80,
-    link: "https://github.com/bottlesdevs/Bottles/issues/1158",
-    icons: [
-      { name: "material-symbols:build-circle", title: "In progress" },
-      { name: "material-symbols:help-outline", title: "Needs funding" },
-    ],
-    infoText: "Estimated time: 1 week of work based on average hourly cost.",
-  },
-  {
-    status: "REJECTED",
-    statusColorClass: "bg-red-500",
-    title: "Layered bottles",
-    description:
-      "Our solution for multiple environments in one bottle. Planned for Bottles Next. Please refer to the Bottles Next task for more details.",
-    progress: 0,
-    link: "https://github.com/bottlesdevs/Bottles/issues/510",
-    infoText:
-      "This feature is planned for Bottles Next. Read the Bottles Next task for more information.",
-  },
-  {
-    status: "WIP",
-    statusColorClass: "bg-blue-500",
-    title: "Integration of UMU",
-    description:
-      "Integration of UMU to enhance the gaming compatibility in Bottles.",
-    progress: 10,
-    link: "https://usebottles.com/posts/2024-09-24-umu-next/",
-    icons: [
-      { name: "material-symbols:build-circle", title: "In progress" },
-      { name: "material-symbols:help-outline", title: "Needs funding" },
-    ],
-    infoText: "Estimated time: 4 weeks of work based on average hourly cost.",
-  },
-  {
-    status: "NEXT",
-    statusColorClass: "bg-purple-500",
-    title: "Bottles Next",
-    description: `A complete redesign of Bottles to overcome current limitations and provide a consistent user experience across Linux and macOS. We need funds, contributors, and companies to provide infrastructure support.
-<br>
-Latest update, Bottles Next is now in the planning phase, <a href="https://usebottles.com/posts/2024-12-27-rust-libcosmic-next/" class="text-blue-600 dark:text-blue-400 underline">read more</a>.
-
-Please, also read the dedicated <a href="https://github.com/bottlesdevs/Bottles/issues/3602" class="text-blue-600 dark:text-blue-400 underline">GitHub issue</a> for more information.
-`,
-    progress: 15,
-    link: "https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/",
-    icons: [
-      { name: "material-symbols:build-circle", title: "In progress" },
-      { name: "material-symbols:help-outline", title: "Needs funding" },
-    ],
-    infoText:
-      "We are looking for funds, contributors, and companies to provide infrastructure support.",
-  },
-];
-
-const filterButtons = [
-  { status: "WIP", text: "WIP" },
-  { status: "DONE", text: "Done" },
-  { status: "ALPHA", text: "Alpha" },
-  { status: "NEXT", text: "Next" },
-  { status: "REJECTED", text: "Rejected" },
-];
-
-const legendIcons = [
-  {
-    name: "material-symbols:build-circle",
-    text: "Work in progress",
-    title: "In progress",
-  },
-  {
-    name: "material-symbols:help-outline",
-    text: "Needs funding",
-    title: "Needs funding",
-  },
-  {
-    name: "material-symbols:info-outline",
-    text: "More information",
-    title: "More information",
-  },
-];
 ---
 
 <Layout title="Funding">
@@ -230,8 +43,52 @@ const legendIcons = [
         Developers.
       </p>
       <div class="grid md:grid-cols-3 gap-6 mb-8">
-        {
-          donationMethods.map((method) => (
+        {[
+          {
+            name: "GitHub Sponsors",
+            bgClass: "bg-blue-900 text-white",
+            recurring: true,
+            linkText: "Sponsor via GitHub",
+            linkUrl: "https://github.com/sponsors/bottlesdevs",
+            icon: "material-symbols:favorite-outline",
+          },
+          {
+            name: "PayPal",
+            bgClass: "bg-blue-500 dark:bg-blue-700 text-white",
+            recurring: true,
+            oneTime: true,
+            preferred: true,
+            linkText: "Donate via PayPal",
+            linkUrl: "https://www.paypal.com/donate?hosted_button_id=HM2VKUH5STU4J",
+            oldLinkText: "Old PayPal Method",
+            oldLinkUrl: "https://paypal.me/MirkoBrombin",
+            icon: "material-symbols:credit-card-outline",
+          },
+          {
+            name: "LiberaPay",
+            bgClass: "bg-yellow-400 dark:bg-yellow-500 text-gray-900",
+            flexible: true,
+            linkText: "Donate via LiberaPay",
+            linkUrl: "https://liberapay.com/bottles",
+            icon: "material-symbols:volunteer-activism-outline",
+          },
+          {
+            name: "Patreon",
+            bgClass: "bg-red-500 text-white",
+            recurring: true,
+            linkText: "Support via Patreon",
+            linkUrl: "https://www.patreon.com/MirkoBrombin",
+            icon: "material-symbols:favorite-outline",
+          },
+          {
+            name: "Cryptocurrency",
+            bgClass: "bg-purple-500 dark:bg-purple-700 text-white",
+            crypto: true,
+            linkText: "View Addresses",
+            linkUrl: "#",
+            icon: "material-symbols:currency-bitcoin",
+          },
+        ].map((method) => (
             <div
               class={`p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1 ${method.bgClass}`}
             >
@@ -365,8 +222,13 @@ const legendIcons = [
           class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <div class="flex flex-wrap items-center gap-2">
-            {
-              filterButtons.map((btn) => (
+            {[
+              { status: "WIP", text: "WIP" },
+              { status: "DONE", text: "Done" },
+              { status: "ALPHA", text: "Alpha" },
+              { status: "NEXT", text: "Next" },
+              { status: "REJECTED", text: "Rejected" },
+            ].map((btn) => (
                 <button
                   class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg text-sm"
                   data-status={btn.status}
@@ -396,8 +258,23 @@ const legendIcons = [
 
       <section class="py-5">
         <div class="flex flex-wrap gap-6">
-          {
-            legendIcons.map((icon) => (
+          {[
+            {
+              name: "material-symbols:build-circle",
+              text: "Work in progress",
+              title: "In progress",
+            },
+            {
+              name: "material-symbols:help-outline",
+              text: "Needs funding",
+              title: "Needs funding",
+            },
+            {
+              name: "material-symbols:info-outline",
+              text: "More information",
+              title: "More information",
+            },
+          ].map((icon) => (
               <div class="flex items-center gap-2">
                 <Icon name={icon.name} class="w-6 h-6" title={icon.title} />
                 <span class="text-gray-700 dark:text-gray-300">
@@ -418,8 +295,75 @@ const legendIcons = [
 
       <section class="py-5">
         <div class="grid md:grid-cols-3 gap-6">
-          {
-            tasks.map((task) => (
+          {[
+            {
+              status: "DONE",
+              statusColorClass: "bg-green-500",
+              title: "Library mode",
+              description:
+                "Allow users to add any program from any bottle in a library view for easy access.",
+              progress: 100,
+              link: "https://usebottles.com/posts/2022-08-28-release-2022.8.28",
+            },
+            {
+              status: "ALPHA",
+              statusColorClass: "bg-yellow-500",
+              title: "Per-bottle sandbox",
+              description:
+                "Experimental feature for wrapping each bottle with a sandbox to limit permissions.",
+              progress: 80,
+              link: "https://github.com/bottlesdevs/Bottles/issues/1158",
+              icons: [
+                { name: "material-symbols:build-circle", title: "In progress" },
+                { name: "material-symbols:help-outline", title: "Needs funding" },
+              ],
+              infoText: "Estimated time: 1 week of work based on average hourly cost.",
+            },
+            {
+              status: "REJECTED",
+              statusColorClass: "bg-red-500",
+              title: "Layered bottles",
+              description:
+                "Our solution for multiple environments in one bottle. Planned for Bottles Next. Please refer to the Bottles Next task for more details.",
+              progress: 0,
+              link: "https://github.com/bottlesdevs/Bottles/issues/510",
+              infoText:
+                "This feature is planned for Bottles Next. Read the Bottles Next task for more information.",
+            },
+            {
+              status: "WIP",
+              statusColorClass: "bg-blue-500",
+              title: "Integration of UMU",
+              description:
+                "Integration of UMU to enhance the gaming compatibility in Bottles.",
+              progress: 10,
+              link: "https://usebottles.com/posts/2024-09-24-umu-next/",
+              icons: [
+                { name: "material-symbols:build-circle", title: "In progress" },
+                { name: "material-symbols:help-outline", title: "Needs funding" },
+              ],
+              infoText: "Estimated time: 4 weeks of work based on average hourly cost.",
+            },
+            {
+              status: "NEXT",
+              statusColorClass: "bg-purple-500",
+              title: "Bottles Next",
+              description: `A complete redesign of Bottles to overcome current limitations and provide a consistent user experience across Linux and macOS. We need funds, contributors, and companies to provide infrastructure support.
+          <br>
+          Latest update, Bottles Next is now in the planning phase, <a href="https://usebottles.com/posts/2024-12-27-rust-libcosmic-next/" class="text-blue-600 dark:text-blue-400 underline">read more</a>.
+
+          Please, also read the dedicated <a href="https://github.com/bottlesdevs/Bottles/issues/3602" class="text-blue-600 dark:text-blue-400 underline">GitHub issue</a> for more information.
+          `,
+              progress: 15,
+              link: "https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/",
+              icons: [
+                { name: "material-symbols:build-circle", title: "In progress" },
+                { name: "material-symbols:help-outline", title: "Needs funding" },
+              ],
+              infoText:
+                "We are looking for funds, contributors, and companies to provide infrastructure support.",
+            },
+          ].map((task) => (
               <div
                 class={`task-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-all relative flex flex-col`}
                 data-status={task.status}
