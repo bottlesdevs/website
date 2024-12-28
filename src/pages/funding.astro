@@ -647,6 +647,15 @@ const legendIcons = [
         ?.addEventListener("click", () => {
           document.getElementById("infoModal")?.classList.add("hidden");
         });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          document.getElementById("donationModal")?.classList.add("hidden");
+          document.getElementById("cryptoModal")?.classList.add("hidden");
+          document.getElementById("infoModal")?.classList.add("hidden");
+        }
+      });
+
       const filterButtons = document.querySelectorAll(".filter-button");
       const searchInput = document.getElementById(
         "searchInput"
