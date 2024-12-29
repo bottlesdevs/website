@@ -14,7 +14,7 @@ import { Icon } from 'astro-icon/components';
     </div>
     <div class="flex justify-center mb-8">
       <div class="relative w-full max-w-md">
-        <input type="search" id="storeSearch" autocomplete="off" placeholder="Epic Games Store" class="w-full py-2 pl-10 pr-4 border rounded-lg shadow-sm focus:ring focus:outline-none dark:bg-gray-800 dark:text-gray-200 dark:placeholder-gray-400 dark:border-gray-700" />
+        <input type="search" id="storeSearch" autocomplete="off" placeholder="" class="w-full py-2 pl-10 pr-4 border rounded-lg shadow-sm focus:ring focus:outline-none dark:bg-gray-800 dark:text-gray-200 dark:placeholder-gray-400 dark:border-gray-700" />
         <Icon name="material-symbols:search" class="absolute top-2 left-2 w-6 h-6 text-gray-400 dark:text-gray-300" />
       </div>
     </div>
@@ -73,7 +73,7 @@ class AppStore {
 
   initSearch(): void {
     if (this.searchInput) {
-      this.searchInput.addEventListener('keyup', (e) => {
+      this.searchInput.addEventListener('keyup', () => {
         const search = this.searchInput?.value.toLowerCase() || '';
         const cards = document.querySelectorAll('#storeResults .card');
         cards.forEach((card) => {
@@ -120,6 +120,12 @@ class AppStore {
         const installers: { [key: string]: Installer } = jsyaml.load(data) as { [key: string]: Installer };
 
         if (typeof installers === 'object' && this.storeResults) {
+          const installerNames = Object.keys(installers);
+          const randomInstallerName = installerNames[Math.floor(Math.random() * installerNames.length)];
+          if (this.searchInput) {
+            this.searchInput.placeholder = installers[randomInstallerName].Name;
+          }
+
           for (const item in installers) {
             const installer = installers[item];
             const icon = `https://github.com/bottlesdevs/programs/blob/main/data/${item}/${installer.Icon}?raw=true`;
