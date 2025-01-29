@@ -11,46 +11,169 @@ import { Icon } from 'astro-icon/components';
       <p class="text-lg text-gray-700 dark:text-gray-300">We offer a variety of download options for Bottles.</p>
     </div>
   </section>
-  
+
   <div class="container mx-auto px-4 mt-8">
     <div class="grid md:grid-cols-3 gap-6 mb-8">
-      <a href="https://flathub.org/apps/details/com.usebottles.bottles" class="bg-white dark:bg-gray-800 text-blue-800 dark:text-blue-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1 border border-blue-400 dark:border-blue-600">
-        <Icon name="material-symbols:download" class="w-12 h-12 mb-4 mx-auto" />
-        <h3 class="text-2xl font-bold mb-2">Flatpak</h3>
-        <p>The recommended installation method to get the best experience. It's supported by all Linux distributions. Also recommended for Steam Deck users.</p>
-      </a>
-      <a href="#" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
-        <Icon name="material-symbols:block" class="w-12 h-12 mb-4 mx-auto" />
-        <h3 class="text-2xl font-bold mb-2">Snap & AppImage</h3>
-        <p>Currently not available.</p>
-      </a>
+      {[
+        {
+          id: "flatpakLink",
+          href: "#",
+          icon: "material-symbols:download",
+          title: "Flatpak",
+          description: "The recommended installation method to get the best experience. It's supported by all Linux distributions. Also recommended for Steam Deck users.",
+          classes: "text-blue-800 dark:text-blue-300 border border-blue-400 dark:border-blue-600"
+        },
+        {
+          href: "#",
+          icon: "material-symbols:block",
+          title: "Snap & AppImage",
+          description: "Currently not available.",
+          classes: "text-gray-800 dark:text-gray-300"
+        }
+      ].map(link => (
+        <a id={link.id} href={link.href} class={`bg-white dark:bg-gray-800 ${link.classes} p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1`}>
+          <Icon name={link.icon} class="w-12 h-12 mb-4 mx-auto" />
+          <h3 class="text-2xl font-bold mb-2">{link.title}</h3>
+          <p>{link.description}</p>
+        </a>
+      ))}
     </div>
   </div>
-  
+
   <section class="py-20 bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Other versions</h2>
       <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">Are you looking for a specific version of Bottles?</p>
-  
+
       <div class="grid md:grid-cols-3 gap-6">
-        <a href="https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1#" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
-          <Icon name="material-symbols:history" class="w-12 h-12 mb-4 mx-auto" />
-          <h3 class="text-2xl font-bold mb-2">Bottles 1 (Legacy)</h3>
-          <p>The first version of Bottles (Legacy) is still available and maintained. It does not have many features introduced by Bottles 2 but useful for those who need a very simple prefix manager.</p>
-        </a>
-        <a href="https://github.com/bottlesdevs/Bottles" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
-          <Icon name="material-symbols:code" class="w-12 h-12 mb-4 mx-auto" />
-          <h3 class="text-2xl font-bold mb-2">Source code</h3>
-          <p>Bottles source code is under GPLv3 license and is publicly available on GitHub.</p>
-        </a>
-        <a href="https://docs.usebottles.com/getting-started/installation#other-packages" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
-          <Icon name="material-symbols:group" class="w-12 h-12 mb-4 mx-auto" />
-          <h3 class="text-2xl font-bold mb-2">Other packages</h3>
-          <p>There are also other non-officially supported packages maintained by our community.</p>
-        </a>
+        {[
+          {
+            href: "https://github.com/bottlesdevs/Bottles/releases/tag/continuous-v1#",
+            icon: "material-symbols:history",
+            title: "Bottles 1 (Legacy)",
+            description: "The first version of Bottles (Legacy) is still available and maintained. It does not have many features introduced by Bottles 2 but useful for those who need a very simple prefix manager."
+          },
+          {
+            href: "https://github.com/bottlesdevs/Bottles",
+            icon: "material-symbols:code",
+            title: "Source code",
+            description: "Bottles source code is under GPLv3 license and is publicly available on GitHub."
+          },
+          {
+            href: "https://docs.usebottles.com/getting-started/installation#other-packages",
+            icon: "material-symbols:group",
+            title: "Other packages",
+            description: "There are also other non-officially supported packages maintained by our community."
+          }
+        ].map(link => (
+          <a href={link.href} class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
+            <Icon name={link.icon} class="w-12 h-12 mb-4 mx-auto" />
+            <h3 class="text-2xl font-bold mb-2">{link.title}</h3>
+            <p>{link.description}</p>
+          </a>
+        ))}
       </div>
     </div>
   </section>
-  
+
+  <div id="donateModal" class="fixed flex inset-0 bg-gray-800 bg-opacity-75 items-center justify-center hidden z-20">
+    <div class="flex flex-col relative justify-center items-center bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center">
+    <a href="#" class="absolute top-5 right-5 text-gray-600 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-600" onclick="document.getElementById('donateModal').classList.add('hidden')">
+      <Icon name="material-symbols:close" class="size-6" />
+    </a>
+      <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Donate and download</h2>
+      <div class="flex flex-col gap-5 items-center justify-center">
+        <p class="text-lg text-gray-700 dark:text-gray-300">Choose the amount you want to donate:</p>
+        <div class="flex flex-row gap-3">
+          {[1, 5].map(amount => (
+            <button class="py-2 px-7 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" onclick={`setAmount(${amount})`}>${amount}</button>
+          ))}
+          <input type="number" class="w-48 py-2 px-4 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-lg focus:ring focus:outline-none dark:focus:ring-gray-500" id="donation-amount" oninput="checkDonation()" placeholder="Custom amount ($0+)" />
+        </div>
+      </div>
+      <form id="donationForm" action="https://www.paypal.com/donate" method="post" target="_blank" onsubmit="setDonationCookie()">
+        <input type="hidden" name="business" value="brombin@mirko.pm">
+        <input type="hidden" id="paypalAmount" name="amount" value="">
+        <button type="submit" id="donateButton" class="flex flex-row justify-center items-center py-2 px-7 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors mt-6">
+          <Icon name="material-symbols:favorite" class="w-5 h-5 mr-1" />
+          <span id="donateText">Donate and download</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function updateElements(amount: number | string) {
+      const elements = {
+        donationAmount: document.getElementById('donation-amount'),
+        donateText: document.getElementById('donateText'),
+        donateButton: document.getElementById('donateButton'),
+        paypalAmount: document.getElementById('paypalAmount'),
+        donationForm: document.getElementById('donationForm')
+      };
+      if (elements.donationAmount && elements.donateText && elements.donateButton && elements.paypalAmount && elements.donationForm) {
+        (elements.donationAmount as HTMLInputElement).value = amount.toString();
+        (elements.paypalAmount as HTMLInputElement).value = amount.toString();
+        if (parseFloat(amount.toString()) == 0) {
+          elements.donateText.textContent = 'Free Download';
+          elements.donationForm.action = "https://flathub.org/apps/details/com.usebottles.bottles";
+          elements.donationForm.target = "_self";
+        } else {
+          elements.donateText.textContent = 'Donate and download';
+          elements.donationForm.action = "https://www.paypal.com/donate";
+          elements.donationForm.target = "_blank";
+        }
+        (elements.donateButton as HTMLButtonElement).disabled = false;
+      }
+    }
+
+    function setAmount(amount: number) {
+      updateElements(amount);
+    }
+
+    function checkDonation() {
+      const donationAmount = (document.getElementById('donation-amount') as HTMLInputElement)?.value;
+      if (parseFloat(donationAmount) < 0) {
+        updateElements(0);
+      } else if (donationAmount === '') {
+        const elements = {
+          donateText: document.getElementById('donateText'),
+          donateButton: document.getElementById('donateButton')
+        };
+        if (elements.donateText) {
+          elements.donateText.textContent = 'Please choose an option';
+        }
+        (elements.donateButton as HTMLButtonElement).disabled = true;
+      } else {
+        updateElements(donationAmount);
+      }
+    }
+
+    function setDonationCookie() {
+      const donationAmount = (document.getElementById('donation-amount') as HTMLInputElement)?.value;
+      if (donationAmount && parseFloat(donationAmount) > 0) {
+        const date = new Date();
+        date.setTime(date.getTime() + (24 * 60 * 60 * 1000));
+        document.cookie = "hasDonated=true; expires=" + date.toUTCString() + "; path=/";
+      }
+      if (parseFloat(donationAmount) === 0) {
+        window.location.href = "https://flathub.org/apps/details/com.usebottles.bottles";
+      }
+    }
+
+    const hasDonated = document.cookie.split(';').some(item => item.trim().startsWith('hasDonated='));
+
+    window.addEventListener('load', () => {
+      const flatpakLink = document.getElementById('flatpakLink') as HTMLAnchorElement | null;
+      if (hasDonated && flatpakLink) {
+        flatpakLink.href = "https://flathub.org/apps/details/com.usebottles.bottles";
+        flatpakLink.removeAttribute('onclick');
+      } else {
+        flatpakLink?.setAttribute('onclick', "const donateModal = document.getElementById('donateModal'); if (donateModal) { donateModal.classList.remove('hidden'); }");
+      }
+      (window as any).setAmount = setAmount;
+      (window as any).checkDonation = checkDonation;
+      (window as any).setDonationCookie = setDonationCookie;
+    });
+  </script>
 </Layout>
-  
