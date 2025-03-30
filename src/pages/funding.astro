@@ -387,9 +387,9 @@ import { Icon } from "astro-icon/components";
                   )}
                   <p class="text-lg mb-4" set:html={task.description} />
                   <div class="flex items-center space-x-2 mb-4">
-                    <span class="w-full bg-gray-300 rounded">
+                    <span class="w-full bg-gray-300 rounded-sm">
                       <span
-                        class={`block h-2 rounded ${task.status === "DONE" ? "bg-green-500" : task.status === "ALPHA" ? "bg-yellow-500" : task.status === "REJECTED" ? "bg-red-300" : task.status === "WIP" ? "bg-blue-500" : task.status === "NEXT" ? "bg-purple-500" : ""}`}
+                        class={`block h-2 rounded-sm ${task.status === "DONE" ? "bg-green-500" : task.status === "ALPHA" ? "bg-yellow-500" : task.status === "REJECTED" ? "bg-red-300" : task.status === "WIP" ? "bg-blue-500" : task.status === "NEXT" ? "bg-purple-500" : ""}`}
                         style={`width: ${task.progress}%`}
                       />
                     </span>

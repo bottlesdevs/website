@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 // @ts-ignore
 import preact from "@astrojs/preact";
@@ -9,5 +9,8 @@ import preact from "@astrojs/preact";
 // https://astro.build/config
 export default defineConfig({
   site: "https://usebottles.com",
-  integrations: [tailwind(), icon(), preact()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  integrations: [icon(), preact()],
 });
