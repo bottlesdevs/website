@@ -101,7 +101,7 @@ import { Icon } from "astro-icon/components";
 
   <div
     id="donateModal"
-    class="fixed flex inset-0 bg-gray-800 bg-opacity-75 items-center justify-center hidden z-20"
+    class="fixed flex inset-0 bg-gray-800/75 items-center justify-center hidden z-20"
   >
     <div
       class="flex flex-col relative justify-center items-center bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center"
@@ -133,7 +133,7 @@ import { Icon } from "astro-icon/components";
           }
           <input
             type="number"
-            class="w-48 py-2 px-4 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-lg focus:ring focus:outline-none dark:focus:ring-gray-500"
+            class="w-48 py-2 px-4 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-lg focus:ring-3 focus:outline-hidden dark:focus:ring-gray-500"
             id="donation-amount"
             oninput="checkDonation()"
             placeholder="Custom amount ($0+)"
