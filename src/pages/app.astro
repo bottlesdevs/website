@@ -9,7 +9,7 @@ import { Icon } from 'astro-icon/components';
     <Icon name="material-symbols:sync" class="w-16 h-16 animate-spin dark:text-gray-200" id="loadingIcon" />
     <span class="text-2xl ml-4 dark:text-gray-200">Loading App details...</span>
   </div>
-  
+
   <div id="appContent" class="hidden">
     <section class="py-16 bg-gray-50 dark:bg-gray-900">
       <div class="container mx-auto px-4">
@@ -20,14 +20,14 @@ import { Icon } from 'astro-icon/components';
                 <h1 class="text-5xl font-bold mb-2 text-gray-900 dark:text-white">!APP_NAME!</h1>
             </div>
             <p class="text-lg text-gray-700 dark:text-gray-300 mb-4 text-center md:text-left">!APP_DESCRIPTION!</p>
-  
+
             <div class="flex gap-4 mb-4 justify-center md:justify-start">
               <span class="px-2 py-1 rounded-lg text-sm !APP_GRADE_CLASS!">!APP_GRADE!</span>
               <span class="px-2 py-1 rounded-lg text-sm !APP_CATEGORY_CLASS!">!APP_CATEGORY!</span>
               <span class="px-2 py-1 rounded-lg text-sm !APP_ARCH_CLASS!">!APP_ARCH!</span>
             </div>
           </div>
-  
+
           <div class="flex space-y-4 flex-col w-full md:w-auto">
             <a href="https://docs.usebottles.com/bottles/installers#use-installers" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 flex items-center justify-center">
               <Icon name="material-symbols:cloud-download" class="w-5 h-5 inline mr-2" />
@@ -41,46 +41,46 @@ import { Icon } from 'astro-icon/components';
         </div>
       </div>
     </section>
-  
+
     <div class="container mx-auto px-4 mt-8">
       <img class="rounded-lg shadow-lg mx-auto hidden" id="app_screenshot" alt="!APP_NAME! Screenshot" />
     </div>
-  
+
     <section class="py-10">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">About the !APP_GRADE! grade</h2>
         <p class="text-lg text-gray-700 dark:text-gray-300">!APP_GRADE_DESCRIPTION!</p>
       </div>
     </section>
-  
+
     <section class="py-10 bg-gray-50 dark:bg-gray-900">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Dependencies</h2>
         <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">The following dependencies will be automatically installed with this app:</p>
-  
+
         <div class="space-y-4" id="app_dependencies">
             <!-- JS will inject dependencies here -->
         </div>
       </div>
     </section>
-  
+
     <section class="py-10">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Configuration</h2>
         <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">The following configuration will be applied to your bottle:</p>
-  
+
         <ul class="list-disc list-inside space-y-2" id="app_configuration">
           <!-- JS will inject configuration here -->
         </ul>
       </div>
     </section>
-  
+
     <section class="py-10 bg-gray-50 dark:bg-gray-900">
       <div class="container mx-auto px-4">
         <p class="text-xs text-gray-600 dark:text-gray-400">Bottles does not re-distribute or host the files but just download them from the vendor's official sources. These files are checked by our maintainers and do not contain viruses. However, they may be subject to copyright or licenses of different types, including proprietary ones.</p>
       </div>
     </section>
-  
+
     <section class="py-10">
       <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col md:flex-row gap-2">
@@ -93,25 +93,25 @@ import { Icon } from 'astro-icon/components';
         </div>
       </div>
     </section>
-  
-    <div id="reviewModal" class="fixed inset-0 items-center justify-center bg-black bg-opacity-50 hidden flex z-50 flex-col">
+
+    <div id="reviewModal" class="fixed inset-0 items-center justify-center bg-black/50 hidden flex z-50 flex-col">
       <div class="bg-white dark:bg-gray-800 w-3/4 md:w-1/2 rounded-lg shadow-lg p-8 max-h-[80vh] overflow-y-auto">
         <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">!APP_NAME!</h2>
         <ul class="space-y-4 dark:text-gray-300" id="reviewContent">
             <!-- JS will inject review here -->
         </ul>
-  
+
         <button id="closeReview" class="mt-6 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">Close</button>
       </div>
     </div>
   </div>
-  
+
   </Layout>
 
 <script>
   import jsyaml from 'js-yaml';
   import { marked } from 'marked';
-  
+
   interface InstallerEntry {
       Name: string;
       Category: string;
@@ -122,50 +122,50 @@ import { Icon } from 'astro-icon/components';
       Parameters?: Record<string, boolean>;
       Grade: 'Bronze' | 'Silver' | 'Gold' | 'Platinum';
   }
-  
+
   interface DependenciesEntry {
       Description: string;
       Category: string;
   }
-  
+
   class InstallerApp {
       architectures: Record<string, string> = {
           "win64": "64-bit",
           "win32": "32-bit"
       };
-  
+
       gradeDescriptions: Record<string, string> = {
-          "Bronze": `This application works but not in the best way. 
-          The installer has configured your bottle to give you the best 
-          possible experience but you have to expect glitches, inaccessible 
-          features (e.g. multiplayer if it's a game) and any other problems. 
+          "Bronze": `This application works but not in the best way.
+          The installer has configured your bottle to give you the best
+          possible experience but you have to expect glitches, inaccessible
+          features (e.g. multiplayer if it's a game) and any other problems.
           In the future, this installer may receive updates to improve the result.`,
-  
+
           "Silver": `This application works fine. There are some glitches, but they
           don't affect the application's functionality. All features
           are accessible and work as expected.`,
-  
+
           "Gold": `This application works in the best way. There may be rare glitches
           but they don't affect the application's functionality. All features
           are accessible and work as expected.`,
-  
+
           "Platinum": `This application works in the best way. There are no glitches.
           All features are accessible and work as expected, the whole
           experience and feedback is smooth.`
       };
-  
+
       async initialize() {
           const installersIndex = await this.fetchYamlData<Record<string, InstallerEntry>>(
               'https://raw.githubusercontent.com/bottlesdevs/programs/main/index.yml'
           ).catch((error) => {
               console.error('Error fetching installers index:', error);
           }) || {} as Record<string, InstallerEntry>;
-  
+
           if (Object.keys(installersIndex).length === 0) {
               console.error('No installers found');
               return;
           }
-  
+
           const hash = window.location.hash.substring(1);
           if (hash && installersIndex[hash]) {
               const entry = installersIndex[hash];
@@ -174,21 +174,21 @@ import { Icon } from 'astro-icon/components';
               ).catch((error) => {
                   console.error('Error fetching app data:', error);
               }) || {} as InstallerEntry;
-  
+
               if (Object.keys(appData).length === 0) {
                   console.error('No app data found');
                   return;
               }
-  
+
               this.populateAppDetails(entry, appData, hash);
           }
       }
-  
+
       populateAppDetails(entry: InstallerEntry, appData: InstallerEntry, hash: string) {
           const screenshot = `https://raw.githubusercontent.com/bottlesdevs/programs/main/data/${hash}/screenshot.png`;
           const icon = `https://raw.githubusercontent.com/bottlesdevs/programs/main/data/${hash}/${entry.Icon}`;
           const review = `https://raw.githubusercontent.com/bottlesdevs/programs/main/Reviews/${hash}.md`;
-  
+
           document.body.innerHTML = document.body.innerHTML
               .replace(/!APP_NAME!/g, entry.Name)
               .replace(/!APP_DESCRIPTION!/g, appData.Description || '')
@@ -200,20 +200,20 @@ import { Icon } from 'astro-icon/components';
               .replace(/!APP_GRADE_CLASS!/g, this.getGradeColor(entry.Grade))
               .replace(/!APP_CATEGORY_CLASS!/g, this.getCategoryColor(entry.Category))
               .replace(/!APP_ARCH_CLASS!/g, this.getArchColor(entry.Arch));
-  
+
           this.updateImage('app_icon', icon);
           this.updateImage('app_screenshot', screenshot);
-  
+
           this.populateDependencies(appData.Dependencies);
           this.populateConfigurations(appData.Parameters);
-  
+
           this.setupReviewModal(review);
-  
+
           document.title = `${entry.Name}`;
           document.getElementById('loading')!.classList.add('hidden');
           document.getElementById('appContent')!.classList.remove('hidden');
       }
-  
+
       updateImage(elementId: string, url: string) {
           const element = document.getElementById(elementId);
           if (element && this.resourceExists(url)) {
@@ -221,14 +221,14 @@ import { Icon } from 'astro-icon/components';
               element.classList.remove('hidden');
           }
       }
-  
+
       async populateDependencies(dependencies?: string[]) {
           if (!dependencies) return;
-  
+
           const dependenciesIndex = await this.fetchYamlData<Record<string, DependenciesEntry>>(
               'https://raw.githubusercontent.com/bottlesdevs/dependencies/main/index.yml'
           );
-  
+
           const dependenciesContainer = document.getElementById('app_dependencies')!;
           dependencies.forEach(dep => {
               const depEntry = dependenciesIndex[dep];
@@ -241,10 +241,10 @@ import { Icon } from 'astro-icon/components';
               dependenciesContainer.appendChild(depDiv);
           });
       }
-  
+
       populateConfigurations(parameters?: Record<string, boolean>) {
           if (!parameters) return;
-  
+
           const configContainer = document.getElementById('app_configuration')!;
           Object.entries(parameters).forEach(([param, value]) => {
               const configItem = document.createElement('li');
@@ -252,32 +252,32 @@ import { Icon } from 'astro-icon/components';
               configContainer.appendChild(configItem);
           });
       }
-  
+
       setupReviewModal(review: string) {
           const reviewModal = document.getElementById('reviewModal')!;
           const openReviewButton = document.getElementById('openReview')!;
           const closeReviewButton = document.getElementById('closeReview')!;
           const reviewContent = document.getElementById('reviewContent')!;
-  
+
           openReviewButton.addEventListener('click', async () => {
               reviewModal.classList.remove('hidden');
               const reviewData = await fetch(review);
               const reviewText = await reviewData.text();
               reviewContent.innerHTML = await marked(reviewText);
           });
-  
+
           closeReviewButton.addEventListener('click', () => {
               reviewModal.classList.add('hidden');
           });
       }
-  
+
       resourceExists(url: string): boolean {
           const http = new XMLHttpRequest();
           http.open('HEAD', url, false);
           http.send();
           return http.status !== 404;
       }
-  
+
       getGradeColor(grade: string): string {
           switch (grade) {
               case 'Bronze': return 'bg-yellow-600 text-yellow-100';
@@ -287,7 +287,7 @@ import { Icon } from 'astro-icon/components';
               default: return '';
           }
       }
-  
+
 
       getCategoryColor(category: string): string {
         switch (category.toLowerCase()) {
@@ -299,7 +299,7 @@ import { Icon } from 'astro-icon/components';
             return 'bg-gray-200 text-gray-800';
         }
       }
-  
+
       getArchColor(arch: string): string {
           switch (arch) {
               case 'win64': return 'bg-green-200 text-green-800';
@@ -307,20 +307,20 @@ import { Icon } from 'astro-icon/components';
               default: return '';
           }
       }
-  
+
       async fetchYamlData<T>(url: string): Promise<T> {
           const response = await fetch(url);
           const textData = await response.text();
           return jsyaml.load(textData) as T;
       }
   }
-  
+
   document.addEventListener('DOMContentLoaded', () => {
       const app = new InstallerApp();
       app.initialize();
   });
   </script>
-  
-  
+
+
 
 </Layout>
