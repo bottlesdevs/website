@@ -2,6 +2,7 @@
 layer(base);
 
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
