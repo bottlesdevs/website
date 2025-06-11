@@ -43,7 +43,8 @@ import { Icon } from "astro-icon/components";
         Developers.
       </p>
       <div class="grid md:grid-cols-3 gap-6 mb-8">
-        {[
+        {
+          [
             {
               name: "GitHub Sponsors",
               bgClass: "bg-blue-900 text-white",
@@ -59,7 +60,8 @@ import { Icon } from "astro-icon/components";
               oneTime: true,
               preferred: true,
               linkText: "Donate via PayPal",
-            linkUrl: "https://www.paypal.com/donate?hosted_button_id=HM2VKUH5STU4J",
+              linkUrl:
+                "https://www.paypal.com/donate?hosted_button_id=HM2VKUH5STU4J",
               oldLinkText: "Old PayPal Method",
               oldLinkUrl: "https://paypal.me/MirkoBrombin",
               icon: "material-symbols:credit-card-outline",
@@ -88,6 +90,16 @@ import { Icon } from "astro-icon/components";
               linkUrl: "#",
               icon: "material-symbols:currency-bitcoin",
             },
+            {
+              name: "Polar.sh",
+              bgClass: "bg-gray-800 dark:bg-gray-900 text-white",
+              recurring: false,
+              oneTime: true,
+              linkText: "Pay what you want",
+              linkUrl:
+                "https://polar.sh/checkout/polar_c_eIOCzD22zZhxCmgD7GIpySe8WF46NbS1D0maC1JYe3C",
+              icon: "material-symbols:toll",
+            },
           ].map((method) => (
             <div
               class={`p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1 ${method.bgClass}`}
@@ -95,7 +107,14 @@ import { Icon } from "astro-icon/components";
               <Icon name={method.icon} class="w-8 h-8 mb-4 mx-auto" />
               <h3 class="text-2xl font-bold mb-2">{method.name}</h3>
 
-              {["One-Time / Recurring", "Recurring", "One-Time", "Preferred Method", "Flexible Subscription", "Bitcoin, Ethereum, and more"].map((text, index) => {
+              {[
+                "One-Time / Recurring",
+                "Recurring",
+                "One-Time",
+                "Preferred Method",
+                "Flexible Subscription",
+                "Bitcoin, Ethereum, and more",
+              ].map((text, index) => {
                 const conditions = [
                   method.recurring && method.oneTime,
                   method.recurring && !method.oneTime,
@@ -148,7 +167,8 @@ import { Icon } from "astro-icon/components";
               You can donate using the following cryptocurrency addresses.
             </p>
             <div class="flex flex-col gap-4">
-              {[
+              {
+                [
                   {
                     name: "Ethereum (ETH)",
                     network: "ERC20",
@@ -173,7 +193,9 @@ import { Icon } from "astro-icon/components";
                     memo: "420078619",
                   },
                 ].map((crypto, index) => (
-              <div class={`flex flex-col gap-2 ${crypto.suggested ? 'bg-green-100 dark:bg-green-900 p-3 rounded-lg' : ''}`}>
+                  <div
+                    class={`flex flex-col gap-2 ${crypto.suggested ? "bg-green-100 dark:bg-green-900 p-3 rounded-lg" : ""}`}
+                  >
                     <h3 class="text-xl font-bold mb-2">
                       {crypto.name}{" "}
                       {crypto.suggested == true && (
@@ -188,7 +210,7 @@ import { Icon } from "astro-icon/components";
                       Network: {crypto.network}
                     </p>
                     <code
-                  class={`text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md block overflow-x-auto ${crypto.suggested ? 'bg-green-200 dark:bg-green-800' : 'bg-gray-200 dark:bg-gray-800'}`}
+                      class={`text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md block overflow-x-auto ${crypto.suggested ? "bg-green-200 dark:bg-green-800" : "bg-gray-200 dark:bg-gray-800"}`}
                     >
                       {crypto.address}
                     </code>
@@ -202,7 +224,8 @@ import { Icon } from "astro-icon/components";
                       <hr class="border-gray-300 dark:border-gray-700 my-4" />
                     )}
                   </div>
-              ))}
+                ))
+              }
               <button
                 id="closeCryptoModal"
                 class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
@@ -222,7 +245,8 @@ import { Icon } from "astro-icon/components";
           class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <div class="flex flex-wrap items-center gap-2">
-            {[
+            {
+              [
                 { status: "WIP", text: "WIP" },
                 { status: "DONE", text: "Done" },
                 { status: "ALPHA", text: "Alpha" },
@@ -258,7 +282,8 @@ import { Icon } from "astro-icon/components";
 
       <section class="py-5">
         <div class="flex flex-wrap gap-6">
-          {[
+          {
+            [
               {
                 name: "material-symbols:build-circle",
                 text: "Work in progress",
@@ -295,7 +320,8 @@ import { Icon } from "astro-icon/components";
 
       <section class="py-5">
         <div class="grid md:grid-cols-3 gap-6">
-          {[
+          {
+            [
               {
                 status: "DONE",
                 statusColorClass: "bg-green-500",
@@ -314,10 +340,17 @@ import { Icon } from "astro-icon/components";
                 progress: 80,
                 link: "https://github.com/bottlesdevs/Bottles/issues/1158",
                 icons: [
-                { name: "material-symbols:build-circle", title: "In progress" },
-                { name: "material-symbols:help-outline", title: "Needs funding" },
+                  {
+                    name: "material-symbols:build-circle",
+                    title: "In progress",
+                  },
+                  {
+                    name: "material-symbols:help-outline",
+                    title: "Needs funding",
+                  },
                 ],
-              infoText: "Estimated time: 1 week of work based on average hourly cost.",
+                infoText:
+                  "Estimated time: 1 week of work based on average hourly cost.",
               },
               {
                 status: "REJECTED",
@@ -339,10 +372,17 @@ import { Icon } from "astro-icon/components";
                 progress: 10,
                 link: "https://usebottles.com/posts/2024-09-24-umu-next/",
                 icons: [
-                { name: "material-symbols:build-circle", title: "In progress" },
-                { name: "material-symbols:help-outline", title: "Needs funding" },
+                  {
+                    name: "material-symbols:build-circle",
+                    title: "In progress",
+                  },
+                  {
+                    name: "material-symbols:help-outline",
+                    title: "Needs funding",
+                  },
                 ],
-              infoText: "Estimated time: 4 weeks of work based on average hourly cost.",
+                infoText:
+                  "Estimated time: 4 weeks of work based on average hourly cost.",
               },
               {
                 status: "NEXT",
@@ -352,13 +392,19 @@ import { Icon } from "astro-icon/components";
           <br>
           Latest update, Bottles Next is now in the planning phase, <a href="https://usebottles.com/posts/2024-12-27-rust-libcosmic-next/" class="text-blue-600 dark:text-blue-400 underline">read more</a>.
 
-          Please, also read the dedicated <a href="https://github.com/bottlesdevs/Bottles/issues/3602" class="text-blue-600 dark:text-blue-400 underline">GitHub issue</a> for more information.
+          Please, also watch the dedicated <a href="https://github.com/bottlesdevs/bottles-next" class="text-blue-600 dark:text-blue-400 underline">GitHub repository</a> for more information.
           `,
                 progress: 15,
                 link: "https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/",
                 icons: [
-                { name: "material-symbols:build-circle", title: "In progress" },
-                { name: "material-symbols:help-outline", title: "Needs funding" },
+                  {
+                    name: "material-symbols:build-circle",
+                    title: "In progress",
+                  },
+                  {
+                    name: "material-symbols:help-outline",
+                    title: "Needs funding",
+                  },
                 ],
                 infoText:
                   "We are looking for funds, contributors, and companies to provide infrastructure support.",
