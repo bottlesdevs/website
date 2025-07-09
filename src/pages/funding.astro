@@ -4,595 +4,650 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Funding">
-  <section class="py-20 bg-gray-50 dark:bg-gray-900">
-    <div class="container mx-auto px-4">
-      <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-        Funding
-      </h1>
-      <p class="text-lg text-gray-700 dark:text-gray-300">
-        Bottles is a <a
-          href="https://en.wikipedia.org/wiki/Free_software"
-          class="text-blue-600 dark:text-blue-400 underline">free software</a
-        > project. You can support its development by leaving a small donation.
-      </p>
-    </div>
-  </section>
+    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+                Funding
+            </h1>
+            <p class="text-lg text-gray-700 dark:text-gray-300">
+                Bottles is a <a
+                    href="https://en.wikipedia.org/wiki/Free_software"
+                    class="text-blue-600 dark:text-blue-400 underline"
+                    >free software</a
+                > project. You can support its development by leaving a small donation.
+            </p>
+        </div>
+    </section>
 
-  <section class="py-5 bg-green-100 dark:bg-green-900">
-    <div class="container mx-auto px-4 mt-8">
-      <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-        Why donate?
-      </h2>
-      <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
-        Donating means helping in shaping the future of Bottles. Please read
-        <a
-          href="https://usebottles.com/posts/2024-12-02-future-of-bottles/"
-          class="text-blue-600 dark:text-blue-400 underline">this post</a
-        > to understand the reasons behind the need for donations.
-      </p>
-    </div>
-  </section>
-
-  <div class="container mx-auto px-4 mt-8">
-    <section class="py-5">
-      <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-        How to donate
-      </h2>
-      <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
-        Here are the official channels from which you can donate to Bottles
-        Developers.
-      </p>
-      <div class="grid md:grid-cols-3 gap-6 mb-8">
-        {
-          [
-            {
-              name: "GitHub Sponsors",
-              bgClass: "bg-blue-900 text-white",
-              recurring: true,
-              linkText: "Sponsor via GitHub",
-              linkUrl: "https://github.com/sponsors/bottlesdevs",
-              icon: "material-symbols:favorite-outline",
-            },
-            {
-              name: "PayPal",
-              bgClass: "bg-blue-500 dark:bg-blue-700 text-white",
-              recurring: true,
-              oneTime: true,
-              preferred: true,
-              linkText: "Donate via PayPal",
-              linkUrl:
-                "https://www.paypal.com/donate?hosted_button_id=HM2VKUH5STU4J",
-              oldLinkText: "Old PayPal Method",
-              oldLinkUrl: "https://paypal.me/MirkoBrombin",
-              icon: "material-symbols:credit-card-outline",
-            },
-            {
-              name: "LiberaPay",
-              bgClass: "bg-yellow-400 dark:bg-yellow-500 text-gray-900",
-              flexible: true,
-              linkText: "Donate via LiberaPay",
-              linkUrl: "https://liberapay.com/bottles",
-              icon: "material-symbols:volunteer-activism-outline",
-            },
-            {
-              name: "Patreon",
-              bgClass: "bg-red-500 text-white",
-              recurring: true,
-              linkText: "Support via Patreon",
-              linkUrl: "https://www.patreon.com/MirkoBrombin",
-              icon: "material-symbols:favorite-outline",
-            },
-            {
-              name: "Cryptocurrency",
-              bgClass: "bg-purple-500 dark:bg-purple-700 text-white",
-              crypto: true,
-              linkText: "View Addresses",
-              linkUrl: "#",
-              icon: "material-symbols:currency-bitcoin",
-            },
-            {
-              name: "Polar.sh",
-              bgClass: "bg-gray-800 dark:bg-gray-900 text-white",
-              recurring: false,
-              oneTime: true,
-              linkText: "Pay what you want",
-              linkUrl:
-                "https://polar.sh/checkout/polar_c_eIOCzD22zZhxCmgD7GIpySe8WF46NbS1D0maC1JYe3C",
-              icon: "material-symbols:toll",
-            },
-          ].map((method) => (
-            <div
-              class={`p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1 ${method.bgClass}`}
-            >
-              <Icon name={method.icon} class="w-8 h-8 mb-4 mx-auto" />
-              <h3 class="text-2xl font-bold mb-2">{method.name}</h3>
-
-              {[
-                "One-Time / Recurring",
-                "Recurring",
-                "One-Time",
-                "Preferred Method",
-                "Flexible Subscription",
-                "Bitcoin, Ethereum, and more",
-              ].map((text, index) => {
-                const conditions = [
-                  method.recurring && method.oneTime,
-                  method.recurring && !method.oneTime,
-                  method.oneTime && !method.recurring,
-                  method.preferred,
-                  method.flexible,
-                  method.crypto,
-                ];
-                const condition = conditions[index];
-                return condition ? (
-                  <span class="relative z-10 bg-black/50 text-white px-2 py-1 rounded-full text-sm inline-block mb-4">
-                    {text}
-                  </span>
-                ) : null;
-              })}
-
-              <a
-                href={method.crypto ? "#" : method.linkUrl}
-                class="mt-4 block relative z-0 bg-black/50 text-white py-2 px-4 rounded-lg hover:bg-black/40 transition-all cursor-pointer"
-                onclick={
-                  method.crypto
-                    ? "document.getElementById('cryptoModal').classList.remove('hidden')"
-                    : undefined
-                }
-              >
-                {method.linkText}
-              </a>
-              {method.oldLinkText ? (
-                <a href={method.oldLinkUrl} class="mt-4 block underline">
-                  {method.oldLinkText}
-                </a>
-              ) : (
-                ""
-              )}
-            </div>
-          ))
-        }
-
-        <div
-          id="cryptoModal"
-          class="fixed inset-0 bg-gray-800/75 flex items-center justify-center hidden z-20"
-        >
-          <div
-            class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center overflow-y-auto max-h-[80vh]"
-          >
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Cryptocurrency Addresses
+    <section class="py-5 bg-green-100 dark:bg-green-900">
+        <div class="container mx-auto px-4 mt-8">
+            <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+                Why donate?
             </h2>
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
-              You can donate using the following cryptocurrency addresses.
+            <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
+                Donating means helping in shaping the future of Bottles. Please
+                read
+                <a
+                    href="https://usebottles.com/posts/2024-12-02-future-of-bottles/"
+                    class="text-blue-600 dark:text-blue-400 underline"
+                    >this post</a
+                > to understand the reasons behind the need for donations.
             </p>
-            <div class="flex flex-col gap-4">
-              {
-                [
-                  {
-                    name: "Ethereum (ETH)",
-                    network: "ERC20",
-                    address: "0xef6a653c63db31403f507bca277f719d2f3d44f8",
-                    icon: "material-symbols:check-circle",
-                    suggested: true,
-                  },
-                  {
-                    name: "Bitcoin (BTC)",
-                    network: "BTC(SegWit)",
-                    address: "bc1q2svx64v90hyyd7jt8xamvqm9vc5248l5rgzwpm",
-                  },
-                  {
-                    name: "Litecoin (LTC)",
-                    network: "LTC",
-                    address: "LWqpd2411CQTuWD15bcPP7bfAw3wmYHScm",
-                  },
-                  {
-                    name: "Ripple (XRP)",
-                    network: "XRP",
-                    address: "rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV",
-                    memo: "420078619",
-                  },
-                ].map((crypto, index) => (
-                  <div
-                    class={`flex flex-col gap-2 ${crypto.suggested ? "bg-green-100 dark:bg-green-900 p-3 rounded-lg" : ""}`}
-                  >
-                    <h3 class="text-xl font-bold mb-2">
-                      {crypto.name}{" "}
-                      {crypto.suggested == true && (
-                        <Icon
-                          name="material-symbols:check-circle"
-                          class="w-6 h-6 inline-block"
-                          title="Suggested"
-                        />
-                      )}
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                      Network: {crypto.network}
-                    </p>
-                    <code
-                      class={`text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md block overflow-x-auto ${crypto.suggested ? "bg-green-200 dark:bg-green-800" : "bg-gray-200 dark:bg-gray-800"}`}
-                    >
-                      {crypto.address}
-                    </code>
-                    {crypto.memo && (
-                      <div class="bg-red-500 text-white px-2 py-1 rounded-md text-sm block mt-6">
-                        <p>The following MEMO is required: {crypto.memo}.</p>
-                        <p>If you can't add the MEMO, coins will be lost.</p>
-                      </div>
-                    )}
-                    {index < 3 && (
-                      <hr class="border-gray-300 dark:border-gray-700 my-4" />
-                    )}
-                  </div>
-                ))
-              }
-              <button
-                id="closeCryptoModal"
-                class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
-              >
-                Close
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <section
-        class="sticky z-10 bg-white dark:bg-gray-900 py-4 border-b border-gray-300 dark:border-gray-700"
-        style="top: 72px;"
-      >
-        <div
-          class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4"
-        >
-          <div class="flex flex-wrap items-center gap-2">
-            {
-              [
-                { status: "WIP", text: "WIP" },
-                { status: "DONE", text: "Done" },
-                { status: "ALPHA", text: "Alpha" },
-                { status: "NEXT", text: "Next" },
-                { status: "REJECTED", text: "Rejected" },
-              ].map((btn) => (
-                <button
-                  class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg text-sm"
-                  data-status={btn.status}
+    <div class="container mx-auto px-4 mt-8">
+        <section class="py-5">
+            <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+                How to donate
+            </h2>
+            <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
+                Here are the official channels from which you can donate to
+                Bottles Developers.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                {
+                    [
+                        {
+                            name: "GitHub Sponsors",
+                            bgClass: "bg-blue-900 text-white",
+                            recurring: true,
+                            linkText: "Sponsor via GitHub",
+                            linkUrl: "https://github.com/sponsors/bottlesdevs",
+                            icon: "material-symbols:favorite-outline",
+                        },
+                        {
+                            name: "PayPal",
+                            bgClass: "bg-blue-500 dark:bg-blue-700 text-white",
+                            recurring: true,
+                            oneTime: true,
+                            preferred: true,
+                            linkText: "Donate via PayPal",
+                            linkUrl:
+                                "https://www.paypal.com/donate?hosted_button_id=HM2VKUH5STU4J",
+                            oldLinkText: "Old PayPal Method",
+                            oldLinkUrl: "https://paypal.me/MirkoBrombin",
+                            icon: "material-symbols:credit-card-outline",
+                        },
+                        {
+                            name: "LiberaPay",
+                            bgClass:
+                                "bg-yellow-400 dark:bg-yellow-500 text-gray-900",
+                            flexible: true,
+                            linkText: "Donate via LiberaPay",
+                            linkUrl: "https://liberapay.com/bottles",
+                            icon: "material-symbols:volunteer-activism-outline",
+                        },
+                        {
+                            name: "Patreon",
+                            bgClass: "bg-red-500 text-white",
+                            recurring: true,
+                            linkText: "Support via Patreon",
+                            linkUrl: "https://www.patreon.com/MirkoBrombin",
+                            icon: "material-symbols:favorite-outline",
+                        },
+                        {
+                            name: "Cryptocurrency",
+                            bgClass:
+                                "bg-purple-500 dark:bg-purple-700 text-white",
+                            crypto: true,
+                            linkText: "View Addresses",
+                            linkUrl: "#",
+                            icon: "material-symbols:currency-bitcoin",
+                        },
+                        {
+                            name: "Polar.sh",
+                            bgClass: "bg-gray-800 dark:bg-gray-900 text-white",
+                            recurring: false,
+                            oneTime: true,
+                            linkText: "Pay what you want",
+                            linkUrl:
+                                "https://buy.polar.sh/polar_cl_yKpkVQyu6SfCFKTRkxPl84tgKI93PIKwRbEWh1OnJ7v",
+                            icon: "material-symbols:toll",
+                        },
+                    ].map((method) => (
+                        <div
+                            class={`p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1 ${method.bgClass}`}
+                        >
+                            <Icon
+                                name={method.icon}
+                                class="w-8 h-8 mb-4 mx-auto"
+                            />
+                            <h3 class="text-2xl font-bold mb-2">
+                                {method.name}
+                            </h3>
+
+                            {[
+                                "One-Time / Recurring",
+                                "Recurring",
+                                "One-Time",
+                                "Preferred Method",
+                                "Flexible Subscription",
+                                "Bitcoin, Ethereum, and more",
+                            ].map((text, index) => {
+                                const conditions = [
+                                    method.recurring && method.oneTime,
+                                    method.recurring && !method.oneTime,
+                                    method.oneTime && !method.recurring,
+                                    method.preferred,
+                                    method.flexible,
+                                    method.crypto,
+                                ];
+                                const condition = conditions[index];
+                                return condition ? (
+                                    <span class="relative z-10 bg-black/50 text-white px-2 py-1 rounded-full text-sm inline-block mb-4">
+                                        {text}
+                                    </span>
+                                ) : null;
+                            })}
+
+                            <a
+                                href={method.crypto ? "#" : method.linkUrl}
+                                class="mt-4 block relative z-0 bg-black/50 text-white py-2 px-4 rounded-lg hover:bg-black/40 transition-all cursor-pointer"
+                                onclick={
+                                    method.crypto
+                                        ? "document.getElementById('cryptoModal').classList.remove('hidden')"
+                                        : undefined
+                                }
+                            >
+                                {method.linkText}
+                            </a>
+                            {method.oldLinkText ? (
+                                <a
+                                    href={method.oldLinkUrl}
+                                    class="mt-4 block underline"
+                                >
+                                    {method.oldLinkText}
+                                </a>
+                            ) : (
+                                ""
+                            )}
+                        </div>
+                    ))
+                }
+
+                <div
+                    id="cryptoModal"
+                    class="fixed inset-0 bg-gray-800/75 flex items-center justify-center hidden z-20"
                 >
-                  {btn.text}
-                </button>
-              ))
-            }
-          </div>
-          <div
-            class="flex flex-col md:flex-row items-center gap-2 w-full md:w-auto"
-          >
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="Search tasks..."
-              class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg text-sm w-full md:w-72"
-            />
-            <button
-              id="resetButton"
-              class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm w-full md:w-auto"
-              >Reset Filters</button
-            >
-          </div>
-        </div>
-      </section>
+                    <div
+                        class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center overflow-y-auto max-h-[80vh]"
+                    >
+                        <h2
+                            class="text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                        >
+                            Cryptocurrency Addresses
+                        </h2>
+                        <p
+                            class="text-lg text-gray-700 dark:text-gray-300 mb-4"
+                        >
+                            You can donate using the following cryptocurrency
+                            addresses.
+                        </p>
+                        <div class="flex flex-col gap-4">
+                            {
+                                [
+                                    {
+                                        name: "Ethereum (ETH)",
+                                        network: "ERC20",
+                                        address:
+                                            "0xef6a653c63db31403f507bca277f719d2f3d44f8",
+                                        icon: "material-symbols:check-circle",
+                                        suggested: true,
+                                    },
+                                    {
+                                        name: "Bitcoin (BTC)",
+                                        network: "BTC(SegWit)",
+                                        address:
+                                            "bc1q2svx64v90hyyd7jt8xamvqm9vc5248l5rgzwpm",
+                                    },
+                                    {
+                                        name: "Litecoin (LTC)",
+                                        network: "LTC",
+                                        address:
+                                            "LWqpd2411CQTuWD15bcPP7bfAw3wmYHScm",
+                                    },
+                                    {
+                                        name: "Ripple (XRP)",
+                                        network: "XRP",
+                                        address:
+                                            "rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV",
+                                        memo: "420078619",
+                                    },
+                                ].map((crypto, index) => (
+                                    <div
+                                        class={`flex flex-col gap-2 ${crypto.suggested ? "bg-green-100 dark:bg-green-900 p-3 rounded-lg" : ""}`}
+                                    >
+                                        <h3 class="text-xl font-bold mb-2">
+                                            {crypto.name}{" "}
+                                            {crypto.suggested == true && (
+                                                <Icon
+                                                    name="material-symbols:check-circle"
+                                                    class="w-6 h-6 inline-block"
+                                                    title="Suggested"
+                                                />
+                                            )}
+                                        </h3>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            Network: {crypto.network}
+                                        </p>
+                                        <code
+                                            class={`text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md block overflow-x-auto ${crypto.suggested ? "bg-green-200 dark:bg-green-800" : "bg-gray-200 dark:bg-gray-800"}`}
+                                        >
+                                            {crypto.address}
+                                        </code>
+                                        {crypto.memo && (
+                                            <div class="bg-red-500 text-white px-2 py-1 rounded-md text-sm block mt-6">
+                                                <p>
+                                                    The following MEMO is
+                                                    required: {crypto.memo}.
+                                                </p>
+                                                <p>
+                                                    If you can't add the MEMO,
+                                                    coins will be lost.
+                                                </p>
+                                            </div>
+                                        )}
+                                        {index < 3 && (
+                                            <hr class="border-gray-300 dark:border-gray-700 my-4" />
+                                        )}
+                                    </div>
+                                ))
+                            }
+                            <button
+                                id="closeCryptoModal"
+                                class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <section class="py-5">
-        <div class="flex flex-wrap gap-6">
-          {
-            [
-              {
-                name: "material-symbols:build-circle",
-                text: "Work in progress",
-                title: "In progress",
-              },
-              {
-                name: "material-symbols:help-outline",
-                text: "Needs funding",
-                title: "Needs funding",
-              },
-              {
-                name: "material-symbols:info-outline",
-                text: "More information",
-                title: "More information",
-              },
-            ].map((icon) => (
-              <div class="flex items-center gap-2">
-                <Icon name={icon.name} class="w-6 h-6" title={icon.title} />
-                <span class="text-gray-700 dark:text-gray-300">
-                  {icon.text}
-                </span>
-              </div>
-            ))
-          }
-          <div class="flex items-center gap-2">
-            <p
-              class="bg-purple-300 dark:bg-purple-800 px-4 py-2 rounded-lg text-sm"
+            <section
+                class="sticky z-10 bg-white dark:bg-gray-900 py-4 border-b border-gray-300 dark:border-gray-700"
+                style="top: 72px;"
             >
-              Progress bars refers to the completion status of each task.
-            </p>
-          </div>
-        </div>
-      </section>
+                <div
+                    class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4"
+                >
+                    <div class="flex flex-wrap items-center gap-2">
+                        {
+                            [
+                                { status: "WIP", text: "WIP" },
+                                { status: "DONE", text: "Done" },
+                                { status: "ALPHA", text: "Alpha" },
+                                { status: "NEXT", text: "Next" },
+                                { status: "REJECTED", text: "Rejected" },
+                            ].map((btn) => (
+                                <button
+                                    class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg text-sm"
+                                    data-status={btn.status}
+                                >
+                                    {btn.text}
+                                </button>
+                            ))
+                        }
+                    </div>
+                    <div
+                        class="flex flex-col md:flex-row items-center gap-2 w-full md:w-auto"
+                    >
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search tasks..."
+                            class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg text-sm w-full md:w-72"
+                        />
+                        <button
+                            id="resetButton"
+                            class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm w-full md:w-auto"
+                            >Reset Filters</button
+                        >
+                    </div>
+                </div>
+            </section>
 
-      <section class="py-5">
-        <div class="grid md:grid-cols-3 gap-6">
-          {
-            [
-              {
-                status: "DONE",
-                statusColorClass: "bg-green-500",
-                title: "Library mode",
-                description:
-                  "Allow users to add any program from any bottle in a library view for easy access.",
-                progress: 100,
-                link: "https://usebottles.com/posts/2022-08-28-release-2022.8.28",
-              },
-              {
-                status: "ALPHA",
-                statusColorClass: "bg-yellow-500",
-                title: "Per-bottle sandbox",
-                description:
-                  "Experimental feature for wrapping each bottle with a sandbox to limit permissions.",
-                progress: 80,
-                link: "https://github.com/bottlesdevs/Bottles/issues/1158",
-                icons: [
-                  {
-                    name: "material-symbols:build-circle",
-                    title: "In progress",
-                  },
-                  {
-                    name: "material-symbols:help-outline",
-                    title: "Needs funding",
-                  },
-                ],
-                infoText:
-                  "Estimated time: 1 week of work based on average hourly cost.",
-              },
-              {
-                status: "REJECTED",
-                statusColorClass: "bg-red-500",
-                title: "Layered bottles",
-                description:
-                  "Our solution for multiple environments in one bottle. Planned for Bottles Next. Please refer to the Bottles Next task for more details.",
-                progress: 0,
-                link: "https://github.com/bottlesdevs/Bottles/issues/510",
-                infoText:
-                  "This feature is planned for Bottles Next. Read the Bottles Next task for more information.",
-              },
-              {
-                status: "WIP",
-                statusColorClass: "bg-blue-500",
-                title: "Integration of UMU",
-                description:
-                  "Integration of UMU to enhance the gaming compatibility in Bottles.",
-                progress: 10,
-                link: "https://usebottles.com/posts/2024-09-24-umu-next/",
-                icons: [
-                  {
-                    name: "material-symbols:build-circle",
-                    title: "In progress",
-                  },
-                  {
-                    name: "material-symbols:help-outline",
-                    title: "Needs funding",
-                  },
-                ],
-                infoText:
-                  "Estimated time: 4 weeks of work based on average hourly cost.",
-              },
-              {
-                status: "NEXT",
-                statusColorClass: "bg-purple-500",
-                title: "Bottles Next",
-                description: `A complete redesign of Bottles to overcome current limitations and provide a consistent user experience across Linux and macOS. We need funds, contributors, and companies to provide infrastructure support.
+            <section class="py-5">
+                <div class="flex flex-wrap gap-6">
+                    {
+                        [
+                            {
+                                name: "material-symbols:build-circle",
+                                text: "Work in progress",
+                                title: "In progress",
+                            },
+                            {
+                                name: "material-symbols:help-outline",
+                                text: "Needs funding",
+                                title: "Needs funding",
+                            },
+                            {
+                                name: "material-symbols:info-outline",
+                                text: "More information",
+                                title: "More information",
+                            },
+                        ].map((icon) => (
+                            <div class="flex items-center gap-2">
+                                <Icon
+                                    name={icon.name}
+                                    class="w-6 h-6"
+                                    title={icon.title}
+                                />
+                                <span class="text-gray-700 dark:text-gray-300">
+                                    {icon.text}
+                                </span>
+                            </div>
+                        ))
+                    }
+                    <div class="flex items-center gap-2">
+                        <p
+                            class="bg-purple-300 dark:bg-purple-800 px-4 py-2 rounded-lg text-sm"
+                        >
+                            Progress bars refers to the completion status of
+                            each task.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5">
+                <div class="grid md:grid-cols-3 gap-6">
+                    {
+                        [
+                            {
+                                status: "DONE",
+                                statusColorClass: "bg-green-500",
+                                title: "Library mode",
+                                description:
+                                    "Allow users to add any program from any bottle in a library view for easy access.",
+                                progress: 100,
+                                link: "https://usebottles.com/posts/2022-08-28-release-2022.8.28",
+                            },
+                            {
+                                status: "ALPHA",
+                                statusColorClass: "bg-yellow-500",
+                                title: "Per-bottle sandbox",
+                                description:
+                                    "Experimental feature for wrapping each bottle with a sandbox to limit permissions.",
+                                progress: 80,
+                                link: "https://github.com/bottlesdevs/Bottles/issues/1158",
+                                icons: [
+                                    {
+                                        name: "material-symbols:build-circle",
+                                        title: "In progress",
+                                    },
+                                    {
+                                        name: "material-symbols:help-outline",
+                                        title: "Needs funding",
+                                    },
+                                ],
+                                infoText:
+                                    "Estimated time: 1 week of work based on average hourly cost.",
+                            },
+                            {
+                                status: "REJECTED",
+                                statusColorClass: "bg-red-500",
+                                title: "Layered bottles",
+                                description:
+                                    "Our solution for multiple environments in one bottle. Planned for Bottles Next. Please refer to the Bottles Next task for more details.",
+                                progress: 0,
+                                link: "https://github.com/bottlesdevs/Bottles/issues/510",
+                                infoText:
+                                    "This feature is planned for Bottles Next. Read the Bottles Next task for more information.",
+                            },
+                            {
+                                status: "WIP",
+                                statusColorClass: "bg-blue-500",
+                                title: "Integration of UMU",
+                                description:
+                                    "Integration of UMU to enhance the gaming compatibility in Bottles.",
+                                progress: 10,
+                                link: "https://usebottles.com/posts/2024-09-24-umu-next/",
+                                icons: [
+                                    {
+                                        name: "material-symbols:build-circle",
+                                        title: "In progress",
+                                    },
+                                    {
+                                        name: "material-symbols:help-outline",
+                                        title: "Needs funding",
+                                    },
+                                ],
+                                infoText:
+                                    "Estimated time: 4 weeks of work based on average hourly cost.",
+                            },
+                            {
+                                status: "NEXT",
+                                statusColorClass: "bg-purple-500",
+                                title: "Bottles Next",
+                                description: `A complete redesign of Bottles to overcome current limitations and provide a consistent user experience across Linux and macOS. We need funds, contributors, and companies to provide infrastructure support.
           <br>
           Latest update, Bottles Next is now in the planning phase, <a href="https://usebottles.com/posts/2024-12-27-rust-libcosmic-next/" class="text-blue-600 dark:text-blue-400 underline">read more</a>.
 
           Please, also watch the dedicated <a href="https://github.com/bottlesdevs/bottles-next" class="text-blue-600 dark:text-blue-400 underline">GitHub repository</a> for more information.
           `,
-                progress: 15,
-                link: "https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/",
-                icons: [
-                  {
-                    name: "material-symbols:build-circle",
-                    title: "In progress",
-                  },
-                  {
-                    name: "material-symbols:help-outline",
-                    title: "Needs funding",
-                  },
-                ],
-                infoText:
-                  "We are looking for funds, contributors, and companies to provide infrastructure support.",
-              },
-            ].map((task) => (
-              <div
-                class={`task-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-all relative flex flex-col`}
-                data-status={task.status}
-                data-title={task.title}
-              >
-                <div>
-                  <span
-                    class={`${task.statusColorClass} text-white px-2 py-1 rounded-full text-sm inline-block mb-4`}
-                  >
-                    [{task.status}]
-                  </span>
-                  <h3 class="text-2xl font-bold mb-2">{task.title}</h3>
-                  {task.icons ? (
-                    <div class="flex gap-2 mb-2">
-                      {task.icons.map((ic) => (
-                        <Icon name={ic.name} class="w-5 h-5" title={ic.title} />
-                      ))}
-                    </div>
-                  ) : (
-                    ""
-                  )}
-                  <p class="text-lg mb-4" set:html={task.description} />
-                  <div class="flex items-center space-x-2 mb-4">
-                    <span class="w-full bg-gray-300 rounded-sm">
-                      <span
-                        class={`block h-2 rounded-sm ${task.status === "DONE" ? "bg-green-500" : task.status === "ALPHA" ? "bg-yellow-500" : task.status === "REJECTED" ? "bg-red-300" : task.status === "WIP" ? "bg-blue-500" : task.status === "NEXT" ? "bg-purple-500" : ""}`}
-                        style={`width: ${task.progress}%`}
-                      />
-                    </span>
-                    {task.infoText ? (
-                      <Icon
-                        name="material-symbols:info-outline"
-                        class="w-6 h-6 cursor-pointer"
-                        onclick={`document.getElementById('infoModal').classList.remove('hidden'); document.getElementById('infoModalText').innerText = '${task.infoText}'`}
-                      />
-                    ) : (
-                      ""
-                    )}
-                  </div>
+                                progress: 15,
+                                link: "https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/",
+                                icons: [
+                                    {
+                                        name: "material-symbols:build-circle",
+                                        title: "In progress",
+                                    },
+                                    {
+                                        name: "material-symbols:help-outline",
+                                        title: "Needs funding",
+                                    },
+                                ],
+                                infoText:
+                                    "We are looking for funds, contributors, and companies to provide infrastructure support.",
+                            },
+                        ].map((task) => (
+                            <div
+                                class={`task-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-all relative flex flex-col`}
+                                data-status={task.status}
+                                data-title={task.title}
+                            >
+                                <div>
+                                    <span
+                                        class={`${task.statusColorClass} text-white px-2 py-1 rounded-full text-sm inline-block mb-4`}
+                                    >
+                                        [{task.status}]
+                                    </span>
+                                    <h3 class="text-2xl font-bold mb-2">
+                                        {task.title}
+                                    </h3>
+                                    {task.icons ? (
+                                        <div class="flex gap-2 mb-2">
+                                            {task.icons.map((ic) => (
+                                                <Icon
+                                                    name={ic.name}
+                                                    class="w-5 h-5"
+                                                    title={ic.title}
+                                                />
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        ""
+                                    )}
+                                    <p
+                                        class="text-lg mb-4"
+                                        set:html={task.description}
+                                    />
+                                    <div class="flex items-center space-x-2 mb-4">
+                                        <span class="w-full bg-gray-300 rounded-sm">
+                                            <span
+                                                class={`block h-2 rounded-sm ${task.status === "DONE" ? "bg-green-500" : task.status === "ALPHA" ? "bg-yellow-500" : task.status === "REJECTED" ? "bg-red-300" : task.status === "WIP" ? "bg-blue-500" : task.status === "NEXT" ? "bg-purple-500" : ""}`}
+                                                style={`width: ${task.progress}%`}
+                                            />
+                                        </span>
+                                        {task.infoText ? (
+                                            <Icon
+                                                name="material-symbols:info-outline"
+                                                class="w-6 h-6 cursor-pointer"
+                                                onclick={`document.getElementById('infoModal').classList.remove('hidden'); document.getElementById('infoModalText').innerText = '${task.infoText}'`}
+                                            />
+                                        ) : (
+                                            ""
+                                        )}
+                                    </div>
+                                </div>
+                                <div class="mt-auto">
+                                    <a
+                                        href={task.link}
+                                        class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800"
+                                    >
+                                        <Icon
+                                            name="material-symbols:menu-book-outline"
+                                            class="w-5 h-5 mr-2"
+                                        />
+                                        README
+                                    </a>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
-                <div class="mt-auto">
-                  <a
-                    href={task.link}
-                    class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800"
-                  >
-                    <Icon
-                      name="material-symbols:menu-book-outline"
-                      class="w-5 h-5 mr-2"
-                    />
-                    README
-                  </a>
+            </section>
+
+            <section class="py-5">
+                <h2
+                    class="text-3xl font-bold mb-4 text-gray-900 dark:text-white"
+                >
+                    Thanks to them who made a donation or became our GitHub
+                    sponsor ❤️!
+                </h2>
+                <div class="flex flex-wrap mb-8 mt-8 gap-4" id="github"></div>
+                <h3
+                    class="text-2xl font-bold mb-4 text-gray-900 dark:text-white"
+                >
+                    Liberapay
+                </h3>
+                <div class="flex flex-wrap mb-8 mt-8 gap-4" id="liberapay">
                 </div>
-              </div>
-            ))
-          }
+                <h3
+                    class="text-2xl font-bold mb-4 text-gray-900 dark:text-white"
+                >
+                    Other platforms
+                </h3>
+                <div class="flex flex-wrap mb-8 gap-4" id="other"></div>
+                <p class="text-center text-gray-800 dark:text-gray-300">
+                    - Thanks from the Bottles Developers.
+                </p>
+            </section>
+        </section>
+
+        <div
+            id="donationModal"
+            class="fixed inset-0 bg-gray-800/75 flex items-center justify-center hidden z-20"
+        >
+            <div
+                class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center"
+            >
+                <h2
+                    class="text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                >
+                    Thank You!
+                </h2>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                    We sincerely appreciate your donation. Your support helps us
+                    keep Bottles growing and improving.
+                </p>
+                <button
+                    id="closeModal"
+                    class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+                    >Close</button
+                >
+            </div>
         </div>
-      </section>
 
-      <section class="py-5">
-        <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-          Thanks to them who made a donation or became our GitHub sponsor ❤️!
-        </h2>
-        <div class="flex flex-wrap mb-8 mt-8 gap-4" id="github"></div>
-        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-          Liberapay
-        </h3>
-        <div class="flex flex-wrap mb-8 mt-8 gap-4" id="liberapay"></div>
-        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-          Other platforms
-        </h3>
-        <div class="flex flex-wrap mb-8 gap-4" id="other"></div>
-        <p class="text-center text-gray-800 dark:text-gray-300">
-          - Thanks from the Bottles Developers.
-        </p>
-      </section>
-    </section>
-
-    <div
-      id="donationModal"
-      class="fixed inset-0 bg-gray-800/75 flex items-center justify-center hidden z-20"
-    >
-      <div
-        class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center"
-      >
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-          Thank You!
-        </h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
-          We sincerely appreciate your donation. Your support helps us keep
-          Bottles growing and improving.
-        </p>
-        <button
-          id="closeModal"
-          class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
-          >Close</button
+        <div
+            id="infoModal"
+            class="fixed inset-0 bg-gray-800/75 flex items-center justify-center hidden z-20"
         >
-      </div>
+            <div
+                class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center"
+            >
+                <h2
+                    class="text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                >
+                    Progress Information
+                </h2>
+                <p
+                    id="infoModalText"
+                    class="text-lg text-gray-700 dark:text-gray-300 mb-4"
+                >
+                    Progress is calculated based on the completion status of
+                    each task.
+                </p>
+                <button
+                    id="closeInfoModal"
+                    class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+                    >Close</button
+                >
+            </div>
+        </div>
     </div>
 
-    <div
-      id="infoModal"
-      class="fixed inset-0 bg-gray-800/75 flex items-center justify-center hidden z-20"
-    >
-      <div
-        class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center"
-      >
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-          Progress Information
-        </h2>
-        <p
-          id="infoModalText"
-          class="text-lg text-gray-700 dark:text-gray-300 mb-4"
-        >
-          Progress is calculated based on the completion status of each task.
-        </p>
-        <button
-          id="closeInfoModal"
-          class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
-          >Close</button
-        >
-      </div>
-    </div>
-  </div>
+    <script>
+        interface Sponsor {
+            username: string;
+            avatar: string;
+        }
+        interface PeopleList {
+            github: Sponsor[];
+            other: string[];
+        }
+        class Donations {
+            domSelector: string;
+            list: PeopleList;
+            constructor(domSelector: string, list: PeopleList) {
+                this.domSelector = domSelector;
+                this.list = list;
+                this.renderPeople();
+            }
+            async renderPeople(): Promise<void> {
+                const githubPeople = await this.getGitHubSponsors();
+                const liberapayInfo = await this.getLiberapayInfo(); // Recupera info Liberapay
+                const otherPeople = this.list.other;
 
-  <script>
-    interface Sponsor {
-      username: string;
-      avatar: string;
-    }
-    interface PeopleList {
-      github: Sponsor[];
-      other: string[];
-    }
-    class Donations {
-      domSelector: string;
-      list: PeopleList;
-      constructor(domSelector: string, list: PeopleList) {
-        this.domSelector = domSelector;
-        this.list = list;
-        this.renderPeople();
-      }
-      async renderPeople(): Promise<void> {
-        const githubPeople = await this.getGitHubSponsors();
-        const liberapayInfo = await this.getLiberapayInfo(); // Recupera info Liberapay
-        const otherPeople = this.list.other;
-
-        this.addSection("#github", githubPeople, true);
-        this.addLiberapaySection("#liberapay", liberapayInfo);
-        this.addSection("#other", otherPeople);
-      }
-      addSection(
-        sectionDOM: string,
-        personList: Sponsor[] | string[],
-        hasPic: boolean = false,
-        customBgClass: string = ""
-      ) {
-        let sectionHtml = ``;
-        personList.forEach((person) => {
-          if (typeof person === "string") {
-            sectionHtml += this.getPersonMarkup(
-              person,
-              hasPic,
-              "",
-              customBgClass
-            );
-          } else {
-            sectionHtml += this.getPersonMarkup(
-              person.username,
-              hasPic,
-              person.avatar,
-              customBgClass
-            );
-          }
-        });
-        document
-          .querySelector(sectionDOM)
-          ?.insertAdjacentHTML("beforeend", sectionHtml);
-      }
-      addLiberapaySection(
-        sectionDOM: string,
-        liberapayInfo: { patrons: number; amount: string }
-      ) {
-        const html = `
+                this.addSection("#github", githubPeople, true);
+                this.addLiberapaySection("#liberapay", liberapayInfo);
+                this.addSection("#other", otherPeople);
+            }
+            addSection(
+                sectionDOM: string,
+                personList: Sponsor[] | string[],
+                hasPic: boolean = false,
+                customBgClass: string = "",
+            ) {
+                let sectionHtml = ``;
+                personList.forEach((person) => {
+                    if (typeof person === "string") {
+                        sectionHtml += this.getPersonMarkup(
+                            person,
+                            hasPic,
+                            "",
+                            customBgClass,
+                        );
+                    } else {
+                        sectionHtml += this.getPersonMarkup(
+                            person.username,
+                            hasPic,
+                            person.avatar,
+                            customBgClass,
+                        );
+                    }
+                });
+                document
+                    .querySelector(sectionDOM)
+                    ?.insertAdjacentHTML("beforeend", sectionHtml);
+            }
+            addLiberapaySection(
+                sectionDOM: string,
+                liberapayInfo: { patrons: number; amount: string },
+            ) {
+                const html = `
         <a class="flex items-center space-x-2 bg-yellow-400 dark:bg-yellow-500 px-4 py-2 rounded-lg" href="https://liberapay.com/bottles">
           <span class="text-lg font-bold text-gray-900">
             ${liberapayInfo.patrons} Patrons
@@ -601,174 +656,201 @@ import { Icon } from "astro-icon/components";
             ${liberapayInfo.amount} / week
           </span>
         </a>`;
-        document
-          .querySelector(sectionDOM)
-          ?.insertAdjacentHTML("beforeend", html);
-      }
-      getPersonMarkup(
-        person: string,
-        hasPic: boolean,
-        avatarUrl: string = "",
-        customBgClass: string = ""
-      ): string {
-        return `<div class="flex items-center space-x-2">
+                document
+                    .querySelector(sectionDOM)
+                    ?.insertAdjacentHTML("beforeend", html);
+            }
+            getPersonMarkup(
+                person: string,
+                hasPic: boolean,
+                avatarUrl: string = "",
+                customBgClass: string = "",
+            ): string {
+                return `<div class="flex items-center space-x-2">
           ${hasPic ? `<img src="${avatarUrl}" alt="${person}" class="w-12 h-12 rounded-full">` : ""}
           <span class="px-4 py-2 rounded-lg text-center ${customBgClass || "bg-gray-100 dark:bg-gray-800"}">
             ${person}
           </span>
         </div>`;
-      }
-      async getGitHubSponsors(): Promise<Sponsor[]> {
-        try {
-          const response = await fetch(
-            "https://ghs.vercel.app/v2/sponsors/bottlesdevs"
-          );
-          const data = await response.json();
-          const allSponsors = [
-            ...data.sponsors.current,
-            ...data.sponsors.past,
-          ].map((sponsor: { username: string; avatar: string }) => ({
-            username: sponsor.username,
-            avatar: sponsor.avatar || "assets/icons/default-avatar.jpg",
-          }));
-          return allSponsors;
-        } catch {
-          return [];
+            }
+            async getGitHubSponsors(): Promise<Sponsor[]> {
+                try {
+                    const response = await fetch(
+                        "https://ghs.vercel.app/v2/sponsors/bottlesdevs",
+                    );
+                    const data = await response.json();
+                    const allSponsors = [
+                        ...data.sponsors.current,
+                        ...data.sponsors.past,
+                    ].map((sponsor: { username: string; avatar: string }) => ({
+                        username: sponsor.username,
+                        avatar:
+                            sponsor.avatar || "assets/icons/default-avatar.jpg",
+                    }));
+                    return allSponsors;
+                } catch {
+                    return [];
+                }
+            }
+            async getLiberapayInfo(): Promise<{
+                patrons: number;
+                amount: string;
+            }> {
+                try {
+                    const response = await fetch(
+                        "https://liberapay.com/bottles/public.json",
+                    );
+                    const data = await response.json();
+
+                    const patrons = data.npatrons || 0;
+                    const amount = `${data.receiving.amount} ${data.receiving.currency}`;
+
+                    return { patrons, amount };
+                } catch {
+                    return { patrons: 0, amount: "0.00 USD" };
+                }
+            }
         }
-      }
-      async getLiberapayInfo(): Promise<{ patrons: number; amount: string }> {
-        try {
-          const response = await fetch(
-            "https://liberapay.com/bottles/public.json"
-          );
-          const data = await response.json();
+        const people: PeopleList = {
+            github: [],
+            other: [
+                "Christopher (kit) Eubanks",
+                "Black_file",
+                "Chris",
+                "Robin Lee",
+                "Andrew Ego",
+                "Sonny Piers",
+                "Dan G",
+                "Caleb Woodbine",
+                "Robert Krisztian Sandor",
+                "+ All the anonymous donations",
+            ],
+        };
+        document.addEventListener("DOMContentLoaded", () => {
+            new Donations("#people", people);
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has("thankyou")) {
+                document
+                    .getElementById("donationModal")
+                    ?.classList.remove("hidden");
+            }
+            document
+                .getElementById("closeModal")
+                ?.addEventListener("click", () => {
+                    document
+                        .getElementById("donationModal")
+                        ?.classList.add("hidden");
+                });
+            document
+                .getElementById("closeCryptoModal")
+                ?.addEventListener("click", () => {
+                    document
+                        .getElementById("cryptoModal")
+                        ?.classList.add("hidden");
+                });
+            document
+                .getElementById("closeInfoModal")
+                ?.addEventListener("click", () => {
+                    document
+                        .getElementById("infoModal")
+                        ?.classList.add("hidden");
+                });
 
-          const patrons = data.npatrons || 0;
-          const amount = `${data.receiving.amount} ${data.receiving.currency}`;
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    document
+                        .getElementById("donationModal")
+                        ?.classList.add("hidden");
+                    document
+                        .getElementById("cryptoModal")
+                        ?.classList.add("hidden");
+                    document
+                        .getElementById("infoModal")
+                        ?.classList.add("hidden");
+                }
+            });
 
-          return { patrons, amount };
-        } catch {
-          return { patrons: 0, amount: "0.00 USD" };
-        }
-      }
-    }
-    const people: PeopleList = {
-      github: [],
-      other: [
-        "Christopher (kit) Eubanks",
-        "Black_file",
-        "Chris",
-        "Robin Lee",
-        "Andrew Ego",
-        "Sonny Piers",
-        "Dan G",
-        "Caleb Woodbine",
-        "Robert Krisztian Sandor",
-        "+ All the anonymous donations",
-      ],
-    };
-    document.addEventListener("DOMContentLoaded", () => {
-      new Donations("#people", people);
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has("thankyou")) {
-        document.getElementById("donationModal")?.classList.remove("hidden");
-      }
-      document.getElementById("closeModal")?.addEventListener("click", () => {
-        document.getElementById("donationModal")?.classList.add("hidden");
-      });
-      document
-        .getElementById("closeCryptoModal")
-        ?.addEventListener("click", () => {
-          document.getElementById("cryptoModal")?.classList.add("hidden");
+            const filterButtons = document.querySelectorAll(".filter-button");
+            const searchInput = document.getElementById(
+                "searchInput",
+            ) as HTMLInputElement;
+            const resetButton = document.getElementById("resetButton");
+            const taskCards = document.querySelectorAll(".task-card");
+            let currentStatusFilter = "";
+            let currentSearchQuery = "";
+            function updateTasksDisplay() {
+                taskCards.forEach((card) => {
+                    const c = card as HTMLElement;
+                    const cardStatus = c.getAttribute("data-status") || "";
+                    const title = (
+                        c.getAttribute("data-title") || ""
+                    ).toLowerCase();
+                    const description = (
+                        c.querySelector("p")?.textContent || ""
+                    ).toLowerCase();
+                    let matchesStatus = true;
+                    let matchesSearch = true;
+                    if (currentStatusFilter !== "") {
+                        matchesStatus = cardStatus === currentStatusFilter;
+                    }
+                    if (currentSearchQuery !== "") {
+                        matchesSearch =
+                            title.includes(currentSearchQuery) ||
+                            description.includes(currentSearchQuery);
+                    }
+                    c.style.display =
+                        matchesStatus && matchesSearch ? "" : "none";
+                });
+            }
+            filterButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const b = button as HTMLElement;
+                    const status = b.getAttribute("data-status") || "";
+                    currentStatusFilter = status;
+                    filterButtons.forEach((btn) => {
+                        const bb = btn as HTMLElement;
+                        bb.classList.remove(
+                            "active",
+                            "bg-blue-500",
+                            "text-white",
+                        );
+                        bb.classList.add(
+                            "bg-gray-200",
+                            "dark:bg-gray-700",
+                            "text-black",
+                            "dark:text-white",
+                        );
+                    });
+                    b.classList.add("active", "bg-blue-500", "text-white");
+                    b.classList.remove(
+                        "bg-gray-200",
+                        "dark:bg-gray-700",
+                        "text-black",
+                        "dark:text-white",
+                    );
+                    updateTasksDisplay();
+                });
+            });
+            searchInput.addEventListener("input", () => {
+                currentSearchQuery = searchInput.value.toLowerCase();
+                updateTasksDisplay();
+            });
+            resetButton?.addEventListener("click", () => {
+                currentStatusFilter = "";
+                currentSearchQuery = "";
+                searchInput.value = "";
+                filterButtons.forEach((btn) => {
+                    const bb = btn as HTMLElement;
+                    bb.classList.remove("active", "bg-blue-500", "text-white");
+                    bb.classList.add(
+                        "bg-gray-200",
+                        "dark:bg-gray-700",
+                        "text-black",
+                        "dark:text-white",
+                    );
+                });
+                updateTasksDisplay();
+            });
         });
-      document
-        .getElementById("closeInfoModal")
-        ?.addEventListener("click", () => {
-          document.getElementById("infoModal")?.classList.add("hidden");
-        });
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-          document.getElementById("donationModal")?.classList.add("hidden");
-          document.getElementById("cryptoModal")?.classList.add("hidden");
-          document.getElementById("infoModal")?.classList.add("hidden");
-        }
-      });
-
-      const filterButtons = document.querySelectorAll(".filter-button");
-      const searchInput = document.getElementById(
-        "searchInput"
-      ) as HTMLInputElement;
-      const resetButton = document.getElementById("resetButton");
-      const taskCards = document.querySelectorAll(".task-card");
-      let currentStatusFilter = "";
-      let currentSearchQuery = "";
-      function updateTasksDisplay() {
-        taskCards.forEach((card) => {
-          const c = card as HTMLElement;
-          const cardStatus = c.getAttribute("data-status") || "";
-          const title = (c.getAttribute("data-title") || "").toLowerCase();
-          const description = (
-            c.querySelector("p")?.textContent || ""
-          ).toLowerCase();
-          let matchesStatus = true;
-          let matchesSearch = true;
-          if (currentStatusFilter !== "") {
-            matchesStatus = cardStatus === currentStatusFilter;
-          }
-          if (currentSearchQuery !== "") {
-            matchesSearch =
-              title.includes(currentSearchQuery) ||
-              description.includes(currentSearchQuery);
-          }
-          c.style.display = matchesStatus && matchesSearch ? "" : "none";
-        });
-      }
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const b = button as HTMLElement;
-          const status = b.getAttribute("data-status") || "";
-          currentStatusFilter = status;
-          filterButtons.forEach((btn) => {
-            const bb = btn as HTMLElement;
-            bb.classList.remove("active", "bg-blue-500", "text-white");
-            bb.classList.add(
-              "bg-gray-200",
-              "dark:bg-gray-700",
-              "text-black",
-              "dark:text-white"
-            );
-          });
-          b.classList.add("active", "bg-blue-500", "text-white");
-          b.classList.remove(
-            "bg-gray-200",
-            "dark:bg-gray-700",
-            "text-black",
-            "dark:text-white"
-          );
-          updateTasksDisplay();
-        });
-      });
-      searchInput.addEventListener("input", () => {
-        currentSearchQuery = searchInput.value.toLowerCase();
-        updateTasksDisplay();
-      });
-      resetButton?.addEventListener("click", () => {
-        currentStatusFilter = "";
-        currentSearchQuery = "";
-        searchInput.value = "";
-        filterButtons.forEach((btn) => {
-          const bb = btn as HTMLElement;
-          bb.classList.remove("active", "bg-blue-500", "text-white");
-          bb.classList.add(
-            "bg-gray-200",
-            "dark:bg-gray-700",
-            "text-black",
-            "dark:text-white"
-          );
-        });
-        updateTasksDisplay();
-      });
-    });
-  </script>
+    </script>
 </Layout>
