@@ -2,97 +2,199 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<header class="sticky top-0 z-50 backdrop-blur-xl bg-[var(--md-sys-color-surface)]/80 shadow-sm">
-  <div class="container mx-auto h-16 flex items-center justify-between px-4">
-    <a href="/" class="flex items-center gap-2">
-      <img src="/assets/logo.svg" alt="Bottles Logo" class="h-8 on-light" />
-      <img src="/assets/logo-dark.svg" alt="Bottles Logo" class="h-8 on-dark" />
-    </a>
+<header
+    class="sticky top-0 z-50 backdrop-blur-xl bg-[var(--md-sys-color-surface)]/80 shadow-sm"
+>
+    <div class="container mx-auto h-16 flex items-center justify-between px-4">
+        <a href="/" class="flex items-center gap-2">
+            <img
+                src="/assets/logo.svg"
+                alt="Bottles Logo"
+                class="h-8 on-light"
+            />
+            <img
+                src="/assets/logo-dark.svg"
+                alt="Bottles Logo"
+                class="h-8 on-dark"
+            />
+        </a>
 
-    <nav class="hidden md:flex items-center gap-1 ml-6">
-      <a href="/appstore" class="px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">Apps</a>
-      <a href="/database" class="px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">Database</a>
-      <a href="/blog" class="px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">Blog</a>
-      <a href="https://github.com/orgs/bottlesdevs/discussions" class="px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">Forums</a>
-      <a href="/funding" class="px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">Funding</a>
-    </nav>
+        <nav class="hidden md:flex items-center gap-1 ml-6">
+            <a
+                href="/appstore"
+                class="px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+                >Apps</a
+            >
+            <a
+                href="/database"
+                class="px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+                >Database</a
+            >
+            <a
+                href="/blog"
+                class="px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+                >Blog</a
+            >
+            <a
+                href="https://github.com/orgs/bottlesdevs/discussions"
+                class="px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+                >Forums</a
+            >
+            <a
+                href="/funding"
+                class="px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+                >Funding</a
+            >
+        </nav>
 
-    <div class="hidden md:flex items-center gap-3">
-      <a href="https://docs.usebottles.com/" class="flex items-center px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors text-lg">
-        <Icon name="material-symbols:book-2-outline" class="w-5 h-5 mr-1" />
-        <span class="hidden lg:inline">Docs</span>
-      </a>
-      <a href="https://github.com/bottlesdevs/Bottles/issues?q=is%3Aissue+label%3ABug" class="flex items-center px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors text-lg">
-        <Icon name="material-symbols:bug-report-outline" class="w-5 h-5 mr-1" />
-        <span class="hidden lg:inline">Bug report</span>
-      </a>
-      <a href="https://hosted.weblate.org/engage/bottles/" class="flex items-center px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors text-lg">
-        <Icon name="material-symbols:translate" class="w-5 h-5 mr-1" />
-        <span class="hidden lg:inline">Help translating</span>
-      </a>
-      <a href="/download" class="md-filled-button flex items-center gap-1 text-lg">
-        <Icon name="material-symbols:cloud-download" class="w-5 h-5" />
-        <span class="hidden lg:inline">Get Bottles</span>
-      </a>
-    </div>
-
-    <!-- Mobile Hamburger Menu -->
-    <div class="md:hidden flex items-center">
-      <button id="hamburger" aria-label="Toggle menu" class="z-50 focus:outline-hidden">
-        <div class="w-8 h-8 flex flex-col justify-center items-center space-y-1 relative">
-          <span class="block w-6 h-0.5 bg-[var(--md-sys-color-on-surface)] transition-all duration-300 ease-in-out" id="line1"></span>
-          <span class="block w-6 h-0.5 bg-[var(--md-sys-color-on-surface)] transition-all duration-300 ease-in-out" id="line2"></span>
+        <div class="hidden md:flex items-center gap-3">
+            <a
+                href="https://docs.usebottles.com/"
+                class="flex items-center px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors text-lg"
+            >
+                <Icon
+                    name="material-symbols:book-2-outline"
+                    class="w-5 h-5 mr-1"
+                />
+                <span class="hidden lg:inline">Docs</span>
+            </a>
+            <a
+                href="https://github.com/bottlesdevs/Bottles/issues?q=is%3Aissue+label%3ABug"
+                class="flex items-center px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors text-lg"
+            >
+                <Icon
+                    name="material-symbols:bug-report-outline"
+                    class="w-5 h-5 mr-1"
+                />
+                <span class="hidden lg:inline">Bug report</span>
+            </a>
+            <a
+                href="https://hosted.weblate.org/engage/bottles/"
+                class="flex items-center px-4 py-2 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors text-lg"
+            >
+                <Icon name="material-symbols:translate" class="w-5 h-5 mr-1" />
+                <span class="hidden lg:inline">Help translating</span>
+            </a>
+            <a
+                href="/download"
+                class="md-filled-button flex items-center gap-1 text-lg"
+            >
+                <Icon name="material-symbols:cloud-download" class="w-5 h-5" />
+                <span class="hidden lg:inline">Get Bottles</span>
+            </a>
         </div>
-      </button>
-    </div>
-  </div>
 
-  <!-- Mobile Menu Overlay -->
-  <div id="mobileMenu" class="md:hidden bg-[var(--md-sys-color-surface)] fixed inset-0 z-40 transform translate-x-full transition-transform">
-    <div class="flex flex-col items-center justify-center min-h-screen space-y-6">
-      <a href="/appstore" class="text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">Apps</a>
-      <a href="/database" class="text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">Database</a>
-      <a href="/blog" class="text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">Blog</a>
-      <a href="https://forum.usebottles.com/" class="text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">Forums</a>
-      <a href="/funding" class="text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">Funding</a>
-      <a href="https://docs.usebottles.com/" class="flex items-center text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">
-        <Icon name="material-symbols:book-2-outline" class="w-6 h-6 mr-1" /> Docs
-      </a>
-      <a href="https://github.com/bottlesdevs/Bottles/issues?q=is%3Aissue+label%3ABug" class="flex items-center text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">
-        <Icon name="material-symbols:bug-report-outline" class="w-6 h-6 mr-1" />
-        Bug report
-      </a>
-      <a href="https://hosted.weblate.org/engage/bottles/" class="flex items-center text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors">
-        <Icon name="material-symbols:translate" class="w-6 h-6 mr-1" /> Help translating
-      </a>
-      <a href="/download" class="md-filled-button flex items-center gap-1">
-        <Icon name="material-symbols:cloud-download" class="w-6 h-6" /> Get Bottles
-      </a>
+        <!-- Mobile Hamburger Menu -->
+        <div class="md:hidden flex items-center">
+            <button
+                id="hamburger"
+                aria-label="Toggle menu"
+                class="z-50 focus:outline-hidden"
+            >
+                <div
+                    class="w-8 h-8 flex flex-col justify-center items-center space-y-1 relative"
+                >
+                    <span
+                        class="block w-6 h-0.5 bg-[var(--md-sys-color-on-surface)] transition-all duration-300 ease-in-out"
+                        id="line1"></span>
+                    <span
+                        class="block w-6 h-0.5 bg-[var(--md-sys-color-on-surface)] transition-all duration-300 ease-in-out"
+                        id="line2"></span>
+                </div>
+            </button>
+        </div>
     </div>
-  </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+        id="mobileMenu"
+        class="md:hidden bg-[var(--md-sys-color-surface)] fixed inset-0 z-40 transform translate-x-full transition-transform"
+    >
+        <div
+            class="bg-black flex flex-col items-center justify-center min-h-screen space-y-6"
+        >
+            <a
+                href="/appstore"
+                class="text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+                >Apps</a
+            >
+            <a
+                href="/database"
+                class="text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+                >Database</a
+            >
+            <a
+                href="/blog"
+                class="text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+                >Blog</a
+            >
+            <a
+                href="https://forum.usebottles.com/"
+                class="text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+                >Forums</a
+            >
+            <a
+                href="/funding"
+                class="text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+                >Funding</a
+            >
+            <a
+                href="https://docs.usebottles.com/"
+                class="flex items-center text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+            >
+                <Icon
+                    name="material-symbols:book-2-outline"
+                    class="w-6 h-6 mr-1"
+                /> Docs
+            </a>
+            <a
+                href="https://github.com/bottlesdevs/Bottles/issues?q=is%3Aissue+label%3ABug"
+                class="flex items-center text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+            >
+                <Icon
+                    name="material-symbols:bug-report-outline"
+                    class="w-6 h-6 mr-1"
+                />
+                Bug report
+            </a>
+            <a
+                href="https://hosted.weblate.org/engage/bottles/"
+                class="flex items-center text-xl px-6 py-3 rounded-full hover:bg-[var(--md-sys-color-primary)]/10 transition-colors"
+            >
+                <Icon name="material-symbols:translate" class="w-6 h-6 mr-1" /> Help
+                translating
+            </a>
+            <a
+                href="/download"
+                class="md-filled-button flex items-center gap-1"
+            >
+                <Icon name="material-symbols:cloud-download" class="w-6 h-6" /> Get
+                Bottles
+            </a>
+        </div>
+    </div>
 </header>
 
 <script>
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const line1 = document.getElementById("line1");
-  const line2 = document.getElementById("line2");
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const line1 = document.getElementById("line1");
+    const line2 = document.getElementById("line2");
 
-  let menuOpen = false;
+    let menuOpen = false;
 
-  hamburger!.addEventListener("click", () => {
-    menuOpen = !menuOpen;
-    if (menuOpen) {
-      mobileMenu!.classList.remove("translate-x-full");
-      mobileMenu!.classList.add("translate-x-0");
-      line1!.classList.add("rotate-45");
-      line2!.classList.add("-rotate-45", "-translate-y-1.5");
-    } else {
-      mobileMenu!.classList.remove("translate-x-0");
-      mobileMenu!.classList.add("translate-x-full");
-      line1!.classList.remove("rotate-45");
-      line2!.classList.remove("-rotate-45", "-translate-y-1.5");
-    }
-  });
+    hamburger!.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+        if (menuOpen) {
+            mobileMenu!.classList.remove("translate-x-full");
+            mobileMenu!.classList.add("translate-x-0");
+            line1!.classList.add("rotate-45");
+            line2!.classList.add("-rotate-45", "-translate-y-1.5");
+        } else {
+            mobileMenu!.classList.remove("translate-x-0");
+            mobileMenu!.classList.add("translate-x-full");
+            line1!.classList.remove("rotate-45");
+            line2!.classList.remove("-rotate-45", "-translate-y-1.5");
+        }
+    });
 </script>
-
