@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap')
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap")
 layer(base);
 
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 /*
@@ -13,47 +13,75 @@ layer(base);
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
 }
 
 :root {
-  --md-sys-color-primary: #0b57d0;
-  --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-secondary: #545f71;
-  --md-sys-color-secondary-container: #d8e3f8;
-  --md-sys-color-on-secondary-container: #111c2b;
-  --md-sys-color-tertiary: #6b5778;
-  --md-sys-color-tertiary-container: #f3daff;
-  --md-sys-color-on-tertiary-container: #251432;
-  --md-sys-color-background: #fdfbff;
-  --md-sys-color-on-background: #1a1c1e;
-  --md-sys-color-surface: #fdfbff;
-  --md-sys-color-surface-container: #e1e2e7;
-  --md-sys-color-on-surface: #1a1c1e;
+    --md-sys-color-primary: #0b57d0;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-secondary: #545f71;
+    --md-sys-color-secondary-container: #d8e3f8;
+    --md-sys-color-on-secondary-container: #111c2b;
+    --md-sys-color-tertiary: #6b5778;
+    --md-sys-color-tertiary-container: #f3daff;
+    --md-sys-color-on-tertiary-container: #251432;
+    --md-sys-color-background: #fdfbff;
+    --md-sys-color-on-background: #1a1c1e;
+    --md-sys-color-surface: #fdfbff;
+    --md-sys-color-surface-container: #e1e2e7;
+    --md-sys-color-on-surface: #1a1c1e;
+
+    /* Accents for donations systems */
+    --md-sys-color-paypal: #4285f4;
+    --md-sys-color-on-paypal: #ffffff;
+    --md-sys-color-github: #5f6368;
+    --md-sys-color-on-github: #ffffff;
+    --md-sys-color-patreon: #ea4335;
+    --md-sys-color-on-patreon: #ffffff;
+    --md-sys-color-cryptocurrency: #9575cd;
+    --md-sys-color-on-cryptocurrency: #ffffff;
+    --md-sys-color-liberapay: #fbbc04;
+    --md-sys-color-on-liberapay: #202124;
+    --md-sys-color-polar: #191919;
+    --md-sys-color-on-polar: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --md-sys-color-primary: #9bc9ff;
-    --md-sys-color-on-primary: #00325c;
-    --md-sys-color-secondary: #b8c8db;
-    --md-sys-color-secondary-container: #3e4758;
-    --md-sys-color-on-secondary-container: #d8e3f8;
-    --md-sys-color-tertiary: #d6bce5;
-    --md-sys-color-tertiary-container: #523f68;
-    --md-sys-color-on-tertiary-container: #f3daff;
-    --md-sys-color-background: #1a1c1e;
-    --md-sys-color-on-background: #e2e2e6;
-    --md-sys-color-surface: #1a1c1e;
-    --md-sys-color-surface-container: #2f3035;
-    --md-sys-color-on-surface: #e2e2e6;
-  }
+    :root {
+        --md-sys-color-primary: #9bc9ff;
+        --md-sys-color-on-primary: #00325c;
+        --md-sys-color-secondary: #b8c8db;
+        --md-sys-color-secondary-container: #3e4758;
+        --md-sys-color-on-secondary-container: #d8e3f8;
+        --md-sys-color-tertiary: #d6bce5;
+        --md-sys-color-tertiary-container: #523f68;
+        --md-sys-color-on-tertiary-container: #f3daff;
+        --md-sys-color-background: #1a1c1e;
+        --md-sys-color-on-background: #e2e2e6;
+        --md-sys-color-surface: #1a1c1e;
+        --md-sys-color-surface-container: #2f3035;
+        --md-sys-color-on-surface: #e2e2e6;
+
+        /* Accents for donations systems */
+        --md-sys-color-paypal: #8ab4f8;
+        --md-sys-color-on-paypal: #0d1117;
+        --md-sys-color-github: #dadce0;
+        --md-sys-color-on-github: #0d1117;
+        --md-sys-color-patreon: #f28b82;
+        --md-sys-color-on-patreon: #0d1117;
+        --md-sys-color-cryptocurrency: #9aa0a6;
+        --md-sys-color-on-cryptocurrency: #202124;
+        --md-sys-color-liberapay: #fde293;
+        --md-sys-color-on-liberapay: #0d1117;
+        --md-sys-color-polar: #191919;
+        --md-sys-color-on-polar: #ffffff;
+    }
 }
 
 body {
@@ -64,12 +92,12 @@ body {
 }
 
 header a:not(.md-filled-button) {
-  color: var(--md-sys-color-on-background);
-  transition: color 0.2s ease;
+    color: var(--md-sys-color-on-background);
+    transition: color 0.2s ease;
 }
 
 header a:not(.md-filled-button):hover {
-  color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-primary);
 }
 
 .on-dark {
@@ -87,44 +115,44 @@ header a:not(.md-filled-button):hover {
 }
 
 @layer components {
-  .md-card {
-    @apply p-6 rounded-3xl shadow-lg backdrop-blur-md;
-    background-color: var(--md-sys-color-surface-container);
-    color: var(--md-sys-color-on-surface);
-  }
-  .md-filled-button {
-    @apply relative overflow-hidden px-6 py-3 rounded-full font-semibold shadow-md transition-colors;
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-  }
-  .md-filled-button::before {
-    content: "";
-    @apply absolute inset-0 bg-current opacity-0 transition-opacity;
-  }
-  .md-filled-button:hover::before {
-    opacity: 0.08;
-  }
-  .md-filled-button:active::before {
-    opacity: 0.12;
-  }
-  .md-tonal-button {
-    @apply relative overflow-hidden px-6 py-3 rounded-full font-semibold shadow-md transition-colors;
-    background-color: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
-  }
-  .md-tonal-button::before {
-    content: "";
-    @apply absolute inset-0 bg-current opacity-0 transition-opacity;
-  }
-  .md-tonal-button:hover::before {
-    opacity: 0.08;
-  }
-  .md-tonal-button:active::before {
-    opacity: 0.12;
-  }
-  .md-chip {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
-    background-color: var(--md-sys-color-surface-container);
-    color: var(--md-sys-color-on-surface);
-  }
+    .md-card {
+        @apply p-6 rounded-3xl shadow-lg backdrop-blur-md;
+        background-color: var(--md-sys-color-surface-container);
+        color: var(--md-sys-color-on-surface);
+    }
+    .md-filled-button {
+        @apply relative overflow-hidden px-6 py-3 rounded-full font-semibold shadow-md transition-colors;
+        background-color: var(--md-sys-color-primary);
+        color: var(--md-sys-color-on-primary);
+    }
+    .md-filled-button::before {
+        content: "";
+        @apply absolute inset-0 bg-current opacity-0 transition-opacity;
+    }
+    .md-filled-button:hover::before {
+        opacity: 0.08;
+    }
+    .md-filled-button:active::before {
+        opacity: 0.12;
+    }
+    .md-tonal-button {
+        @apply relative overflow-hidden px-6 py-3 rounded-full font-semibold shadow-md transition-colors;
+        background-color: var(--md-sys-color-secondary-container);
+        color: var(--md-sys-color-on-secondary-container);
+    }
+    .md-tonal-button::before {
+        content: "";
+        @apply absolute inset-0 bg-current opacity-0 transition-opacity;
+    }
+    .md-tonal-button:hover::before {
+        opacity: 0.08;
+    }
+    .md-tonal-button:active::before {
+        opacity: 0.12;
+    }
+    .md-chip {
+        @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+        background-color: var(--md-sys-color-surface-container);
+        color: var(--md-sys-color-on-surface);
+    }
 }
