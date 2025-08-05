@@ -1,77 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import GrantAnnouncement from "../components/GrantAnnouncement.astro";
 ---
 
 <Layout title="Run Windows in a Bottle">
-    <section class="bg-yellow-100 dark:bg-gray-800 py-4">
-        <div
-            class="max-w-6xl mx-auto px-4 flex items-center justify-center text-center"
-        >
-            <a
-                href="https://usebottles.com/posts/2025-07-06-bottles-need-help/"
-                class="text-2xl font-semibold text-yellow-700 dark:text-yellow-400 underline hover:text-yellow-900 dark:hover:text-yellow-600 transition-all"
-            >
-                📢 Bottles need your help! Learn how you can contribute →
-            </a>
-        </div>
-    </section>
+    <GrantAnnouncement />
 
-    <section
-        class="bg-linear-to-r from-purple-300 via-pink-200 to-red-200 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 min-h-screen flex flex-col md:justify-between gap-4 md:gap-0"
-    >
-        <div class="text-center mt-20">
-            <h1
-                class="text-6xl font-extrabold text-gray-800 dark:text-white mb-6"
-            >
+    <section class="relative min-h-screen flex flex-col md:justify-between gap-4 md:gap-0 overflow-hidden">
+        <div class="absolute inset-0 bg-[var(--md-sys-color-surface)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,var(--md-sys-color-primary)/20,transparent_60%)]"></div>
+        <div class="text-center mt-20 relative z-10">
+            <h1 class="text-6xl font-extrabold text-[var(--md-sys-color-on-background)] mb-6">
                 Run Windows in a Bottle
             </h1>
-            <p
-                class="text-2xl leading-relaxed text-gray-600 dark:text-gray-300 mb-6"
-            >
+            <p class="text-2xl leading-relaxed text-[var(--md-sys-color-on-background)]/80 mb-6">
                 Easily run Windows software on Linux with Bottles!
             </p>
-            <a
-                href="/download"
-                class="mt-6 inline-block px-8 py-4 bg-blue-600 dark:bg-blue-700 text-white text-2xl rounded-lg hover:bg-blue-900 dark:hover:bg-blue-800 transition-all"
-            >
-                <Icon
-                    name="material-symbols:cloud-download"
-                    class="w-6 h-6 inline mr-2"
-                />
+            <a href="/download" class="mt-6 inline-flex items-center gap-2 md-filled-button text-2xl">
+                <Icon name="material-symbols:cloud-download" class="w-6 h-6" />
                 Download
             </a>
             <div class="mt-4">
-                <a
-                    href="https://flathub.org/apps/details/com.usebottles.bottles"
-                    class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-base"
-                    >Download from Flathub</a
-                >
+                <a href="https://flathub.org/apps/details/com.usebottles.bottles" class="text-[var(--md-sys-color-primary)] hover:underline text-base">Download from Flathub</a>
             </div>
         </div>
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center relative z-10">
             <picture>
-                <source
-                    srcset="/assets/hero/bottle-creation.png"
-                    media="(prefers-color-scheme: light)"
-                />
-
-                <source
-                    srcset="/assets/hero/bottle-creation-dark.png"
-                    media="(prefers-color-scheme: dark)"
-                />
-
-                <img
-                    src="/assets/hero/bottle-creation.png"
-                    alt="Bottle Creation"
-                    class="max-w-full h-auto mb-0"
-                />
+                <source srcset="/assets/hero/bottle-creation.png" media="(prefers-color-scheme: light)" />
+                <source srcset="/assets/hero/bottle-creation-dark.png" media="(prefers-color-scheme: dark)" />
+                <img src="/assets/hero/bottle-creation.png" alt="Bottle Creation" class="max-w-full h-auto mb-0" />
             </picture>
         </div>
     </section>
 
     <section
-        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-black dark:bg-gray-900"
+        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[var(--md-sys-color-primary)]/5"
     >
         <video
             autoplay
@@ -84,11 +48,10 @@ import { Icon } from "astro-icon/components";
             Your browser does not support the video tag.
         </video>
         <div
-            class="absolute inset-0 bg-linear-to-r from-purple-900/50 via-red-500/30 to-pink-400/20 dark:from-purple-800/50 dark:via-red-600/30 dark:to-pink-500/20 backdrop-blur-lg z-10"
-        >
-        </div>
+            class="absolute inset-0 bg-linear-to-r from-[var(--md-sys-color-primary)]/40 via-[var(--md-sys-color-secondary)]/30 to-[var(--md-sys-color-tertiary)]/20 backdrop-blur-lg z-10"
+        ></div>
         <div
-            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center text-center text-white justify-start"
+            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center text-center text-[var(--md-sys-color-on-surface)] justify-start"
         >
             <div class="text-left grow z-20 md:min-w-[600px]">
                 <h2 class="text-5xl font-extrabold mb-6">Gaming ready.</h2>
@@ -98,7 +61,7 @@ import { Icon } from "astro-icon/components";
                 </p>
                 <p class="text-2xl leading-relaxed mb-6">
                     Thanks to our <span
-                        class="bg-purple-900 text-white px-2 rounded-lg"
+                        class="bg-[var(--md-sys-color-primary)] text-[var(--md-sys-color-on-primary)] px-2 rounded-full"
                         >Installers</span
                     >, you can have immediate access to the most famous game
                     stores (e.g. Epic Games Store, EA Launcher, Battle.net etc.)
@@ -106,7 +69,7 @@ import { Icon } from "astro-icon/components";
                 </p>
                 <a
                     href="/gaming"
-                    class="mt-4 inline-block px-8 py-4 bg-purple-900 dark:bg-purple-800 text-white text-2xl rounded-lg hover:bg-purple-950 dark:hover:bg-purple-900 transition-all"
+                    class="mt-4 inline-flex items-center gap-2 md-filled-button text-2xl"
                     >More about</a
                 >
             </div>
@@ -131,10 +94,10 @@ import { Icon } from "astro-icon/components";
     </section>
 
     <section
-        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#fbe6d4] dark:bg-gray-800"
+        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[var(--md-sys-color-primary)]/5"
     >
         <div
-            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center text-center text-black dark:text-white justify-start"
+            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center text-center text-[var(--md-sys-color-on-surface)] justify-start"
         >
             <div class="text-left grow z-20 md:min-w-[600px]">
                 <h2 class="text-5xl font-extrabold mb-6">
@@ -147,23 +110,23 @@ import { Icon } from "astro-icon/components";
                 </p>
                 <p class="text-2xl leading-relaxed mb-6">
                     Choose between <span
-                        class="bg-[#b89b82] text-[#ffffff] px-2 rounded-lg"
+                        class="bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)] px-2 rounded-full"
                         >Gaming</span
                     > and
-                    <span class="bg-[#b89b82] text-[#ffffff] px-2 rounded-lg"
+                    <span class="bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)] px-2 rounded-full"
                         >Software</span
                     > environment based on the type of software you want to start.
                 </p>
                 <p class="text-2xl leading-relaxed mb-6">
                     More advanced users can choose the <span
-                        class="bg-[#b89b82] text-[#ffffff] px-2 rounded-lg"
+                        class="bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)] px-2 rounded-full"
                         >Custom</span
                     >
                     environment to configure the bottle on their own.
                 </p>
                 <a
                     href="https://docs.usebottles.com/getting-started/environments"
-                    class="mt-4 inline-block px-8 py-4 bg-[#b89b82] text-[#ffffff] dark:bg-[#947a68] text-2xl rounded-lg hover:bg-[#c0a08b] dark:hover:bg-[#b38e77] transition-all"
+                    class="mt-4 inline-flex items-center gap-2 md-filled-button text-2xl"
                     >More about</a
                 >
             </div>
@@ -189,10 +152,10 @@ import { Icon } from "astro-icon/components";
     </section>
 
     <section
-        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#cfe1f7] dark:bg-gray-700"
+        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[var(--md-sys-color-primary)]/5"
     >
         <div
-            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center text-center text-black dark:text-white justify-start"
+            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center text-center text-[var(--md-sys-color-on-surface)] justify-start"
         >
             <div class="text-left grow z-20 md:min-w-[600px]">
                 <h2 class="text-5xl font-extrabold mb-6">Highly tweakable</h2>
@@ -213,7 +176,7 @@ import { Icon } from "astro-icon/components";
                 </p>
                 <a
                     href="https://docs.usebottles.com/bottles/preferences"
-                    class="mt-4 inline-block px-8 py-4 bg-[#98bddf] dark:bg-[#6a91b3] text-white text-2xl rounded-lg hover:bg-[#7fa7cb] dark:hover:bg-[#5f88a7] transition-all"
+                    class="mt-4 inline-flex items-center gap-2 md-filled-button text-2xl"
                     >More about</a
                 >
             </div>
@@ -239,10 +202,10 @@ import { Icon } from "astro-icon/components";
     </section>
 
     <section
-        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#f7d5c0] dark:bg-gray-800"
+        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[var(--md-sys-color-primary)]/5"
     >
         <div
-            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center text-center text-black dark:text-white justify-start"
+            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center text-center text-[var(--md-sys-color-on-surface)] justify-start"
         >
             <div class="text-left grow z-20 md:min-w-[600px]">
                 <h2 class="text-5xl font-extrabold mb-6">
@@ -261,7 +224,7 @@ import { Icon } from "astro-icon/components";
                 </p>
                 <a
                     href="https://docs.usebottles.com/bottles/dependencies"
-                    class="mt-4 inline-block px-8 py-4 bg-[#d59a7e] dark:bg-[#b98066] text-white text-2xl rounded-lg hover:bg-[#b98066] dark:hover:bg-[#a76f58] transition-all"
+                    class="mt-4 inline-flex items-center gap-2 md-filled-button text-2xl"
                     >More about</a
                 >
             </div>
@@ -287,10 +250,10 @@ import { Icon } from "astro-icon/components";
     </section>
 
     <section
-        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#e4d4f7] dark:bg-gray-700"
+        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[var(--md-sys-color-primary)]/5"
     >
         <div
-            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center text-center text-black dark:text-white justify-start"
+            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center text-center text-[var(--md-sys-color-on-surface)] justify-start"
         >
             <div class="text-left grow z-20 md:min-w-[600px]">
                 <h2 class="text-5xl font-extrabold mb-6">
@@ -307,12 +270,12 @@ import { Icon } from "astro-icon/components";
                 </p>
                 <a
                     href="https://docs.usebottles.com/bottles/installers"
-                    class="mt-4 inline-block px-8 py-4 bg-[#b79dda] dark:bg-[#9477bb] text-white text-2xl rounded-lg hover:bg-[#9e83c3] dark:hover:bg-[#8569a5] transition-all"
+                    class="mt-4 inline-flex items-center gap-2 md-filled-button text-2xl"
                     >More about</a
                 >
                 <a
                     href="/appstore"
-                    class="ml-4 text-2xl text-gray-700 dark:text-gray-300 underline"
+                    class="ml-4 text-2xl text-[var(--md-sys-color-primary)] underline"
                     >Apps</a
                 >
             </div>
@@ -338,10 +301,10 @@ import { Icon } from "astro-icon/components";
     </section>
 
     <section
-        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#c5e6d1] dark:bg-gray-800"
+        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[var(--md-sys-color-primary)]/5"
     >
         <div
-            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center text-center text-black dark:text-white justify-start"
+            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center text-center text-[var(--md-sys-color-on-surface)] justify-start"
         >
             <div class="text-left grow z-20 md:min-w-[600px]">
                 <h2 class="text-5xl font-extrabold mb-6">
@@ -361,7 +324,7 @@ import { Icon } from "astro-icon/components";
                 </p>
                 <a
                     href="https://docs.usebottles.com/bottles/versioning"
-                    class="mt-4 inline-block px-8 py-4 bg-[#87b08f] dark:bg-[#6e9578] text-white text-2xl rounded-lg hover:bg-[#6e9578] dark:hover:bg-[#5d7d65] transition-all"
+                    class="mt-4 inline-flex items-center gap-2 md-filled-button text-2xl"
                     >More about</a
                 >
             </div>
@@ -387,10 +350,10 @@ import { Icon } from "astro-icon/components";
     </section>
 
     <section
-        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[#f7f7f7] dark:bg-gray-900"
+        class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-[var(--md-sys-color-primary)]/5"
     >
         <div
-            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col items-center text-center text-black dark:text-white justify-center"
+            class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col items-center text-center text-[var(--md-sys-color-on-surface)] justify-center"
         >
             <h2 class="text-5xl font-extrabold mb-6">
                 <Icon
@@ -406,7 +369,7 @@ import { Icon } from "astro-icon/components";
             <p class="text-2xl leading-relaxed mb-6">
                 The full-sandbox is provided and pre-configured only using the <a
                     href="https://flathub.org/apps/details/com.usebottles.bottles"
-                    class="text-blue-600 dark:text-blue-400 underline"
+                    class="text-[var(--md-sys-color-primary)] underline"
                     >Flatpak package</a
                 > (highly recommended).
             </p>
@@ -417,7 +380,7 @@ import { Icon } from "astro-icon/components";
             </p>
             <a
                 href="#"
-                class="mt-4 inline-block px-8 py-4 bg-gray-900 dark:bg-gray-700 text-white text-2xl rounded-lg hover:bg-black dark:hover:bg-gray-800 transition-all"
+                class="mt-4 inline-flex items-center gap-2 md-filled-button text-2xl"
             >
                 More about
             </a>

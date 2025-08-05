@@ -8,10 +8,8 @@ const dateFormatted = new Date(date).toLocaleDateString('en-US', {
 })
 ---
 
-<a href={url} class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all block">
-  <div class="relative p-6 flex gap-2 flex-col items-start">
-    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{title}</h3>
-    <p class="text-gray-600 dark:text-gray-300">{brief}</p>
-    <span class="text-gray-500 dark:text-gray-400 text-sm bg-gray-200 dark:bg-gray-700 px-4 py-1 rounded-full mt-2 inline-block">{dateFormatted}</span>
-  </div>
+<a href={url} class="md-card block hover:shadow-xl transition-all">
+  <h3 class="text-2xl font-bold mb-2">{title}</h3>
+  <p>{brief}</p>
+  <span class="md-chip mt-2">{dateFormatted}</span>
 </a>

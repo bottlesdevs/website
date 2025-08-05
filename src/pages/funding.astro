@@ -4,32 +4,28 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Funding">
-    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section class="py-20 bg-[var(--md-sys-color-surface)] text-[var(--md-sys-color-on-surface)]">
         <div class="container mx-auto px-4">
-            <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-                Funding
-            </h1>
-            <p class="text-lg text-gray-700 dark:text-gray-300">
+            <h1 class="text-5xl font-bold mb-4">Funding</h1>
+            <p class="text-lg">
                 Bottles is a <a
                     href="https://en.wikipedia.org/wiki/Free_software"
-                    class="text-blue-600 dark:text-blue-400 underline"
+                    class="text-[var(--md-sys-color-primary)] underline"
                     >free software</a
                 > project. You can support its development by leaving a small donation.
             </p>
         </div>
     </section>
 
-    <section class="py-5 bg-green-100 dark:bg-green-900">
+    <section class="py-5 bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)]">
         <div class="container mx-auto px-4 mt-8">
-            <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-                Why donate?
-            </h2>
-            <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
+            <h2 class="text-3xl font-bold mb-4">Why donate?</h2>
+            <p class="text-lg mb-6">
                 Donating means helping in shaping the future of Bottles. Please
                 read
                 <a
                     href="https://usebottles.com/posts/2024-12-02-future-of-bottles/"
-                    class="text-blue-600 dark:text-blue-400 underline"
+                    class="text-[var(--md-sys-color-primary)] underline"
                     >this post</a
                 > to understand the reasons behind the need for donations.
             </p>
@@ -38,10 +34,10 @@ import { Icon } from "astro-icon/components";
 
     <div class="container mx-auto px-4 mt-8">
         <section class="py-5">
-            <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 class="text-3xl font-bold mb-4">
                 How to donate
             </h2>
-            <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
+            <p class="text-lg mb-6">
                 Here are the official channels from which you can donate to
                 Bottles Developers.
             </p>
@@ -50,7 +46,6 @@ import { Icon } from "astro-icon/components";
                     [
                         {
                             name: "GitHub Sponsors",
-                            bgClass: "bg-blue-900 text-white",
                             recurring: true,
                             linkText: "Sponsor via GitHub",
                             linkUrl: "https://github.com/sponsors/bottlesdevs",
@@ -58,7 +53,6 @@ import { Icon } from "astro-icon/components";
                         },
                         {
                             name: "PayPal",
-                            bgClass: "bg-blue-500 dark:bg-blue-700 text-white",
                             recurring: true,
                             oneTime: true,
                             preferred: true,
@@ -71,8 +65,6 @@ import { Icon } from "astro-icon/components";
                         },
                         {
                             name: "LiberaPay",
-                            bgClass:
-                                "bg-yellow-400 dark:bg-yellow-500 text-gray-900",
                             flexible: true,
                             linkText: "Donate via LiberaPay",
                             linkUrl: "https://liberapay.com/bottles",
@@ -80,7 +72,6 @@ import { Icon } from "astro-icon/components";
                         },
                         {
                             name: "Patreon",
-                            bgClass: "bg-red-500 text-white",
                             recurring: true,
                             linkText: "Support via Patreon",
                             linkUrl: "https://www.patreon.com/MirkoBrombin",
@@ -88,8 +79,6 @@ import { Icon } from "astro-icon/components";
                         },
                         {
                             name: "Cryptocurrency",
-                            bgClass:
-                                "bg-purple-500 dark:bg-purple-700 text-white",
                             crypto: true,
                             linkText: "View Addresses",
                             linkUrl: "#",
@@ -97,7 +86,6 @@ import { Icon } from "astro-icon/components";
                         },
                         {
                             name: "Polar.sh",
-                            bgClass: "bg-gray-800 dark:bg-gray-900 text-white",
                             recurring: false,
                             oneTime: true,
                             linkText: "Pay what you want",
@@ -106,13 +94,8 @@ import { Icon } from "astro-icon/components";
                             icon: "material-symbols:toll",
                         },
                     ].map((method) => (
-                        <div
-                            class={`p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1 ${method.bgClass}`}
-                        >
-                            <Icon
-                                name={method.icon}
-                                class="w-8 h-8 mb-4 mx-auto"
-                            />
+                        <div class="md-card text-center flex flex-col items-center">
+                            <Icon name={method.icon} class="w-8 h-8 mb-4" />
                             <h3 class="text-2xl font-bold mb-2">
                                 {method.name}
                             </h3>
@@ -135,7 +118,7 @@ import { Icon } from "astro-icon/components";
                                 ];
                                 const condition = conditions[index];
                                 return condition ? (
-                                    <span class="relative z-10 bg-black/50 text-white px-2 py-1 rounded-full text-sm inline-block mb-4">
+                                    <span class="bg-[var(--md-sys-color-primary)]/20 text-[var(--md-sys-color-primary)] px-2 py-1 rounded-full text-sm inline-block mb-4">
                                         {text}
                                     </span>
                                 ) : null;
@@ -143,7 +126,7 @@ import { Icon } from "astro-icon/components";
 
                             <a
                                 href={method.crypto ? "#" : method.linkUrl}
-                                class="mt-4 block relative z-0 bg-black/50 text-white py-2 px-4 rounded-lg hover:bg-black/40 transition-all cursor-pointer"
+                                class="md-filled-button mt-2"
                                 onclick={
                                     method.crypto
                                         ? "document.getElementById('cryptoModal').classList.remove('hidden')"
@@ -155,7 +138,7 @@ import { Icon } from "astro-icon/components";
                             {method.oldLinkText ? (
                                 <a
                                     href={method.oldLinkUrl}
-                                    class="mt-4 block underline"
+                                    class="mt-4 text-[var(--md-sys-color-primary)] underline"
                                 >
                                     {method.oldLinkText}
                                 </a>
@@ -166,21 +149,10 @@ import { Icon } from "astro-icon/components";
                     ))
                 }
 
-                <div
-                    id="cryptoModal"
-                    class="fixed inset-0 bg-gray-800/75 flex items-center justify-center hidden z-20"
-                >
-                    <div
-                        class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center overflow-y-auto max-h-[80vh]"
-                    >
-                        <h2
-                            class="text-3xl font-bold text-gray-900 dark:text-white mb-4"
-                        >
-                            Cryptocurrency Addresses
-                        </h2>
-                        <p
-                            class="text-lg text-gray-700 dark:text-gray-300 mb-4"
-                        >
+                <div id="cryptoModal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-20">
+                    <div class="md-card m-5 text-center overflow-y-auto max-h-[80vh]">
+                        <h2 class="text-3xl font-bold mb-4">Cryptocurrency Addresses</h2>
+                        <p class="text-lg mb-4">
                             You can donate using the following cryptocurrency
                             addresses.
                         </p>
@@ -216,7 +188,7 @@ import { Icon } from "astro-icon/components";
                                     },
                                 ].map((crypto, index) => (
                                     <div
-                                        class={`flex flex-col gap-2 ${crypto.suggested ? "bg-green-100 dark:bg-green-900 p-3 rounded-lg" : ""}`}
+                                        class={`flex flex-col gap-2 ${crypto.suggested ? "bg-[var(--md-sys-color-secondary-container)] p-3 rounded-lg" : ""}`}
                                     >
                                         <h3 class="text-xl font-bold mb-2">
                                             {crypto.name}{" "}
@@ -228,11 +200,9 @@ import { Icon } from "astro-icon/components";
                                                 />
                                             )}
                                         </h3>
-                                        <p class="text-gray-700 dark:text-gray-300">
-                                            Network: {crypto.network}
-                                        </p>
+                                        <p>Network: {crypto.network}</p>
                                         <code
-                                            class={`text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md block overflow-x-auto ${crypto.suggested ? "bg-green-200 dark:bg-green-800" : "bg-gray-200 dark:bg-gray-800"}`}
+                                            class={`px-4 py-2 rounded-md block overflow-x-auto ${crypto.suggested ? "bg-[var(--md-sys-color-secondary-container)]" : "bg-[var(--md-sys-color-surface-container)]"}`}
                                         >
                                             {crypto.address}
                                         </code>
@@ -249,14 +219,14 @@ import { Icon } from "astro-icon/components";
                                             </div>
                                         )}
                                         {index < 3 && (
-                                            <hr class="border-gray-300 dark:border-gray-700 my-4" />
+                                            <hr class="my-4 border-[var(--md-sys-color-surface-container)]" />
                                         )}
                                     </div>
                                 ))
                             }
                             <button
                                 id="closeCryptoModal"
-                                class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+                                class="md-filled-button mt-4"
                             >
                                 Close
                             </button>
@@ -266,12 +236,10 @@ import { Icon } from "astro-icon/components";
             </div>
 
             <section
-                class="sticky z-10 bg-white dark:bg-gray-900 py-4 border-b border-gray-300 dark:border-gray-700"
+                class="sticky z-10 bg-[var(--md-sys-color-surface)] border-b border-[var(--md-sys-color-surface-container)] py-4"
                 style="top: 72px;"
             >
-                <div
-                    class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4"
-                >
+                <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
                     <div class="flex flex-wrap items-center gap-2">
                         {
                             [
@@ -282,7 +250,7 @@ import { Icon } from "astro-icon/components";
                                 { status: "REJECTED", text: "Rejected" },
                             ].map((btn) => (
                                 <button
-                                    class="filter-button bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg text-sm"
+                                    class="filter-button px-4 py-2 rounded-full bg-[var(--md-sys-color-surface-container)] hover:bg-[var(--md-sys-color-primary)]/10 text-sm"
                                     data-status={btn.status}
                                 >
                                     {btn.text}
@@ -290,20 +258,19 @@ import { Icon } from "astro-icon/components";
                             ))
                         }
                     </div>
-                    <div
-                        class="flex flex-col md:flex-row items-center gap-2 w-full md:w-auto"
-                    >
+                    <div class="flex flex-col md:flex-row items-center gap-2 w-full md:w-auto">
                         <input
                             type="text"
                             id="searchInput"
                             placeholder="Search tasks..."
-                            class="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg text-sm w-full md:w-72"
+                            class="bg-[var(--md-sys-color-surface-container)] px-4 py-2 rounded-full text-sm w-full md:w-72"
                         />
                         <button
                             id="resetButton"
-                            class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm w-full md:w-auto"
-                            >Reset Filters</button
+                            class="md-filled-button text-sm w-full md:w-auto"
                         >
+                            Reset Filters
+                        </button>
                     </div>
                 </div>
             </section>
@@ -334,7 +301,7 @@ import { Icon } from "astro-icon/components";
                                     class="w-6 h-6"
                                     title={icon.title}
                                 />
-                                <span class="text-gray-700 dark:text-gray-300">
+                                <span>
                                     {icon.text}
                                 </span>
                             </div>
@@ -444,7 +411,7 @@ import { Icon } from "astro-icon/components";
                             },
                         ].map((task) => (
                             <div
-                                class={`task-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-all relative flex flex-col`}
+                                class={`task-card md-card p-8 transition-all relative flex flex-col`}
                                 data-status={task.status}
                                 data-title={task.title}
                             >
@@ -475,7 +442,7 @@ import { Icon } from "astro-icon/components";
                                         set:html={task.description}
                                     />
                                     <div class="flex items-center space-x-2 mb-4">
-                                        <span class="w-full bg-gray-300 rounded-sm">
+                                        <span class="w-full bg-[var(--md-sys-color-surface-container)] rounded-sm">
                                             <span
                                                 class={`block h-2 rounded-sm ${task.status === "DONE" ? "bg-green-500" : task.status === "ALPHA" ? "bg-yellow-500" : task.status === "REJECTED" ? "bg-red-300" : task.status === "WIP" ? "bg-blue-500" : task.status === "NEXT" ? "bg-purple-500" : ""}`}
                                                 style={`width: ${task.progress}%`}
@@ -495,7 +462,7 @@ import { Icon } from "astro-icon/components";
                                 <div class="mt-auto">
                                     <a
                                         href={task.link}
-                                        class="flex items-center justify-center bg-white text-gray-800 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800"
+                                        class="md-filled-button flex items-center justify-center"
                                     >
                                         <Icon
                                             name="material-symbols:menu-book-outline"
@@ -512,26 +479,26 @@ import { Icon } from "astro-icon/components";
 
             <section class="py-5">
                 <h2
-                    class="text-3xl font-bold mb-4 text-gray-900 dark:text-white"
+                    class="text-3xl font-bold mb-4"
                 >
                     Thanks to them who made a donation or became our GitHub
                     sponsor ❤️!
                 </h2>
                 <div class="flex flex-wrap mb-8 mt-8 gap-4" id="github"></div>
                 <h3
-                    class="text-2xl font-bold mb-4 text-gray-900 dark:text-white"
+                    class="text-2xl font-bold mb-4"
                 >
                     Liberapay
                 </h3>
                 <div class="flex flex-wrap mb-8 mt-8 gap-4" id="liberapay">
                 </div>
                 <h3
-                    class="text-2xl font-bold mb-4 text-gray-900 dark:text-white"
+                    class="text-2xl font-bold mb-4"
                 >
                     Other platforms
                 </h3>
                 <div class="flex flex-wrap mb-8 gap-4" id="other"></div>
-                <p class="text-center text-gray-800 dark:text-gray-300">
+                <p class="text-center">
                     - Thanks from the Bottles Developers.
                 </p>
             </section>
@@ -539,23 +506,23 @@ import { Icon } from "astro-icon/components";
 
         <div
             id="donationModal"
-            class="fixed inset-0 bg-gray-800/75 flex items-center justify-center hidden z-20"
+            class="fixed inset-0 bg-[var(--md-sys-color-on-background)]/30 flex items-center justify-center hidden z-20"
         >
             <div
-                class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center"
+                class="md-card p-8 m-5 text-center"
             >
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                    class="text-3xl font-bold mb-4"
                 >
                     Thank You!
                 </h2>
-                <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                <p class="text-lg mb-4">
                     We sincerely appreciate your donation. Your support helps us
                     keep Bottles growing and improving.
                 </p>
                 <button
                     id="closeModal"
-                    class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+                    class="md-filled-button"
                     >Close</button
                 >
             </div>
@@ -563,26 +530,26 @@ import { Icon } from "astro-icon/components";
 
         <div
             id="infoModal"
-            class="fixed inset-0 bg-gray-800/75 flex items-center justify-center hidden z-20"
+            class="fixed inset-0 bg-[var(--md-sys-color-on-background)]/30 flex items-center justify-center hidden z-20"
         >
             <div
-                class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center"
+                class="md-card p-8 m-5 text-center"
             >
                 <h2
-                    class="text-3xl font-bold text-gray-900 dark:text-white mb-4"
+                    class="text-3xl font-bold mb-4"
                 >
                     Progress Information
                 </h2>
                 <p
                     id="infoModalText"
-                    class="text-lg text-gray-700 dark:text-gray-300 mb-4"
+                    class="text-lg mb-4"
                 >
                     Progress is calculated based on the completion status of
                     each task.
                 </p>
                 <button
                     id="closeInfoModal"
-                    class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+                    class="md-filled-button"
                     >Close</button
                 >
             </div>
@@ -649,10 +616,10 @@ import { Icon } from "astro-icon/components";
             ) {
                 const html = `
         <a class="flex items-center space-x-2 bg-yellow-400 dark:bg-yellow-500 px-4 py-2 rounded-lg" href="https://liberapay.com/bottles">
-          <span class="text-lg font-bold text-gray-900">
+          <span class="text-lg font-bold">
             ${liberapayInfo.patrons} Patrons
           </span>
-          <span class="text-lg text-gray-800 dark:text-gray-900">
+          <span class="text-lg">
             ${liberapayInfo.amount} / week
           </span>
         </a>`;
@@ -668,7 +635,7 @@ import { Icon } from "astro-icon/components";
             ): string {
                 return `<div class="flex items-center space-x-2">
           ${hasPic ? `<img src="${avatarUrl}" alt="${person}" class="w-12 h-12 rounded-full">` : ""}
-          <span class="px-4 py-2 rounded-lg text-center ${customBgClass || "bg-gray-100 dark:bg-gray-800"}">
+          <span class="px-4 py-2 rounded-lg text-center ${customBgClass || "bg-[var(--md-sys-color-surface-container)]"}">
             ${person}
           </span>
         </div>`;
@@ -809,24 +776,20 @@ import { Icon } from "astro-icon/components";
                     currentStatusFilter = status;
                     filterButtons.forEach((btn) => {
                         const bb = btn as HTMLElement;
-                        bb.classList.remove(
-                            "active",
-                            "bg-blue-500",
-                            "text-white",
-                        );
-                        bb.classList.add(
-                            "bg-gray-200",
-                            "dark:bg-gray-700",
-                            "text-black",
-                            "dark:text-white",
-                        );
+                    bb.classList.remove(
+                        "active",
+                        "bg-blue-500",
+                        "text-white",
+                    );
+                    bb.classList.add(
+                        "bg-[var(--md-sys-color-surface-container)]",
+                        "text-[var(--md-sys-color-on-surface)]",
+                    );
                     });
                     b.classList.add("active", "bg-blue-500", "text-white");
                     b.classList.remove(
-                        "bg-gray-200",
-                        "dark:bg-gray-700",
-                        "text-black",
-                        "dark:text-white",
+                        "bg-[var(--md-sys-color-surface-container)]",
+                        "text-[var(--md-sys-color-on-surface)]",
                     );
                     updateTasksDisplay();
                 });
@@ -843,10 +806,8 @@ import { Icon } from "astro-icon/components";
                     const bb = btn as HTMLElement;
                     bb.classList.remove("active", "bg-blue-500", "text-white");
                     bb.classList.add(
-                        "bg-gray-200",
-                        "dark:bg-gray-700",
-                        "text-black",
-                        "dark:text-white",
+                        "bg-[var(--md-sys-color-surface-container)]",
+                        "text-[var(--md-sys-color-on-surface)]",
                     );
                 });
                 updateTasksDisplay();

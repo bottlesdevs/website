@@ -5,35 +5,35 @@ import { Icon } from 'astro-icon/components';
 
 <Layout title="App Details">
 
-  <div class="flex items-center justify-center h-screen dark:bg-gray-900" id="loading">
-    <Icon name="material-symbols:sync" class="w-16 h-16 animate-spin dark:text-gray-200" id="loadingIcon" />
-    <span class="text-2xl ml-4 dark:text-gray-200">Loading App details...</span>
+  <div class="flex items-center justify-center h-screen bg-[var(--md-sys-color-background)]" id="loading">
+    <Icon name="material-symbols:sync" class="w-16 h-16 animate-spin" id="loadingIcon" />
+    <span class="text-2xl ml-4">Loading App details...</span>
   </div>
 
   <div id="appContent" class="hidden">
-    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+    <section class="py-16 bg-[var(--md-sys-color-surface)]">
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center flex-col md:flex-row">
           <div>
             <div class="flex gap-4 flex-col md:flex-row items-center md:items-start">
                 <img id="app_icon" class="w-16 h-16" alt="!APP_NAME! Icon" />
-                <h1 class="text-5xl font-bold mb-2 text-gray-900 dark:text-white">!APP_NAME!</h1>
+                <h1 class="text-5xl font-bold mb-2">!APP_NAME!</h1>
             </div>
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4 text-center md:text-left">!APP_DESCRIPTION!</p>
+            <p class="text-lg mb-4 text-center md:text-left">!APP_DESCRIPTION!</p>
 
             <div class="flex gap-4 mb-4 justify-center md:justify-start">
-              <span class="px-2 py-1 rounded-lg text-sm !APP_GRADE_CLASS!">!APP_GRADE!</span>
-              <span class="px-2 py-1 rounded-lg text-sm !APP_CATEGORY_CLASS!">!APP_CATEGORY!</span>
-              <span class="px-2 py-1 rounded-lg text-sm !APP_ARCH_CLASS!">!APP_ARCH!</span>
+              <span class="md-chip !APP_GRADE_CLASS!">!APP_GRADE!</span>
+              <span class="md-chip !APP_CATEGORY_CLASS!">!APP_CATEGORY!</span>
+              <span class="md-chip !APP_ARCH_CLASS!">!APP_ARCH!</span>
             </div>
           </div>
 
           <div class="flex space-y-4 flex-col w-full md:w-auto">
-            <a href="https://docs.usebottles.com/bottles/installers#use-installers" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 flex items-center justify-center">
+            <a href="https://docs.usebottles.com/bottles/installers#use-installers" class="md-filled-button flex items-center justify-center">
               <Icon name="material-symbols:cloud-download" class="w-5 h-5 inline mr-2" />
               How to Install
             </a>
-            <button id="openReview" class="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 flex items-center justify-center">
+            <button id="openReview" class="md-tonal-button flex items-center justify-center">
               <Icon name="material-symbols:rate-review" class="w-5 h-5 inline mr-2" />
               Read Review
             </button>
@@ -48,15 +48,15 @@ import { Icon } from 'astro-icon/components';
 
     <section class="py-10">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">About the !APP_GRADE! grade</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300">!APP_GRADE_DESCRIPTION!</p>
+        <h2 class="text-3xl font-bold mb-4">About the !APP_GRADE! grade</h2>
+        <p class="text-lg">!APP_GRADE_DESCRIPTION!</p>
       </div>
     </section>
 
-    <section class="py-10 bg-gray-50 dark:bg-gray-900">
+    <section class="py-10 bg-[var(--md-sys-color-surface)]">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Dependencies</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">The following dependencies will be automatically installed with this app:</p>
+        <h2 class="text-3xl font-bold mb-4">Dependencies</h2>
+        <p class="text-lg mb-4">The following dependencies will be automatically installed with this app:</p>
 
         <div class="space-y-4" id="app_dependencies">
             <!-- JS will inject dependencies here -->
@@ -66,8 +66,8 @@ import { Icon } from 'astro-icon/components';
 
     <section class="py-10">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Configuration</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">The following configuration will be applied to your bottle:</p>
+        <h2 class="text-3xl font-bold mb-4">Configuration</h2>
+        <p class="text-lg mb-4">The following configuration will be applied to your bottle:</p>
 
         <ul class="list-disc list-inside space-y-2" id="app_configuration">
           <!-- JS will inject configuration here -->
@@ -75,33 +75,29 @@ import { Icon } from 'astro-icon/components';
       </div>
     </section>
 
-    <section class="py-10 bg-gray-50 dark:bg-gray-900">
+    <section class="py-10 bg-[var(--md-sys-color-surface)]">
       <div class="container mx-auto px-4">
-        <p class="text-xs text-gray-600 dark:text-gray-400">Bottles does not re-distribute or host the files but just download them from the vendor's official sources. These files are checked by our maintainers and do not contain viruses. However, they may be subject to copyright or licenses of different types, including proprietary ones.</p>
+        <p class="text-xs">Bottles does not re-distribute or host the files but just download them from the vendor's official sources. These files are checked by our maintainers and do not contain viruses. However, they may be subject to copyright or licenses of different types, including proprietary ones.</p>
       </div>
     </section>
 
     <section class="py-10">
       <div class="container mx-auto px-4">
         <div class="flex justify-center flex-col md:flex-row gap-2">
-          <a href="https://www.winehq.org/search?q=!APP_SHORT_URL!" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-6 py-3 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-600 text-center">
-            More info on WineDB
-          </a>
-          <a href="https://www.protondb.com/search?q=!APP_SHORT_URL!" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 text-center">
-            More info on ProtonDB
-          </a>
+          <a href="https://www.winehq.org/search?q=!APP_SHORT_URL!" class="md-filled-button flex-1 text-center">More info on WineDB</a>
+          <a href="https://www.protondb.com/search?q=!APP_SHORT_URL!" class="md-filled-button flex-1 text-center">More info on ProtonDB</a>
         </div>
       </div>
     </section>
 
-    <div id="reviewModal" class="fixed inset-0 items-center justify-center bg-black/50 hidden flex z-50 flex-col">
-      <div class="bg-white dark:bg-gray-800 w-3/4 md:w-1/2 rounded-lg shadow-lg p-8 max-h-[80vh] overflow-y-auto">
-        <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">!APP_NAME!</h2>
-        <ul class="space-y-4 dark:text-gray-300" id="reviewContent">
+    <div id="reviewModal" class="fixed inset-0 items-center justify-center bg-[var(--md-sys-color-on-background)]/30 hidden flex z-50 flex-col">
+      <div class="md-card w-3/4 md:w-1/2 max-h-[80vh] overflow-y-auto">
+        <h2 class="text-3xl font-bold mb-4">!APP_NAME!</h2>
+        <ul class="space-y-4" id="reviewContent">
             <!-- JS will inject review here -->
         </ul>
 
-        <button id="closeReview" class="mt-6 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">Close</button>
+        <button id="closeReview" class="mt-6 md-tonal-button">Close</button>
       </div>
     </div>
   </div>
@@ -233,10 +229,10 @@ import { Icon } from 'astro-icon/components';
           dependencies.forEach(dep => {
               const depEntry = dependenciesIndex[dep];
               const depDiv = document.createElement('div');
-              depDiv.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'dark:bg-gray-800', 'dark:text-gray-300');
+              depDiv.classList.add('md-card', 'p-4');
               depDiv.innerHTML = `
                   <h3 class="text-xl font-bold">${dep}</h3>
-                  <p class="text-lg text-gray-600">${depEntry.Description}</p>
+                  <p class="text-lg">${depEntry.Description}</p>
               `;
               dependenciesContainer.appendChild(depDiv);
           });
@@ -280,11 +276,11 @@ import { Icon } from 'astro-icon/components';
 
       getGradeColor(grade: string): string {
           switch (grade) {
-              case 'Bronze': return 'bg-yellow-600 text-yellow-100';
-              case 'Silver': return 'bg-gray-200 text-gray-800';
-              case 'Gold': return 'bg-yellow-300 text-yellow-900';
-              case 'Platinum': return 'bg-gray-300 text-gray-900';
-              default: return '';
+              case 'Bronze': return 'bg-amber-600 text-amber-50';
+              case 'Silver': return 'bg-zinc-200 text-zinc-800';
+              case 'Gold': return 'bg-amber-200 text-amber-900';
+              case 'Platinum': return 'bg-[var(--md-sys-color-primary)]/20 text-[var(--md-sys-color-primary)]';
+              default: return 'bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)]';
           }
       }
 
@@ -292,20 +288,20 @@ import { Icon } from 'astro-icon/components';
       getCategoryColor(category: string): string {
         switch (category.toLowerCase()) {
           case 'software':
-            return 'bg-blue-200 text-blue-800';
+            return 'bg-[var(--md-sys-color-primary)]/20 text-[var(--md-sys-color-primary)]';
           case 'games':
-            return 'bg-purple-200 text-purple-800';
+            return 'bg-[var(--md-sys-color-tertiary)]/20 text-[var(--md-sys-color-tertiary)]';
           default:
-            return 'bg-gray-200 text-gray-800';
+            return 'bg-[var(--md-sys-color-secondary)]/20 text-[var(--md-sys-color-secondary)]';
         }
       }
 
       getArchColor(arch: string): string {
-          switch (arch) {
-              case 'win64': return 'bg-green-200 text-green-800';
-              case 'win32': return 'bg-red-200 text-red-800';
-              default: return '';
-          }
+        switch (arch) {
+              case 'win64': return 'bg-[var(--md-sys-color-primary)]/20 text-[var(--md-sys-color-primary)]';
+              case 'win32': return 'bg-[var(--md-sys-color-tertiary)]/20 text-[var(--md-sys-color-tertiary)]';
+              default: return 'bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)]';
+        }
       }
 
       async fetchYamlData<T>(url: string): Promise<T> {

@@ -4,46 +4,41 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Run Windows in a Bottle">
-
-  <section class="relative min-h-screen flex flex-col md:justify-between gap-4 md:gap-0">
-	<video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-	  <source src="/assets/videos/gaming-1.webm" type="video/webm">
-	  Your browser does not support the video tag.
-	</video>
-	<div class="absolute inset-0 bg-linear-to-r from-purple-900/50 via-red-500/30 to-pink-400/20 backdrop-blur-lg z-10"></div>
-    <div class="relative z-20">
-        <div class="text-center mt-20">
-            <h1 class="text-6xl font-extrabold text-white mb-6">Bottles is also for Gaming!</h1>
-            <p class="text-2xl leading-relaxed text-white mb-6">Play on Linux just like you do on Windows!</p>
-            <a href="/download" class="mt-6 inline-block px-8 py-4 bg-blue-600 text-white text-2xl rounded-lg hover:bg-blue-900 transition-all">
-                <Icon name="material-symbols:cloud-download" class="w-6 h-6 inline mr-2" />
-                Download
-            </a>
-        </div>
-        <div class="w-full flex justify-center">
-            <img src="/assets/hero/bottles-gaming.png" alt="Bottle showcase" class="max-w-full h-auto mb-0">
-        </div>
+  <section class="relative min-h-screen flex flex-col md:justify-between overflow-hidden">
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+      <source src="/assets/videos/gaming-1.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="absolute inset-0 bg-[var(--md-sys-color-surface)]/70 backdrop-blur-md z-10"></div>
+    <div class="relative z-20 text-center mt-20">
+      <h1 class="text-6xl font-extrabold mb-6 text-[var(--md-sys-color-on-surface)]">Bottles is also for Gaming!</h1>
+      <p class="text-2xl leading-relaxed mb-6 text-[var(--md-sys-color-on-surface)]/80">Play on Linux just like you do on Windows!</p>
+      <a href="/download" class="mt-6 inline-flex items-center gap-2 md-filled-button text-2xl">
+        <Icon name="material-symbols:cloud-download" class="w-6 h-6" />
+        Download
+      </a>
+    </div>
+    <div class="w-full flex justify-center relative z-20">
+      <img src="/assets/hero/bottles-gaming.png" alt="Bottle showcase" class="max-w-full h-auto mb-0" />
     </div>
   </section>
-  
-  <section class="relative min-h-screen py-10 px-4 flex flex-col justify-center bg-linear-to-r from-purple-100 to-purple-300">
-	<div class="relative z-20 max-w-6xl mx-auto px-4 flex flex-col gap-10 md:flex-row items-center text-center text-black justify-start">
-	  <div class="text-left grow z-20 md:min-w-[600px]">
-		<h2 class="text-5xl font-extrabold mb-6">All the gaming platforms you already know, right here</h2>
-		<p class="text-2xl leading-relaxed mb-6">
-		  Customize your Windows environment with ease.
-		</p>
-		<p class="text-2xl leading-relaxed mb-6">
-            The most popular gaming platforms (Epic Games Store, GOG Galaxy, Origin, Battle.net, EA Games..) are already available as an 
-            installer in Bottles. You don't have to do more than choose what you want and install it, just like you would on Windows!
-		</p>
-		<p class="text-2xl leading-relaxed mb-6">
-            Create a gaming bottle, install the stores you want and start playing right away!
-		</p>
-		<a href="/appstore" class="mt-4 inline-block px-8 py-4 bg-[#b998df] text-white text-2xl rounded-lg hover:bg-[#9c7fcb] transition-all">Visit the App Store</a>
-	  </div>
-	  <img src="/assets/hero/gaming-platforms.png" alt="Common Gaming Launchers on Bottles" class="md:max-w-none md:h-auto">
-	</div>
+
+  <section class="relative py-20 px-4 bg-[var(--md-sys-color-primary)]/5">
+    <div class="relative z-20 max-w-6xl mx-auto flex flex-col md:flex-row items-center text-center text-[var(--md-sys-color-on-surface)] justify-start gap-10">
+      <div class="text-left grow z-20 md:min-w-[600px]">
+        <h2 class="text-5xl font-extrabold mb-6">All the gaming platforms you already know, right here</h2>
+        <p class="text-2xl leading-relaxed mb-6">
+          Customize your Windows environment with ease.
+        </p>
+        <p class="text-2xl leading-relaxed mb-6">
+          The most popular gaming platforms (Epic Games Store, GOG Galaxy, Origin, Battle.net, EA Games..) are already available as an installer in Bottles. You don't have to do more than choose what you want and install it, just like you would on Windows!
+        </p>
+        <p class="text-2xl leading-relaxed mb-6">
+          Create a gaming bottle, install the stores you want and start playing right away!
+        </p>
+        <a href="/appstore" class="mt-4 inline-flex items-center gap-2 md-tonal-button text-2xl">Visit the App Store</a>
+      </div>
+      <img src="/assets/hero/gaming-platforms.png" alt="Common Gaming Launchers on Bottles" class="md:max-w-none md:h-auto" />
+    </div>
   </section>
-  
 </Layout>
