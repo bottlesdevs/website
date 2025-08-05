@@ -47,7 +47,7 @@ class DatabaseTableManager {
             case 'latencyflex':
                 return 'bg-sky-300 text-sky-900 dark:bg-sky-600 dark:text-sky-100';
             default:
-                return 'bg-gray-300 text-gray-900 dark:bg-gray-600 dark:text-gray-200';
+                return 'bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)]';
         }
     }
 
@@ -59,7 +59,7 @@ class DatabaseTableManager {
         }
 
         const row = table.insertRow(-1);
-        row.classList.add('hover:bg-gray-50', 'dark:hover:bg-gray-700', 'border-b', 'dark:border-gray-700');
+        row.classList.add('hover:bg-[var(--md-sys-color-primary)]/10', 'border-b');
 
         const name = row.insertCell(0);
         const descriptionOrType = row.insertCell(1);
@@ -67,7 +67,7 @@ class DatabaseTableManager {
         const additional = row.insertCell(3);
         const actions = row.insertCell(4);
 
-        name.classList.add('px-6', 'py-4', 'whitespace-nowrap', 'text-lg', 'font-medium', 'text-gray-900', 'dark:text-gray-100');
+        name.classList.add('px-6', 'py-4', 'whitespace-nowrap', 'text-lg', 'font-medium');
         category.classList.add('px-6', 'py-4', 'whitespace-nowrap');
         actions.classList.add('px-6', 'py-4', 'whitespace-nowrap', 'text-lg', 'font-medium', 'text-blue-600', 'dark:text-blue-400');
 
@@ -75,8 +75,8 @@ class DatabaseTableManager {
 
         if (this.databaseType === 'dependencies') {
             const dependency = data as Dependency;
-            descriptionOrType.classList.add('px-6', 'py-4', 'whitespace-nowrap', 'text-lg', 'text-gray-500', 'dark:text-gray-300');
-            descriptionOrType.innerHTML = `<span class="text-gray-600 dark:text-gray-400">${dependency.Description}</span>`;
+            descriptionOrType.classList.add('px-6', 'py-4', 'whitespace-nowrap', 'text-lg');
+            descriptionOrType.innerHTML = `<span>${dependency.Description}</span>`;
             category.innerHTML = `<span class="px-2 py-1 rounded-lg ${this.getCategoryColor(dependency.Category)}">${dependency.Category}</span>`;
             additional.remove();
             actions.innerHTML = `
@@ -85,10 +85,10 @@ class DatabaseTableManager {
         } else if (this.databaseType === 'components') {
             const component = data as Component;
             descriptionOrType.classList.add('px-6', 'py-4', 'whitespace-nowrap');
-            descriptionOrType.innerHTML = `<span class="px-2 py-1 rounded-lg">${component["Sub-category"] || 'n/a'}</span>`;
+            descriptionOrType.innerHTML = `<span class="md-chip">${component["Sub-category"] || 'n/a'}</span>`;
             category.innerHTML = `<span class="px-2 py-1 rounded-lg ${this.getCategoryColor(component.Category)}">${component.Category}</span>`;
             additional.classList.add('px-6', 'py-4', 'whitespace-nowrap');
-            additional.innerHTML = `<span class="px-2 py-1 rounded-lg">${component.Channel}</span>`;
+            additional.innerHTML = `<span class="md-chip">${component.Channel}</span>`;
             actions.innerHTML = `
         <a href='https://github.com/bottlesdevs/components/blob/main/${component.Category}/${item}.yml' class="text-blue-600 dark:text-blue-400">Details</a> |
         <a href='https://github.com/bottlesdevs/components/issues/new/choose' class="text-blue-600 dark:text-blue-400">Report problem</a>`;

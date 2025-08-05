@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section
+    id="grant-banner"
+    class="bg-gradient-to-r from-[var(--md-sys-color-secondary-container)] to-[var(--md-sys-color-tertiary-container)] py-6"
+>
+    <div class="max-w-6xl mx-auto px-4">
+        <div
+            class="md-card relative flex items-start gap-4 bg-[var(--md-sys-color-tertiary-container)] text-[var(--md-sys-color-on-tertiary-container)]"
+        >
+            <Icon
+                name="material-symbols:volunteer-activism"
+                class="w-14 h-14 flex-shrink-0"
+            />
+            <div class="flex-1">
+                <h2 class="text-3xl font-bold mb-2">Bottles funded by NLnet</h2>
+                <p class="text-lg">
+                    We\'re thrilled to join NLnet's 2025 Commons Fund. <a
+                        href="/posts/2025-08-04-nlnet-commons-fund/"
+                        class="underline font-semibold"
+                        >See what the grant enables →</a
+                    >
+                </p>
+            </div>
+            <button
+                id="grant-banner-close"
+                aria-label="Dismiss"
+                class="absolute top-4 right-4 p-2 rounded-full hover:bg-[var(--md-sys-color-on-tertiary-container)]/10"
+            >
+                <Icon name="material-symbols:close" class="w-6 h-6" />
+            </button>
+        </div>
+    </div>
+</section>
+<script>
+    const banner = document.getElementById("grant-banner");
+    const close = document.getElementById("grant-banner-close");
+    if (localStorage.getItem("grantBannerDismissed")) {
+        banner?.classList.add("hidden");
+    }
+    close?.addEventListener("click", () => {
+        banner?.classList.add("hidden");
+        localStorage.setItem("grantBannerDismissed", "1");
+    });
+</script>

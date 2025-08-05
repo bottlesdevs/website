@@ -5,26 +5,26 @@ import { Icon } from 'astro-icon/components';
 
 <Layout title="Database">
 
-  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+  <section class="py-20 bg-[var(--md-sys-color-surface)]">
     <div class="container mx-auto px-4">
-      <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">Bottles Database</h1>
-      <p class="text-lg text-gray-700 dark:text-gray-300">Dependencies, resources, and Windows software installers for Bottles.</p>
+      <h1 class="text-5xl font-bold mb-4">Bottles Database</h1>
+      <p class="text-lg">Dependencies, resources, and Windows software installers for Bottles.</p>
     </div>
   </section>
   
   <div class="container mx-auto px-4 mt-8">
     <div class="grid md:grid-cols-3 gap-6 mb-8">
-      <a href="/database/dependencies" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
+      <a href="/database/dependencies" class="md-card p-8 text-center hover:shadow-xl transition-all relative top-0 hover:-top-1">
         <Icon name="material-symbols:layers-outline" class="w-12 h-12 mb-4 mx-auto" />
         <h3 class="text-2xl font-bold mb-2">Dependencies</h3>
         <p>These packages increase the compatibility of WINE environments with Windows software.</p>
       </a>
-      <a href="/database/components" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
+      <a href="/database/components" class="md-card p-8 text-center hover:shadow-xl transition-all relative top-0 hover:-top-1">
         <Icon name="material-symbols:extension-outline" class="w-12 h-12 mb-4 mx-auto" />
         <h3 class="text-2xl font-bold mb-2">Components</h3>
         <p>These are essential elements for creating environments and extending them with new features and implementations.</p>
       </a>
-      <a href="/appstore" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1">
+      <a href="/appstore" class="md-card p-8 text-center hover:shadow-xl transition-all relative top-0 hover:-top-1">
         <Icon name="material-symbols:cloud-download-outline" class="w-12 h-12 mb-4 mx-auto" />
         <h3 class="text-2xl font-bold mb-2">Installers</h3>
         <p>These are installers maintained by our community that automate the installation of a Windows program.</p>

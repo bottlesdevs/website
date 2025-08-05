@@ -5,28 +5,28 @@ import { Icon } from 'astro-icon/components';
 
 <Layout title="AppStore">
 
-  <section class="p-10 bg-gray-50 dark:bg-gray-900">
+  <section class="p-10 bg-[var(--md-sys-color-surface)] text-[var(--md-sys-color-on-surface)]">
     <div class="container mx-auto px-4">
       <div class="text-center mb-10">
-        <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">AppStore</h1>
-        <p class="text-lg text-gray-700 dark:text-gray-300">Overview of the installers available in Bottles.</p>
+        <h1 class="text-5xl font-bold mb-4">AppStore</h1>
+        <p class="text-lg">Overview of the installers available in Bottles.</p>
       </div>
     </div>
     <div class="flex justify-center mb-8">
       <div class="relative w-full max-w-md">
-        <input type="search" id="storeSearch" autocomplete="off" placeholder="" class="w-full py-2 pl-10 pr-4 border rounded-lg shadow-xs focus:ring-3 focus:outline-hidden dark:bg-gray-800 dark:text-gray-200 dark:placeholder-gray-400 dark:border-gray-700" />
-        <Icon name="material-symbols:search" class="absolute top-2 left-2 w-6 h-6 text-gray-400 dark:text-gray-300" />
+        <input type="search" id="storeSearch" autocomplete="off" placeholder="" class="w-full py-2 pl-10 pr-4 rounded-full bg-[var(--md-sys-color-surface-container)]" />
+        <Icon name="material-symbols:search" class="absolute top-2 left-2 w-6 h-6 text-[var(--md-sys-color-on-surface)]/50" />
       </div>
     </div>
   </section>
 
   <div class="container mx-auto px-4 mt-8">
       <div id="filters" class="flex mb-8 space-x-4 overflow-x-auto md:overflow-x-hidden w-full md:justify-center">
-        <button id="allFilter" class="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors active:shadow-lg">All</button>
-        <button id="platinumFilter" class="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors opacity-50">Platinum</button>
-        <button id="goldFilter" class="bg-yellow-300 dark:bg-yellow-600 text-yellow-900 dark:text-yellow-100 px-4 py-2 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors opacity-50">Gold</button>
-        <button id="silverFilter" class="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors opacity-50">Silver</button>
-        <button id="bronzeFilter" class="bg-yellow-600 dark:bg-yellow-700 text-yellow-100 px-4 py-2 rounded-lg hover:bg-yellow-700 dark:hover:bg-yellow-800 transition-colors opacity-50">Bronze</button>
+        <button id="allFilter" class="md-filled-button">All</button>
+        <button id="platinumFilter" class="md-filled-button opacity-50">Platinum</button>
+        <button id="goldFilter" class="md-filled-button opacity-50">Gold</button>
+        <button id="silverFilter" class="md-filled-button opacity-50">Silver</button>
+        <button id="bronzeFilter" class="md-filled-button opacity-50">Bronze</button>
       </div>
 
       <div id="storeResults" class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -140,48 +140,48 @@ class AppStore {
   getGradeColor(grade: string): string {
     switch (grade.toLowerCase()) {
       case 'platinum':
-        return 'bg-gray-300 text-gray-900';
+        return 'bg-[var(--md-sys-color-primary)]/20 text-[var(--md-sys-color-primary)]';
       case 'gold':
-        return 'bg-yellow-300 text-yellow-900';
+        return 'bg-amber-200 text-amber-900';
       case 'silver':
-        return 'bg-gray-200 text-gray-800';
+        return 'bg-zinc-200 text-zinc-800';
       case 'bronze':
-        return 'bg-yellow-600 text-yellow-100';
+        return 'bg-amber-600 text-amber-50';
       default:
-        return 'bg-gray-200 text-gray-800';
+        return 'bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)]';
     }
   }
 
   getCategoryColor(category: string): string {
     switch (category.toLowerCase()) {
       case 'software':
-        return 'bg-blue-200 text-blue-800';
+        return 'bg-[var(--md-sys-color-primary)]/20 text-[var(--md-sys-color-primary)]';
       case 'games':
-        return 'bg-purple-200 text-purple-800';
+        return 'bg-[var(--md-sys-color-tertiary)]/20 text-[var(--md-sys-color-tertiary)]';
       default:
-        return 'bg-gray-200 text-gray-800';
+        return 'bg-[var(--md-sys-color-secondary)]/20 text-[var(--md-sys-color-secondary)]';
     }
   }
 
   generateCardHTML(item: string, installer: Installer, icon: string): string {
     return `
-      <div grade="${installer.Grade.toLowerCase()}" category="${installer.Category.toLowerCase()}" class="card bg-white rounded-lg shadow-md justify-between flex flex-col relative top-0 transition-all hover:shadow-lg hover:-top-1 dark:bg-gray-800 dark:text-gray-200">
-        <div class="p-4">
+      <div grade="${installer.Grade.toLowerCase()}" category="${installer.Category.toLowerCase()}" class="card md-card p-4 flex flex-col justify-between relative top-0 transition-all hover:-top-1">
+        <div>
           <div class="flex gap-4">
             <img src="${icon}" alt="${item}" class="w-8 h-8 self-center">
             <h3 class="text-2xl font-bold mb-2">${installer.Name}</h3>
           </div>
-          <p class="text-gray-600 mb-4 text-xl dark:text-gray-300">${installer.Description}</p>
-          <div class="tags flex space-x-2 mb-4">
-            <span class="${this.getGradeColor(installer.Grade)} px-2 py-1 rounded-lg text-sm">${installer.Grade}</span>
-            <span class="px-2 py-1 rounded-lg text-sm ${this.getCategoryColor(installer.Category)}">${installer.Category}</span>
+          <p class="mb-4 text-xl">${installer.Description}</p>
+          <div class="tags flex flex-wrap gap-2 mb-4">
+            <span class="md-chip ${this.getGradeColor(installer.Grade)}">${installer.Grade}</span>
+            <span class="md-chip ${this.getCategoryColor(installer.Category)}">${installer.Category}</span>
           </div>
         </div>
-        <div class="bg-gray-100 rounded-b-lg text-center flex gap-2 justify-between dark:bg-gray-700 dark:text-gray-300">
-          <a class="block font-medium text-lg size-full p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-bl-lg" href="/app#${item}">Details</a>
-          <a class="block font-medium text-lg size-full p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-br-lg" href="https://docs.usebottles.com/bottles/installers#use-installers">Install</a>
-      </div>
-      `;
+        <div class="flex gap-2 mt-2">
+          <a class="md-tonal-button flex-1 text-center" href="/app#${item}">Details</a>
+          <a class="md-filled-button flex-1 text-center" href="https://docs.usebottles.com/bottles/installers#use-installers">Install</a>
+        </div>
+      </div>`;
     }
 }
 

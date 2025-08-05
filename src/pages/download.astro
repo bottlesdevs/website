@@ -4,12 +4,12 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Get Bottles">
-  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+  <section class="py-20 bg-[var(--md-sys-color-surface)]">
     <div class="container mx-auto px-4">
-      <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+      <h1 class="text-5xl font-bold mb-4">
         Get Bottles
       </h1>
-      <p class="text-lg text-gray-700 dark:text-gray-300">
+      <p class="text-lg">
         We offer a variety of download options for Bottles.
       </p>
     </div>
@@ -34,13 +34,13 @@ import { Icon } from "astro-icon/components";
             icon: "material-symbols:block",
             title: "Snap & AppImage",
             description: "Currently not available.",
-            classes: "text-gray-800 dark:text-gray-300",
+            classes: "",
           },
         ].map((link) => (
           <a
             id={link.id}
             href={link.href}
-            class={`bg-white dark:bg-gray-800 ${link.classes} p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1`}
+            class={`md-card p-8 text-center hover:shadow-xl transition-all relative top-0 hover:-top-1 ${link.classes}`}
           >
             <Icon name={link.icon} class="w-12 h-12 mb-4 mx-auto" />
             <h3 class="text-2xl font-bold mb-2">{link.title}</h3>
@@ -51,12 +51,12 @@ import { Icon } from "astro-icon/components";
     </div>
   </div>
 
-  <section class="py-20 bg-gray-50 dark:bg-gray-900">
+  <section class="py-20 bg-[var(--md-sys-color-surface)]">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+      <h2 class="text-3xl font-bold mb-6">
         Other versions
       </h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+      <p class="text-lg mb-8">
         Are you looking for a specific version of Bottles?
       </p>
 
@@ -87,7 +87,7 @@ import { Icon } from "astro-icon/components";
           ].map((link) => (
             <a
               href={link.href}
-              class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-all relative top-0 hover:-top-1"
+              class="md-card p-8 text-center hover:shadow-xl transition-all relative top-0 hover:-top-1"
             >
               <Icon name={link.icon} class="w-12 h-12 mb-4 mx-auto" />
               <h3 class="text-2xl font-bold mb-2">{link.title}</h3>
@@ -101,30 +101,30 @@ import { Icon } from "astro-icon/components";
 
   <div
     id="donateModal"
-    class="fixed flex inset-0 bg-gray-800/75 items-center justify-center hidden z-20"
+    class="fixed flex inset-0 bg-[var(--md-sys-color-on-background)]/30 items-center justify-center hidden z-20"
   >
     <div
-      class="flex flex-col relative justify-center items-center bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg m-5 text-center"
+      class="flex flex-col relative justify-center items-center md-card p-8 m-5 text-center"
     >
       <a
         href="#"
-        class="absolute top-5 right-5 text-gray-600 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-600"
+        class="absolute top-5 right-5 hover:text-[var(--md-sys-color-primary)]"
         onclick="document.getElementById('donateModal').classList.add('hidden')"
       >
         <Icon name="material-symbols:close" class="size-6" />
       </a>
-      <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+      <h2 class="text-3xl font-bold mb-6">
         Donate and download
       </h2>
       <div class="flex flex-col gap-5 items-center justify-center">
-        <p class="text-lg text-gray-700 dark:text-gray-300">
+        <p class="text-lg">
           Choose the amount you want to donate:
         </p>
         <div class="flex flex-row gap-3">
           {
             [2, 5].map((amount) => (
               <button
-                class="py-2 px-7 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                class="md-filled-button"
                 onclick={`setAmount(${amount})`}
               >
                 ${amount}
@@ -133,7 +133,7 @@ import { Icon } from "astro-icon/components";
           }
           <input
             type="number"
-            class="w-48 py-2 px-4 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-lg focus:ring-3 focus:outline-hidden dark:focus:ring-gray-500"
+            class="w-48 py-2 px-4 rounded-full bg-[var(--md-sys-color-surface-container)] text-[var(--md-sys-color-on-surface)] focus:ring-3 focus:outline-hidden"
             id="donation-amount"
             oninput="checkDonation()"
             placeholder="Custom amount ($0+)"
@@ -152,7 +152,7 @@ import { Icon } from "astro-icon/components";
         <button
           type="submit"
           id="donateButton"
-          class="flex flex-row justify-center items-center py-2 px-7 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors mt-6"
+          class="md-filled-button flex flex-row justify-center items-center mt-6"
         >
           <Icon name="material-symbols:favorite" class="w-5 h-5 mr-1" />
           <span id="donateText">Donate and download</span>
