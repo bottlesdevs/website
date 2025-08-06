@@ -84,6 +84,10 @@ layer(base);
     }
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
     font-family: "Roboto Flex", sans-serif;
     overflow-x: hidden;
