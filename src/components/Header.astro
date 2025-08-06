@@ -180,6 +180,7 @@ import { Icon } from "astro-icon/components";
     const mobileMenu = document.getElementById("mobileMenu");
     const line1 = document.getElementById("line1");
     const line2 = document.getElementById("line2");
+    const header = document.querySelector("header");
 
     let menuOpen = false;
 
@@ -190,11 +191,17 @@ import { Icon } from "astro-icon/components";
             mobileMenu!.classList.add("translate-x-0");
             line1!.classList.add("rotate-45");
             line2!.classList.add("-rotate-45", "-translate-y-1.5");
+            setTimeout(() => {
+              header!.classList.add("fixed", "top-0", "left-0", "w-full");
+              header!.classList.remove("sticky");
+            }, 300); // delay so you don't see the header jump
         } else {
             mobileMenu!.classList.remove("translate-x-0");
             mobileMenu!.classList.add("translate-x-full");
             line1!.classList.remove("rotate-45");
             line2!.classList.remove("-rotate-45", "-translate-y-1.5");
+            header!.classList.remove("fixed", "top-0", "left-0", "w-full");
+            header!.classList.add("sticky");
         }
     });
 </script>
