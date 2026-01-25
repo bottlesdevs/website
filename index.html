@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bottles - Run Windows Software on Linux</title>
+  <link rel="shortcut icon" href="/uploads/bottles.png" type="image/png" />
+  <link rel="icon" type="image/png" href="/uploads/bottles.png" />
+  <link rel="stylesheet" href="https://mastodon.online/custom.css" media="all" />
+  <link href='https://mastodon.online/@usebottles.rss' rel='alternate' type='application/rss+xml'>
+  <link href='https://mastodon.online/users/usebottles' rel='alternate' type='application/activity+json'>
+  <meta content="profile" property="og:type">
+  <meta content='81 Posts, 14 Following, 830 Followers · Run Windows software on Linux with Bottles.'
+    name='description'>
+  <meta content="https://mastodon.online/@usebottles" property="og:url">
+  <meta content="Mastodon" property="og:site_name">
+  <meta content="usebottles (@usebottles@mastodon.online)" property="og:title">
+  <meta content="81 Posts, 14 Following, 830 Followers · Run Windows software on Linux with Bottles."
+    property="og:description">
+  <meta content="https://files.mastodon.online/accounts/avatars/108/200/697/004/152/142/original/b30e7d4b6fe0ad6e.png"
+    property="og:image">
+  <meta content="400" property="og:image:width">
+  <meta content="400" property="og:image:height">
+  <meta content="summary" property="twitter:card">
+  <meta content="usebottles@mastodon.online" property="profile:username">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Merriweather', 'serif'],
+          },
+          colors: {
+            background: 'rgb(var(--background) / <alpha-value>)',
+            foreground: 'rgb(var(--foreground) / <alpha-value>)',
+            surface: 'rgb(var(--surface) / <alpha-value>)',
+            border: 'rgb(var(--border) / <alpha-value>)',
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 360deg)',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --background: 255 255 255;
+      --foreground: 9 9 11;
+      --surface: 244 244 245;
+      --border: 228 228 231;
+      --grid-color: rgba(0, 0, 0, 0.08);
+    }
+
+    .dark {
+      --background: 0 0 0;
+      --foreground: 255 255 255;
+      --surface: 9 9 11;
+      --border: 39 39 42;
+      --grid-color: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      background-color: rgb(var(--background));
+      color: rgb(var(--foreground));
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+      mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgb(var(--background));
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgb(var(--border));
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #71717a;
+    }
+
+    .prose h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: rgb(var(--foreground));
+      letter-spacing: -0.025em;
+    }
+
+    .prose h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: rgb(var(--foreground));
+      letter-spacing: -0.025em;
+    }
+
+    .prose h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: rgb(var(--foreground));
+    }
+
+    .prose p {
+      margin-bottom: 1.25rem;
+      line-height: 1.75;
+      color: #71717a;
+    }
+
+    .prose a {
+      color: rgb(var(--foreground));
+      text-decoration: underline;
+      text-decoration-color: #71717a;
+      text-underline-offset: 4px;
+    }
+
+    .prose a:hover {
+      color: #3b82f6;
+      text-decoration-color: #3b82f6;
+    }
+
+    .prose ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+      color: #71717a;
+    }
+
+    .prose li {
+      margin-bottom: 0.5rem;
+    }
+
+    .prose strong {
+      color: rgb(var(--foreground));
+      font-weight: 600;
+    }
+
+    .prose blockquote {
+      border-left: 4px solid rgb(var(--border));
+      padding-left: 1rem;
+      font-style: italic;
+      color: #71717a;
+      margin: 1.5rem 0;
+    }
+
+    .prose code {
+      background-color: rgb(var(--surface));
+      padding: 0.2em 0.4em;
+      border-radius: 0.25rem;
+      font-size: 0.875em;
+      color: rgb(var(--foreground));
+      font-family: monospace;
+    }
+
+    .dark .prose p {
+      color: #a1a1aa;
+    }
+
+    .dark .prose blockquote {
+      border-color: #27272a;
+    }
+
+    @media print {
+      @page {
+        margin: 2.5cm;
+      }
+
+      body {
+        background-color: white !important;
+        color: black !important;
+      }
+
+      nav,
+      footer,
+      button,
+      .no-print,
+      .fixed {
+        display: none !important;
+      }
+
+      .prose {
+        font-family: 'Merriweather', 'Georgia', serif !important;
+        color: black !important;
+        max-width: 100% !important;
+        font-size: 12pt !important;
+        line-height: 1.6 !important;
+      }
+
+      .prose h1 {
+        color: black !important;
+        font-size: 24pt !important;
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .prose h2,
+      .prose h3,
+      .prose strong {
+        color: black !important;
+      }
+
+      .prose p,
+      .prose ul,
+      .prose li {
+        color: #1a1a1a !important;
+      }
+
+      .prose a {
+        color: black !important;
+        text-decoration: underline !important;
+      }
+
+      .prose a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #555;
+      }
+
+      .prose code {
+        background-color: #f5f5f5 !important;
+        color: black !important;
+        border: 1px solid #ddd;
+      }
+
+      .print-only {
+        display: block !important;
+      }
+    }
+
+    .print-only {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.jsx"></script>
+</body>
+
+</html>
