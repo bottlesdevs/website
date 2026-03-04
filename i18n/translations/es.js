@@ -9,6 +9,24 @@ export const es = {
         docs: 'Documentación',
         download: 'Descargar',
     },
+    appStore: {
+        title: 'Tienda de Aplicaciones',
+        description: 'Explore e instale instaladores mantenidos por la comunidad para sus aplicaciones favoritas de Windows.',
+        searchPlaceholder: 'Buscar instaladores...',
+        publish: 'Publicar tu instalador',
+        loading: 'Cargando instaladores desde la base de datos...',
+        filters: {
+            all: 'Todos',
+            platinum: 'Platino',
+            gold: 'Oro',
+            silver: 'Plata',
+            bronze: 'Bronce'
+        },
+        card: {
+            details: 'Detalles',
+            install: 'Instalar'
+        }
+    },
     hero: {
         badge: 'Última versión: ',
         badgeLoading: 'Cargando...',
