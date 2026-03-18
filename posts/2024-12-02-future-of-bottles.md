@@ -17,7 +17,7 @@ Let's talk about stats, Bottles got **2.2 million downloads** since its first pu
 
 ## Why Your Support Matters
 
-Developing Bottles is cool and all, but it also requires time, resources, and funds. From foundational features like the **Dependencies Manager** and **Installers**, to big features like **Per-bottle sandboxing**, **Layered Bottles**, and the upcoming **Bottles Next**, every step we take involves significant effort and investment. For example, Bottles has its own infrastructure with servers, CDNs, and services that need to be maintained and expanded (a very special thanks to [HyperBit](https://hyperbit.it/?ref=bottles) for providing the servers and [fabricators.ltd](https://fabricators.ltd?ref=bottles) to provide the expertise).
+Developing Bottles is cool and all, but it also requires time, resources, and funds. From foundational features like the **Dependencies Manager** and **Installers**, to big features like **Per-bottle sandboxing**, **Layered Bottles**, and the upcoming **Bottles Next**, every step we take involves significant effort and investment. For example, Bottles has its own infrastructure with servers, CDNs, and services that need to be maintained and expanded (a very special thanks to [HyperBit](https://hyperbit.it/?ref=bottles) for providing the servers and [fabricators.ltd](https://fabricators.ltd/?utm_source=bottles&utm_medium=referral) to provide the expertise).
 
 Each donation helps us:
 

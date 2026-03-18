@@ -113,7 +113,7 @@ const Footer = () => {
             {t.footer.made}
             <br className="md:hidden" />
             <span className="hidden md:inline"> • </span>
-            <a href="https://fabricators.ltd" target="_blank" rel="noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <a href="https://fabricators.ltd/?utm_source=bottles&utm_medium=referral" target="_blank" rel="noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               sponsored by fabricators.ltd
             </a>
           </div>
