@@ -9,6 +9,24 @@ export const it = {
         docs: 'Documentazione',
         download: 'Scarica',
     },
+    appStore: {
+        title: 'App Store',
+        description: 'Sfoglia e installa i pacchetti gestiti dalla comunità per le tue applicazioni Windows preferite.',
+        searchPlaceholder: 'Cerca installatori...',
+        publish: 'Pubblica il tuo pacchetto',
+        loading: 'Caricamento degli installatori dal database...',
+        filters: {
+            all: 'Tutti',
+            platinum: 'Platino',
+            gold: 'Oro',
+            silver: 'Argento',
+            bronze: 'Bronzo'
+        },
+        card: {
+            details: 'Dettagli',
+            install: 'Installa'
+        }
+    },
     hero: {
         badge: 'Ultima versione: ',
         badgeLoading: 'Caricamento...',

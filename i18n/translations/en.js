@@ -9,6 +9,24 @@ export const en = {
         docs: 'Docs',
         download: 'Download',
     },
+    appStore: {
+        title: 'App Store',
+        description: 'Browse and install community-maintained installers for your favorite Windows applications.',
+        searchPlaceholder: 'Search installers...',
+        publish: 'Publish your installer',
+        loading: 'Fetching installers from the database...',
+        filters: {
+            all: 'All',
+            platinum: 'Platinum',
+            gold: 'Gold',
+            silver: 'Silver',
+            bronze: 'Bronze'
+        },
+        card: {
+            details: 'Details',
+            install: 'Install'
+        }
+    },
     hero: {
         badge: 'Latest Release: ',
         badgeLoading: 'Loading Release...',

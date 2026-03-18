@@ -62,15 +62,15 @@ const AppStore = () => {
         <div className="min-h-screen bg-zinc-50 dark:bg-black transition-colors duration-300">
             <section className="pt-32 pb-12 bg-white dark:bg-zinc-900/20 border-b border-zinc-200 dark:border-white/5">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">{t.appStore.title}</h1>
+                    <h1 className="text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">{t.appStore?.title || 'App Store'}</h1>
                     <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-10">
-                        {t.appStore.description}
+                        {t.appStore?.description || 'Browse available installers.'}
                     </p>
 
                     <div className="max-w-md mx-auto relative">
                         <input
                             type="text"
-                            placeholder={t.appStore.searchPlaceholder}
+                            placeholder={t.appStore?.searchPlaceholder || 'Search installers...'}
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             className="w-full pl-12 pr-4 py-3 rounded-full bg-zinc-100 dark:bg-zinc-800 border-none focus:ring-2 focus:ring-blue-500 text-zinc-900 dark:text-white placeholder-zinc-500"
@@ -86,7 +86,7 @@ const AppStore = () => {
                             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20"
                         >
                             <Upload className="w-4 h-4" />
-                            {t.appStore.publish}
+                            {t.appStore?.publish || 'Publish'}
                         </a>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const AppStore = () => {
                                 : 'bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800'
                                 }`}
                         >
-                            {t.appStore.filters[f.toLowerCase()]}
+                            {t.appStore?.filters?.[f.toLowerCase()] || f}
                         </button>
                     ))}
                 </div>
@@ -112,7 +112,7 @@ const AppStore = () => {
                 {loading ? (
                     <div className="text-center py-20">
                         <div className="inline-block w-12 h-12 border-4 border-zinc-200 border-t-blue-600 rounded-full animate-spin mb-4"></div>
-                        <p className="text-zinc-500">{t.appStore.loading}</p>
+                        <p className="text-zinc-500">{t.appStore?.loading || 'Loading...'}</p>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -147,14 +147,14 @@ const AppStore = () => {
                                         className="flex-1 py-2 px-4 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white text-center text-sm font-medium hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors flex items-center justify-center gap-2"
                                     >
                                         <Info className="w-4 h-4" />
-                                        {t.appStore.card.details}
+                                        {t.appStore?.card?.details || 'Details'}
                                     </Link>
                                     <Link
                                         to="/docs/bottles/installers"
                                         className="flex-1 py-2 px-4 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-black text-center text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2"
                                     >
                                         <Download className="w-4 h-4" />
-                                        {t.appStore.card.install}
+                                        {t.appStore?.card?.install || 'Install'}
                                     </Link>
                                 </div>
                             </div>
