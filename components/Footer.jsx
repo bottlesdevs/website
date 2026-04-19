@@ -82,7 +82,7 @@ const Footer = () => {
             <h3 className="font-bold text-zinc-900 dark:text-white mb-4">Others</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="https://github.com/bottlesdevs/Bottles/blob/main/LICENSE" target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400 transition-colors">
+                <a href="https://github.com/bottlesdevs/Bottles/blob/main/COPYING.md" target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400 transition-colors">
                   {t.footer.license} (GPLv3)
                 </a>
               </li>
