@@ -10,6 +10,7 @@ const LanguageSwitcher = () => {
         { value: 'en', label: 'English' },
         { value: 'it', label: 'Italiano' },
         { value: 'es', label: 'Español' },
+        { value: 'ar', label: 'العربية' },
     ];
 
     // Custom label rendering if we want "EN" instead of "English" in the button is not fully supported by generic Select
