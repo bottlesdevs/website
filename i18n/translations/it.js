@@ -25,6 +25,35 @@ export const it = {
         card: {
             details: 'Dettagli',
             install: 'Installa'
+        },
+        details: {
+            loading: 'Caricamento dettagli app...',
+            notFound: 'App non trovata',
+            back: 'Torna all\'App Store',
+            aboutGrade: 'Informazioni su questa app {grade}',
+            grades: {
+                bronze: 'Questa applicazione funziona, ma non nel modo migliore. L\'installer ha configurato la tua bottle per offrirti la migliore esperienza possibile, ma devi aspettarti glitch, funzionalita non accessibili (ad esempio il multiplayer se e un gioco) e altri problemi. In futuro, questo installer potrebbe ricevere aggiornamenti per migliorare il risultato.',
+                silver: 'Questa applicazione funziona bene. Ci sono alcuni glitch, ma non influenzano la funzionalita dell\'applicazione. Tutte le funzionalita sono accessibili e funzionano come previsto.',
+                gold: 'Questa applicazione funziona nel modo migliore. Potrebbero esserci rari glitch, ma non influenzano la funzionalita dell\'applicazione. Tutte le funzionalita sono accessibili e funzionano come previsto.',
+                platinum: 'Questa applicazione funziona nel modo migliore. Non ci sono glitch. Tutte le funzionalita sono accessibili e funzionano come previsto, e l\'esperienza complessiva e fluida.',
+            },
+            dependencies: {
+                title: 'Dipendenze',
+                description: 'Le seguenti dipendenze verranno installate automaticamente con questa applicazione:',
+                noDescription: 'Nessuna descrizione disponibile.',
+            },
+            configuration: {
+                title: 'Configurazione',
+                description: 'La seguente configurazione verra applicata alla tua bottle:',
+                enabled: 'abilitato',
+                disabled: 'disabilitato',
+            },
+            install: 'Come installare',
+            readReview: 'Leggi la recensione',
+            review: 'Recensione di',
+            disclaimer: 'Bottles non ridistribuisce ne ospita i file, ma li scarica solo dalle fonti ufficiali del fornitore. Questi file sono controllati dai nostri maintainer e non contengono virus. Tuttavia, possono essere soggetti a copyright o licenze di vario tipo, incluse quelle proprietarie.',
+            wineDb: 'Maggiori info su WineDB',
+            protonDb: 'Maggiori info su ProtonDB',
         }
     },
     hero: {
