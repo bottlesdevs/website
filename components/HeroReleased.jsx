@@ -101,7 +101,7 @@ const HeroReleased = ({ onDownload, onOpenPost }) => {
         <div className="relative mx-auto max-w-6xl mt-12 perspective-1000">
           <img
             src="/assets/hero/bottles-60.png"
-            alt="Bottles 61 Interface"
+            alt="Bottles 64 Interface"
             className="w-full h-auto block drop-shadow-2xl rounded-xl animate-float"
           />
         </div>
