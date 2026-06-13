@@ -7,7 +7,7 @@ pubDate: 2025-08-04
 
 We are really happy to announce that [Bottles](https://nlnet.nl/project/Bottles/) has been awarded a grant from the **NLnet Foundation** through the **2025 Commons Fund**.
 
-This support will help us accelerate our work on the [Bottles Next](/posts/2023-10-05-bottles-next-a-new-chapter) project (also read [here](/posts/2024-12-27-rust-libcosmic-next) for updates), bringing a more modern and polished experience to running Windows software on Linux. The grant recognizes our efforts to build a better future for running Windows applications on Linux.
+This support will help us accelerate our work on the [Bottles Next](/blog/2023-10-05-bottles-next-a-new-chapter.md) project (also read [here](/blog/2024-12-27-rust-libcosmic-next.md) for updates), bringing a more modern and polished experience to running Windows software on Linux. The grant recognizes our efforts to build a better future for running Windows applications on Linux.
 
 We are incredibly thankful to the NLnet Foundation and the Commons Fund for believing in our mission.
 

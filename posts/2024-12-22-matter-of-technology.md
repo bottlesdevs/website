@@ -9,7 +9,7 @@ user_name: Mirko Brombin
 user_tag: Founder
 ---
 
-More than a year ago, we [announced](https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/) the beginning of the development of Bottles Next, a project aimed at solving a large number of architectural problems in Bottles' source code—issues that to date have prevented the implementation of new features without significant complications.
+More than a year ago, we [announced](https://usebottles.com/blog/2023-10-05-bottles-next-a-new-chapter.md) the beginning of the development of Bottles Next, a project aimed at solving a large number of architectural problems in Bottles' source code—issues that to date have prevented the implementation of new features without significant complications.
 
 ![Bottles Next](https://usebottles.com/uploads/bottles-next-classic-bottle-details.png)
 
