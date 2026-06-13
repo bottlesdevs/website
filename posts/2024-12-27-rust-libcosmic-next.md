@@ -9,7 +9,7 @@ user_name: Mirko Brombin
 user_tag: Founder
 ---
 
-Over a year ago, we [announced Bottles Next](https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/), a complete rewrite of the Bottles project. Initially, the idea was to leverage web technologies to achieve the experience we envisioned for our users. However, as is often the case, extensive research, discussions, experiments, and continuous re-evaluations followed.
+Over a year ago, we [announced Bottles Next](https://usebottles.com/blog/2023-10-05-bottles-next-a-new-chapter.md), a complete rewrite of the Bottles project. Initially, the idea was to leverage web technologies to achieve the experience we envisioned for our users. However, as is often the case, extensive research, discussions, experiments, and continuous re-evaluations followed.
 
 Why go through all this trouble? Well, to ensure we make the right choices.
 
@@ -61,7 +61,7 @@ We’ll also announce the public repositories where you can follow the ongoing w
 
 We kindly ask you to **consider making a donation**, even a small one, to help support development timelines and cover any necessary resources. For those interested, [visit our dedicated page](https://usebottles.com/funding/).
 
-We deeply appreciate your support for the [future of Bottles](https://usebottles.com/posts/2024-12-02-future-of-bottles/).
+We deeply appreciate your support for the [future of Bottles](https://usebottles.com/blog/2024-12-02-future-of-bottles.md).
 
 ## GTK?
 
