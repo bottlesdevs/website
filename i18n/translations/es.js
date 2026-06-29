@@ -25,6 +25,35 @@ export const es = {
         card: {
             details: 'Detalles',
             install: 'Instalar'
+        },
+        details: {
+            loading: 'Cargando detalles de la aplicación...',
+            notFound: 'Aplicación no encontrada',
+            back: 'Volver a la Tienda de Aplicaciones',
+            aboutGrade: 'Acerca de esta aplicación {grade}',
+            grades: {
+                bronze: 'Esta aplicación funciona, pero no de la mejor manera. El instalador ha configurado tu botella para ofrecerte la mejor experiencia posible, pero debes esperar fallos, funciones inaccesibles (por ejemplo, el multijugador si es un juego) y otros problemas. En el futuro, este instalador puede recibir actualizaciones para mejorar el resultado.',
+                silver: 'Esta aplicación funciona bien. Hay algunos fallos, pero no afectan la funcionalidad de la aplicación. Todas las funciones están accesibles y funcionan como se espera.',
+                gold: 'Esta aplicación funciona de la mejor manera. Puede haber fallos raros, pero no afectan la funcionalidad de la aplicación. Todas las funciones están accesibles y funcionan como se espera.',
+                platinum: 'Esta aplicación funciona de la mejor manera. No hay fallos. Todas las funciones están accesibles y funcionan como se espera, y la experiencia general es fluida.',
+            },
+            dependencies: {
+                title: 'Dependencias',
+                description: 'Las siguientes dependencias se instalarán automáticamente con esta aplicación:',
+                noDescription: 'No hay descripción disponible.',
+            },
+            configuration: {
+                title: 'Configuración',
+                description: 'La siguiente configuración se aplicará a tu botella:',
+                enabled: 'habilitado',
+                disabled: 'deshabilitado',
+            },
+            install: 'Cómo instalar',
+            readReview: 'Leer reseña',
+            review: 'Reseña de',
+            disclaimer: 'Bottles no redistribuye ni aloja los archivos, solo los descarga desde las fuentes oficiales del proveedor. Estos archivos son revisados por nuestros mantenedores y no contienen virus. Sin embargo, pueden estar sujetos a derechos de autor o licencias de distintos tipos, incluidas licencias propietarias.',
+            wineDb: 'Más información en WineDB',
+            protonDb: 'Más información en ProtonDB',
         }
     },
     hero: {

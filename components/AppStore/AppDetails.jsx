@@ -76,7 +76,7 @@ const AppDetails = () => {
 
     const getGradeDescription = (grade) => {
         const gradeKey = grade?.toLowerCase();
-        return t.appStore.details.grades[gradeKey] || "";
+        return t.appStore?.details?.grades?.[gradeKey] || '';
     }
 
     if (loading) {
@@ -84,7 +84,7 @@ const AppDetails = () => {
             <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-black">
                 <div className="text-center">
                     <div className="inline-block w-12 h-12 border-4 border-zinc-200 border-t-blue-600 rounded-full animate-spin mb-4"></div>
-                    <p className="text-zinc-500">{t.appStore.details.loading}</p>
+                    <p className="text-zinc-500">{t.appStore?.details?.loading || 'Loading app details...'}</p>
                 </div>
             </div>
         );
@@ -94,8 +94,8 @@ const AppDetails = () => {
         return (
             <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-black">
                 <div className="text-center">
-                    <h1 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-white">{t.appStore.details.notFound}</h1>
-                    <Link to="/appstore" className="text-blue-600 hover:underline">{t.appStore.details.back}</Link>
+                    <h1 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-white">{t.appStore?.details?.notFound || 'App not found'}</h1>
+                    <Link to="/appstore" className="text-blue-600 hover:underline">{t.appStore?.details?.back || 'Back to App Store'}</Link>
                 </div>
             </div>
         );
@@ -106,7 +106,7 @@ const AppDetails = () => {
             <section className="pt-32 pb-12 bg-white dark:bg-zinc-900/20 border-b border-zinc-200 dark:border-white/5">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <Link to="/appstore" className="inline-flex items-center text-zinc-500 hover:text-zinc-900 dark:hover:text-white mb-8 transition-colors">
-                        <ArrowLeft className="w-4 h-4 mr-2" /> {t.appStore.details.back}
+                        <ArrowLeft className="w-4 h-4 mr-2" /> {t.appStore?.details?.back || 'Back to App Store'}
                     </Link>
 
                     <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -138,7 +138,7 @@ const AppDetails = () => {
                                     className="inline-flex items-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors"
                                 >
                                     <Download className="w-5 h-5 mr-2" />
-                                    {t.appStore.details.install}
+                                    {t.appStore?.details?.install || 'Install'}
                                 </Link>
                                 {reviewContent && (
                                     <button
@@ -146,7 +146,7 @@ const AppDetails = () => {
                                         className="inline-flex items-center px-6 py-3 rounded-full bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-900 dark:text-white font-medium transition-colors"
                                     >
                                         <Star className="w-5 h-5 mr-2" />
-                                        {t.appStore.details.readReview}
+                                        {t.appStore?.details?.readReview || 'Read review'}
                                     </button>
                                 )}
                             </div>
@@ -168,7 +168,7 @@ const AppDetails = () => {
                 <section>
                     <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
                         <Shield className="w-6 h-6 text-blue-600" />
-                        {t.appStore.details.aboutGrade.replace('{grade}', entry.Grade)}
+                        {(t.appStore?.details?.aboutGrade || 'About this {grade} app').replace('{grade}', entry.Grade)}
                     </h2>
                     <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">
                         {getGradeDescription(entry.Grade)}
@@ -179,17 +179,17 @@ const AppDetails = () => {
                     <section>
                         <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6 flex items-center gap-2">
                             <Package className="w-6 h-6 text-purple-600" />
-                            {t.appStore.details.dependencies.title}
+                            {t.appStore?.details?.dependencies?.title || 'Dependencies'}
                         </h2>
                         <p className="text-zinc-600 dark:text-zinc-400 mb-6">
-                            {t.appStore.details.dependencies.description}
+                            {t.appStore?.details?.dependencies?.description || 'These dependencies are required for the installer.'}
                         </p>
                         <div className="grid md:grid-cols-2 gap-4">
                             {details.Dependencies.map(dep => (
                                 <div key={dep} className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
                                     <h3 className="font-bold text-zinc-900 dark:text-white mb-2">{dep}</h3>
                                     <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                                        {dependenciesData[dep]?.Description || t.appStore.details.dependencies.noDescription}
+                                        {dependenciesData[dep]?.Description || t.appStore?.details?.dependencies?.noDescription || 'No description available.'}
                                     </p>
                                 </div>
                             ))}
@@ -201,23 +201,31 @@ const AppDetails = () => {
                     <section>
                         <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6 flex items-center gap-2">
                             <Settings className="w-6 h-6 text-zinc-500" />
-                            {t.appStore.details.configuration.title}
+                            {t.appStore?.details?.configuration?.title || 'Configuration'}
                         </h2>
                         <p className="text-zinc-600 dark:text-zinc-400 mb-6">
-                            {t.appStore.details.configuration.description}
+                            {t.appStore?.details?.configuration?.description || 'The following configuration will be applied to your bottle:'}
                         </p>
                         <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
                             <ul className="space-y-2">
                                 {Object.entries(details.Parameters).map(([param, value]) => (
                                     <li key={param} className="flex items-center gap-2 text-zinc-700 dark:text-zinc-300 font-mono text-sm">
                                         <div className={`w-2 h-2 rounded-full ${value ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                                        {param}: <span className={value ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}>{value ? t.appStore.details.configuration.enabled : t.appStore.details.configuration.disabled}</span>
+                                        {param}: <span className={value ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}>{value ? (t.appStore?.details?.configuration?.enabled || 'enabled') : (t.appStore?.details?.configuration?.disabled || 'disabled')}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
                     </section>
                 )}
+
+                <section className="py-6 bg-white dark:bg-zinc-900/20 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+                    <div className="px-6">
+                        <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                            {t.appStore?.details?.disclaimer || 'Bottles does not re-distribute or host the files but only downloads them from the vendor\'s official sources. These files are checked by our maintainers and do not contain viruses. However, they may be subject to copyright or licenses of different types, including proprietary ones.'}
+                        </p>
+                    </div>
+                </section>
 
                 <section className="pt-8 border-t border-zinc-200 dark:border-zinc-800">
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -227,7 +235,7 @@ const AppDetails = () => {
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-900 dark:text-white transition-colors"
                         >
-                            {t.appStore.details.wineDb} <ExternalLink className="w-4 h-4" />
+                            {t.appStore?.details?.wineDb || 'More info on WineDB'} <ExternalLink className="w-4 h-4" />
                         </a>
                         <a
                             href={`https://www.protondb.com/search?q=${entry.Name}`}
@@ -235,7 +243,7 @@ const AppDetails = () => {
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-900 dark:text-white transition-colors"
                         >
-                            {t.appStore.details.protonDb} <ExternalLink className="w-4 h-4" />
+                            {t.appStore?.details?.protonDb || 'More info on ProtonDB'} <ExternalLink className="w-4 h-4" />
                         </a>
                     </div>
                 </section>
@@ -245,7 +253,7 @@ const AppDetails = () => {
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
                     <div className="bg-white dark:bg-zinc-900 w-full max-w-3xl max-h-[80vh] rounded-2xl shadow-2xl flex flex-col">
                         <div className="p-6 border-b border-zinc-200 dark:border-zinc-800 flex justify-between items-center">
-                            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">{t.appStore.details.review} {entry.Name}</h2>
+                            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">{t.appStore?.details?.review || 'Review for'} {entry.Name}</h2>
                             <button onClick={() => setShowReview(false)} className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
                                 <X className="w-6 h-6" />
                             </button>

@@ -25,6 +25,35 @@ export const en = {
         card: {
             details: 'Details',
             install: 'Install'
+        },
+        details: {
+            loading: 'Loading app details...',
+            notFound: 'App not found',
+            back: 'Back to App Store',
+            aboutGrade: 'About this {grade} app',
+            grades: {
+                bronze: 'This application works but not in the best way. The installer has configured your bottle to give you the best possible experience but you have to expect glitches, inaccessible features (e.g. multiplayer if it\'s a game) and other problems. In the future, this installer may receive updates to improve the result.',
+                silver: 'This application works fine. There are some glitches, but they do not affect the application\'s functionality. All features are accessible and work as expected.',
+                gold: 'This application works in the best way. There may be rare glitches but they do not affect the application\'s functionality. All features are accessible and work as expected.',
+                platinum: 'This application works in the best way. There are no glitches. All features are accessible and work as expected, and the overall experience is smooth.',
+            },
+            dependencies: {
+                title: 'Dependencies',
+                description: 'The following dependencies will be automatically installed with this app:',
+                noDescription: 'No description available.',
+            },
+            configuration: {
+                title: 'Configuration',
+                description: 'The following configuration will be applied to your bottle:',
+                enabled: 'enabled',
+                disabled: 'disabled',
+            },
+            install: 'How to Install',
+            readReview: 'Read review',
+            review: 'Review for',
+            disclaimer: 'Bottles does not re-distribute or host the files but only downloads them from the vendor\'s official sources. These files are checked by our maintainers and do not contain viruses. However, they may be subject to copyright or licenses of different types, including proprietary ones.',
+            wineDb: 'More info on WineDB',
+            protonDb: 'More info on ProtonDB',
         }
     },
     hero: {
