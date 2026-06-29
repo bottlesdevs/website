@@ -8,13 +8,14 @@ const detectSystemLanguage = () => {
 
     if (browserLang.startsWith('it')) return 'it';
     if (browserLang.startsWith('es')) return 'es';
+    if (browserLang.startsWith('ar')) return 'ar';
     return 'en';
 };
 
 export const LanguageProvider = ({ children }) => {
     const [language, setLanguageState] = useState(() => {
         const stored = localStorage.getItem('bottles-language');
-        if (stored && (stored === 'en' || stored === 'it' || stored === 'es')) {
+        if (stored && (stored === 'en' || stored === 'it' || stored === 'es' || stored === 'ar')) {
             return stored;
         }
         return detectSystemLanguage();
@@ -22,6 +23,14 @@ export const LanguageProvider = ({ children }) => {
 
     useEffect(() => {
         localStorage.setItem('bottles-language', language);
+    }, [language]);
+
+    useEffect(() => {
+        const root = document.documentElement;
+        const isArabic = language === 'ar';
+
+        root.dir = isArabic ? 'rtl' : 'ltr';
+        root.lang = isArabic ? 'ar' : language;
     }, [language]);
 
     const setLanguage = (lang) => {

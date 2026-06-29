@@ -4,7 +4,8 @@ import { Download, Gamepad2, Layers, Database, Cpu, ChevronRight, MonitorPlay, E
 import { useLanguage } from '../i18n/LanguageContext';
 
 const Gaming = ({ onDownload }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const isArabic = language === 'ar';
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
 
@@ -52,7 +53,7 @@ const Gaming = ({ onDownload }) => {
 
       <section className="py-32 relative border-t border-white/5 bg-zinc-950 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
             <div className="flex-1 space-y-8 lg:max-w-xl relative z-10">
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
@@ -77,12 +78,12 @@ const Gaming = ({ onDownload }) => {
               </Link>
             </div>
 
-            <div className="flex-1 w-full relative lg:-mr-64 mt-12 lg:mt-0">
+            <div className={`flex-1 w-full relative mt-12 lg:mt-0 ${isArabic ? 'lg:-ml-64' : 'lg:-mr-64'}`}>
               <div className="absolute inset-0 bg-purple-900/20 blur-[100px] rounded-full pointer-events-none"></div>
               <img
                 src="https://usebottles.com/assets/hero/gaming-platforms.png"
                 alt="Supported Gaming Platforms"
-                className="relative z-10 max-w-none w-[150%] lg:w-[130%] transform translate-x-10 lg:translate-x-0"
+                className={`relative z-10 max-w-none w-[150%] lg:w-[130%] ${isArabic ? '-translate-x-10 lg:translate-x-0' : 'translate-x-10 lg:translate-x-0'}`}
               />
             </div>
 
