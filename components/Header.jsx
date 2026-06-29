@@ -69,7 +69,7 @@ const Header = ({ currentView, onNavigate, onDownload, theme, onThemeChange, for
           </div>
 
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-6">
+            <div className="flex items-center gap-6">
               {navItems.map((item) => {
                 const isActive = currentView === item.key;
                 return (
