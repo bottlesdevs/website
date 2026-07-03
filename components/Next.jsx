@@ -307,7 +307,7 @@ const Next = () => {
                                     {t.nextPage.donations.supportButton}
                                 </a>
                                 <a
-                                    href="/posts/2025-08-04-nlnet-commons-fund"
+                                    href="/blog/2025-08-04-nlnet-commons-fund.md"
                                     className="w-full sm:w-auto px-8 py-4 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white font-bold hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
                                 >
                                     {t.nextPage.donations.readButton}
@@ -426,7 +426,7 @@ const Next = () => {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-12">{t.nextPage.readMore.title}</h2>
                     <div className="grid md:grid-cols-2 gap-8">
-                        <a href="/posts/2024-12-22-matter-of-technology" className="block group text-left">
+                        <a href="/blog/2024-12-22-matter-of-technology.md" className="block group text-left">
                             <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:border-purple-500 dark:hover:border-purple-500 transition-colors h-full">
                                 <span className="text-sm text-zinc-500 mb-2 block">Dec 22, 2024</span>
                                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
@@ -437,7 +437,7 @@ const Next = () => {
                                 </p>
                             </div>
                         </a>
-                        <a href="/posts/2024-12-27-rust-libcosmic-next" className="block group text-left">
+                        <a href="/blog/2024-12-27-rust-libcosmic-next.md" className="block group text-left">
                             <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:border-purple-500 dark:hover:border-purple-500 transition-colors h-full">
                                 <span className="text-sm text-zinc-500 mb-2 block">Dec 27, 2024</span>
                                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">

@@ -15,7 +15,7 @@ const Community = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
 
-          <a href="https://discord.gg/bottles" target="_blank" rel="noreferrer" className="group relative bg-gradient-to-br from-[#5865F2]/10 to-[#5865F2]/5 dark:from-[#5865F2]/20 dark:to-[#5865F2]/10 hover:from-[#5865F2]/20 hover:to-[#5865F2]/10 dark:hover:from-[#5865F2]/30 dark:hover:to-[#5865F2]/20 rounded-xl p-8 border-2 border-[#5865F2]/30 dark:border-[#5865F2]/40 hover:border-[#5865F2]/60 dark:hover:border-[#5865F2]/70 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#5865F2]/20">
+          <a href="https://discord.gg/wF4JAdYrTR" target="_blank" rel="noreferrer" className="group relative bg-gradient-to-br from-[#5865F2]/10 to-[#5865F2]/5 dark:from-[#5865F2]/20 dark:to-[#5865F2]/10 hover:from-[#5865F2]/20 hover:to-[#5865F2]/10 dark:hover:from-[#5865F2]/30 dark:hover:to-[#5865F2]/20 rounded-xl p-8 border-2 border-[#5865F2]/30 dark:border-[#5865F2]/40 hover:border-[#5865F2]/60 dark:hover:border-[#5865F2]/70 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#5865F2]/20">
             <div className="flex flex-col h-full justify-between">
               <div className="mb-8">
                 <div className="w-14 h-14 bg-[#5865F2] rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">

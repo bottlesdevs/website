@@ -49,7 +49,7 @@ Bottles has a bright future, with ongoing projects like:
 - [DONE] **Library Mode**: Seamless access to programs in a library view
 - [ALPHA] **Per-Bottle Sandbox**: Enhanced security through isolated environments
 - [WIP] **Layered Bottles**: Supporting multiple environments in one bottle
-- [NEXT] **Bottles Next** [[i]](https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/): A complete overhaul with modular architecture for Linux and macOS compatibility
+- [NEXT] **Bottles Next** [[i]](https://usebottles.com/blog/2023-10-05-bottles-next-a-new-chapter.md): A complete overhaul with modular architecture for Linux and macOS compatibility
 
 Each feature brings us closer to realizing Bottles’ full potential, but we need your help to get there. Visit our [Funding Page](https://usebottles.com/funding/) to learn more and contribute.
 

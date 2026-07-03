@@ -71,7 +71,7 @@ const HeroReleased = ({ onDownload, onOpenPost }) => {
 
         {/* Main Title */}
         <h1 className="text-6xl md:text-9xl font-extrabold tracking-tighter text-zinc-900 dark:text-white mb-6 drop-shadow-sm animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-100">
-          Bottles <span className="text-transparent bg-clip-text bg-gradient-to-b from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-500">61</span>
+          Bottles <span className="text-transparent bg-clip-text bg-gradient-to-b from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-500">64</span>
         </h1>
 
         {/* Subtitle */}
@@ -101,7 +101,7 @@ const HeroReleased = ({ onDownload, onOpenPost }) => {
         <div className="relative mx-auto max-w-6xl mt-12 perspective-1000">
           <img
             src="/assets/hero/bottles-60.png"
-            alt="Bottles 61 Interface"
+            alt="Bottles 64 Interface"
             className="w-full h-auto block drop-shadow-2xl rounded-xl animate-float"
           />
         </div>

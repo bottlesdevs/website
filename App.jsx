@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation, Navigate, useParams } from 'react-router-dom';
 import { LanguageProvider } from './i18n/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/HeroReleased';
@@ -66,6 +66,11 @@ const App = () => {
         else navigate(`/${view}`);
     };
 
+    const RedirectToBlog = () => {
+        const { slug } = useParams();
+        return <Navigate to={`/blog/${slug}.md`} replace />;
+    };
+
     const isGaming = currentView === 'gaming';
 
     return (
@@ -99,6 +104,7 @@ const App = () => {
                             <Route path="/funding" element={<Funding />} />
                             <Route path="/blog" element={<Blog />} />
                             <Route path="/blog/:slug" element={<Blog />} />
+                            <Route path="/posts/:slug" element={<RedirectToBlog />} />
                             <Route path="/database" element={<DatabaseHome />} />
                             <Route path="/runners" element={<Runners />} />
                             <Route path="/next" element={<Next />} />

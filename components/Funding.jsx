@@ -12,7 +12,7 @@ const tasksData = [
     title: "Library mode",
     description: "Allow users to add any program from any bottle in a library view for easy access.",
     progress: 100,
-    link: "https://usebottles.com/posts/2022-08-28-release-2022.8.28",
+    link: "https://usebottles.com/blog/2022-08-28-release-2022.8.28.md",
   },
   {
     status: "ALPHA",
@@ -36,7 +36,7 @@ const tasksData = [
     title: "Integration of UMU",
     description: "Integration of UMU to enhance the gaming compatibility in Bottles.",
     progress: 10,
-    link: "https://usebottles.com/posts/2024-09-24-umu-next/",
+    link: "https://usebottles.com/blog/2024-09-24-umu-next.md",
     infoText: "Estimated time: 4 weeks of work based on average hourly cost.",
     icons: [{ name: 'build', title: 'In progress' }, { name: 'help', title: 'Needs funding' }]
   },
@@ -45,7 +45,7 @@ const tasksData = [
     title: "Bottles Next",
     description: "A complete redesign of Bottles to overcome current limitations and provide a consistent user experience across Linux and macOS.",
     progress: 15,
-    link: "https://usebottles.com/posts/2023-10-05-bottles-next-a-new-chapter/",
+    link: "https://usebottles.com/blog/2023-10-05-bottles-next-a-new-chapter.md",
     infoText: "We are looking for funds, contributors, and companies to provide infrastructure support.",
     icons: [{ name: 'build', title: 'In progress' }, { name: 'help', title: 'Needs funding' }]
   },

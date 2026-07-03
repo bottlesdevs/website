@@ -7,7 +7,7 @@ pubDate: 2025-08-16
 
 Hello everyone,
 
-A few days ago, the news broke that Bottles had received the [green light from NLnet](https://usebottles.com/posts/2025-08-04-nlnet-commons-fund/). This was wonderful news, which made us proud and energized. However, reading the media headlines and some comments from the community, I realized that perhaps some clarity is needed.
+A few days ago, the news broke that Bottles had received the [green light from NLnet](https://usebottles.com/blog/2025-08-04-nlnet-commons-fund.md). This was wonderful news, which made us proud and energized. However, reading the media headlines and some comments from the community, I realized that perhaps some clarity is needed.
 
 **First important thing: we haven't received the funding.**
 A European call for proposals doesn't work like a direct bank transfer to a project's account. It works like this: the project is selected, receives the "green light," and from that moment on, a process of discussion and planning begins to define the actual budget it will be eligible for and how it will be spent. In our case, these funds will be dedicated to Bottles Next, not Bottles in its current form.
