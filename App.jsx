@@ -115,7 +115,7 @@ const App = () => {
                             <Route path="/appstore" element={<AppStore />} />
                             <Route path="/app" element={<AppDetails />} />
                             <Route path="/docs/*" element={<Docs />} />
-                            <Route path="/gaming" element={<Gaming onNavigate={handleNavigate} />} />
+                            <Route path="/gaming" element={<Gaming onDownload={handleOpenDownload} />} />
                         </Routes>
                     </div>
                     <DownloadSection showModal={showDownloadModal} setShowModal={setShowDownloadModal} />
