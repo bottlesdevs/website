@@ -148,7 +148,7 @@ export const ar = {
         soda: {
             badge: 'المشغل الافتراضي',
             title: 'Soda',
-            upgrading: 'نحن نعمل حالياً على ترقيته إلى Wine 10.0!',
+            wineVersion: 'يعتمد الآن على Wine 11.0!',
             description1: 'Soda هو مشغلنا الرائد، صُمم خصيصاً لحل مشاكل التوافق وتقليل الأخطاء التي قد تظهر في نسخ Wine العادية.',
             description2: "يعتمد Soda على نسخة Valve (المستخدمة في Proton)، ويتضمن إصلاحات من Proton و TKG و GE. هو مُحسّن خصيصاً لـ Bottles ليمنحك تجربة 'منعشة' للألعاب والتطبيقات على حد سواء.",
             valveWine: "Valve's Wine Base",

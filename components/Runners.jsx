@@ -36,7 +36,7 @@ const Runners = () => {
                             <h2 className="text-4xl font-bold text-zinc-900 dark:text-white mb-6">{t.runners.soda.title}</h2>
                             <div className="bg-purple-100 dark:bg-purple-900/30 p-4 rounded-xl border border-purple-200 dark:border-purple-800 mb-6 flex items-center gap-2">
                                 <AlertCircle className="w-4 h-4" />
-                                <p>{t.runners.soda.upgrading}</p>
+                                <p>{t.runners.soda.wineVersion}</p>
                             </div>
                             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
                                 {t.runners.soda.description1}
