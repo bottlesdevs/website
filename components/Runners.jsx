@@ -197,7 +197,7 @@ const Runners = () => {
                                 <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                                     <div className="flex items-center gap-3">
                                         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                                        <span className="font-mono text-sm">soda-9.0-1</span>
+                                        <span className="font-mono text-sm">soda-11.0-2</span>
                                     </div>
                                     <span className="text-xs text-zinc-500">{t.runners.contribute.passing}</span>
                                 </div>
