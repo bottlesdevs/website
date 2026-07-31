@@ -148,7 +148,7 @@ export const en = {
         soda: {
             badge: 'Default Runner',
             title: 'Soda',
-            upgrading: 'We are working to upgrade it to Wine 10.0!',
+            wineVersion: 'Now based on Wine 11.0!',
             description1: 'Soda is our flagship runner, designed to solve compatibility issues and decrease the risk of regressions found in upstream Wine.',
             description2: "Based on Valve's Wine (used in Proton), Soda includes patches from Proton, TKG, and GE. It is optimized specifically for Bottles, offering a \"sparkling\" experience for both gaming and applications.",
             valveWine: "Valve's Wine Base",
