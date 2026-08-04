@@ -268,12 +268,12 @@ export const es = {
             beta: 'BETA',
             title: 'Conoce a',
             titleHighlight: 'Eagle',
-            description: 'No más ejecuciones a ciegas. Eagle escanea binarios, detecta patrones, mapea dependencias y sugiere la configuración perfecta, en segundos.',
+            description: 'Eagle examina los ejecutables de Windows antes de iniciarlos, señala posibles problemas y combina el análisis local con datos de compatibilidad de la comunidad.',
             download: 'Descargar Bottles',
         },
         howItWorks: {
             title: 'Cómo funciona Eagle',
-            description: 'En segundos, Eagle realiza un análisis exhaustivo de múltiples etapas para comprender exactamente qué necesita tu ejecutable.',
+            description: 'Eagle sigue un análisis por etapas y relaciona cada resultado con el archivo o la fuente de datos que lo produjo.',
             steps: {
                 peParsing: {
                     title: 'Análisis PE',
@@ -281,21 +281,21 @@ export const es = {
                 },
                 yaraScanning: {
                     title: 'Escaneo YARA',
-                    description: 'Más de 50 reglas de patrones detectan motores, frameworks, instaladores y amenazas.',
+                    description: 'Las reglas detectan familias de software y firmas conocidas asociadas a malware y ladrones de información.',
                 },
                 contextAnalysis: {
                     title: 'Análisis de Contexto',
-                    description: 'Escanea archivos vecinos, carpetas Unity Data y configuraciones .NET.',
+                    description: 'Comprueba archivos relacionados y busca una coincidencia en la base de datos comunitaria sin conexión.',
                 },
                 suggestions: {
                     title: 'Sugerencias',
-                    description: 'Genera configuraciones optimizadas y recomendaciones de dependencias.',
+                    description: 'Crea sugerencias opcionales de dependencias y configuración a partir de las pruebas encontradas.',
                 },
             },
         },
         detection: {
-            title: 'Detecta Todo',
-            description: "Desde APIs gráficas hasta motores de juego, desde sistemas DRM hasta formatos de instalación. Las reglas YARA de Eagle y el mapeo de DLL lo cubren todo.",
+            title: 'Sabe Qué Buscar',
+            description: 'Eagle identifica API gráficas, motores, entornos de ejecución, sistemas de protección y formatos de instalación mediante metadatos PE, importaciones DLL y reglas YARA.',
             categories: {
                 graphics: { title: 'Gráficos', description: 'DirectX 8-12, Vulkan, OpenGL, DXGI, NVAPI, AMD AGS, PhysX' },
                 audio: { title: 'Audio', description: 'XAudio, FMOD, Wwise, OpenAL, DirectSound, Miles, Bink' },
@@ -306,23 +306,36 @@ export const es = {
             },
         },
         intelligence: {
-            title: 'No solo un Escáner',
-            description: "Eagle no solo lee archivos, entiende el contexto, las relaciones y la compatibilidad.",
+            title: 'Análisis con Contexto',
+            description: 'La inspección local, los controles de seguridad y los datos de la comunidad se reúnen en un informe antes de que decidas qué ejecutar o cambiar.',
             features: {
                 deepScan: { title: 'Escaneo Profundo', description: 'Extrae y analiza archivos de instaladores. Escanea ejecutables incrustados, DLLs y archivos de configuración para construir una imagen completa.' },
-                neighborAnalysis: { title: 'Análisis Vecinal', description: 'Escanea archivos relacionados en el mismo directorio: carpetas Unity Data, DLLs conocidas, archivos de configuración .NET y paquetes .pck de Godot.' },
-                smartSuggestions: { title: 'Sugerencias Inteligentes', description: 'Recomienda automáticamente DXVK, VKD3D, GameMode y otras optimizaciones basadas en las tecnologías detectadas.' },
-                compatibilityWarnings: { title: 'Advertencias de Compatibilidad', description: 'Detecta anti-cheat, binarios ARM64, protectores problemáticos y componentes faltantes antes de ejecutar.' },
+                threatScanning: { title: 'Escaneo de Amenazas', description: 'Comprueba los ejecutables en busca de patrones conocidos de malware y ladrones de información, y avisa antes de iniciar un programa marcado.' },
+                communityEvidence: { title: 'Datos de la Comunidad', description: 'Compara los programas con informes offline de ProtonDB y metadatos de aplicaciones de winetricks incluidos en Bottles.' },
+                crashFollowUp: { title: 'Análisis tras un Cierre', description: 'Ofrece un análisis de Eagle cuando un programa se cierra de inmediato para facilitar la revisión de componentes ausentes y problemas conocidos.' },
+                smartSuggestions: { title: 'Sugerencias Opcionales', description: 'Propone dependencias, variables de entorno, reemplazos de DLL, argumentos de inicio y algunas optimizaciones cuando las pruebas los respaldan.' },
+                transparentSources: { title: 'Fuentes y Licencias', description: 'Muestra el tipo de coincidencia, las pruebas, la fuente, los créditos y la licencia junto a los resultados derivados de la comunidad.' },
             },
+        },
+        community: {
+            badge: 'NUEVO EN BOTTLES 65',
+            title: 'Conocimiento de la Comunidad, Disponible sin Conexión',
+            description: 'Eagle Intelligence puede identificar aplicaciones conocidas y compararlas con informes de la comunidad sin enviar el ejecutable a ningún sitio. Los datos se incluyen en el Flatpak de Bottles y no requieren una descarga aparte.',
+            disclaimer: 'Los datos de la comunidad son orientativos. Eagle calcula su propio nivel y nunca lo presenta como una clasificación oficial de ProtonDB ni como una garantía de compatibilidad.',
+            imageAlt: 'Fuentes, pruebas de coincidencia, créditos y licencias de Eagle Intelligence en Bottles 65',
+            protondbTitle: 'Informes de la comunidad de ProtonDB',
+            winetricksTitle: 'Metadatos de aplicaciones de winetricks',
         },
         report: {
             title: 'Transparencia Total',
-            description: 'Eagle genera informes Markdown completos que puedes guardar y compartir. Cada detección incluye su fuente, contexto y razonamiento.',
+            description: 'Eagle genera informes Markdown que puedes guardar y compartir. Los resultados técnicos se mantienen separados de los datos comunitarios y los cambios sugeridos.',
             items: [
                 'Metadatos binarios: arquitectura, fecha de compilación, editor',
                 'Tecnologías detectadas con atribución de archivo fuente',
-                'Advertencias de compatibilidad y explicaciones',
-                'Dependencias recomendadas y optimizaciones',
+                'Amenazas detectadas y advertencias de compatibilidad',
+                'Tipo, confianza y pruebas de la coincidencia comunitaria',
+                'Dependencias sugeridas y configuración opcional',
+                'Créditos y licencias de las fuentes de datos',
                 'Lista completa de archivos analizados',
             ],
         },
@@ -539,9 +552,36 @@ export const es = {
             crypto: { desc: 'BTC, ETH, y más' },
             polar: { desc: 'Paga lo que quieras' }
         },
+        goals: {
+            nextBackend: {
+                title: 'Backend de Bottles Next',
+                description: 'Nuestro backend en Rust ya gestiona botellas, runners, componentes, dependencias, instantáneas, wrappers, Wine, Proton y WineBridge.',
+                info: 'Hemos completado el backend necesario para la primera aplicación de Bottles Next.',
+            },
+            nextUi: {
+                title: 'Toolkit de interfaz de Next',
+                description: 'Estamos construyendo la biblioteca de componentes Rust e Iced que definirá la interfaz de Bottles Next y sus patrones de interacción.',
+                info: 'Nuestra galería de componentes ya se puede usar y estamos añadiendo nuevos patrones de la aplicación.',
+            },
+            nextApp: {
+                title: 'Aplicacion Bottles Next',
+                description: 'Estamos conectando next-ui al backend terminado y convirtiendo los bloques actuales en la primera aplicación de escritorio utilizable.',
+                info: 'La aplicación gráfica es nuestro paso actual entre el backend terminado y la primera vista previa pública.',
+            },
+            layers: {
+                title: 'Botellas por capas',
+                description: 'Estamos convirtiendo la demo Flatpak funcional de prefijos por capas en una función compatible con Bottles Next, con capas reutilizables de aplicaciones y dependencias.',
+                info: 'Nuestra prueba de concepto ya crea capas, compone un prefijo y ejecuta una aplicación real de Windows.',
+            },
+            legacy: {
+                title: 'Versiones legacy',
+                description: 'Sigo manteniendo estable la versión actual de Bottles mientras construimos Next, con correcciones de compatibilidad, actualizaciones de Soda, Eagle y versiones de Flatpak.',
+                info: 'Bottles Next sigue siendo el futuro del proyecto, pero continuaré con el mantenimiento específico de la aplicación actual.',
+            },
+        },
         roadmap: {
-            title: 'Hoja de Ruta de Desarrollo',
-            description: 'Sigue el progreso de las características financiadas por la comunidad.',
+            title: 'Objetivos de Financiación Actuales',
+            description: 'Descubre dónde se invierten ahora el tiempo de desarrollo y los fondos del proyecto.',
             searchPlaceholder: 'Filtrar tareas...',
         },
         tasks: {
@@ -549,8 +589,7 @@ export const es = {
                 wip: 'EN PROGRESO',
                 done: 'HECHO',
                 alpha: 'ALPHA',
-                next: 'PRÓXIMO',
-                rejected: 'RECHAZADO'
+                next: 'PRÓXIMO'
             },
             viewDetails: 'Ver Detalles',
         },

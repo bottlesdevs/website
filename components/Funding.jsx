@@ -6,47 +6,44 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
-const tasksData = [
+const getTasksData = (t) => [
   {
     status: "DONE",
-    title: "Library mode",
-    description: "Allow users to add any program from any bottle in a library view for easy access.",
-    progress: 100,
-    link: "https://usebottles.com/blog/2022-08-28-release-2022.8.28.md",
-  },
-  {
-    status: "ALPHA",
-    title: "Per-bottle sandbox",
-    description: "Experimental feature for wrapping each bottle with a sandbox to limit permissions.",
-    progress: 80,
-    link: "https://github.com/bottlesdevs/Bottles/issues/1158",
-    infoText: "Estimated time: 1 week of work based on average hourly cost.",
-    icons: [{ name: 'build', title: 'In progress' }, { name: 'help', title: 'Needs funding' }]
-  },
-  {
-    status: "REJECTED",
-    title: "Layered bottles",
-    description: "Our solution for multiple environments in one bottle. Planned for Bottles Next.",
-    progress: 0,
-    link: "https://github.com/bottlesdevs/Bottles/issues/510",
-    infoText: "This feature is planned for Bottles Next.",
+    title: t.funding.goals.nextBackend.title,
+    description: t.funding.goals.nextBackend.description,
+    link: "https://github.com/bottlesdevs/next-core",
+    infoText: t.funding.goals.nextBackend.info,
   },
   {
     status: "WIP",
-    title: "Integration of UMU",
-    description: "Integration of UMU to enhance the gaming compatibility in Bottles.",
-    progress: 10,
-    link: "https://usebottles.com/blog/2024-09-24-umu-next.md",
-    infoText: "Estimated time: 4 weeks of work based on average hourly cost.",
+    title: t.funding.goals.nextUi.title,
+    description: t.funding.goals.nextUi.description,
+    link: "https://github.com/bottlesdevs/next-ui",
+    infoText: t.funding.goals.nextUi.info,
     icons: [{ name: 'build', title: 'In progress' }, { name: 'help', title: 'Needs funding' }]
   },
   {
     status: "NEXT",
-    title: "Bottles Next",
-    description: "A complete redesign of Bottles to overcome current limitations and provide a consistent user experience across Linux and macOS.",
-    progress: 15,
-    link: "https://usebottles.com/blog/2023-10-05-bottles-next-a-new-chapter.md",
-    infoText: "We are looking for funds, contributors, and companies to provide infrastructure support.",
+    title: t.funding.goals.nextApp.title,
+    description: t.funding.goals.nextApp.description,
+    link: "https://github.com/bottlesdevs/bottles-next",
+    infoText: t.funding.goals.nextApp.info,
+    icons: [{ name: 'build', title: 'In progress' }, { name: 'help', title: 'Needs funding' }]
+  },
+  {
+    status: "ALPHA",
+    title: t.funding.goals.layers.title,
+    description: t.funding.goals.layers.description,
+    link: "https://github.com/bottlesdevs/next-layers-demo",
+    infoText: t.funding.goals.layers.info,
+    icons: [{ name: 'build', title: 'In progress' }, { name: 'help', title: 'Needs funding' }]
+  },
+  {
+    status: "WIP",
+    title: t.funding.goals.legacy.title,
+    description: t.funding.goals.legacy.description,
+    link: "https://github.com/bottlesdevs/Bottles/releases",
+    infoText: t.funding.goals.legacy.info,
     icons: [{ name: 'build', title: 'In progress' }, { name: 'help', title: 'Needs funding' }]
   },
 ];
@@ -66,6 +63,7 @@ const otherSponsors = [
 
 const Funding = () => {
   const { t } = useLanguage();
+  const tasksData = getTasksData(t);
   const [filter, setFilter] = useState('');
   const [search, setSearch] = useState('');
   const [showCryptoModal, setShowCryptoModal] = useState(false);
@@ -116,21 +114,9 @@ const Funding = () => {
     switch (status) {
       case 'DONE': return 'text-green-600 dark:text-green-400 border-green-200 dark:border-green-900 bg-green-50 dark:bg-green-900/20';
       case 'ALPHA': return 'text-yellow-600 dark:text-yellow-400 border-yellow-200 dark:border-yellow-900 bg-yellow-50 dark:bg-yellow-900/20';
-      case 'REJECTED': return 'text-red-600 dark:text-red-400 border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-900/20';
       case 'WIP': return 'text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/20';
       case 'NEXT': return 'text-purple-600 dark:text-purple-400 border-purple-200 dark:border-purple-900 bg-purple-50 dark:bg-purple-900/20';
       default: return 'text-zinc-500 dark:text-zinc-400 border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900';
-    }
-  };
-
-  const getProgressColor = (status) => {
-    switch (status) {
-      case 'DONE': return 'bg-green-500';
-      case 'ALPHA': return 'bg-yellow-500';
-      case 'REJECTED': return 'bg-red-500';
-      case 'WIP': return 'bg-blue-500';
-      case 'NEXT': return 'bg-purple-500';
-      default: return 'bg-zinc-500';
     }
   };
 
@@ -203,7 +189,7 @@ const Funding = () => {
 
         {/* Filter Chips */}
         <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
-          {['WIP', 'DONE', 'ALPHA', 'NEXT', 'REJECTED'].map(s => (
+          {['WIP', 'DONE', 'ALPHA', 'NEXT'].map(s => (
             <button
               key={s}
               onClick={() => setFilter(filter === s ? '' : s)}
@@ -233,10 +219,7 @@ const Funding = () => {
               <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">{task.title}</h3>
               <p className="text-sm text-zinc-600 dark:text-zinc-500 mb-6 leading-relaxed" dangerouslySetInnerHTML={{ __html: task.description }}></p>
 
-              <div className="mt-auto space-y-4">
-                <div className="h-1 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
-                  <div className={`h-full ${getProgressColor(task.status)}`} style={{ width: `${task.progress}%` }}></div>
-                </div>
+              <div className="mt-auto">
                 <a href={task.link} target="_blank" rel="noreferrer" className="flex items-center justify-center w-full py-2 rounded-lg border border-zinc-300 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 text-sm hover:text-zinc-900 dark:hover:text-white hover:border-zinc-500 dark:hover:border-zinc-600 transition-all bg-white dark:bg-transparent">
                   <BookOpen className="w-3 h-3 mr-2" /> {t.funding.tasks.viewDetails}
                 </a>

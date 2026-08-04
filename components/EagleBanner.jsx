@@ -10,7 +10,7 @@ const EagleIcon = ({ className }) => (
     </svg>
 );
 
-const EagleBanner = () => {
+const EagleBanner = ({ isHidden = false }) => {
     const { t } = useLanguage();
     const [isAnimated, setIsAnimated] = useState(false);
 
@@ -21,7 +21,7 @@ const EagleBanner = () => {
 
     return (
         <div
-            className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${isAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`${isHidden ? 'hidden' : ''} fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${isAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
         >
             <div className="relative group">
@@ -29,7 +29,7 @@ const EagleBanner = () => {
                 <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 rounded-2xl overflow-visible">
                     <rect
                         x="1" y="1"
-                        width="calc(100% - 2px)" height="calc(100% - 2px)"
+                        width="100%" height="100%"
                         rx="16" ry="16"
                         fill="none"
                         stroke="#f97316"
@@ -37,6 +37,8 @@ const EagleBanner = () => {
                         pathLength="100"
                         strokeLinecap="round"
                         style={{
+                            width: 'calc(100% - 2px)',
+                            height: 'calc(100% - 2px)',
                             strokeDasharray: '35 65',
                             animation: 'snakeBorder 3s linear infinite'
                         }}

@@ -268,12 +268,12 @@ export const it = {
             beta: 'BETA',
             title: 'Scopri',
             titleHighlight: 'Eagle',
-            description: 'Niente più esecuzioni alla cieca. Eagle scansiona i binari, rileva i pattern, mappa le dipendenze e suggerisce la configurazione perfetta, in pochi secondi.',
+            description: 'Eagle esamina gli eseguibili Windows prima dell\'avvio, segnala possibili problemi e unisce l\'analisi locale alle esperienze della community.',
             download: 'Scarica Bottles',
         },
         howItWorks: {
             title: 'Come funziona Eagle',
-            description: 'In pochi secondi, Eagle esegue un\'analisi completa e multistadio per capire esattamente di cosa ha bisogno il tuo eseguibile.',
+            description: 'Eagle segue più fasi di analisi e collega ogni risultato al file o alla fonte dati che lo ha prodotto.',
             steps: {
                 peParsing: {
                     title: 'Parsing PE',
@@ -281,21 +281,21 @@ export const it = {
                 },
                 yaraScanning: {
                     title: 'Scansione YARA',
-                    description: 'Oltre 50 regole di pattern rilevano engine, framework, installer e minacce.',
+                    description: 'Le regole riconoscono famiglie di software e firme note associate a malware e stealer.',
                 },
                 contextAnalysis: {
                     title: 'Analisi del Contesto',
-                    description: 'Scansiona i file vicini, le cartelle Unity Data e i config .NET.',
+                    description: 'Controlla i file correlati e cerca una corrispondenza nel database offline della community.',
                 },
                 suggestions: {
                     title: 'Suggerimenti',
-                    description: 'Genera configurazioni ottimizzate e raccomandazioni sulle dipendenze.',
+                    description: 'Crea suggerimenti opzionali per dipendenze e configurazione usando le prove trovate.',
                 },
             },
         },
         detection: {
-            title: 'Rileva Tutto',
-            description: "Dalle API grafiche ai motori di gioco, dai sistemi DRM ai formati di installazione. Le regole YARA di Eagle e la mappatura DLL coprono tutto.",
+            title: 'Sa Cosa Cercare',
+            description: 'Eagle identifica API grafiche, motori, runtime, sistemi di protezione e formati di installazione tramite metadati PE, import DLL e regole YARA.',
             categories: {
                 graphics: { title: 'Grafica', description: 'DirectX 8-12, Vulkan, OpenGL, DXGI, NVAPI, AMD AGS, PhysX' },
                 audio: { title: 'Audio', description: 'XAudio, FMOD, Wwise, OpenAL, DirectSound, Miles, Bink' },
@@ -306,23 +306,36 @@ export const it = {
             },
         },
         intelligence: {
-            title: 'Non solo uno Scanner',
-            description: "Eagle non legge solo i file, comprende il contesto, le relazioni e la compatibilità.",
+            title: 'Analisi con Contesto',
+            description: 'Analisi locale, controlli di sicurezza ed esperienze della community si incontrano in un solo report prima di decidere cosa eseguire o modificare.',
             features: {
                 deepScan: { title: 'Scansione Profonda', description: 'Estrae e analizza i file dagli installer. Scansiona eseguibili incorporati, DLL e file di configurazione per costruire un quadro completo.' },
-                neighborAnalysis: { title: 'Analisi dei Vicini', description: 'Scansiona i file correlati nella stessa directory: cartelle Unity Data, DLL note, file di configurazione .NET e pacchetti .pck Godot.' },
-                smartSuggestions: { title: 'Suggerimenti Intelligenti', description: 'Raccomanda automaticamente DXVK, VKD3D, GameMode e altre ottimizzazioni basate sulle tecnologie rilevate.' },
-                compatibilityWarnings: { title: 'Avvisi di Compatibilità', description: 'Rileva anti-cheat, binari ARM64, protezioni problematiche e componenti mancanti prima dell\'esecuzione.' },
+                threatScanning: { title: 'Scansione delle Minacce', description: 'Controlla gli eseguibili per pattern noti di malware e stealer, poi avvisa prima di avviare un programma segnalato.' },
+                communityEvidence: { title: 'Esperienze della Community', description: 'Confronta i programmi con i report offline di ProtonDB e i metadati applicativi di winetricks inclusi in Bottles.' },
+                crashFollowUp: { title: 'Analisi dopo un Crash', description: 'Propone l\'analisi Eagle quando un programma si chiude subito, così è più semplice controllare componenti mancanti e problemi noti.' },
+                smartSuggestions: { title: 'Suggerimenti Opzionali', description: 'Propone dipendenze, variabili d\'ambiente, override DLL, argomenti di avvio e alcune ottimizzazioni quando le prove le supportano.' },
+                transparentSources: { title: 'Fonti e Licenze', description: 'Mostra tipo di corrispondenza, prove, fonte, crediti e licenza accanto ai risultati derivati dalla community.' },
             },
+        },
+        community: {
+            badge: 'NOVITÀ IN BOTTLES 65',
+            title: 'La Conoscenza della Community, Disponibile Offline',
+            description: 'Eagle Intelligence può riconoscere applicazioni note e confrontarle con i report della community senza inviare altrove l\'eseguibile. I dati sono inclusi nel Flatpak di Bottles e non richiedono un download separato.',
+            disclaimer: 'Le esperienze della community sono indicative. Eagle calcola il proprio livello e non lo presenta mai come una valutazione ufficiale di ProtonDB o una garanzia di compatibilità.',
+            imageAlt: 'Fonti, prove di corrispondenza, crediti e licenze di Eagle Intelligence in Bottles 65',
+            protondbTitle: 'Report della community ProtonDB',
+            winetricksTitle: 'Metadati applicativi di winetricks',
         },
         report: {
             title: 'Trasparenza Totale',
-            description: 'Eagle genera report Markdown completi che puoi salvare e condividere. Ogni rilevamento include la fonte, il contesto e la motivazione.',
+            description: 'Eagle genera report Markdown che puoi salvare e condividere. I risultati tecnici restano distinti dalle esperienze della community e dalle modifiche suggerite.',
             items: [
                 'Metadati binari: architettura, data di build, editore',
                 'Tecnologie rilevate con attribuzione del file sorgente',
-                'Avvisi di compatibilità e spiegazioni',
-                'Dipendenze raccomandate e ottimizzazioni',
+                'Minacce rilevate e avvisi di compatibilità',
+                'Tipo, affidabilità e prove della corrispondenza community',
+                'Dipendenze suggerite e configurazione opzionale',
+                'Crediti e licenze delle fonti dati',
                 'Elenco completo dei file analizzati',
             ],
         },
@@ -539,9 +552,36 @@ export const it = {
             crypto: { desc: 'BTC, ETH, e altro' },
             polar: { desc: 'Paga quanto vuoi' },
         },
+        goals: {
+            nextBackend: {
+                title: 'Backend di Bottles Next',
+                description: 'Il nostro backend Rust ora gestisce bottiglie, runner, componenti, dipendenze, snapshot, wrapper, Wine, Proton e WineBridge.',
+                info: 'Abbiamo completato la parte di backend necessaria alla prima applicazione Bottles Next.',
+            },
+            nextUi: {
+                title: 'Toolkit UI di Next',
+                description: 'Stiamo sviluppando la libreria di componenti Rust e Iced che definirà l\'interfaccia di Bottles Next e i suoi pattern di interazione.',
+                info: 'La nostra galleria dei componenti è utilizzabile e stiamo aggiungendo nuovi pattern dell\'applicazione.',
+            },
+            nextApp: {
+                title: 'Applicazione Bottles Next',
+                description: 'Stiamo collegando next-ui al backend completato e trasformando i blocchi attuali nella prima applicazione desktop utilizzabile.',
+                info: 'L\'applicazione grafica è il nostro passaggio attuale tra il backend completato e la prima anteprima pubblica.',
+            },
+            layers: {
+                title: 'Bottiglie a livelli',
+                description: 'Stiamo trasformando la demo Flatpak funzionante dei prefix a livelli in una funzionalità supportata di Bottles Next, con livelli riutilizzabili per applicazioni e dipendenze.',
+                info: 'La nostra prova di concetto crea già i livelli, compone un prefix e avvia una vera applicazione Windows.',
+            },
+            legacy: {
+                title: 'Release legacy',
+                description: 'Continuo a mantenere stabile l\'attuale Bottles mentre costruiamo Next, con correzioni di compatibilità, aggiornamenti Soda, Eagle e release Flatpak.',
+                info: 'Bottles Next rimane il futuro del progetto, ma continuo a occuparmi della manutenzione mirata dell\'applicazione attuale.',
+            },
+        },
         roadmap: {
-            title: 'Roadmap di Sviluppo',
-            description: 'Segui i progressi sulle funzionalità finanziate dalla community.',
+            title: 'Obiettivi di Finanziamento Attuali',
+            description: 'Scopri dove vengono impiegati oggi il tempo di sviluppo e i fondi del progetto.',
             searchPlaceholder: 'Filtra attività...',
         },
         tasks: {
@@ -549,8 +589,7 @@ export const it = {
                 wip: 'WIP',
                 done: 'FATTO',
                 alpha: 'ALPHA',
-                next: 'PROSSIMO',
-                rejected: 'RIFIUTATO'
+                next: 'PROSSIMO'
             },
             viewDetails: 'Vedi Dettagli',
         },

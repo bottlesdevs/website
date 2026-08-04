@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import {
     Eye, Cpu, Layers, FileSearch, Shield, Gamepad2, Box, Music2, Monitor,
     FileCode2, AlertTriangle, Sparkles, ChevronRight, Zap, GitBranch, FileScan,
-    Binary, CheckCircle2, ArrowRight, Terminal
+    Binary, CheckCircle2, ArrowRight, Terminal, Database, ExternalLink
 } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -31,9 +31,19 @@ const Eagle = () => {
             description: t.eaglePage.intelligence.features.deepScan.description,
         },
         {
-            icon: <GitBranch className="w-6 h-6" />,
-            title: t.eaglePage.intelligence.features.neighborAnalysis.title,
-            description: t.eaglePage.intelligence.features.neighborAnalysis.description,
+            icon: <Shield className="w-6 h-6" />,
+            title: t.eaglePage.intelligence.features.threatScanning.title,
+            description: t.eaglePage.intelligence.features.threatScanning.description,
+        },
+        {
+            icon: <Database className="w-6 h-6" />,
+            title: t.eaglePage.intelligence.features.communityEvidence.title,
+            description: t.eaglePage.intelligence.features.communityEvidence.description,
+        },
+        {
+            icon: <AlertTriangle className="w-6 h-6" />,
+            title: t.eaglePage.intelligence.features.crashFollowUp.title,
+            description: t.eaglePage.intelligence.features.crashFollowUp.description,
         },
         {
             icon: <Sparkles className="w-6 h-6" />,
@@ -41,9 +51,9 @@ const Eagle = () => {
             description: t.eaglePage.intelligence.features.smartSuggestions.description,
         },
         {
-            icon: <AlertTriangle className="w-6 h-6" />,
-            title: t.eaglePage.intelligence.features.compatibilityWarnings.title,
-            description: t.eaglePage.intelligence.features.compatibilityWarnings.description,
+            icon: <GitBranch className="w-6 h-6" />,
+            title: t.eaglePage.intelligence.features.transparentSources.title,
+            description: t.eaglePage.intelligence.features.transparentSources.description,
         },
     ];
 
@@ -154,7 +164,7 @@ const Eagle = () => {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {intelligenceFeatures.map((feat, i) => (
                             <div key={i} className="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:border-amber-300 dark:hover:border-amber-800 transition-colors group">
                                 <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-2xl flex items-center justify-center text-amber-600 dark:text-amber-400 mb-6 group-hover:scale-110 transition-transform">
@@ -164,6 +174,55 @@ const Eagle = () => {
                                 <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">{feat.description}</p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Community Intelligence */}
+            <section className="py-24 bg-white dark:bg-zinc-900/30 border-t border-zinc-200 dark:border-white/5">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-400 text-sm font-medium mb-6">
+                                <Database className="w-4 h-4" />
+                                <span>{t.eaglePage.community.badge}</span>
+                            </div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-6">
+                                {t.eaglePage.community.title}
+                            </h2>
+                            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
+                                {t.eaglePage.community.description}
+                            </p>
+
+                            <div className="space-y-4 mb-6">
+                                <a href="https://github.com/bdefore/protondb-data" target="_blank" rel="noreferrer" className="flex items-center justify-between gap-4 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-black hover:border-blue-300 dark:hover:border-blue-800 transition-colors">
+                                    <div>
+                                        <div className="font-semibold text-zinc-900 dark:text-white">{t.eaglePage.community.protondbTitle}</div>
+                                        <div className="text-sm text-zinc-500 dark:text-zinc-400">protondb-data, ODbL 1.0 / DbCL 1.0</div>
+                                    </div>
+                                    <ExternalLink className="w-5 h-5 text-zinc-400 shrink-0" />
+                                </a>
+                                <a href="https://github.com/Winetricks/winetricks" target="_blank" rel="noreferrer" className="flex items-center justify-between gap-4 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-black hover:border-blue-300 dark:hover:border-blue-800 transition-colors">
+                                    <div>
+                                        <div className="font-semibold text-zinc-900 dark:text-white">{t.eaglePage.community.winetricksTitle}</div>
+                                        <div className="text-sm text-zinc-500 dark:text-zinc-400">LGPL-2.1-or-later</div>
+                                    </div>
+                                    <ExternalLink className="w-5 h-5 text-zinc-400 shrink-0" />
+                                </a>
+                            </div>
+
+                            <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                                {t.eaglePage.community.disclaimer}
+                            </p>
+                        </div>
+
+                        <div className="rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-black shadow-2xl">
+                            <img
+                                src="/uploads/bottles-65/eagle-intelligence.png"
+                                alt={t.eaglePage.community.imageAlt}
+                                className="w-full h-auto"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
