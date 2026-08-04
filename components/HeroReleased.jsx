@@ -4,7 +4,7 @@ import { marked } from 'marked';
 
 import { useLanguage } from '../i18n/LanguageContext';
 
-const HeroReleased = ({ onDownload, onOpenPost }) => {
+const HeroReleased = ({ onDownload, onOpenPost, onModalChange }) => {
   const { t } = useLanguage();
   const [releaseData, setReleaseData] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -30,8 +30,11 @@ const HeroReleased = ({ onDownload, onOpenPost }) => {
     fetchLatestRelease();
   }, []);
 
+  useEffect(() => () => onModalChange?.(false), [onModalChange]);
+
   const handleOpenReleaseNotes = async () => {
     setShowModal(true);
+    onModalChange?.(true);
     setLoadingNotes(true);
     try {
       const response = await fetch('https://api.github.com/repos/bottlesdevs/Bottles/releases/latest');
@@ -45,6 +48,11 @@ const HeroReleased = ({ onDownload, onOpenPost }) => {
     } finally {
       setLoadingNotes(false);
     }
+  };
+
+  const handleCloseReleaseNotes = () => {
+    setShowModal(false);
+    onModalChange?.(false);
   };
 
   return (
@@ -71,7 +79,7 @@ const HeroReleased = ({ onDownload, onOpenPost }) => {
 
         {/* Main Title */}
         <h1 className="text-6xl md:text-9xl font-extrabold tracking-tighter text-zinc-900 dark:text-white mb-6 drop-shadow-sm animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-100">
-          Bottles <span className="text-transparent bg-clip-text bg-gradient-to-b from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-500">64</span>
+          Bottles <span className="text-transparent bg-clip-text bg-gradient-to-b from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-500">65</span>
         </h1>
 
         {/* Subtitle */}
@@ -100,8 +108,8 @@ const HeroReleased = ({ onDownload, onOpenPost }) => {
         {/* App Screenshot */}
         <div className="relative mx-auto max-w-6xl mt-12 perspective-1000">
           <img
-            src="/assets/hero/bottles-60.png"
-            alt="Bottles 64 Interface"
+            src="/uploads/bottles-65/bottle-details.png"
+            alt="Bottles 65 Interface"
             className="w-full h-auto block drop-shadow-2xl rounded-xl animate-float"
           />
         </div>
@@ -111,7 +119,7 @@ const HeroReleased = ({ onDownload, onOpenPost }) => {
       {showModal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
-          onClick={() => setShowModal(false)}
+          onClick={handleCloseReleaseNotes}
         >
           {/* Backdrop with blur */}
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300" />
@@ -139,7 +147,7 @@ const HeroReleased = ({ onDownload, onOpenPost }) => {
                 </div>
               </div>
               <button
-                onClick={() => setShowModal(false)}
+                onClick={handleCloseReleaseNotes}
                 className="p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full transition-colors text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
               >
                 <X className="w-5 h-5" />

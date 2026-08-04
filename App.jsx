@@ -28,6 +28,7 @@ const App = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [showDownloadModal, setShowDownloadModal] = useState(false);
+    const [showReleaseNotesModal, setShowReleaseNotesModal] = useState(false);
     const [theme, setTheme] = useState('system');
 
     const getCurrentView = () => {
@@ -93,12 +94,12 @@ const App = () => {
                         <Routes>
                             <Route path="/" element={
                                 <>
-                                    <Hero onDownload={handleOpenDownload} onOpenPost={handleOpenPost} />
+                                    <Hero onDownload={handleOpenDownload} onOpenPost={handleOpenPost} onModalChange={setShowReleaseNotesModal} />
                                     <GrantBanner onOpenPost={handleOpenPost} />
                                     <Features onNavigate={handleNavigate} />
                                     <Community />
                                     <Sponsors onNavigate={handleNavigate} />
-                                    <EagleBanner />
+                                    <EagleBanner isHidden={showReleaseNotesModal} />
                                 </>
                             } />
                             <Route path="/funding" element={<Funding />} />

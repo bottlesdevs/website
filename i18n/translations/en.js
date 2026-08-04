@@ -268,12 +268,12 @@ export const en = {
             beta: 'BETA',
             title: 'Meet',
             titleHighlight: 'Eagle',
-            description: 'No more blind runs. Eagle scans binaries, detects patterns, maps dependencies, and suggests the perfect configuration, in seconds.',
+            description: 'Eagle examines Windows executables before launch, flags possible problems, and combines local analysis with community compatibility evidence.',
             download: 'Download Bottles',
         },
         howItWorks: {
             title: 'How Eagle Works',
-            description: 'In seconds, Eagle performs a comprehensive multi-stage analysis to understand exactly what your executable needs.',
+            description: 'Eagle follows a staged analysis and keeps every result tied to the file or data source that produced it.',
             steps: {
                 peParsing: {
                     title: 'PE Parsing',
@@ -281,21 +281,21 @@ export const en = {
                 },
                 yaraScanning: {
                     title: 'YARA Scanning',
-                    description: '50+ pattern rules detect engines, frameworks, installers, and threats.',
+                    description: 'Pattern rules detect software families plus known malware and stealer signatures.',
                 },
                 contextAnalysis: {
                     title: 'Context Analysis',
-                    description: 'Scans neighbor files, Unity Data folders, and .NET configs.',
+                    description: 'Checks related files and searches the offline community database for a match.',
                 },
                 suggestions: {
                     title: 'Suggestions',
-                    description: 'Generates optimized configuration and dependency recommendations.',
+                    description: 'Builds optional dependency and configuration suggestions from the evidence it found.',
                 },
             },
         },
         detection: {
-            title: 'Detects Everything',
-            description: "From graphics APIs to game engines, from DRM systems to installer formats. Eagle's YARA rules and DLL mapping cover it all.",
+            title: 'Knows What to Look For',
+            description: 'Eagle maps graphics APIs, engines, runtimes, protection systems, and installer formats through PE metadata, DLL imports, and YARA rules.',
             categories: {
                 graphics: { title: 'Graphics', description: 'DirectX 8-12, Vulkan, OpenGL, DXGI, NVAPI, AMD AGS, PhysX' },
                 audio: { title: 'Audio', description: 'XAudio, FMOD, Wwise, OpenAL, DirectSound, Miles, Bink' },
@@ -306,23 +306,36 @@ export const en = {
             },
         },
         intelligence: {
-            title: 'Not Just a Scanner',
-            description: "Eagle doesn't just read files, it understands context, relationships, and compatibility.",
+            title: 'Analysis with Context',
+            description: 'Local inspection, security checks, and community evidence meet in one report before you decide what to run or change.',
             features: {
                 deepScan: { title: 'Deep Scan', description: 'Extracts and analyzes files from installers. Scans embedded executables, DLLs, and configuration files to build a complete picture.' },
-                neighborAnalysis: { title: 'Neighbor Analysis', description: 'Scans related files in the same directory: Unity Data folders, known DLLs, .NET config files, and Godot .pck packages.' },
-                smartSuggestions: { title: 'Smart Suggestions', description: 'Automatically recommends DXVK, VKD3D, GameMode, and other optimizations based on detected technologies.' },
-                compatibilityWarnings: { title: 'Compatibility Warnings', description: 'Detects anti-cheat, ARM64 binaries, problematic protectors, and missing components before you run.' },
+                threatScanning: { title: 'Threat Scanning', description: 'Checks executables for known malware and stealer patterns, then warns before a flagged program runs.' },
+                communityEvidence: { title: 'Community Evidence', description: 'Matches programs against offline ProtonDB reports and winetricks application metadata included with Bottles.' },
+                crashFollowUp: { title: 'Crash Follow-up', description: 'Offers an Eagle analysis when a program closes immediately so missing components and known problems are easier to inspect.' },
+                smartSuggestions: { title: 'Optional Suggestions', description: 'Proposes dependencies, environment variables, DLL overrides, launch arguments, and selected optimizations when the evidence supports them.' },
+                transparentSources: { title: 'Sources and Licenses', description: 'Shows the match type, evidence, source, data credits, and license beside community-derived results.' },
             },
+        },
+        community: {
+            badge: 'NEW IN BOTTLES 65',
+            title: 'Community Knowledge, Available Offline',
+            description: 'Eagle Intelligence can identify known applications and compare them with community reports without sending the executable anywhere. The data ships inside the Bottles Flatpak, so analysis does not require a separate download.',
+            disclaimer: 'Community evidence is advisory. Eagle calculates its own tier and never presents it as an official ProtonDB rating or a compatibility guarantee.',
+            imageAlt: 'Eagle Intelligence sources, match evidence, credits, and licenses in Bottles 65',
+            protondbTitle: 'ProtonDB community reports',
+            winetricksTitle: 'winetricks application metadata',
         },
         report: {
             title: 'Full Transparency',
-            description: 'Eagle generates comprehensive Markdown reports you can save and share. Every detection includes its source, context, and reasoning.',
+            description: 'Eagle generates Markdown reports you can save and share. Technical findings stay separate from community evidence and suggested changes.',
             items: [
                 'Binary metadata: architecture, build date, publisher',
                 'Detected technologies with source file attribution',
-                'Compatibility warnings and explanations',
-                'Recommended dependencies and optimizations',
+                'Threat findings and compatibility warnings',
+                'Community match type, confidence, and evidence',
+                'Suggested dependencies and optional configuration',
+                'Data source credits and licenses',
                 'Complete list of analyzed files',
             ],
         },
@@ -539,9 +552,36 @@ export const en = {
             crypto: { desc: 'BTC, ETH, and more' },
             polar: { desc: 'Pay what you want' },
         },
+        goals: {
+            nextBackend: {
+                title: 'Bottles Next backend',
+                description: 'Our Rust backend now manages bottles, runners, components, dependencies, snapshots, wrappers, Wine, Proton, and WineBridge.',
+                info: 'We have completed the backend scope required by the first Bottles Next application.',
+            },
+            nextUi: {
+                title: 'Next UI toolkit',
+                description: 'We are building the Rust and Iced component library that will define the Bottles Next interface and interaction patterns.',
+                info: 'Our component gallery is usable and we are adding new application patterns now.',
+            },
+            nextApp: {
+                title: 'Bottles Next application',
+                description: 'We are connecting next-ui to the completed backend and turning the current building blocks into the first usable desktop application.',
+                info: 'The graphical application is our current bridge between the finished backend and the first public preview.',
+            },
+            layers: {
+                title: 'Layered bottles',
+                description: 'We are turning the working layered-prefix Flatpak demo into a supported Bottles Next feature with reusable application and dependency layers.',
+                info: 'Our proof of concept already builds layers, composes a prefix, and launches a real Windows application.',
+            },
+            legacy: {
+                title: 'Legacy releases',
+                description: 'I am keeping the current Bottles release healthy while we build Next, with compatibility fixes, Soda updates, Eagle, and Flatpak releases.',
+                info: 'Bottles Next remains the future of the project, but I will continue focused maintenance of the current application.',
+            },
+        },
         roadmap: {
-            title: 'Development Roadmap',
-            description: 'Track progress on features funded by the community.',
+            title: 'Current Funding Goals',
+            description: 'See where development time and project funding are going now.',
             searchPlaceholder: 'Filter tasks...',
         },
         tasks: {
@@ -549,8 +589,7 @@ export const en = {
                 wip: 'WIP',
                 done: 'DONE',
                 alpha: 'ALPHA',
-                next: 'NEXT',
-                rejected: 'REJECTED'
+                next: 'NEXT'
             },
             viewDetails: 'View Details',
         },
