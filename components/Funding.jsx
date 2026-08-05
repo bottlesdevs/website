@@ -49,10 +49,10 @@ const getTasksData = (t) => [
 ];
 
 const cryptoAddresses = [
-  { name: "Ethereum (ETH)", network: "ERC20", address: "0xef6a653c63db31403f507bca277f719d2f3d44f8", suggested: true },
-  { name: "Bitcoin (BTC)", network: "BTC(SegWit)", address: "bc1q2svx64v90hyyd7jt8xamvqm9vc5248l5rgzwpm" },
-  { name: "Litecoin (LTC)", network: "LTC", address: "LWqpd2411CQTuWD15bcPP7bfAw3wmYHScm" },
-  { name: "Ripple (XRP)", network: "XRP", address: "rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV", memo: "420078619" },
+  { name: "Ethereum (ETH)", network: "ERC20", address: "0x20D27496EC8e1d85c0b5A0bF8fbAE8cBd826F9e6", suggested: true },
+  { name: "Bitcoin (BTC)", network: "BTC(SegWit)", address: "bc1qaujs7f50uutxrr9nh92hr3n7nkl76lltncgdmj" },
+  { name: "Litecoin (LTC)", network: "LTC", address: "ltc1qy8tz3gd52j68lzuy3nlr72ngt3wv09ffsf3q2l" },
+  { name: "Ripple (XRP)", network: "XRP", address: "rLNmmcNEizWaygypRVTKaWoZG6RrqfsJpi", memo: "770863059" },
 ];
 
 const otherSponsors = [
