@@ -1,4 +1,4 @@
-import { Terminal, GitBranch, Activity, Coffee, GlassWater, ArrowRight, Code2, AlertCircle } from 'lucide-react';
+import { Terminal, GitBranch, Activity, Coffee, GlassWater, Gamepad2, ArrowRight, Code2, AlertCircle } from 'lucide-react';
 
 
 import { useLanguage } from '../i18n/LanguageContext';
@@ -65,6 +65,44 @@ const Runners = () => {
                         </div>
                     </div>
 
+                    <div className="flex flex-col lg:flex-row items-center gap-16 mb-32">
+                        <div className="flex-1 flex justify-center">
+                            <img
+                                src="https://raw.githubusercontent.com/bottlesdevs/data/main/logo/protosoda-logo.svg"
+                                alt="ProtoSoda Runner Logo"
+                                className="w-64 h-64 md:w-96 md:h-96 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                            />
+                        </div>
+                        <div className="flex-1">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6">
+                                <Gamepad2 className="w-4 h-4" />
+                                {t.runners.protosoda.badge}
+                            </div>
+                            <h2 className="text-4xl font-bold text-zinc-900 dark:text-white mb-6">{t.runners.protosoda.title}</h2>
+                            <div className="bg-emerald-100 dark:bg-emerald-900/30 p-4 rounded-xl border border-emerald-200 dark:border-emerald-800 mb-6 flex items-center gap-2">
+                                <AlertCircle className="w-4 h-4" />
+                                <p>{t.runners.protosoda.version}</p>
+                            </div>
+                            <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
+                                {t.runners.protosoda.description1}
+                            </p>
+                            <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
+                                {t.runners.protosoda.description2}
+                            </p>
+
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                <div className="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
+                                    <h3 className="font-bold text-zinc-900 dark:text-white mb-2">{t.runners.protosoda.umu}</h3>
+                                    <p className="text-sm text-zinc-500">{t.runners.protosoda.umuDesc}</p>
+                                </div>
+                                <div className="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
+                                    <h3 className="font-bold text-zinc-900 dark:text-white mb-2">{t.runners.protosoda.sodaCore}</h3>
+                                    <p className="text-sm text-zinc-500">{t.runners.protosoda.sodaCoreDesc}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="flex-1 flex justify-center">
                             <img
@@ -116,6 +154,7 @@ const Runners = () => {
                                 <tr className="border-b border-zinc-200 dark:border-zinc-800">
                                     <th className="py-4 px-6 text-sm font-semibold text-zinc-500 uppercase tracking-wider">{t.runners.comparison.feature}</th>
                                     <th className="py-4 px-6 text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">{t.runners.comparison.sodaRecommended}</th>
+                                    <th className="py-4 px-6 text-sm font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">{t.runners.comparison.protosoda}</th>
                                     <th className="py-4 px-6 text-sm font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wider">{t.runners.comparison.caffe}</th>
                                     <th className="py-4 px-6 text-sm font-semibold text-zinc-500 uppercase tracking-wider">{t.runners.comparison.vaniglia}</th>
                                 </tr>
@@ -124,23 +163,27 @@ const Runners = () => {
                                 <tr>
                                     <td className="py-4 px-6 font-medium text-zinc-900 dark:text-white">{t.runners.comparison.base}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.valveWine}</td>
+                                    <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.proton}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.wineHQ}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.wineHQStaging}</td>
                                 </tr>
                                 <tr>
                                     <td className="py-4 px-6 font-medium text-zinc-900 dark:text-white">{t.runners.comparison.bestFor}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.gamingModern}</td>
+                                    <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.umuGaming}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.generalPurpose}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.testingVanilla}</td>
                                 </tr>
                                 <tr>
                                     <td className="py-4 px-6 font-medium text-zinc-900 dark:text-white">{t.runners.comparison.patches}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.protonTKG}</td>
+                                    <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.sodaProton}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.bottlesSpecific}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.minimalNone}</td>
                                 </tr>
                                 <tr>
                                     <td className="py-4 px-6 font-medium text-zinc-900 dark:text-white">{t.runners.comparison.releaseCycle}</td>
+                                    <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.independent}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.independent}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.followsWineHQ}</td>
                                     <td className="py-4 px-6 text-zinc-600 dark:text-zinc-400">{t.runners.comparison.followsWineHQ}</td>
@@ -204,16 +247,23 @@ const Runners = () => {
                                 <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                                     <div className="flex items-center gap-3">
                                         <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                                        <span className="font-mono text-sm">caffe-9.0</span>
+                                        <span className="font-mono text-sm">protosoda-11.0-1</span>
                                     </div>
                                     <span className="text-xs text-zinc-500">{t.runners.contribute.passing}</span>
                                 </div>
                                 <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                                        <span className="font-mono text-sm">vaniglia-staging</span>
+                                        <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                                        <span className="font-mono text-sm">caffe-10.0</span>
                                     </div>
-                                    <span className="text-xs text-zinc-500">{t.runners.contribute.building}</span>
+                                    <span className="text-xs text-zinc-500">{t.runners.contribute.passing}</span>
+                                </div>
+                                <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                                        <span className="font-mono text-sm">vaniglia-10.19</span>
+                                    </div>
+                                    <span className="text-xs text-zinc-500">{t.runners.contribute.passing}</span>
                                 </div>
                             </div>
                             <div className="mt-6 pt-6 border-t border-white/10 text-center">
