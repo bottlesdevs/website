@@ -74,4 +74,4 @@ This update concerns both Bottles Legacy (the current maintained version of Bott
 As you know, Bottles is officially distributed only as a Flatpak on [Flathub](https://flathub.org/apps/com.usebottles.bottles), but we want to experiment with this new format, confident it might appeal to some users. Initially, it will be considered alpha and offer limited support compared to the Flatpak version. However, we will explain everything in a separate article, along with the reasons why we see cpak as a good alternative for those who cannot or do not want to use Flatpak.
 
 Thank you all for your attention,  
-_Mirko B._
+_[Mirko B.](https://bromb.in/)_

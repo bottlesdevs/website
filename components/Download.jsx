@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-   Copy, Check, Terminal, Download as DownloadIcon,
-   Heart, X, AlertCircle, Monitor, ChevronRight, Hammer
+   Terminal, Download as DownloadIcon,
+   Heart, X, AlertCircle, PackageCheck, Monitor, ChevronRight, Hammer, ExternalLink
 } from 'lucide-react';
-import Select from './Select';
 
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -36,40 +35,33 @@ const DownloadSection = ({ showModal, setShowModal }) => {
    const isModalOpen = showModal !== undefined ? showModal : localShowModal;
    const setIsModalOpen = setShowModal || setLocalShowModal;
 
-   const [donationAmount, setDonationAmount] = useState(5);
+   const [donationAmount, setDonationAmount] = useState(10);
    const [view, setView] = useState('selection');
    const [modalView, setModalView] = useState('donation');
 
-   const distros = [
-      {
-         name: "Vanilla OS",
-         installCommand: ["abroot pkg add flatpak", "abroot pkg apply", "reboot"],
-         description: t.download.distro.vanillaOs
-      },
-      { name: "Ubuntu / Debian", installCommand: "sudo apt install flatpak" },
-      { name: "Fedora", installCommand: "sudo dnf install flatpak" },
-      { name: "Arch Linux", installCommand: "sudo pacman -S flatpak" },
-      { name: "OpenSUSE", installCommand: "sudo zypper install flatpak" },
-      { name: "Solus", installCommand: "sudo eopkg install flatpak" },
-      { name: "Alpine", installCommand: "sudo apk add flatpak" },
-      { name: "Void", installCommand: "sudo xbps-install -S flatpak" },
-      { name: "Gentoo", installCommand: "sudo emerge sys-apps/flatpak" },
-   ];
-
-   const [selectedDistro, setSelectedDistro] = useState(distros[0]);
-
-   const [copiedCommand, setCopiedCommand] = useState(null);
-
-   const flathubCommand = "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo";
-   const installCommand = "flatpak install flathub com.usebottles.bottles";
+   const scrollToDownload = () => {
+      const scroll = () => document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' });
+      requestAnimationFrame(scroll);
+      setTimeout(scroll, 300);
+      setTimeout(scroll, 1500);
+   };
 
    useEffect(() => {
       const checkCookie = () => {
+         const params = new URLSearchParams(window.location.search);
+         const paymentCompleted = params.get('payment') === 'complete';
          const cookies = document.cookie.split(';');
-         const donated = cookies.some(item => item.trim().startsWith('hasDonated=true'));
+         const donated = paymentCompleted || cookies.some(item => item.trim().startsWith('hasDonated=true'));
+
+         if (paymentCompleted) {
+            setCookie();
+            window.history.replaceState({}, '', `${window.location.pathname}#download`);
+         }
+
          setHasDonated(donated);
          if (donated) {
             setView('guide');
+            scrollToDownload();
          }
       };
       checkCookie();
@@ -85,7 +77,7 @@ const DownloadSection = ({ showModal, setShowModal }) => {
    const handleDownloadClick = () => {
       if (hasDonated) {
          setView('guide');
-         document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' });
+         scrollToDownload();
       } else {
          setModalView('donation');
          setIsModalOpen(true);
@@ -97,23 +89,26 @@ const DownloadSection = ({ showModal, setShowModal }) => {
       setIsModalOpen(false);
       setModalView('donation');
       setView('guide');
-      setTimeout(() => {
-         document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      scrollToDownload();
    };
 
    const handleDonationSubmit = (amount) => {
       if (amount < 1) {
          setModalView('confirm');
       } else {
-         const paypalUrl = `https://www.paypal.com/donate?business=brombin94@gmail.com&amount=${amount}&currency_code=USD`;
-         window.open(paypalUrl, '_blank');
-         setCookie();
-         setIsModalOpen(false);
-         setView('guide');
-         setTimeout(() => {
-            document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' });
-         }, 100);
+         const returnUrl = `${window.location.origin}/?payment=complete#download`;
+         const cancelUrl = `${window.location.origin}/#download`;
+         const params = new URLSearchParams({
+            business: 'brombin94@gmail.com',
+            amount: amount.toString(),
+            currency_code: 'USD',
+            item_name: 'Bottles',
+            return: returnUrl,
+            cancel_return: cancelUrl,
+            rm: '2',
+         });
+
+         window.location.assign(`https://www.paypal.com/donate?${params.toString()}`);
       }
    };
 
@@ -125,12 +120,6 @@ const DownloadSection = ({ showModal, setShowModal }) => {
       } else {
          handleDonationSubmit(0);
       }
-   };
-
-   const copyToClipboard = (text, type) => {
-      navigator.clipboard.writeText(text);
-      setCopiedCommand(type);
-      setTimeout(() => setCopiedCommand(null), 2000);
    };
 
    const currentAmount = parseFloat(donationAmount.toString());
@@ -186,15 +175,27 @@ const DownloadSection = ({ showModal, setShowModal }) => {
                         </div>
                      </div>
 
-                     <div className="bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
-                        <div className="w-16 h-16 bg-zinc-200 dark:bg-zinc-900 rounded-2xl flex items-center justify-center mb-6 text-zinc-500">
-                           <AlertCircle className="w-8 h-8" />
+                     <button
+                        type="button"
+                        onClick={handleDownloadClick}
+                        className="group relative w-full text-left bg-blue-50/50 dark:bg-blue-950/20 hover:bg-blue-50 dark:hover:bg-blue-950/30 border border-blue-200 dark:border-blue-900/50 hover:border-blue-400 dark:hover:border-blue-600 rounded-2xl p-8 transition-all"
+                     >
+                        <div className="absolute top-0 right-0 p-4">
+                           <div className="bg-blue-100 dark:bg-blue-500/10 text-blue-700 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-200 dark:border-blue-500/20">
+                              {t.download.cpak.badge}
+                           </div>
                         </div>
-                        <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">{t.download.comingSoon.title}</h3>
-                        <p className="text-zinc-500 text-sm">
-                           {t.download.comingSoon.desc}
+                        <div className="w-16 h-16 bg-blue-100 dark:bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-300 group-hover:scale-110 transition-transform duration-300">
+                           <PackageCheck className="w-8 h-8" />
+                        </div>
+                        <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">{t.download.cpak.title}</h3>
+                        <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-6">
+                           {t.download.cpak.desc}
                         </p>
-                     </div>
+                        <div className="flex items-center text-blue-700 dark:text-blue-300 font-medium">
+                           {t.download.startInstall} <ChevronRight className="w-5 h-5 ml-2" />
+                        </div>
+                     </button>
                   </div>
 
                   <div className="border-t border-zinc-200 dark:border-white/5 pt-12">
@@ -232,94 +233,46 @@ const DownloadSection = ({ showModal, setShowModal }) => {
                      </div>
                      <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">{t.download.thankYou.title}</h3>
                      <p className="text-zinc-600 dark:text-zinc-400 mt-2">{t.download.thankYou.desc}</p>
-                     <button
-                        onClick={() => setView('selection')}
-                        className="mt-4 text-xs text-zinc-500 hover:text-zinc-900 dark:hover:text-white underline"
-                     >
-                        {t.download.thankYou.back}
-                     </button>
                   </div>
 
-                  <div className="space-y-8">
-                     <div className="bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800 rounded-2xl">
-                        <div className="bg-zinc-100 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-white/5 px-6 py-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 rounded-t-2xl">
-                           <div>
-                              <span className="text-blue-600 dark:text-blue-500 font-mono text-xs font-bold uppercase tracking-wider mb-1 block">{t.download.steps.step1}</span>
-                              <h4 className="text-lg font-bold text-zinc-900 dark:text-white">{t.download.steps.installFlatpak}</h4>
-                           </div>
-                           <div className="flex items-center gap-2">
-                              <label className="text-xs text-zinc-500 uppercase font-bold mr-2">{t.download.steps.selectDistro}</label>
-                              <Select
-                                 value={selectedDistro.name}
-                                 onChange={(val) => setSelectedDistro(distros.find(d => d.name === val) || distros[0])}
-                                 options={distros.map(d => ({ value: d.name, label: d.name }))}
-                                 className="min-w-[200px]"
-                              />
-                           </div>
+                  <div className="grid gap-6 md:grid-cols-2">
+                     <a
+                        href="https://flathub.org/apps/com.usebottles.bottles"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group relative flex cursor-pointer flex-col rounded-2xl border border-blue-200 bg-blue-50/60 p-8 transition-all hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-50 hover:shadow-xl dark:border-blue-900/50 dark:bg-blue-950/20 dark:hover:border-blue-600"
+                     >
+                        <div className="absolute right-4 top-4 rounded-full border border-blue-200 bg-blue-100 px-3 py-1 text-xs font-bold text-blue-700 dark:border-blue-600/30 dark:bg-blue-500/10 dark:text-blue-300">
+                           {t.download.recommended}
                         </div>
-                        <div className="p-6">
-                           {selectedDistro.description ? (
-                              <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-4">{selectedDistro.description}</p>
-                           ) : (
-                              <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-4">
-                                 {t.download.distro.descriptionWithDistro.split('{distro}')[0]}
-                                 <span className="text-zinc-900 dark:text-white font-medium">{selectedDistro.name}</span>
-                                 {t.download.distro.descriptionWithDistro.split('{distro}')[1]}
-                              </p>
-                           )}
-                           {Array.isArray(selectedDistro.installCommand) ? (
-                              <div className="space-y-3">
-                                 {selectedDistro.installCommand.map((cmd, i) => (
-                                    <div key={i} className="bg-white dark:bg-black rounded-lg border border-zinc-200 dark:border-zinc-800 p-4 flex items-center justify-between group">
-                                       <code className="font-mono text-sm text-blue-600 dark:text-blue-300 select-all">{cmd}</code>
-                                       <button onClick={() => copyToClipboard(cmd, `distro-${i}`)} className="text-zinc-400 hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-white transition-colors">
-                                          {copiedCommand === `distro-${i}` ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
-                                       </button>
-                                    </div>
-                                 ))}
-                              </div>
-                           ) : (
-                              <div className="bg-white dark:bg-black rounded-lg border border-zinc-200 dark:border-zinc-800 p-4 flex items-center justify-between group">
-                                 <code className="font-mono text-sm text-blue-600 dark:text-blue-300 select-all">{selectedDistro.installCommand}</code>
-                                 <button onClick={() => copyToClipboard(selectedDistro.installCommand, 'distro')} className="text-zinc-400 hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-white transition-colors">
-                                    {copiedCommand === 'distro' ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
-                                 </button>
-                              </div>
-                           )}
+                        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition-transform group-hover:scale-110 dark:bg-blue-500/10 dark:text-blue-300">
+                           <DownloadIcon className="h-8 w-8" />
                         </div>
-                     </div>
+                        <h4 className="mb-3 text-2xl font-bold text-zinc-900 dark:text-white">{t.download.flatpak.title}</h4>
+                        <p className="mb-6 flex-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{t.download.flatpak.desc}</p>
+                        <div className="flex w-full items-center justify-center rounded-xl bg-blue-600 px-5 py-3 font-bold text-white transition-colors group-hover:bg-blue-500">
+                           {t.download.flatpak.button} <ExternalLink className="ml-2 h-4 w-4" />
+                        </div>
+                     </a>
 
-                     <div className="bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden">
-                        <div className="bg-zinc-100 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-white/5 px-6 py-4">
-                           <span className="text-blue-600 dark:text-blue-500 font-mono text-xs font-bold uppercase tracking-wider mb-1 block">{t.download.steps.step2}</span>
-                           <h4 className="text-lg font-bold text-zinc-900 dark:text-white">{t.download.steps.addFlathub}</h4>
+                     <a
+                        href="https://cpak.it/store/Utilities/github.com/bottlesdevs/bottles"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group relative flex cursor-pointer flex-col rounded-2xl border border-blue-200 bg-blue-50/40 p-8 transition-all hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-50 hover:shadow-xl dark:border-blue-900/50 dark:bg-blue-950/20 dark:hover:border-blue-600"
+                     >
+                        <div className="absolute right-4 top-4 rounded-full border border-blue-200 bg-blue-100 px-3 py-1 text-xs font-bold text-blue-700 dark:border-blue-600/30 dark:bg-blue-500/10 dark:text-blue-300">
+                           {t.download.cpak.badge}
                         </div>
-                        <div className="p-6">
-                           <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-4">{t.download.steps.addFlathubDesc}</p>
-                           <div className="bg-white dark:bg-black rounded-lg border border-zinc-200 dark:border-zinc-800 p-4 flex items-center justify-between group overflow-x-auto">
-                              <code className="font-mono text-sm text-yellow-600 dark:text-yellow-300 whitespace-nowrap mr-4">{flathubCommand}</code>
-                              <button onClick={() => copyToClipboard(flathubCommand, 'flathub')} className="text-zinc-400 hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-white transition-colors flex-shrink-0">
-                                 {copiedCommand === 'flathub' ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
-                              </button>
-                           </div>
+                        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition-transform group-hover:scale-110 dark:bg-blue-500/10 dark:text-blue-300">
+                           <PackageCheck className="h-8 w-8" />
                         </div>
-                     </div>
-
-                     <div className="bg-blue-50 dark:bg-white/5 border border-blue-200 dark:border-blue-500/30 rounded-2xl overflow-hidden relative">
-                        <div className="bg-zinc-100 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-white/5 px-6 py-4">
-                           <span className="text-blue-600 dark:text-blue-400 font-mono text-xs font-bold uppercase tracking-wider mb-1 block">{t.download.steps.step3}</span>
-                           <h4 className="text-lg font-bold text-zinc-900 dark:text-white">{t.download.steps.installBottles}</h4>
+                        <h4 className="mb-3 text-2xl font-bold text-zinc-900 dark:text-white">{t.download.cpak.title}</h4>
+                        <p className="mb-6 flex-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{t.download.cpak.desc}</p>
+                        <div className="flex w-full items-center justify-center rounded-xl bg-blue-600 px-5 py-3 font-bold text-white transition-colors group-hover:bg-blue-500">
+                           {t.download.cpak.button} <ExternalLink className="ml-2 h-4 w-4" />
                         </div>
-                        <div className="p-6">
-                           <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-4">{t.download.steps.installBottlesDesc}</p>
-                           <div className="bg-white dark:bg-black rounded-lg border border-zinc-200 dark:border-zinc-800 p-4 flex items-center justify-between group">
-                              <code className="font-mono text-sm text-green-600 dark:text-green-400">{installCommand}</code>
-                              <button onClick={() => copyToClipboard(installCommand, 'install')} className="text-zinc-400 hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-white transition-colors">
-                                 {copiedCommand === 'install' ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
-                              </button>
-                           </div>
-                        </div>
-                     </div>
+                     </a>
                   </div>
                </div>
             )}
@@ -351,7 +304,7 @@ const DownloadSection = ({ showModal, setShowModal }) => {
                         </p>
 
                         <div className="grid grid-cols-4 gap-3 mb-4">
-                           {[2, 5, 10, 50].map(amount => {
+                           {[5, 10, 20, 50].map(amount => {
                               if (amount === 50) {
                                  return (
                                     <button

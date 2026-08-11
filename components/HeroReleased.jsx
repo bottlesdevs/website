@@ -60,9 +60,71 @@ const HeroReleased = ({ onDownload, onOpenPost, onModalChange }) => {
 
       {/* Ambient background glow for Dark Mode */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden dark:block">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-purple-500/20 rounded-full blur-[120px] opacity-50 mix-blend-screen animate-pulse"></div>
+        <div className="hero-liquid-blob absolute top-[42%] left-1/2 w-[980px] h-[590px] bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.38)_0%,rgba(192,38,211,0.2)_42%,transparent_72%)] rounded-[44%_56%_63%_37%/58%_42%_58%_42%] opacity-65 mix-blend-screen"></div>
+        <div className="hero-liquid-blob-secondary absolute top-[56%] left-1/2 w-[900px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.28)_0%,rgba(59,130,246,0.18)_44%,transparent_74%)] rounded-[63%_37%_46%_54%/42%_61%_39%_58%] opacity-55 mix-blend-screen"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] opacity-30"></div>
+        <div className="hero-reactive-grid absolute inset-0"></div>
       </div>
+
+      <style>{`
+        @keyframes heroLiquidBlob {
+          0% { transform: translate3d(-68%, -52%, 0) rotate(-8deg) scale(0.82, 1.16); border-radius: 32% 68% 72% 28% / 68% 31% 69% 32%; filter: blur(76px) hue-rotate(-8deg); }
+          25% { transform: translate3d(-55%, -60%, 0) rotate(6deg) scale(1.18, 0.78); border-radius: 74% 26% 38% 62% / 27% 72% 28% 73%; filter: blur(68px) hue-rotate(8deg); }
+          50% { transform: translate3d(-43%, -45%, 0) rotate(12deg) scale(0.88, 1.2); border-radius: 27% 73% 61% 39% / 76% 24% 68% 32%; filter: blur(82px) hue-rotate(18deg); }
+          75% { transform: translate3d(-56%, -37%, 0) rotate(-4deg) scale(1.22, 0.82); border-radius: 68% 32% 24% 76% / 35% 64% 36% 65%; filter: blur(70px) hue-rotate(4deg); }
+          100% { transform: translate3d(-66%, -50%, 0) rotate(-10deg) scale(0.9, 1.13); border-radius: 39% 61% 69% 31% / 63% 38% 62% 37%; filter: blur(76px) hue-rotate(-12deg); }
+        }
+        @keyframes heroLiquidBlobSecondary {
+          0% { transform: translate3d(-30%, -58%, 0) rotate(11deg) scale(1.16, 0.78); border-radius: 71% 29% 43% 57% / 32% 69% 31% 68%; filter: blur(70px) hue-rotate(-10deg); }
+          50% { transform: translate3d(-52%, -34%, 0) rotate(-9deg) scale(0.8, 1.2); border-radius: 28% 72% 65% 35% / 74% 26% 61% 39%; filter: blur(62px) hue-rotate(14deg); }
+          100% { transform: translate3d(-35%, -64%, 0) rotate(6deg) scale(1.2, 0.84); border-radius: 64% 36% 26% 74% / 39% 66% 34% 61%; filter: blur(74px) hue-rotate(-18deg); }
+        }
+        @keyframes heroReactiveGrid {
+          0% { mask-position: 35% 42%; -webkit-mask-position: 35% 42%; }
+          35% { mask-position: 54% 35%; -webkit-mask-position: 54% 35%; }
+          70% { mask-position: 61% 54%; -webkit-mask-position: 61% 54%; }
+          100% { mask-position: 42% 47%; -webkit-mask-position: 42% 47%; }
+        }
+        .hero-liquid-blob {
+          animation: heroLiquidBlob 9s ease-in-out infinite alternate;
+          will-change: transform, filter;
+        }
+        .hero-liquid-blob-secondary {
+          animation: heroLiquidBlobSecondary 12s ease-in-out infinite alternate;
+          will-change: transform, filter;
+        }
+        .hero-reactive-grid {
+          background-size: 40px 40px;
+          background-image:
+            linear-gradient(to right, rgba(196, 181, 253, 0.24) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(147, 197, 253, 0.2) 1px, transparent 1px);
+          mask-image: radial-gradient(ellipse at center, black 0%, rgba(0, 0, 0, 0.72) 44%, transparent 76%);
+          mask-repeat: no-repeat;
+          mask-size: 1040px 570px;
+          -webkit-mask-image: radial-gradient(ellipse at center, black 0%, rgba(0, 0, 0, 0.72) 44%, transparent 76%);
+          -webkit-mask-repeat: no-repeat;
+          -webkit-mask-size: 1040px 570px;
+          animation: heroReactiveGrid 9s ease-in-out infinite alternate;
+          mix-blend-mode: screen;
+          opacity: 0.52;
+          will-change: mask-position;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hero-liquid-blob,
+          .hero-liquid-blob-secondary,
+          .hero-reactive-grid {
+            animation: none;
+          }
+          .hero-liquid-blob,
+          .hero-liquid-blob-secondary {
+            transform: translate3d(-50%, -50%, 0);
+          }
+          .hero-reactive-grid {
+            mask-position: center 44%;
+            -webkit-mask-position: center 44%;
+          }
+        }
+      `}</style>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
@@ -71,20 +133,25 @@ const HeroReleased = ({ onDownload, onOpenPost, onModalChange }) => {
           href={releaseData ? releaseData.url : "https://github.com/bottlesdevs/Bottles/releases/latest"}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-white/10 border border-zinc-200 dark:border-white/20 text-xs font-bold tracking-widest uppercase mb-8 text-zinc-900 dark:text-white animate-in fade-in slide-in-from-bottom-4 duration-700 hover:bg-zinc-200 dark:hover:bg-white/20 transition-colors cursor-pointer"
+          className="inline-block text-xs font-bold tracking-widest uppercase mb-8 text-zinc-500 dark:text-zinc-400 animate-in fade-in slide-in-from-bottom-4 duration-700 hover:text-zinc-900 dark:hover:text-white transition-colors"
         >
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
           <span>{releaseData ? `${t.heroReleased.release}${releaseData.tag}` : t.heroReleased.newRelease}</span>
         </a>
 
         {/* Main Title */}
         <h1 className="text-6xl md:text-9xl font-extrabold tracking-tighter text-zinc-900 dark:text-white mb-6 drop-shadow-sm animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-100">
-          Bottles <span className="text-transparent bg-clip-text bg-gradient-to-b from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-500">65</span>
+          Bottles <span className="text-transparent bg-clip-text bg-gradient-to-b from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-500">66</span>
         </h1>
 
         {/* Subtitle */}
         <p className="mt-6 max-w-3xl mx-auto text-2xl md:text-3xl text-zinc-500 dark:text-zinc-400 mb-12 font-medium leading-tight animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
-          {t.heroReleased.subtitle}
+          {t.heroReleased.subtitle.includes('!') ? (
+            <>
+              {t.heroReleased.subtitle.split('!')[0]}!
+              <br />
+              {t.heroReleased.subtitle.split('!').slice(1).join('!').trim()}
+            </>
+          ) : t.heroReleased.subtitle}
         </p>
 
         {/* Buttons */}
@@ -109,7 +176,7 @@ const HeroReleased = ({ onDownload, onOpenPost, onModalChange }) => {
         <div className="relative mx-auto max-w-6xl mt-12 perspective-1000">
           <img
             src="/assets/hero/bottles-60.png"
-            alt="Bottles 64 Interface"
+            alt="Bottles 66 Interface"
             className="w-full h-auto block drop-shadow-2xl rounded-xl animate-float"
           />
         </div>

@@ -26,6 +26,13 @@ const Sponsors = ({ onNavigate }) => {
               className="h-12 grayscale opacity-70 dark:invert group-hover:grayscale-0 group-hover:opacity-100 dark:group-hover:[filter:none] transition-all duration-300"
             />
           </a>
+          <a href="https://sinty.dev/" target="_blank" rel="noopener noreferrer" className="group">
+            <img
+              src="/assets/sponsors/sinty.svg"
+              alt="Sinty"
+              className="h-12 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+            />
+          </a>
           <a href="https://appwrite.io?from=bottles" target="_blank" rel="noopener noreferrer" className="group">
             <img
               src={`/assets/sponsors/built-with-appwrite.svg`}

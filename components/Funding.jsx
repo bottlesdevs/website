@@ -46,6 +46,13 @@ const getTasksData = (t) => [
     infoText: t.funding.goals.legacy.info,
     icons: [{ name: 'build', title: 'In progress' }, { name: 'help', title: 'Needs funding' }]
   },
+  {
+    status: "DONE",
+    title: t.funding.goals.umu.title,
+    description: t.funding.goals.umu.description,
+    link: "https://github.com/bottlesdevs/Bottles/issues/3537",
+    infoText: t.funding.goals.umu.info,
+  },
 ];
 
 const cryptoAddresses = [

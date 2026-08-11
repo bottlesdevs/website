@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import jsyaml from 'js-yaml';
-import { Search, Download, Info, Upload } from 'lucide-react';
+import { Search, Download, Info, Upload, Gamepad2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../i18n/LanguageContext';
+
+const integratedLaunchers = new Set(['epicgamestore', 'ubisoftconnect', 'steam']);
 
 const AppStore = () => {
     const { t } = useLanguage();
@@ -139,6 +141,15 @@ const AppStore = () => {
                                     <span className={`px-2.5 py-0.5 rounded-full text-xs font-medium ${getCategoryColor(installer.Category)}`}>
                                         {installer.Category}
                                     </span>
+                                    {integratedLaunchers.has(key) && (
+                                        <Link
+                                            to="/gaming#launcher-integrations"
+                                            className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-500/15 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-500/25 transition-colors"
+                                        >
+                                            <Gamepad2 className="w-3.5 h-3.5" />
+                                            Integrated
+                                        </Link>
+                                    )}
                                 </div>
 
                                 <div className="flex gap-3 mt-auto">

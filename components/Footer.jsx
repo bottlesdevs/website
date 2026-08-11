@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 
-const Footer = () => {
+const Footer = ({ bannerOffset = false }) => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-zinc-100 dark:bg-black py-12 border-t border-zinc-200 dark:border-zinc-900 transition-colors duration-300">
+    <footer className={`bg-zinc-100 dark:bg-black pt-12 ${bannerOffset ? 'pb-32 sm:pb-36' : 'pb-12'} border-t border-zinc-200 dark:border-zinc-900 transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
 
           <div>
-            <span className="text-lg font-bold text-zinc-900 dark:text-white block mb-4">Bottles</span>
+            <div className="mb-4">
+              <img src="/assets/logo.svg" alt="Bottles" className="h-8 w-auto dark:hidden" />
+              <img src="/assets/logo-dark.svg" alt="Bottles" className="hidden h-8 w-auto dark:block" />
+            </div>
             <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
               {t.footer.tagline}
             </p>
@@ -110,7 +113,11 @@ const Footer = () => {
             © {new Date().getFullYear()} Bottles Developers.
           </div>
           <div className="text-zinc-500 dark:text-zinc-600 text-xs text-center md:text-right">
-            {t.footer.made}
+            {t.footer.productBy}{' '}
+            <a href="https://bromb.in/" target="_blank" rel="noreferrer" className="text-zinc-700 dark:text-zinc-300 underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              Mirko Brombin
+            </a>
+            {`, ${t.footer.made}`}
             <br className="md:hidden" />
             <span className="hidden md:inline"> • </span>
             <a href="https://fabricators.ltd/?utm_source=bottles&utm_medium=referral" target="_blank" rel="noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">

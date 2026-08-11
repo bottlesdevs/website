@@ -94,6 +94,22 @@ const Eagle = () => {
                 </div>
             </section>
 
+            <section className="pb-24 bg-zinc-50 dark:bg-black">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-3 gap-5">
+                        {[intelligenceFeatures[1], intelligenceFeatures[2], intelligenceFeatures[4]].map((feature) => (
+                            <div key={feature.title} className="rounded-2xl border border-amber-200/70 dark:border-amber-500/20 bg-white dark:bg-zinc-950 p-7 shadow-sm">
+                                <div className="w-11 h-11 rounded-xl bg-amber-100 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-5">
+                                    {feature.icon}
+                                </div>
+                                <h2 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">{feature.title}</h2>
+                                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">{feature.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* How It Works */}
             <section className="py-24 bg-white dark:bg-zinc-900/30 border-y border-zinc-200 dark:border-white/5">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,7 +234,7 @@ const Eagle = () => {
 
                         <div className="rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-black shadow-2xl">
                             <img
-                                src="/uploads/bottles-65/eagle-intelligence.png"
+                                src="/uploads/bottles-66/eagle-analysis.png"
                                 alt={t.eaglePage.community.imageAlt}
                                 className="w-full h-auto"
                             />

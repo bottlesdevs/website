@@ -20,6 +20,8 @@ import Next from './components/Next';
 import Runners from './components/Runners';
 import Eagle from './components/Eagle';
 import EagleBanner from './components/EagleBanner';
+import UmuHomeSection from './components/UmuHomeSection';
+import Umu from './components/Umu';
 import WineBridge from './components/WineBridge';
 import Footer from './components/Footer';
 import GrantBanner from './components/GrantBanner';
@@ -96,10 +98,11 @@ const App = () => {
                                 <>
                                     <Hero onDownload={handleOpenDownload} onOpenPost={handleOpenPost} onModalChange={setShowReleaseNotesModal} />
                                     <GrantBanner onOpenPost={handleOpenPost} />
+                                    <UmuHomeSection onOpenPost={handleOpenPost} />
                                     <Features onNavigate={handleNavigate} />
                                     <Community />
                                     <Sponsors onNavigate={handleNavigate} />
-                                    <EagleBanner isHidden={showReleaseNotesModal} />
+                                    <EagleBanner isHidden={showReleaseNotesModal || showDownloadModal} onSupport={handleOpenDownload} />
                                 </>
                             } />
                             <Route path="/funding" element={<Funding />} />
@@ -110,18 +113,19 @@ const App = () => {
                             <Route path="/runners" element={<Runners />} />
                             <Route path="/next" element={<Next />} />
                             <Route path="/eagle" element={<Eagle />} />
+                            <Route path="/umu" element={<Umu />} />
                             <Route path="/winebridge" element={<WineBridge onDownload={handleOpenDownload} />} />
                             <Route path="/database/dependencies" element={<Dependencies />} />
                             <Route path="/database/components" element={<Components />} />
                             <Route path="/appstore" element={<AppStore />} />
                             <Route path="/app" element={<AppDetails />} />
                             <Route path="/docs/*" element={<Docs />} />
-                            <Route path="/gaming" element={<Gaming onNavigate={handleNavigate} />} />
+                            <Route path="/gaming" element={<Gaming onDownload={handleOpenDownload} />} />
                         </Routes>
                     </div>
                     <DownloadSection showModal={showDownloadModal} setShowModal={setShowDownloadModal} />
                 </main>
-                <Footer />
+                <Footer bannerOffset={location.pathname === '/'} />
             </div>
         </LanguageProvider>
     );

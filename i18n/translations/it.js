@@ -86,7 +86,7 @@ export const it = {
         },
         sandboxed: {
             title: 'Sandboxed',
-            description: 'Basato su Flatpak, Bottles mantiene il tuo sistema pulito e sicuro isolando le applicazioni Windows.',
+            description: 'Flatpak resta il pacchetto sandbox raccomandato, mentre la build cpak sperimentale offre un altro modo ufficiale per installare Bottles.',
         },
         versionManager: {
             title: 'Gestione versioni',
@@ -155,6 +155,9 @@ export const it = {
             valveWineDesc: 'Costruito sulla stessa base Wine usata da Steam Deck.',
             patches: 'Patch curate',
             patchesDesc: 'Include le migliori correzioni da TKG, GE e Proton.',
+            adaptiveLaunch: 'Avvio adattivo',
+            adaptiveLaunchDesc: 'Soda impara quali file usa un programma durante l\'avvio e li prepara prima nei lanci successivi. È il primo passo di una serie di aggiornamenti dedicati a rendere Soda più intelligente.',
+            adaptiveLaunchRequires: 'Richiede Bottles 66 e soda-11.0-5 o successivo.',
         },
         protosoda: {
             badge: 'Per Proton e UMU',
@@ -367,7 +370,7 @@ export const it = {
         community: {
             badge: 'NOVITÀ IN BOTTLES 65',
             title: 'La Conoscenza della Community, Disponibile Offline',
-            description: 'Eagle Intelligence può riconoscere applicazioni note e confrontarle con i report della community senza inviare altrove l\'eseguibile. I dati sono inclusi nel Flatpak di Bottles e non richiedono un download separato.',
+            description: 'Eagle Intelligence può riconoscere applicazioni note e confrontarle con i report della community senza inviare altrove l\'eseguibile. I dati sono inclusi nei pacchetti ufficiali di Bottles e non richiedono un download separato.',
             disclaimer: 'Le esperienze della community sono indicative. Eagle calcola il proprio livello e non lo presenta mai come una valutazione ufficiale di ProtonDB o una garanzia di compatibilità.',
             imageAlt: 'Fonti, prove di corrispondenza, crediti e licenze di Eagle Intelligence in Bottles 65',
             protondbTitle: 'Report della community ProtonDB',
@@ -558,7 +561,8 @@ export const it = {
         license: 'Licenza',
         privacy: 'Privacy',
         terms: 'Termini',
-        made: 'Fatto con ❤️ dalla community Bottles',
+        productBy: 'Un prodotto di',
+        made: 'realizzato con ❤️ dalla community Bottles',
     },
     community: {
         title: 'Unisciti alla',
@@ -622,8 +626,13 @@ export const it = {
             },
             legacy: {
                 title: 'Release legacy',
-                description: 'Continuo a mantenere stabile l\'attuale Bottles mentre costruiamo Next, con correzioni di compatibilità, aggiornamenti Soda, Eagle e release Flatpak.',
+                description: 'Continuo a mantenere stabile l\'attuale Bottles mentre costruiamo Next, con correzioni di compatibilità, aggiornamenti Soda, Eagle e release dei pacchetti ufficiali.',
                 info: 'Bottles Next rimane il futuro del progetto, ma continuo a occuparmi della manutenzione mirata dell\'applicazione attuale.',
+            },
+            umu: {
+                title: 'UMU in Bottles Legacy',
+                description: 'UMU ora ha un\'integrazione grafica completa nella Libreria, con prefix gestiti, impostazioni per gioco, dipendenze e ProtoSoda.',
+                info: 'L\'integrazione UMU è completa e arriverà con Bottles 66.',
             },
         },
         roadmap: {
@@ -681,23 +690,26 @@ export const it = {
         },
         otherVersions: {
             title: 'Altre Versioni',
-            v1: { title: 'Bottles v1 (Legacy)', desc: 'Versione classica. Buona per esigenze semplici, ma manca di funzionalità moderne.' },
+            v1: { title: 'Bottles Original', desc: 'L\'esperienza Bottles originale, ancora disponibile per chi preferisce il suo flusso più semplice.' },
             source: { title: 'Codice Sorgente', desc: 'Licenza GPLv3. Compilalo tu stesso o contribuisci su GitHub.' },
             manual: { title: 'Compilazione manuale', desc: 'Compila Bottles da zero.' }
         },
         recommended: 'RACCOMANDATO',
         flatpak: {
             title: 'Flatpak (Flathub)',
-            desc: 'Il modo ufficiale e raccomandato per installare Bottles. Supportato su tutte le principali distribuzioni incluso Steam Deck.'
+            desc: 'Il modo ufficiale e raccomandato per installare Bottles. Supportato su tutte le principali distribuzioni incluso Steam Deck.',
+            button: 'Installa da Flathub'
         },
         startInstall: 'Avvia Installazione',
-        comingSoon: {
+        cpak: {
             title: 'cpak',
-            desc: 'Prossimamente. Attualmente in sviluppo.'
+            desc: 'Il secondo pacchetto ufficiale di Bottles, disponibile ora per la sperimentazione.',
+            badge: 'SPERIMENTALE',
+            button: 'Prova Bottles con cpak'
         },
         thankYou: {
             title: 'Grazie per aver scaricato!',
-            desc: 'Segui questi passaggi per far funzionare Bottles sul tuo sistema.',
+            desc: 'Scegli come installare Bottles, poi premi uno dei pulsanti qui sotto.',
             back: 'Torna alla selezione'
         },
         modal: {

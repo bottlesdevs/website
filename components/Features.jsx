@@ -77,7 +77,7 @@ const Features = ({ onNavigate }) => {
             </p>
           </Link>
 
-          <div className="md:col-span-2 lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-200 dark:bg-zinc-800">
+          <div className="md:col-span-2 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-px bg-zinc-200 dark:bg-zinc-800">
             <div className="bg-white dark:bg-black p-8 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors group">
               <div className="flex flex-col h-full justify-between gap-6">
                 <div>
@@ -103,6 +103,30 @@ const Features = ({ onNavigate }) => {
                   {t.features.installers.button}
                   <ChevronRight className="w-5 h-5" />
                 </button>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-black p-8 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors group">
+              <div className="flex flex-col h-full justify-between gap-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-zinc-100 dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-hover:text-red-500 group-hover:border-red-300 dark:group-hover:border-red-800 transition-all shrink-0">
+                    <Gamepad2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-3">UMU</h3>
+                    <p className="text-zinc-600 dark:text-zinc-500 leading-relaxed text-sm">
+                      Run Proton games through the Steam Linux Runtime outside Steam, managed from the Bottles Library.
+                    </p>
+                  </div>
+                </div>
+                <Link
+                  to="/umu"
+                  onClick={() => window.scrollTo(0, 0)}
+                  className="w-full sm:w-auto self-center bg-zinc-900 dark:bg-white text-white dark:text-black px-6 py-3 rounded-full font-bold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2"
+                >
+                  Discover UMU
+                  <ChevronRight className="w-5 h-5" />
+                </Link>
               </div>
             </div>
 
@@ -204,6 +228,50 @@ const Features = ({ onNavigate }) => {
           <div className="w-[200%] h-[200%] bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_90deg,rgba(168,85,247,0.1)_180deg,transparent_270deg)] animate-[spin_10s_linear_infinite]"></div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent dark:via-purple-500/10"></div>
+        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-60" viewBox="0 0 1440 520" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <filter id="nextTrailGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+          {[
+            'M-40 92 H270 L350 172 H610 L690 92 H1040 L1120 172 H1480',
+            'M-80 390 H210 L310 290 H510 L590 370 H900 L1010 260 H1240 L1320 340 H1500',
+            'M120 540 V430 L220 330 V210 L320 110 V-30',
+            'M1130 560 V430 L1040 340 V210 L1150 100 V-40',
+          ].map((path, index) => (
+            <g key={path}>
+              <path d={path} fill="none" stroke="rgba(168,85,247,0.14)" strokeWidth="1" />
+              <path
+                d={path}
+                fill="none"
+                stroke="rgb(192,132,252)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                pathLength="100"
+                strokeDasharray="8 92"
+                filter="url(#nextTrailGlow)"
+                className="next-light-trail"
+                style={{ animationDelay: `${index * -1.4}s` }}
+              />
+            </g>
+          ))}
+        </svg>
+        <style>{`
+          @keyframes nextLightTrail {
+            to { stroke-dashoffset: -100; }
+          }
+          .next-light-trail {
+            animation: nextLightTrail 6s linear infinite;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .next-light-trail { animation: none; }
+          }
+        `}</style>
 
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 text-sm font-medium mb-8 backdrop-blur-sm">

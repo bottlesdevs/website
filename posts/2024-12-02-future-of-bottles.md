@@ -61,4 +61,4 @@ I am not going to stop developing Bottles, but I need to invest more time and to
 
 Together, we can continue to build a tool that empowers users and redefines Wine management. Thank you for being part of this journey!
 
-_ Mirko B.
+_[Mirko B.](https://bromb.in/)_

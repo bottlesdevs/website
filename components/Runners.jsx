@@ -1,4 +1,4 @@
-import { Terminal, GitBranch, Activity, Coffee, GlassWater, Gamepad2, ArrowRight, Code2, AlertCircle } from 'lucide-react';
+import { Terminal, GitBranch, Activity, Coffee, GlassWater, Gamepad2, ArrowRight, Code2, AlertCircle, Zap } from 'lucide-react';
 
 
 import { useLanguage } from '../i18n/LanguageContext';
@@ -54,6 +54,15 @@ const Runners = () => {
                                     <h3 className="font-bold text-zinc-900 dark:text-white mb-2">{t.runners.soda.patches}</h3>
                                     <p className="text-sm text-zinc-500">{t.runners.soda.patchesDesc}</p>
                                 </div>
+                            </div>
+
+                            <div className="mt-4 bg-purple-50 dark:bg-purple-950/20 p-5 rounded-xl border border-purple-200 dark:border-purple-900/60">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <Zap className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                                    <h3 className="font-bold text-zinc-900 dark:text-white">{t.runners.soda.adaptiveLaunch}</h3>
+                                </div>
+                                <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3">{t.runners.soda.adaptiveLaunchDesc}</p>
+                                <p className="text-xs font-semibold text-purple-700 dark:text-purple-300">{t.runners.soda.adaptiveLaunchRequires}</p>
                             </div>
                         </div>
                         <div className="flex-1 order-1 lg:order-2 flex justify-center">
@@ -332,7 +341,7 @@ const Runners = () => {
                                 <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                                     <div className="flex items-center gap-3">
                                         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                                        <span className="font-mono text-sm">soda-11.0-4</span>
+                                        <span className="font-mono text-sm">soda-11.0-5</span>
                                     </div>
                                     <span className="text-xs text-zinc-500">{t.runners.contribute.passing}</span>
                                 </div>

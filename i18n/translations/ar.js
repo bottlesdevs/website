@@ -86,7 +86,7 @@ export const ar = {
         },
         sandboxed: {
             title: 'العزل',
-            description: 'نظامك في أمان؛ بفضل تقنية Flatpak، يعمل Bottles على عزل تطبيقات ويندوز ليبقى نظامك نظيفاً ومحمياً.',
+            description: 'يبقى Flatpak الحزمة المعزولة الموصى بها، بينما يوفر إصدار cpak التجريبي طريقة رسمية أخرى لتثبيت Bottles.',
         },
         versionManager: {
             title: 'مدير الإصدارات',
@@ -155,6 +155,9 @@ export const ar = {
             valveWineDesc: 'مبني على القاعدة المتينة والقوية التي يعتمد عليها جهاز Steam Deck.',
             patches: 'Curated Patches',
             patchesDesc: 'يحتوي على أفضل الإصلاحات المختارة بعناية من TKG و GE و Proton.',
+            adaptiveLaunch: 'التشغيل التكيفي',
+            adaptiveLaunchDesc: 'يتعلم Soda الملفات التي يستخدمها البرنامج أثناء بدء التشغيل ويجهزها مبكرا في مرات التشغيل اللاحقة. هذه هي الخطوة الأولى في سلسلة تحديثات مخصصة لجعل Soda أكثر ذكاء.',
+            adaptiveLaunchRequires: 'يتطلب Bottles 66 وsoda-11.0-5 أو إصدارا أحدث.',
         },
         protosoda: {
             badge: 'لـ Proton وUMU',
@@ -367,7 +370,7 @@ export const ar = {
         community: {
             badge: 'جديد في BOTTLES 65',
             title: 'معرفة المجتمع متاحة دون اتصال',
-            description: 'يمكن لـ Eagle Intelligence التعرف على التطبيقات المعروفة ومقارنتها بتقارير المجتمع دون إرسال الملف التنفيذي إلى أي جهة. تأتي البيانات داخل حزمة Bottles Flatpak ولا تحتاج إلى تنزيل منفصل.',
+            description: 'يمكن لـ Eagle Intelligence التعرف على التطبيقات المعروفة ومقارنتها بتقارير المجتمع دون إرسال الملف التنفيذي إلى أي جهة. تأتي البيانات داخل حزم Bottles الرسمية ولا تحتاج إلى تنزيل منفصل.',
             disclaimer: 'أدلة المجتمع إرشادية. يحسب Eagle تقييمه الخاص ولا يقدمه كتقييم رسمي من ProtonDB أو كضمان للتوافق.',
             imageAlt: 'مصادر Eagle Intelligence وأدلة المطابقة ونسب البيانات والتراخيص في Bottles 65',
             protondbTitle: 'تقارير مجتمع ProtonDB',
@@ -558,6 +561,7 @@ export const ar = {
         license: 'الترخيص',
         privacy: 'الخصوصية',
         terms: 'الشروط',
+        productBy: 'منتج من',
         made: 'صُنع بكل حب بواسطة مجتمع Bottles',
     },
     community: {
@@ -622,8 +626,13 @@ export const ar = {
             },
             legacy: {
                 title: 'إصدارات Legacy',
-                description: 'أحافظ على استقرار إصدار Bottles الحالي بينما نبني Next، مع إصلاحات التوافق وتحديثات Soda وEagle وإصدارات Flatpak.',
+                description: 'أحافظ على استقرار إصدار Bottles الحالي بينما نبني Next، مع إصلاحات التوافق وتحديثات Soda وEagle وإصدارات الحزم الرسمية.',
                 info: 'يبقى Bottles Next مستقبل المشروع، لكنني سأواصل الصيانة المركزة للتطبيق الحالي.',
+            },
+            umu: {
+                title: 'UMU في Bottles Legacy',
+                description: 'يملك UMU الآن تكاملاً رسوميًا كاملاً في المكتبة مع بادئات مُدارة وإعدادات لكل لعبة واعتماديات وProtoSoda.',
+                info: 'اكتمل تكامل UMU وسيصدر مع Bottles 66.',
             },
         },
         roadmap: {
@@ -681,23 +690,26 @@ export const ar = {
         },
         otherVersions: {
             title: 'إصدارات أخرى',
-            v1: { title: 'Bottles v1 (قديم)', desc: 'الإصدار الكلاسيكي. مناسب للاحتياجات البسيطة، لكنه يفتقد الميزات الحديثة.' },
+            v1: { title: 'Bottles Original', desc: 'تجربة Bottles الأصلية، ما زالت متاحة لمن يفضل أسلوب عملها الأبسط.' },
             source: { title: 'الشيفرة المصدرية', desc: 'مرخّص تحت GPLv3. ابنِه بنفسك أو ساهم عبر GitHub.' },
             manual: { title: 'بناء يدوي', desc: 'ابنِ Bottles من الصفر.' }
         },
         recommended: 'موصى به',
         flatpak: {
             title: 'Flatpak (Flathub)',
-            desc: 'الطريقة الرسمية والموصى بها لتثبيت Bottles. مدعومة على جميع التوزيعات الرئيسية بما فيها Steam Deck.'
+            desc: 'الطريقة الرسمية والموصى بها لتثبيت Bottles. مدعومة على جميع التوزيعات الرئيسية بما فيها Steam Deck.',
+            button: 'ثبّت من Flathub'
         },
         startInstall: 'ابدأ التثبيت',
-        comingSoon: {
+        cpak: {
             title: 'cpak',
-            desc: 'قريباً. لا يزال قيد التطوير حالياً.'
+            desc: 'حزمة Bottles الرسمية الثانية، متاحة الآن للاختبار التجريبي.',
+            badge: 'تجريبي',
+            button: 'جرّب Bottles مع cpak'
         },
         thankYou: {
             title: 'شكراً لتحميلك!',
-            desc: 'اتبع هذه الخطوات لتشغيل Bottles على نظامك.',
+            desc: 'اختر طريقة تثبيت Bottles، ثم اضغط على أحد الزرين أدناه.',
             back: 'العودة إلى الاختيار'
         },
         modal: {

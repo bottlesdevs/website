@@ -86,7 +86,7 @@ export const en = {
         },
         sandboxed: {
             title: 'Sandboxed',
-            description: 'Built on Flatpak, Bottles keeps your system clean and secure by isolating Windows applications.',
+            description: 'Flatpak remains the recommended sandboxed package, while the experimental cpak build offers another official way to install Bottles.',
         },
         versionManager: {
             title: 'Version Manager',
@@ -155,6 +155,9 @@ export const en = {
             valveWineDesc: 'Built on the same Wine base used by the Steam Deck.',
             patches: 'Curated Patches',
             patchesDesc: 'Includes the best fixes from TKG, GE, and Proton.',
+            adaptiveLaunch: 'Adaptive Launch',
+            adaptiveLaunchDesc: 'Soda learns which files a program uses while it starts and prepares them earlier on later launches. This is the first step in a series of updates dedicated to making Soda smarter.',
+            adaptiveLaunchRequires: 'Requires Bottles 66 and soda-11.0-5 or newer.',
         },
         protosoda: {
             badge: 'For Proton and UMU',
@@ -367,7 +370,7 @@ export const en = {
         community: {
             badge: 'NEW IN BOTTLES 65',
             title: 'Community Knowledge, Available Offline',
-            description: 'Eagle Intelligence can identify known applications and compare them with community reports without sending the executable anywhere. The data ships inside the Bottles Flatpak, so analysis does not require a separate download.',
+            description: 'Eagle Intelligence can identify known applications and compare them with community reports without sending the executable anywhere. The data ships inside the official Bottles packages, so analysis does not require a separate download.',
             disclaimer: 'Community evidence is advisory. Eagle calculates its own tier and never presents it as an official ProtonDB rating or a compatibility guarantee.',
             imageAlt: 'Eagle Intelligence sources, match evidence, credits, and licenses in Bottles 65',
             protondbTitle: 'ProtonDB community reports',
@@ -558,7 +561,8 @@ export const en = {
         license: 'License',
         privacy: 'Privacy',
         terms: 'Terms',
-        made: 'Made with ❤️ by the Bottles community',
+        productBy: 'A product by',
+        made: 'made with ❤️ by the Bottles community',
     },
     community: {
         title: 'Join the',
@@ -622,8 +626,13 @@ export const en = {
             },
             legacy: {
                 title: 'Legacy releases',
-                description: 'I am keeping the current Bottles release healthy while we build Next, with compatibility fixes, Soda updates, Eagle, and Flatpak releases.',
+                description: 'I am keeping the current Bottles release healthy while we build Next, with compatibility fixes, Soda updates, Eagle, and official package releases.',
                 info: 'Bottles Next remains the future of the project, but I will continue focused maintenance of the current application.',
+            },
+            umu: {
+                title: 'UMU in Bottles Legacy',
+                description: 'UMU now has a complete graphical integration in the Library, with managed prefixes, per-game settings, dependencies, and ProtoSoda.',
+                info: 'The UMU integration is complete and will ship with Bottles 66.',
             },
         },
         roadmap: {
@@ -681,23 +690,26 @@ export const en = {
         },
         otherVersions: {
             title: 'Other Versions',
-            v1: { title: 'Bottles v1 (Legacy)', desc: 'Classic version. Good for simple needs, but lacks modern features.' },
+            v1: { title: 'Bottles Original', desc: 'The original Bottles experience, kept available for users who prefer its simpler workflow.' },
             source: { title: 'Source Code', desc: 'GPLv3 licensed. Build it yourself or contribute on GitHub.' },
             manual: { title: 'Manual build', desc: 'Build Bottles from scratch.' }
         },
         recommended: 'RECOMMENDED',
         flatpak: {
             title: 'Flatpak (Flathub)',
-            desc: 'The official and recommended way to install Bottles. Supported on all major distributions including Steam Deck.'
+            desc: 'The official and recommended way to install Bottles. Supported on all major distributions including Steam Deck.',
+            button: 'Install from Flathub'
         },
         startInstall: 'Start Installation',
-        comingSoon: {
+        cpak: {
             title: 'cpak',
-            desc: 'Coming soon. Currently under development.'
+            desc: 'The second official Bottles package, available now for experimental testing.',
+            badge: 'EXPERIMENTAL',
+            button: 'Try Bottles with cpak'
         },
         thankYou: {
             title: 'Thank you for downloading!',
-            desc: 'Follow these steps to get Bottles running on your system.',
+            desc: 'Choose how you want to install Bottles, then click one of the buttons below.',
             back: 'Go back to selection'
         },
         modal: {
