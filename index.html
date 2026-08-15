@@ -188,11 +188,41 @@
       font-family: monospace;
     }
 
+    .prose pre {
+      margin: 1.75rem 0;
+      padding: 1.25rem 1.5rem;
+      overflow-x: auto;
+      background-color: #18181b;
+      border: 1px solid #3f3f46;
+      border-radius: 0.75rem;
+      color: #f4f4f5;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.875rem;
+      line-height: 1.65;
+      text-align: left;
+      tab-size: 2;
+    }
+
+    .prose pre code {
+      display: block;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+      color: inherit;
+      font: inherit;
+      white-space: pre;
+    }
+
     .dark .prose p {
       color: #a1a1aa;
     }
 
     .dark .prose blockquote {
+      border-color: #27272a;
+    }
+
+    .dark .prose pre {
+      background-color: #09090b;
       border-color: #27272a;
     }
 
@@ -258,6 +288,18 @@
         background-color: #f5f5f5 !important;
         color: black !important;
         border: 1px solid #ddd;
+      }
+
+      .prose pre {
+        background-color: #f5f5f5 !important;
+        color: black !important;
+        border: 1px solid #ddd;
+        white-space: pre-wrap;
+      }
+
+      .prose pre code {
+        border: 0;
+        white-space: inherit;
       }
 
       .print-only {
