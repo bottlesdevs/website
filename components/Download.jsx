@@ -55,12 +55,14 @@ const DownloadSection = ({ showModal, setShowModal }) => {
 
          if (paymentCompleted) {
             setCookie();
-            window.history.replaceState({}, '', `${window.location.pathname}#download`);
+            window.history.replaceState({}, '', window.location.pathname);
          }
 
          setHasDonated(donated);
          if (donated) {
             setView('guide');
+         }
+         if (paymentCompleted) {
             scrollToDownload();
          }
       };
@@ -97,7 +99,7 @@ const DownloadSection = ({ showModal, setShowModal }) => {
          setModalView('confirm');
       } else {
          const returnUrl = `${window.location.origin}/?payment=complete#download`;
-         const cancelUrl = `${window.location.origin}/#download`;
+         const cancelUrl = `${window.location.origin}/`;
          const params = new URLSearchParams({
             business: 'brombin94@gmail.com',
             amount: amount.toString(),
