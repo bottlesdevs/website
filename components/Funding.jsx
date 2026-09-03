@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Heart, CreditCard, Wallet, Search,
+  Heart, CreditCard, Wallet, Search, Banknote,
   X as XIcon, Info, BookOpen, CircleDollarSign,
   Bitcoin
 } from 'lucide-react';
@@ -146,7 +146,9 @@ const Funding = () => {
         <div className="grid md:grid-cols-3 gap-6 mb-20">
           {[
             { name: 'GitHub Sponsors', icon: <Heart className="w-6 h-6" />, link: "https://github.com/sponsors/bottlesdevs", desc: t.funding.channels.github.desc, highlight: false },
-            { name: 'PayPal', icon: <CreditCard className="w-6 h-6" />, link: "https://www.paypal.com/donate?hosted_button_id=HM2VKUH5STU4J", desc: t.funding.channels.paypal.desc, highlight: true },
+            { name: 'PayPal', icon: <Banknote className="w-6 h-6" />, link: "https://www.paypal.com/donate?hosted_button_id=HM2VKUH5STU4J", desc: t.funding.channels.paypal.desc, highlight: true },
+            { name: t.funding.channels.card.name, icon: <CreditCard className="w-6 h-6" />, link: "https://revolut.me/mirkobrombin", desc: t.funding.channels.card.desc, highlight: false },
+            { name: 'Revolut', icon: <img src="/assets/revolut.svg" alt="" className="w-24 h-6 dark:invert" />, link: "https://revolut.me/mirkobrombin", desc: t.funding.channels.revolut.desc, highlight: false },
             { name: 'LiberaPay', icon: <Wallet className="w-6 h-6" />, link: "https://liberapay.com/bottles", desc: t.funding.channels.liberapay.desc, highlight: false },
             { name: 'Patreon', icon: <Heart className="w-6 h-6" />, link: "https://www.patreon.com/MirkoBrombin", desc: t.funding.channels.patreon.desc, highlight: false },
             { name: 'Crypto', icon: <Bitcoin className="w-6 h-6" />, action: () => setShowCryptoModal(true), desc: t.funding.channels.crypto.desc, highlight: false },

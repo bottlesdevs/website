@@ -598,6 +598,8 @@ export const ar = {
             preferred: 'المفضل',
             github: { desc: 'شهري متكرر' },
             paypal: { desc: 'مرة واحدة أو متكرر' },
+            card: { name: 'بطاقة ائتمان/خصم', desc: 'مرة واحدة بالبطاقة أو Apple Pay' },
+            revolut: { desc: 'Revolut أو بطاقة أو Apple Pay' },
             liberapay: { desc: 'متكرر بمرونة' },
             patreon: { desc: 'عضوية' },
             crypto: { desc: 'BTC وETH والمزيد' },
@@ -717,7 +719,8 @@ export const ar = {
             desc: 'Bottles برنامج حر يصنعه متطوعون. تبرعك يساعدنا في الحفاظ على الخوادم وتطوير ميزات جديدة.',
             custom: 'اكتب المبلغ الذى تحبه (أو 0 للتحميل مجاناً)',
             free: 'حمّل مجاناً',
-            donate: 'تبرع وحمّل',
+            donatePaypal: 'تبرع عبر PayPal ثم حمّل',
+            donateCard: 'بطاقة ائتمان/خصم',
             secure: 'مدفوعات آمنة بواسطة',
             noPayment: 'قليلٌ من الدعم يصنع الكثير من التغيير! ☕',
             confirm: {

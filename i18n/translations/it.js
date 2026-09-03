@@ -598,6 +598,8 @@ export const it = {
             preferred: 'Preferito',
             github: { desc: 'Ricorrente mensile' },
             paypal: { desc: 'Una tantum o ricorrente' },
+            card: { name: 'Carta di credito/debito', desc: 'Una tantum con carta o Apple Pay' },
+            revolut: { desc: 'Revolut, carta o Apple Pay' },
             liberapay: { desc: 'Ricorrente flessibile' },
             patreon: { desc: 'Abbonamento' },
             crypto: { desc: 'BTC, ETH, e altro' },
@@ -717,7 +719,8 @@ export const it = {
             desc: 'Bottles è software libero costruito da volontari. La tua donazione ci aiuta a mantenere i server e sviluppare nuove funzionalità.',
             custom: 'Importo personalizzato (0 per gratis)',
             free: 'Scarica Gratis',
-            donate: 'Dona & Scarica',
+            donatePaypal: 'Dona con PayPal e scarica',
+            donateCard: 'Carta di credito/debito',
             secure: 'Pagamenti sicuri offerti da',
             noPayment: "Nessun pagamento richiesto. Ma ci piacerebbe un caffè! ☕",
             confirm: {

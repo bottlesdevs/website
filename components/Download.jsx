@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
    Terminal, Download as DownloadIcon,
-   Heart, X, AlertCircle, PackageCheck, Monitor, ChevronRight, Hammer, ExternalLink
+   Heart, X, AlertCircle, PackageCheck, Monitor, ChevronRight, Hammer, ExternalLink, CreditCard
 } from 'lucide-react';
 
 import { useLanguage } from '../i18n/LanguageContext';
@@ -122,6 +122,15 @@ const DownloadSection = ({ showModal, setShowModal }) => {
       } else {
          handleDonationSubmit(0);
       }
+   };
+
+   const handleRevolutDonation = () => {
+      setCookie();
+      setIsModalOpen(false);
+      setModalView('donation');
+      setView('guide');
+      window.open('https://revolut.me/mirkobrombin', '_blank', 'noopener,noreferrer');
+      scrollToDownload();
    };
 
    const currentAmount = parseFloat(donationAmount.toString());
@@ -371,9 +380,28 @@ const DownloadSection = ({ showModal, setShowModal }) => {
                               : 'bg-zinc-900 dark:bg-white text-white dark:text-black hover:bg-zinc-700 dark:hover:bg-zinc-200'
                               }`}
                         >
-                           {isFree ? t.download.modal.free : t.download.modal.donate}
+                           {isFree ? t.download.modal.free : t.download.modal.donatePaypal}
                            <DownloadIcon className="w-4 h-4" />
                         </button>
+
+                        {!isFree && (
+                           <div className="grid grid-cols-2 gap-3 mt-3">
+                              <button
+                                 onClick={handleRevolutDonation}
+                                 className="py-3 rounded-xl font-bold flex items-center justify-center gap-2 border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+                              >
+                                 <CreditCard className="w-4 h-4" />
+                                 {t.download.modal.donateCard}
+                              </button>
+                              <button
+                                 onClick={handleRevolutDonation}
+                                 aria-label="Revolut"
+                                 className="py-3 rounded-xl font-bold flex items-center justify-center border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+                              >
+                                 <img src="/assets/revolut.svg" alt="Revolut" className="h-4 w-auto dark:invert" />
+                              </button>
+                           </div>
+                        )}
 
                         <div className="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800">
                            <div className="flex items-center justify-center gap-2 text-[11px] text-zinc-400 dark:text-zinc-500">
