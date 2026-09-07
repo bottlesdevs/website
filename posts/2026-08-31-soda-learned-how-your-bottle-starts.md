@@ -51,6 +51,6 @@ MangoHud now reads its custom Flatpak configuration. If you added an override on
 
 A sandboxed UMU game starts without network access. Enable **Share Network** in its settings when the game needs online services.
 
-The [Bottles 67.1 source release](https://github.com/bottlesdevs/Bottles/releases/tag/67.1) is published, with x86_64 packages on [Cpak](https://cpak.it/store/Utilities/github.com/bottlesdevs/bottles) and [Flathub](https://flathub.org/apps/com.usebottles.bottles). [Soda 11.0-7](https://github.com/bottlesdevs/wine/releases/tag/soda-11.0-7) provides x86_64 and ARM64 archives. [ProtoSoda 11.0-2](https://github.com/bottlesdevs/wine/releases/tag/protosoda-11.0-2) is available for UMU games.
+The [Bottles 67.1 source release](https://github.com/bottlesdevs/Bottles/releases/tag/67.1) is published, with x86_64 packages on [cpak](https://cpak.it/store/Utilities/github.com/bottlesdevs/bottles) and [Flathub](https://flathub.org/apps/com.usebottles.bottles). [Soda 11.0-7](https://github.com/bottlesdevs/wine/releases/tag/soda-11.0-7) provides x86_64 and ARM64 archives. [ProtoSoda 11.0-2](https://github.com/bottlesdevs/wine/releases/tag/protosoda-11.0-2) is available for UMU games.
 
 [~ Mirko](https://bromb.in/)
